@@ -1,1 +1,10 @@
-*.log *.jou *.cache/ *.runs/ *.sim/ *.ip_user_files/ *.tmp *.bak Thumbs.db Destop.ini
+*.log
+*.jou
+*.cache/
+*.runs/
+*.sim/
+*.ip_user_files/
+*.tmp
+*.bak
+Thumbs.db
+Destop.ini
