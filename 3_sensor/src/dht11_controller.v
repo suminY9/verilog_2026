@@ -5,7 +5,7 @@ module dht11_controller (
     input         rst,
     input         start,
     output [15:0] humidity,
-    output [15:0] tmperature,
+    output [15:0] temperature,
     output        dht11_done,
     output        dht11_valid,
     output [ 3:0] debug,
@@ -21,14 +21,24 @@ module dht11_controller (
     );
 
     //STATE
-    parameter IDLE = 0, START = 1, WAIT = 2, SYNC_L = 3, SYNC_H = 4,
-              DATA_SYNC = 5, DATA_C = 6, STOP = 7;
+    parameter IDLE      = 0,
+              START     = 1,
+              WAIT      = 2,
+              SYNC_L    = 3,
+              SYNC_H    = 4,
+              DATA_SYNC = 5,
+              DATA_C    = 6,
+              STOP      = 7;
     reg [2:0] c_state, n_state;
 
+    // sensor state control
     reg dhtio_reg, dhtio_next;
     reg
         io_sel_reg,
         io_sel_next;  // FSM 안에서 제어. 조합으로 내보냄.
+    // sensor data control
+    reg [5:0]  bit_cnt_reg, bit_cnt_next; // to count 40
+    reg [39:0] data_reg, data_next;       // 40-bit data
 
     // tick counter in FSM
     // for 19msec count by 10usec tick
@@ -40,13 +50,15 @@ module dht11_controller (
 
     always @(posedge clk, posedge rst) begin
         if (rst) begin
-            c_state    <= 3'b000;
-            dhtio_reg  <= 1'b1;
-            io_sel_reg <= 1'b1;
+            c_state      <= 3'b000;
+            dhtio_reg    <= 1'b1;
+            io_sel_reg   <= 1'b1;
+            tick_cnt_reg <= 0;
         end else begin
-            c_state     <= n_state;
-            dhtio_reg   <= dhtio_next;
-            io_sel_next <= io_sel_reg;
+            c_state      <= n_state;
+            dhtio_reg    <= dhtio_next;
+            io_sel_reg   <= io_sel_next;
+            tick_cnt_reg <= tick_cnt_next;
         end
     end
 
@@ -68,7 +80,7 @@ module dht11_controller (
                 if (tick_10u) begin
                     tick_cnt_next = tick_cnt_reg + 1;
                     if (tick_cnt_reg == 1900) begin
-                        tick_cnt_reg = 0; // 재활용 할거기 때문에 state 이동 전에 초기화
+                        tick_cnt_next = 0; // 재활용 할거기 때문에 state 이동 전에 초기화
                         n_state = WAIT;
                     end
                 end
@@ -79,8 +91,9 @@ module dht11_controller (
                     tick_cnt_next = tick_cnt_reg + 1;
                     if (tick_cnt_reg == 3) begin    // 30us 정도는 끌어주는 것이 좋더라!
                         // for output to high-z
-                        n_state     = SYNC_L;
-                        io_sel_next = 1'b0;  // io_sel 의 출력을 끊음
+                        n_state       = SYNC_L;
+                        tick_cnt_next = 0;
+                        io_sel_next   = 1'b0;  // io_sel 의 출력을 끊음
                     end
                 end
             end
@@ -110,10 +123,25 @@ module dht11_controller (
             DATA_C: begin
                 if (tick_10u) begin
                     if (dhtio == 1) begin
-                        // 완성필요
                         tick_cnt_next = tick_cnt_reg + 1;
                     end else begin
-                        n_state = STOP;
+                        // dhtio가 LOW일 때 40us보다 짧으면 0
+                        if(tick_cnt_reg < 4) begin
+                            data_next = {data_reg[38:0], 1'b0};
+                        // 40us보다 길면 1
+                        end else begin
+                            data_next = {data_reg[38:0], 1'b1};
+                        end
+                        tick_cnt_next = 0;
+
+                        // 40-bit 모두 채우면 STOP state로 이동
+                        // 모두 채우지 못했을 경우 DATA_SYNC로 이동
+                        if(bit_cnt_reg == 39) begin
+                            n_state = STOP;
+                        end else begin
+                            bit_cnt_next = bit_cnt_next + 1;
+                            n_state = DATA_SYNC;
+                        end
                     end
                 end
             end
