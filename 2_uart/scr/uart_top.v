@@ -176,6 +176,177 @@ module signal_select_unit (
 
 endmodule
 
+module ASCII_sender (
+    input            clk,
+    input            rst,
+    input      [1:0] fnd_sel,     // 0: watch, 1: SR04, 2: DHT11
+    input      [7:0] fnd_data,
+    input            fnd_collect,
+    input            send_start,
+    input            tx_done,
+    output reg       tx_start,
+    output reg [7:0] tx_data
+);
+
+    // fnd_sel parameter
+    localparam WATCH = 0,
+               SR04  = 1,
+               DHT11 = 2;
+
+    // state
+    localparam IDLE       = 0,
+               FND_SELECT = 1,
+               START      = 2,
+               SENDING    = 3,
+               WAIT       = 4;
+    reg [2:0]  c_state, n_state;
+    // fnd 자릿수 0~7
+    //reg [2:0]  fnd_num, fnd_num_next;
+    // data buffer
+    reg [63:0] data_buf;
+    // fnd data collecting
+    reg [2:0] collect_cnt;
+    reg [3:0] tx_send_cnt_reg, tx_send_cnt_next;
+
+    always @(posedge clk, posedge rst) begin
+        if(rst) begin
+            c_state         <= 0;
+            //fnd_num         <= 0;
+            data_buf        <= 0;
+            collect_cnt     <= 0;
+            tx_send_cnt_reg <= 0;
+        end else begin
+            c_state         <= n_state;
+            //fnd_num         <= fnd_num_next;
+            tx_send_cnt_reg <= tx_send_cnt_next;
+
+            // fnd 8자리 collect
+            case(fnd_sel)
+                WATCH: begin
+                    if(fnd_collect && collect_cnt < 8) begin
+                        data_buf    <= {data_buf[55:0], fnd_data};
+                        collect_cnt <= collect_cnt + 1;
+                    end else begin
+                        collect_cnt <= 0;
+                    end
+                end
+                SR04: begin
+                    if(fnd_collect && collect_cnt < 4) begin
+                        data_buf    <= {data_buf[55:0], fnd_data};
+                        collect_cnt <= collect_cnt + 1;
+                    end else begin
+                        collect_cnt <= 0;
+                    end
+                end
+                DHT11: begin
+                    if(fnd_collect && collect_cnt < 4) begin
+                        data_buf    <= {data_buf[55:0], fnd_data};
+                        collect_cnt <= collect_cnt + 1;
+                    end else begin
+                        collect_cnt <= 0;
+                    end
+                end
+            endcase
+        end
+    end
+
+    always @(*) begin
+        n_state  = c_state;
+        tx_start = 0;
+        tx_data  = 8'd0;
+        tx_send_cnt_next = tx_send_cnt_reg;
+        //fnd_num_next = fnd_num;
+
+        case(c_state)
+            IDLE: begin
+                if(send_start) begin
+                    n_state = FND_SELECT;
+                end
+            end
+            FND_SELECT: begin
+                case(fnd_sel)
+                    WATCH: begin
+                        case(tx_send_cnt_reg)
+                            0: tx_data = data_buf[63:56];
+                            1: tx_data = data_buf[55:48];
+                            2: tx_data = data_buf[47:40];
+                            3: tx_data = data_buf[39:32];
+                            4: tx_data = data_buf[31:24];
+                            5: tx_data = data_buf[23:16];
+                            6: tx_data = data_buf[15: 8];
+                            7: tx_data = data_buf[ 7: 0];
+                            default: tx_data = 0;
+                        endcase
+                    end
+                    SR04: begin
+                        case(tx_send_cnt_reg)
+                            0: tx_data = data_buf[63:56];
+                            1: tx_data = data_buf[55:48];
+                            2: tx_data = data_buf[47:40];
+                            3: tx_data = data_buf[39:32];
+                            default: tx_data = 0;
+                        endcase
+                    end
+                    DHT11: begin
+                        case(tx_send_cnt_reg)
+                            0: tx_data = data_buf[63:56];
+                            1: tx_data = data_buf[55:48];
+                            2: tx_data = data_buf[47:40];
+                            3: tx_data = data_buf[39:32];
+                            default: tx_data = 0;
+                        endcase
+                    end
+                    //default:
+                endcase
+
+                // 0~9 숫자 인풋, ASCII 문자로 변환
+                tx_data = tx_data + 8'h30;
+                
+                n_state = START;
+            end
+            START: begin
+                // uart_tx <- 전송 가능 상태로 전환
+                tx_start = 1;
+                n_state = SENDING;
+            end
+            SENDING: begin
+                if(tx_done) begin // uart_tx <- 전송 done check
+                    n_state = WAIT;
+                end
+            end
+            WAIT: begin
+                tx_send_cnt_next = tx_send_cnt_reg + 1;
+
+                case(fnd_sel)
+                    WATCH: begin
+                        if(tx_send_cnt_reg == 7) begin
+                            n_state = IDLE;
+                        end else begin
+                            n_state = FND_SELECT;
+                        end
+                    end
+                    SR04: begin
+                        if(tx_send_cnt_reg == 4) begin
+                            n_state = IDLE;
+                        end else begin
+                            n_state = FND_SELECT;
+                        end
+                    end
+                    DHT11: begin
+                        if(tx_send_cnt_reg == 4) begin
+                            n_state = IDLE;
+                        end else begin
+                            n_state = FND_SELECT;
+                        end
+                    end
+                    //default:
+                endcase
+            end
+            default: n_state = IDLE;
+        endcase
+    end
+
+endmodule
 
 module ASCII_decoder (
     input      [7:0] in_data,
@@ -275,7 +446,7 @@ module uart_rx (
             DATA: begin
                 if (b_tick) begin
                     if (b_tick_cnt_reg == 4'd15) begin
-                        b_tick_cnt_next = 5'd0;
+                        b_tick_cnt_next = 4'd0;
                         buf_next = {rx, buf_reg[7:1]};
                         if (bit_cnt_reg == 7) begin
                             n_state = STOP;
@@ -304,19 +475,17 @@ endmodule
 
 
 module uart_tx (
-    input clk,
-    input rst,
-    input tx_start,
-    input b_tick,
-    input [7:0] tx_data,
-    output tx_busy,  //안전한 출력을 위해
-    output tx_done,
-    output uart_tx
+    input        clk,
+    input        rst,
+    input        tx_start,
+    input        b_tick,
+    input  [7:0] tx_data,
+    output       tx_busy,   //안전한 출력을 위해
+    output       tx_done,
+    output       uart_tx
 );
 
-    localparam IDLE = 2'd0, START = 2'd1;
-    localparam DATA = 2'd2;
-    localparam STOP = 2'd3;
+    localparam IDLE = 2'd0, START = 2'd1, DATA = 2'd2, STOP = 2'd3;
 
     //state reg
     reg [1:0] c_state, n_state;
@@ -331,7 +500,8 @@ module uart_tx (
     //tick_count
     reg [3:0] b_tick_cnt_reg, b_tick_cnt_next;
     //busy,done
-    reg busy_reg, busy_next, done_reg, done_next;
+    reg busy_reg, busy_next;
+    reg done_reg, done_next;
     //buffer
     reg [7:0] data_in_buf_reg, data_in_buf_next;
 
