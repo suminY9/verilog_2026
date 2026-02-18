@@ -64,73 +64,75 @@ module SR04_controller (
 
     // FSM variable
     reg [1:0] current_st, next_st;
+    // managing output variable
+    reg [11:0]distance_reg;
+    reg trigger_reg;
     // trigger counter
-    reg [ 3:0] trigger_cnt;
+    reg [3:0] trigger_cnt_next, trigger_cnt_reg;
     // echo counter
-    reg [15:0] echo_cnt;
+    reg [15:0] echo_cnt_next, echo_cnt_reg;
+    // echo signal synchronizer
+    reg echo_reg1, echo_reg2;
+    // tick resigter for detect rising edge
+    reg tick_reg;
 
     always @(posedge clk, posedge reset) begin
         if (reset) begin
-            current_st  <= 0;
-            trigger_cnt <= 0;
-            echo_cnt    <= 0;
+            current_st      <= 0;
+            tick_reg        <= 0;
+            trigger_cnt_reg <= 0;
+            echo_cnt_reg    <= 0;
+            echo_reg1       <= 0;
+            echo_reg2       <= 0;
+            distance_reg    <= 11'b0;
+            trigger_reg     <= 0;
         end else begin
             current_st <= next_st;
+            tick_reg <= tick_1MHz;   //register 값 변경은 clk에 동기해서!
+            trigger_cnt_reg <= trigger_cnt_next;
+            echo_cnt_reg <= echo_cnt_next;
+            distance_reg <= distance;
+            trigger_reg <= trigger;
+            // 2-stage synchronizer
+            echo_reg1 <= echo;
+            echo_reg2 <= echo_reg1;
         end
     end
 
     always @(*) begin
-        next_st = current_st;
+        next_st          = current_st;
+        distance         = distance_reg;
+        trigger_cnt_next = trigger_cnt_reg;
+        echo_cnt_next    = echo_cnt_reg;
+        trigger          = trigger_reg;
 
         case (current_st)
             IDLE: begin
-                trigger_cnt = 0;
-                echo_cnt    = 0;
+                // initialize counter
+                trigger_cnt_next = 0;
+                echo_cnt_next    = 0;
                 if (start == 1) begin
                     next_st = TRIGGER;
                 end
             end
-            //TRIGGER: begin
-            //    if(tick_1MHz) begin
-            //        if (trigger_cnt < 11) begin
-            //            trigger = 1'b1;
-            //            trigger_cnt = trigger_cnt + 1;
-            //        end else if (trigger_cnt == 11 & echo == 1) begin
-            //            trigger = 1'b0;
-            //            next_st = ECHO;
-            //        end
-            //    end
-            //end
-            //ECHO: begin
-            //    if(tick_1MHz) begin
-            //        if (echo == 0) begin
-            //            distance = echo_cnt / 58;
-            //            next_st  = IDLE;
-            //        end else if (echo == 1) begin
-            //            echo_cnt = echo_cnt + 1;
-            //        end
-            //    end
-            //end
             TRIGGER: begin
-                if(tick_1MHz) begin
-                    if( trigger_cnt < 11) begin
+                if (tick_1MHz == 1'b1 && tick_reg == 1'b0) begin // rising edge detect
+                    if (trigger_cnt_reg < 11) begin
                         trigger = 1'b1;
-                        trigger_cnt = trigger_cnt + 1;
-                    end else if (trigger_cnt == 11) begin
+                        trigger_cnt_next = trigger_cnt_next + 1;
+                    end else begin
                         trigger = 1'b0;
-                        trigger_cnt = 0;
                         next_st = ECHO;
                     end
                 end
             end
             ECHO: begin
-                if(tick_1MHz) begin
-                    if(echo == 1) begin
-                        echo_cnt = echo_cnt + 1;
-                    end else if(echo_cnt > 0 & echo == 0) begin
-                        distance = echo_cnt / 58;
-                        next_st = IDLE;
-                        echo_cnt = 0;
+                if (tick_1MHz == 1'b1 && tick_reg == 1'b0) begin // rising edge detect
+                    if (echo_reg2 == 1) begin
+                        echo_cnt_next = echo_cnt_next + 1;
+                    end else if (echo_cnt_reg > 0 && echo_reg2 == 0) begin
+                        distance = (echo_cnt_reg * 25'd1130) >> 16;
+                        next_st  = IDLE;
                     end
                 end
             end
