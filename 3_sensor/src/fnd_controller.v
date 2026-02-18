@@ -9,7 +9,7 @@ module fnd_controller (
 );
 
     // counter
-    wire [2:0] w_digit_sel;
+    wire [1:0] w_digit_sel;
     wire w_1khz;
     // digit splitter
     wire [3:0] w_digit_1, w_digit_10, w_digit_100, w_digit_1000;
@@ -178,7 +178,7 @@ module digit_splitter #(
     assign digit_1  = in_data % 10;
     assign digit_10 = (in_data / 10) % 10;
     assign digit_100 = (in_data / 100) % 10;
-    assign digit_1000 = (in_data / 1000) %10;
+    assign digit_1000 = (in_data / 1000) % 10;
 
 endmodule
 
