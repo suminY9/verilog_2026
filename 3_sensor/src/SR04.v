@@ -40,7 +40,7 @@ module top_SR04 (
         .tick_us(w_tick_1MHz)
     );
 
-    fnd_controller U_FND_CNTL (
+    fnd_controller_SR04 U_FND_CNTL_SR04 (
         .clk(clk),
         .reset(reset),
         .fnd_in_data(w_distance),
