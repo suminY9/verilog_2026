@@ -1,5 +1,253 @@
 `timescale 1ns / 1ps
 
+module fnd_controller (
+    input         clk,
+    input         reset,
+    input         sel_SR04,     // sw[1]: SR04
+    input         sel_DHT11,    // sw[2]: DHT11
+    input         sel_display,  // sw[0], 1: stopwatch, 0: watch
+    input  [31:0] fnd_in_data,
+    output [ 3:0] fnd_digit,
+    output [ 7:0] fnd_data
+);
+
+    // counter
+    wire [2:0] w_digit_sel;
+    wire w_1khz;
+
+    // digit splitter
+    // watch
+    wire [3:0] w_digit_hour_1, w_digit_hour_10;
+    wire [3:0] w_digit_min_1, w_digit_min_10;
+    wire [3:0] w_digit_sec_1, w_digit_sec_10;
+    wire [3:0] w_digit_msec_1, w_digit_msec_10;
+    // SR04
+    wire [3:0] w_digit_1, w_digit_10, w_digit_100;
+    // DHT11
+    wire [3:0] w_digit_hum_1, w_digit_hum_10;
+    wire [3:0] w_digit_hum_d01, w_digit_hum_d10;
+    wire [3:0] w_digit_temp_1, w_digit_temp_10;
+    wire [3:0] w_digit_temp_d01, w_digit_temp_d10;
+
+    // dot comparision
+    wire w_dot_onoff;
+
+    // MUX
+    // watch
+    wire [3:0] w_mux_hour_min_out, w_mux_sec_msec_out;
+    wire [3:0] w_mux_2x1_out_watch;
+    // SR04
+    wire [3:0] w_mux_2x1_out_SR04;
+    // DHT11
+    wire [3:0] w_mux_hum_out, w_mux_temp_out;
+    wire [3:0] w_mux_2x1_out_DHT11;
+    // final
+    wire [3:0] w_mux_final_out;
+
+    clk_div U_CLK_DIV (
+        .clk(clk),
+        .reset(reset),
+        .o_1khz(w_1khz)
+    );
+
+    // counter 8
+    counter_8 U_COUNTER_8 (
+        .clk(w_1khz),
+        .reset(reset),
+        .digit_sel(w_digit_sel)
+    );
+
+    // decoder
+    decoder_2x4 U_DECODER_2x4 (
+        .digit_sel  (w_digit_sel[1:0]),
+        .decoder_out(fnd_digit)
+    );
+
+
+    /* watch */
+    digit_splitter #(
+        .BIT_WIDTH(5)
+    ) U_HOUR_DS (
+        .in_data  (fnd_in_data[23:19]),
+        .digit_1  (w_digit_hour_1),
+        .digit_10 (w_digit_hour_10),
+        .digit_100()
+    );
+    digit_splitter #(
+        .BIT_WIDTH(6)
+    ) U_MIN_DS (
+        .in_data  (fnd_in_data[18:13]),
+        .digit_1  (w_digit_min_1),
+        .digit_10 (w_digit_min_10),
+        .digit_100()
+    );
+    digit_splitter #(
+        .BIT_WIDTH(6)
+    ) U_SEC_DS (
+        .in_data  (fnd_in_data[12:7]),
+        .digit_1  (w_digit_sec_1),
+        .digit_10 (w_digit_sec_10),
+        .digit_100()
+    );
+    digit_splitter #(
+        .BIT_WIDTH(7)
+    ) U_MSEC_DS (
+        .in_data  (fnd_in_data[6:0]),
+        .digit_1  (w_digit_msec_1),
+        .digit_10 (w_digit_msec_10),
+        .digit_100()
+    );
+
+    // dot comparision
+    dot_onoff_comp #(
+        .BIT_WIDTH(7)
+    ) U_DOT_COMP_WATCH (
+        .msec(fnd_in_data[6:0]),
+        .dot_onoff(w_dot_onoff)
+    );
+
+    // MUX
+    mux_8x1 U_MUX_HOUR_MIN (
+        .sel(w_digit_sel),
+        .digit_1(w_digit_min_1),
+        .digit_10(w_digit_min_10),
+        .digit_100(w_digit_hour_1),
+        .digit_1000(w_digit_hour_10),
+        .digit_dot_1(4'hf),
+        .digit_dot_10(4'hf),
+        .digit_dot_100({3'b111, w_dot_onoff}),
+        .digit_dot_1000(4'hf),
+        .mux_out(w_mux_hour_min_out)
+    );
+    mux_8x1 U_MUX_SEC_MSEC (
+        .sel(w_digit_sel),
+        .digit_1(w_digit_msec_1),
+        .digit_10(w_digit_msec_10),
+        .digit_100(w_digit_sec_1),
+        .digit_1000(w_digit_sec_10),
+        .digit_dot_1(4'hf),
+        .digit_dot_10(4'hf),
+        .digit_dot_100({3'b111, w_dot_onoff}),
+        .digit_dot_1000(4'hf),
+        .mux_out(w_mux_sec_msec_out)
+    );
+    mux_2x1 U_MUX_2x1_WATCH (
+        .sel(sel_display),
+        .i_sel0(w_mux_sec_msec_out),  // sel 0: sec_msec
+        .i_sel1(w_mux_hour_min_out),  // sel 1: hour_min
+        .o_mux(w_mux_2x1_out_watch)
+    );
+
+    /* SR04 */
+    // digit splitter
+    digit_splitter #(
+        .BIT_WIDTH(12)
+    ) U_SR04_DS (
+        .in_data  (fnd_in_data[11:0]),
+        .digit_1  (w_digit_1),
+        .digit_10 (w_digit_10),
+        .digit_100(w_digit_100)
+    );
+
+    // MUX
+    mux_8x1 U_MUX_SR04 (
+        .sel(w_digit_sel),
+        .digit_1(w_digit_1),
+        .digit_10(w_digit_10),
+        .digit_100(w_digit_100),
+        .digit_1000(4'd0),
+        .digit_dot_1(4'hf),
+        .digit_dot_10(4'hf),
+        .digit_dot_100(4'hf),
+        .digit_dot_1000(4'hf),
+        .mux_out(w_mux_2x1_out_SR04)
+    );
+
+    /* DHT11 */
+    // digit splitter
+    digit_splitter #(
+        .BIT_WIDTH(8)
+    ) U_HUM_DS (
+        .in_data  (fnd_in_data[31:24]),
+        .digit_1  (w_digit_hum_1),
+        .digit_10 (w_digit_hum_10),
+        .digit_100()
+    );
+    digit_splitter #(
+        .BIT_WIDTH(8)
+    ) U_HUM_D_DS (
+        .in_data  (fnd_in_data[23:16]),
+        .digit_1  (w_digit_hum_d01),
+        .digit_10 (w_digit_hum_d10),
+        .digit_100()
+    );
+    digit_splitter #(
+        .BIT_WIDTH(8)
+    ) U_TEMP_DS (
+        .in_data  (fnd_in_data[15:8]),
+        .digit_1  (w_digit_temp_1),
+        .digit_10 (w_digit_temp_10),
+        .digit_100()
+    );
+    digit_splitter #(
+        .BIT_WIDTH(8)
+    ) U_TEMP_D_DS (
+        .in_data  (fnd_in_data[7:0]),
+        .digit_1  (w_digit_temp_d01),
+        .digit_10 (w_digit_temp_d10),
+        .digit_100()
+    );
+
+    // MUX
+    mux_8x1 U_MUX_HUMIDITY (
+        .sel(w_digit_sel),
+        .digit_1(w_digit_hum_d01),
+        .digit_10(w_digit_hum_d10),
+        .digit_100(w_digit_hum_1),
+        .digit_1000(w_digit_hum_10),
+        .digit_dot_1(4'hf),
+        .digit_dot_10(4'hf),
+        .digit_dot_100(4'b1110),
+        .digit_dot_1000(4'hf),
+        .mux_out(w_mux_hum_out)
+    );
+    mux_8x1 U_MUX_TEMPERATURE (
+        .sel(w_digit_sel),
+        .digit_1(w_digit_temp_d01),
+        .digit_10(w_digit_temp_d10),
+        .digit_100(w_digit_temp_1),
+        .digit_1000(w_digit_temp_10),
+        .digit_dot_1(4'hf),
+        .digit_dot_10(4'hf),
+        .digit_dot_100(4'b1110),
+        .digit_dot_1000(4'hf),
+        .mux_out(w_mux_temp_out)
+    );
+    mux_2x1 U_MUX_2x1_DHT (
+        .sel(sel_display),
+        .i_sel0(w_mux_hum_out),  // sel 0: humidity
+        .i_sel1(w_mux_temp_out),  // sel 1: temperature
+        .o_mux(w_mux_2x1_out_DHT11)
+    );
+
+    // decide what to display
+    // MUX
+    MUX_3X1 U_MUX_3X1 (
+        .sel({sel_DHT11, sel_SR04}),
+        .i_sel_watch(w_mux_2x1_out_watch),
+        .i_sel_sr(w_mux_2x1_out_SR04),
+        .i_sel_dht(w_mux_2x1_out_DHT11),
+        .o_mux(w_mux_final_out)
+    );
+
+    // BCD
+    BCD U_BCD (
+        .bcd(w_mux_final_out),
+        .fnd_data(fnd_data)
+    );
+
+endmodule
+
 module fnd_controller_watch (
     input         clk,
     input         reset,
@@ -46,33 +294,33 @@ module fnd_controller_watch (
     digit_splitter #(
         .BIT_WIDTH(5)
     ) U_HOUR_DS (
-        .in_data (fnd_in_data[23:19]),
-        .digit_1 (w_digit_hour_1),
-        .digit_10(w_digit_hour_10),
+        .in_data  (fnd_in_data[23:19]),
+        .digit_1  (w_digit_hour_1),
+        .digit_10 (w_digit_hour_10),
         .digit_100()
     );
     digit_splitter #(
         .BIT_WIDTH(6)
     ) U_MIN_DS (
-        .in_data (fnd_in_data[18:13]),
-        .digit_1 (w_digit_min_1),
-        .digit_10(w_digit_min_10),
+        .in_data  (fnd_in_data[18:13]),
+        .digit_1  (w_digit_min_1),
+        .digit_10 (w_digit_min_10),
         .digit_100()
     );
     digit_splitter #(
         .BIT_WIDTH(6)
     ) U_SEC_DS (
-        .in_data (fnd_in_data[12:7]),
-        .digit_1 (w_digit_sec_1),
-        .digit_10(w_digit_sec_10),
+        .in_data  (fnd_in_data[12:7]),
+        .digit_1  (w_digit_sec_1),
+        .digit_10 (w_digit_sec_10),
         .digit_100()
     );
     digit_splitter #(
         .BIT_WIDTH(7)
     ) U_MSEC_DS (
-        .in_data (fnd_in_data[6:0]),
-        .digit_1 (w_digit_msec_1),
-        .digit_10(w_digit_msec_10),
+        .in_data  (fnd_in_data[6:0]),
+        .digit_1  (w_digit_msec_1),
+        .digit_10 (w_digit_msec_10),
         .digit_100()
     );
 
@@ -163,9 +411,9 @@ module fnd_controller_SR04 (
     digit_splitter #(
         .BIT_WIDTH(12)
     ) U_HUM_DS (
-        .in_data (fnd_in_data),
-        .digit_1 (w_digit_1),
-        .digit_10(w_digit_10),
+        .in_data  (fnd_in_data),
+        .digit_1  (w_digit_1),
+        .digit_10 (w_digit_10),
         .digit_100(w_digit_100)
     );
 
@@ -235,33 +483,33 @@ module fnd_controller_dht11 (
     digit_splitter #(
         .BIT_WIDTH(8)
     ) U_HUM_DS (
-        .in_data (fnd_in_data[31:24]),
-        .digit_1 (w_digit_hum_1),
-        .digit_10(w_digit_hum_10),
+        .in_data  (fnd_in_data[31:24]),
+        .digit_1  (w_digit_hum_1),
+        .digit_10 (w_digit_hum_10),
         .digit_100()
     );
     digit_splitter #(
         .BIT_WIDTH(8)
     ) U_HUM_D_DS (
-        .in_data (fnd_in_data[23:16]),
-        .digit_1 (w_digit_hum_d01),
-        .digit_10(w_digit_hum_d10),
+        .in_data  (fnd_in_data[23:16]),
+        .digit_1  (w_digit_hum_d01),
+        .digit_10 (w_digit_hum_d10),
         .digit_100()
     );
     digit_splitter #(
         .BIT_WIDTH(8)
     ) U_TEMP_DS (
-        .in_data (fnd_in_data[15:8]),
-        .digit_1 (w_digit_temp_1),
-        .digit_10(w_digit_temp_10),
+        .in_data  (fnd_in_data[15:8]),
+        .digit_1  (w_digit_temp_1),
+        .digit_10 (w_digit_temp_10),
         .digit_100()
     );
     digit_splitter #(
         .BIT_WIDTH(8)
     ) U_TEMP_D_DS (
-        .in_data (fnd_in_data[7:0]),
-        .digit_1 (w_digit_temp_d01),
-        .digit_10(w_digit_temp_d10),
+        .in_data  (fnd_in_data[7:0]),
+        .digit_1  (w_digit_temp_d01),
+        .digit_10 (w_digit_temp_d10),
         .digit_100()
     );
 
@@ -311,11 +559,25 @@ endmodule
 
 
 
-
+module MUX_3X1 (
+    input      [1:0] sel,
+    input      [3:0] i_sel_watch,
+    input      [3:0] i_sel_sr,
+    input      [3:0] i_sel_dht,
+    output reg [3:0] o_mux
+);
+    always @(*) begin
+        case (sel)
+            2'b01:   o_mux = i_sel_sr;
+            2'b10:   o_mux = i_sel_dht;
+            default: o_mux = i_sel_watch;
+        endcase
+    end
+endmodule
 
 module dot_onoff_comp #(
     parameter BIT_WIDTH = 7
-)(
+) (
     input [BIT_WIDTH - 1:0] msec,
     output dot_onoff
 );
@@ -434,8 +696,8 @@ module digit_splitter #(
     output [3:0] digit_100
 );
 
-    assign digit_1  = in_data % 10;
-    assign digit_10 = (in_data / 10) % 10;
+    assign digit_1   = in_data % 10;
+    assign digit_10  = (in_data / 10) % 10;
     assign digit_100 = (in_data / 100) % 10;
 endmodule
 
