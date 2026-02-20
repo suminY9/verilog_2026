@@ -1,5 +1,49 @@
 `timescale 1ns / 1ps
 
+module top_dht11 (
+    input        clk,
+    input        rst,
+    input        btn_r,
+    input        sw,
+    inout        dht11_io,
+    output [3:0] fnd_digit,
+    output [7:0] fnd_data
+);
+
+    // button
+    wire o_btn_r;
+    // dht11 output
+    wire [15:0] w_humidity, w_temperature;
+
+    btn_debounce U_BD_R (
+        .clk(clk),
+        .reset(rst),
+        .i_btn(btn_r),
+        .o_btn(o_btn_r)
+    );
+
+    dht11_controller U_DHT11_CTRL (
+        .clk(clk),
+        .rst(rst),
+        .start(o_btn_r),
+        .humidity(w_humidity),
+        .temperature(w_temperature),
+        .dht11_done(),
+        .dht11_valid(),
+        .debug(),
+        .dhtio(dht11_io)
+    );
+
+    fnd_controller_dht11 U_FND_CTRL_DHT11 (
+        .clk(clk),
+        .reset(rst),
+        .sel_display(sw),
+        .fnd_in_data({w_humidity, w_temperature}),
+        .fnd_digit(fnd_digit),
+        .fnd_data(fnd_data)
+    );
+endmodule
+
 module dht11_controller (
     input         clk,
     input         rst,
@@ -36,9 +80,12 @@ module dht11_controller (
     reg
         io_sel_reg,
         io_sel_next;  // FSM 안에서 제어. 조합으로 내보냄.
+    reg done_reg, done_next;
+    reg valid_reg, valid_next;
+
     // sensor data control
-    reg [5:0]  bit_cnt_reg, bit_cnt_next; // to count 40
-    reg [39:0] data_reg, data_next;       // 40-bit data
+    reg [5:0] bit_cnt_reg, bit_cnt_next;  // to count 40
+    reg [39:0] data_reg, data_next;  // 40-bit data
 
     // tick counter in FSM
     // for 19msec count by 10usec tick
@@ -46,31 +93,61 @@ module dht11_controller (
         tick_cnt_reg,
         tick_cnt_next; // 내부에서 쓰는 것은 무조건 F/F으로 가야함
 
+    // data update
+    reg [15:0] humidity_reg, humidity_next;
+    reg [15:0] temperature_reg, temperature_next;
+
     assign dhtio = (io_sel_reg) ? dhtio_reg : 1'bz;  //tri-state buffer
+    assign debug = c_state;
+    assign dht11_done = done_reg;
+    assign dht11_valid = valid_reg;
+    assign humidity = humidity_reg;
+    assign temperature = temperature_reg;
 
     always @(posedge clk, posedge rst) begin
         if (rst) begin
-            c_state      <= 3'b000;
-            dhtio_reg    <= 1'b1;
-            io_sel_reg   <= 1'b1;
-            tick_cnt_reg <= 0;
+            c_state         <= 3'b000;
+            dhtio_reg       <= 1'b1;
+            io_sel_reg      <= 1'b1;
+            done_reg        <= 0;
+            valid_reg       <= 0;
+            tick_cnt_reg    <= 0;
+            bit_cnt_reg     <= 0;
+            data_reg        <= 0;
+            humidity_reg    <= 0;
+            temperature_reg <= 0;
         end else begin
-            c_state      <= n_state;
-            dhtio_reg    <= dhtio_next;
-            io_sel_reg   <= io_sel_next;
-            tick_cnt_reg <= tick_cnt_next;
+            c_state         <= n_state;
+            dhtio_reg       <= dhtio_next;
+            io_sel_reg      <= io_sel_next;
+            done_reg        <= done_next;
+            valid_reg       <= valid_next;
+            tick_cnt_reg    <= tick_cnt_next;
+            bit_cnt_reg     <= bit_cnt_next;
+            data_reg        <= data_next;
+            humidity_reg    <= humidity_next;
+            temperature_reg <= temperature_next;
         end
     end
 
     // next, output
     always @(*) begin
-        n_state       = c_state;
-        tick_cnt_next = tick_cnt_reg;
-        dhtio_next    = dhtio_reg;
-        io_sel_next   = io_sel_reg;
+        n_state          = c_state;
+        tick_cnt_next    = tick_cnt_reg;
+        dhtio_next       = dhtio_reg;
+        io_sel_next      = io_sel_reg;
+        done_next        = done_reg;
+        valid_next       = valid_reg;
+        bit_cnt_next     = bit_cnt_reg;
+        data_next        = data_reg;
+        humidity_next    = humidity_reg;
+        temperature_next = temperature_reg;
 
         case (c_state)
             IDLE: begin
+                bit_cnt_next = 0;
+                done_next = 1'b0;
+                valid_next = 1'b0;
                 if (start) begin
                     n_state = START;
                 end
@@ -126,9 +203,9 @@ module dht11_controller (
                         tick_cnt_next = tick_cnt_reg + 1;
                     end else begin
                         // dhtio가 LOW일 때 40us보다 짧으면 0
-                        if(tick_cnt_reg < 4) begin
+                        if (tick_cnt_reg < 4) begin
                             data_next = {data_reg[38:0], 1'b0};
-                        // 40us보다 길면 1
+                            // 40us보다 길면 1
                         end else begin
                             data_next = {data_reg[38:0], 1'b1};
                         end
@@ -136,7 +213,7 @@ module dht11_controller (
 
                         // 40-bit 모두 채우면 STOP state로 이동
                         // 모두 채우지 못했을 경우 DATA_SYNC로 이동
-                        if(bit_cnt_reg == 39) begin
+                        if (bit_cnt_reg == 39) begin
                             n_state = STOP;
                         end else begin
                             bit_cnt_next = bit_cnt_next + 1;
@@ -149,10 +226,19 @@ module dht11_controller (
                 if (tick_10u) begin
                     tick_cnt_next = tick_cnt_reg + 1;
                     if (tick_cnt_reg == 5) begin
-                        // output mode
-                        dhtio_next  = 1'b1;
-                        io_sel_next = 1'b1;
-                        n_state     = IDLE;
+                        done_next = 1'b1;
+                        if(data_reg[39:32] + data_reg[31:24] + data_reg[23:16] + data_reg[15:8] == data_reg[7:0]) begin
+                            humidity_next    = {data_reg[39:24]};
+                            temperature_next = {data_reg[23:8]};
+                            valid_next = 1'b1;
+                        end else begin
+                            valid_next = 1'b0;
+                        end
+                        // output mode (to IDLE)
+                        dhtio_next    = 1'b1;
+                        io_sel_next   = 1'b1;
+                        n_state       = IDLE;
+                        tick_cnt_next = 0;
                     end
                 end
             end
