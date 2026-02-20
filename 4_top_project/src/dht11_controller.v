@@ -1,52 +1,9 @@
 `timescale 1ns / 1ps
 
-module top_dht11 (
-    input        clk,
-    input        rst,
-    input        btn_r,
-    input        sw,
-    inout        dht11_io,
-    output [3:0] fnd_digit,
-    output [7:0] fnd_data
-);
-
-    // button
-    wire o_btn_r;
-    // dht11 output
-    wire [15:0] w_humidity, w_temperature;
-
-    btn_debounce U_BD_R (
-        .clk(clk),
-        .reset(rst),
-        .i_btn(btn_r),
-        .o_btn(o_btn_r)
-    );
-
-    dht11_controller U_DHT11_CTRL (
-        .clk(clk),
-        .rst(rst),
-        .start(o_btn_r),
-        .humidity(w_humidity),
-        .temperature(w_temperature),
-        .dht11_done(),
-        .dht11_valid(),
-        .debug(),
-        .dhtio(dht11_io)
-    );
-
-    fnd_controller_dht11 U_FND_CTRL_DHT11 (
-        .clk(clk),
-        .reset(rst),
-        .sel_display(sw),
-        .fnd_in_data({w_humidity, w_temperature}),
-        .fnd_digit(fnd_digit),
-        .fnd_data(fnd_data)
-    );
-endmodule
-
 module dht11_controller (
     input         clk,
     input         rst,
+    input         DHT11_sw,
     input         start,
     output [15:0] humidity,
     output [15:0] temperature,
@@ -148,8 +105,12 @@ module dht11_controller (
                 bit_cnt_next = 0;
                 done_next = 1'b0;
                 valid_next = 1'b0;
-                if (start) begin
-                    n_state = START;
+                if (DHT11_sw) begin
+                    humidity_next = 2;
+                    temperature_next = 3; //debug
+                    if (start) begin
+                        n_state = START;
+                    end
                 end
             end
             START: begin

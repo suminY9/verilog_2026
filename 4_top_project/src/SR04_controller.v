@@ -1,59 +1,10 @@
 `timescale 1ns / 1ps
 
-module top_SR04 (
-    input        clk,
-    input        reset,
-    input        btn_r,
-    input        echo,
-    output       trigger,
-    output [3:0] fnd_digit,
-    output [7:0] fnd_data
-);
-
-    // tick generator
-    wire w_tick_1MHz;
-    // button debouce
-    wire w_btn_start;
-    // distance (from SR04 controller to fnd_controller)
-    wire [11:0] w_distance;
-
-    btn_debounce U_BD_RIGHT (
-        .clk  (clk),
-        .reset(reset),
-        .i_btn(btn_r),
-        .o_btn(w_btn_start)
-    );
-
-    SR04_controller U_SR04_CTRL (
-        .clk(clk),
-        .reset(reset),
-        .tick_1MHz(w_tick_1MHz),
-        .start(w_btn_start),
-        .echo(echo),
-        .trigger(trigger),
-        .distance(w_distance)
-    );
-
-    tick_gen_1MHz U_TICK_GEN (
-        .clk(clk),
-        .reset(reset),
-        .tick_us(w_tick_1MHz)
-    );
-
-    fnd_controller_SR04 U_FND_CNTL_SR04 (
-        .clk(clk),
-        .reset(reset),
-        .fnd_in_data(w_distance),
-        .fnd_digit(fnd_digit),
-        .fnd_data(fnd_data)
-    );
-
-endmodule
-
 module SR04_controller (
     input             clk,
     input             reset,
     input             tick_1MHz,
+    input             SR04_sw,
     input             start,
     input             echo,
     output reg        trigger,
@@ -111,7 +62,7 @@ module SR04_controller (
                 // initialize counter
                 trigger_cnt_next = 0;
                 echo_cnt_next    = 0;
-                if (start == 1) begin
+                if(SR04_sw && start) begin
                     next_st = TRIGGER;
                 end
             end

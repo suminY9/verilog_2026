@@ -3,13 +3,14 @@
 module top_stopwatch_watch (
     input        clk,
     input        reset,
-    input  [3:0] sw,
+    input  [5:0] sw,
     input        btn_u,
     input        btn_d,
     input        btn_r,
     input        btn_l,
-    output [3:0] fnd_digit,
-    output [7:0] fnd_data,
+    output [23:0] out_data,
+    //output [3:0] fnd_digit,
+    //output [7:0] fnd_data,
     output [3:0] LED
 );
 
@@ -20,7 +21,7 @@ module top_stopwatch_watch (
     // time bitstream
     wire [23:0] w_watch_time;
     wire [23:0] w_stopwatch_time;
-    wire [23:0] w_mux_2x1_24bit_out;
+    //wire [23:0] w_mux_2x1_24bit_out;
 
     // control unit
     watch_control_unit U_CTRL_UNIT (
@@ -31,8 +32,8 @@ module top_stopwatch_watch (
         .i_right(btn_r),
         .i_left(btn_l),
         //.i_count_mode(sw[0]),
-        .i_watch_select(sw[1]),
-        .i_edit(sw[3]),
+        .i_watch_select(sw[0]),
+        .i_edit(sw[5]),
         //.o_count_mode(),
         .o_run_stop(w_run_stop),
         .o_clear(w_clear),
@@ -47,8 +48,8 @@ module top_stopwatch_watch (
     watch_datapath U_WATCH_DATAPATH (
         .clk(clk),
         .reset(reset),
-        .watch_select(sw[1]),
-        .count_mode(sw[0]),
+        .watch_select(sw[0]),
+        .count_mode(sw[3]),
         .edit_msec(w_edit_msec),
         .edit_sec(w_edit_sec),
         .edit_min(w_edit_min),
@@ -64,8 +65,8 @@ module top_stopwatch_watch (
     stopwatch_datapath U_STOPWATCH_DATAPATH (
         .clk(clk),
         .reset(reset),
-        .watch_select(sw[1]),
-        .count_mode(sw[0]),
+        .watch_select(sw[0]),
+        .count_mode(sw[3]),
         .run_stop(w_run_stop),
         .clear(w_clear),
         .msec(w_stopwatch_time[6:0]),
@@ -77,21 +78,10 @@ module top_stopwatch_watch (
 
     // 2x1 MUX: watch or stopwatch to fnd
     MUX_2x1_24bit U_MUX_WATCH_STOPWATCH (
-        .sel(sw[1]),
+        .sel(sw[0]),
         .i_sel0(w_watch_time),
         .i_sel1(w_stopwatch_time),
-        .o_mux(w_mux_2x1_24bit_out)
-    );
-
-
-    // fnd controller
-    fnd_controller U_FND_CNTL (
-        .clk(clk),
-        .reset(reset),
-        .sel_display(sw[2]),
-        .fnd_in_data(w_mux_2x1_24bit_out),
-        .fnd_digit(fnd_digit),
-        .fnd_data(fnd_data)
+        .o_mux(out_data)
     );
 
 endmodule
