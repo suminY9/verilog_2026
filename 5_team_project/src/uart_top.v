@@ -17,6 +17,7 @@ module top_uart (
     wire [7:0] w_rx_data, w_sender_data;
     wire [7:0] w_rx_fifo_pop_data, w_tx_fifo_pop_data;
     wire w_tx_fifo_full, w_rx_fifo_empty, w_tx_fifo_empty, w_tx_busy;
+    wire w_tx_busy_f_detect;
     wire w_decoder_busy;
     wire w_sender_en, w_sender_ready, w_sender_busy;
 
@@ -73,7 +74,7 @@ module top_uart (
         .clk(clk),
         .rst(rst),
         .push(w_sender_ready),
-        .pop(~w_tx_busy),
+        .pop(w_tx_busy_f_detect),
         .push_data(w_sender_data),
         .pop_data(w_tx_fifo_pop_data),
         .full(w_tx_fifo_full),
@@ -92,11 +93,39 @@ module top_uart (
         .uart_tx(uart_tx)
     );
 
+    falling_edge_detector U_TX_BUSY_F_DETECT (
+        .clk(clk),
+        .rst(rst),
+        .tx_busy(w_tx_busy),
+        .tx_busy_f_detect(w_tx_busy_f_detect)
+    );
+
     baud_tick U_BAUD_TICK (
         .clk(clk),
         .rst(rst),
         .b_tick(w_b_tick)
     );
+
+endmodule
+
+module falling_edge_detector (
+    input clk,
+    input rst,
+    input tx_busy,
+    output tx_busy_f_detect
+);
+
+    reg busy_reg;
+
+    always @(posedge clk, posedge rst) begin
+        if(rst) begin
+            busy_reg <= 1'b0;
+        end else begin
+            busy_reg <= tx_busy;
+        end
+    end
+
+    assign tx_busy_f_detect = (busy_reg && !tx_busy);
 
 endmodule
 
