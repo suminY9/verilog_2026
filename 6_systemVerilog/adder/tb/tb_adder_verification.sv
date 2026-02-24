@@ -14,6 +14,8 @@ class transaction;
     rand bit [31:0] a;
     rand bit [31:0] b;
     rand bit        mode;
+    logic    [31:0] s;
+    logic           c;
 endclass  //transaction
 
 // generator for randomize stimulus
@@ -23,14 +25,13 @@ class generator;
     mailbox #(transaction) gen2drv_mbox;
     event gen_next_ev;
 
-    function new(mailbox#(transaction) gen2drv_mbox,
-                 event gen_next_ev);
+    function new(mailbox#(transaction) gen2drv_mbox, event gen_next_ev);
         this.gen_next_ev  = gen_next_ev;
         this.gen2drv_mbox = gen2drv_mbox;
     endfunction  //new()
 
     task run(int count);
-        repeat(count) begin
+        repeat (count) begin
             tr = new();
             tr.randomize();
             gen2drv_mbox.put(tr);
@@ -43,13 +44,12 @@ class driver;
     transaction tr;  // 다른 class이므로 이름 같아도 됨
     virtual adder_interface adder_if;   // 외부와 연결하기 위한 virtual interface
     mailbox #(transaction) gen2drv_mbox;
-    event gen_next_ev;
+    event mon_next_ev;
 
-    function new(mailbox#(transaction) gen2drv_mbox,
-                 event gen_next_ev,
+    function new(mailbox#(transaction) gen2drv_mbox, event mon_next_ev,
                  virtual adder_interface adder_if);
         this.adder_if     = adder_if;
-        this.gen_next_ev  = gen_next_ev;
+        this.mon_next_ev  = mon_next_ev;
         this.gen2drv_mbox = gen2drv_mbox;
     endfunction  //new()
 
@@ -61,29 +61,89 @@ class driver;
             adder_if.mode = tr.mode;
             #10;
             // event generation
-            -> gen_next_ev;
+            ->mon_next_ev;
         end
     endtask  //
 endclass  //driver
 
-class environment;
-    generator gen;
-    driver    drv;
-    mailbox #(transaction) gen2drv_mbox; // {keword} #(data_type) {name};
+class monitor;
+    transaction tr;
+    mailbox #(transaction) mon2scb_mbox;
+    event mon_next_ev;
+    virtual adder_interface adder_if;
+
+    function new(mailbox#(transaction) mon2scb_mbox,
+                 event mon_next_ev,
+                 virtual adder_interface adder_if);
+        this.mon2scb_mbox = mon2scb_mbox;
+        this.mon_next_ev  = mon_next_ev;
+        this.adder_if     = adder_if;
+    endfunction  //new()
+
+    task run();
+        forever begin
+            @(mon_next_ev);
+            tr      = new();
+            tr.a    = adder_if.a;
+            tr.b    = adder_if.b;
+            tr.mode = adder_if.mode;
+            tr.s    = adder_if.s;
+            tr.c    = adder_if.c;
+            mon2scb_mbox.put(tr);
+        end
+    endtask  //
+
+endclass //monitor
+
+class scoreboard;
+    transaction tr;
+    mailbox #(transaction) mon2scb_mbox;
     event gen_next_ev;
 
-    function new(virtual adder_interface adder_if,
+    function new(mailbox #(transaction) mon2scb_mbox,
                  event gen_next_ev);
+        this.mon2scb_mbox = mon2scb_mbox;
+        this.gen_next_ev  = gen_next_ev;
+    endfunction //new()
+
+    task run();
+        forever begin
+            mon2scb_mbox.get(tr);
+            // compare, pass, fail
+            // 완성 필요
+            $display("%t:a=%d, b=%d, mode=%d, s=%d, c=%d", $time, tr.a, tr.b, tr.mode, tr.s, tr.c);
+            -> gen_next_ev;
+        end
+    endtask //
+endclass //scoreboard
+
+class environment;
+    generator  gen;
+    driver     drv;
+    monitor    mon;
+    scoreboard scb;
+
+    mailbox #(transaction) gen2drv_mbox; // gen -> drv // {keword} #(data_type) {name};
+    mailbox #(transaction) mon2scb_mbox; // mon -> scb
+    event gen_next_ev; // scb to gen
+    event mon_next_ev; // drv to mon
+
+    function new(virtual adder_interface adder_if);
         gen2drv_mbox = new();
+        mon2scb_mbox = new();
         gen = new(gen2drv_mbox, gen_next_ev);
-        drv = new(gen2drv_mbox, gen_next_ev, adder_if);
+        drv = new(gen2drv_mbox, mon_next_ev, adder_if);
+        mon = new(mon2scb_mbox, mon_next_ev, adder_if);
+        scb = new(mon2scb_mbox, gen_next_ev);
     endfunction  //new()
 
     task run();
         fork
             gen.run(10);
             drv.run();
-        join
+            mon.run();
+            scb.run();
+        join_any
         $stop;
     endtask  //
 endclass  //environment
@@ -103,7 +163,7 @@ module tb_adder_verification ();
 
     initial begin
         // constructor (생성자)
-        env = new(adder_if, gen_next_ev);
+        env = new(adder_if);
 
         // exe (실행)
         env.run();
