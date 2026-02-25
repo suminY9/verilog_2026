@@ -11,9 +11,9 @@ endinterface  //adder_interface
 // stimulus(vector)
 class transaction;
     // task, function에서 randomize를 하면 rand 키워드가 있는 변수들에 랜덤 값 생성
-    rand bit [31:0] a;
-    rand bit [31:0] b;
-    rand bit        mode;
+    randc bit [31:0] a;
+    randc bit [31:0] b;
+    randc bit        mode;
     logic    [31:0] s;
     logic           c;
 
