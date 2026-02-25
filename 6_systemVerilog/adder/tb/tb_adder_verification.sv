@@ -16,6 +16,12 @@ class transaction;
     rand bit        mode;
     logic    [31:0] s;
     logic           c;
+
+    // to debug
+    task display(string name);
+        $display("%t: [%s] a = %h, b = %h, mode = %h, sum = %h, carry = %h",
+                 $time, name, a, b, mode, s, c);        
+    endtask //display
 endclass  //transaction
 
 // generator for randomize stimulus
@@ -35,6 +41,7 @@ class generator;
             tr = new();
             tr.randomize();
             gen2drv_mbox.put(tr);
+            tr.display("gen");      // debug message display
             @(gen_next_ev);
         end
     endtask  //
@@ -59,6 +66,7 @@ class driver;
             adder_if.a    = tr.a;
             adder_if.b    = tr.b;
             adder_if.mode = tr.mode;
+            tr.display("drv");          // debug message display
             #10;
             // event generation
             ->mon_next_ev;
@@ -90,9 +98,9 @@ class monitor;
             tr.s    = adder_if.s;
             tr.c    = adder_if.c;
             mon2scb_mbox.put(tr);
+            tr.display("mon");          // debug message display
         end
     endtask  //
-
 endclass //monitor
 
 class scoreboard;
@@ -109,9 +117,10 @@ class scoreboard;
     task run();
         forever begin
             mon2scb_mbox.get(tr);
+            tr.display("scb");          // debug message display
             // compare, pass, fail
             // 완성 필요
-            $display("%t:a=%d, b=%d, mode=%d, s=%d, c=%d", $time, tr.a, tr.b, tr.mode, tr.s, tr.c);
+            //$display("%t:a=%d, b=%d, mode=%d, s=%d, c=%d", $time, tr.a, tr.b, tr.mode, tr.s, tr.c);
             -> gen_next_ev;
         end
     endtask //
