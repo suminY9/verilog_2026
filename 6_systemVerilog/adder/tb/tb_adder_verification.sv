@@ -22,6 +22,27 @@ class transaction;
         $display("%t: [%s] a = %h, b = %h, mode = %h, sum = %h, carry = %h",
                  $time, name, a, b, mode, s, c);        
     endtask //display
+
+    /* constraint randomize */
+    // 범위 지정
+    //constraint range {
+    //    a > 10;
+    //    b > 32'hFFFF_0000;
+    //}
+
+    // 확률 지정
+    //constraint dist_patten {
+    //    a dist {
+    //        0 :/ 80,                   //  10번 중 8번
+    //        32'hffff_ffff :/ 10,       //  10번 중 1번
+    //        [1:32'hffff_fffe] :/ 10    //  10번 중 1번
+    //    };
+    //}
+
+    // 범위 지정 방법 2
+    constraint list_pattern {
+        a inside {[ 0:16 ]};            // a의 범위 지정
+    }
 endclass  //transaction
 
 // generator for randomize stimulus
