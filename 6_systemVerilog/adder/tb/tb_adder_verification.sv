@@ -132,9 +132,11 @@ class scoreboard;
                          tr.a, tr.b, tr.mode, tr.s, tr.c);
                 pass_cnt++;
             end else begin
-                $display("[pass]:a=%d, b=%d, mode=%d, s=%d, c=%d",
+                $display("[fail]:a=%d, b=%d, mode=%d, s=%d, c=%d",
                          tr.a, tr.b, tr.mode, tr.s, tr.c);
                 fail_cnt++;
+                $display("expected sum = %d", expected_sum);
+                $display("expected carry = %d", expected_carry);
             end
             
             -> gen_next_ev;
