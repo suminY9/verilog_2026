@@ -17,7 +17,7 @@ class transaction;
     logic    [31:0] s;
     logic           c;
 
-    // to debug
+    // to deburg
     task display(string name);
         $display("%t: [%s] a = %h, b = %h, mode = %h, sum = %h, carry = %h",
                  $time, name, a, b, mode, s, c);        
@@ -41,7 +41,7 @@ class generator;
             tr = new();
             tr.randomize();
             gen2drv_mbox.put(tr);
-            tr.display("gen");      // debug message display
+            tr.display("gen");      // deburg message display
             @(gen_next_ev);
         end
     endtask  //
@@ -66,7 +66,7 @@ class driver;
             adder_if.a    = tr.a;
             adder_if.b    = tr.b;
             adder_if.mode = tr.mode;
-            tr.display("drv");          // debug message display
+            tr.display("drv");          // deburg message display
             #10;
             // event generation
             ->mon_next_ev;
@@ -98,7 +98,7 @@ class monitor;
             tr.s    = adder_if.s;
             tr.c    = adder_if.c;
             mon2scb_mbox.put(tr);
-            tr.display("mon");          // debug message display
+            tr.display("mon");          // deburg message display
         end
     endtask  //
 endclass //monitor
@@ -107,6 +107,10 @@ class scoreboard;
     transaction tr;
     mailbox #(transaction) mon2scb_mbox;
     event gen_next_ev;
+    // to compare
+    bit [31:0] expected_sum;
+    bit        expected_carry;
+    int        pass_cnt, fail_cnt;
 
     function new(mailbox #(transaction) mon2scb_mbox,
                  event gen_next_ev);
@@ -117,10 +121,22 @@ class scoreboard;
     task run();
         forever begin
             mon2scb_mbox.get(tr);
-            tr.display("scb");          // debug message display
+            tr.display("scb");          // deburg message display
+            
             // compare, pass, fail
-            // 완성 필요
-            //$display("%t:a=%d, b=%d, mode=%d, s=%d, c=%d", $time, tr.a, tr.b, tr.mode, tr.s, tr.c);
+            // generate for compare expected data
+            if(tr.mode == 0)  {expected_carry, expected_sum} = tr.a + tr.b;
+            else              {expected_carry, expected_sum} = tr.a - tr.b;
+            if((expected_sum == tr.s) && (expected_carry == tr.c)) begin
+                $display("[pass]:a=%d, b=%d, mode=%d, s=%d, c=%d",
+                         tr.a, tr.b, tr.mode, tr.s, tr.c);
+                pass_cnt++;
+            end else begin
+                $display("[pass]:a=%d, b=%d, mode=%d, s=%d, c=%d",
+                         tr.a, tr.b, tr.mode, tr.s, tr.c);
+                fail_cnt++;
+            end
+            
             -> gen_next_ev;
         end
     endtask //
@@ -137,6 +153,9 @@ class environment;
     event gen_next_ev; // scb to gen
     event mon_next_ev; // drv to mon
 
+    // try
+    int i;
+
     function new(virtual adder_interface adder_if);
         gen2drv_mbox = new();
         mon2scb_mbox = new();
@@ -147,12 +166,26 @@ class environment;
     endfunction  //new()
 
     task run();
+        i = 100;
+
         fork
-            gen.run(10);
+            gen.run(i);
             drv.run();
             mon.run();
             scb.run();
         join_any
+        #20;    // 모든 class들이 연산을 마칠 때까지 기다림. 안정적으로 값을 뽑기 위한 delay
+        
+        // total pass/fail
+        $display("______________________________");
+        $display("** 32bit Adder Verification **");
+        $display("------------------------------");
+        $display("** Total test cnt = %3d     **", i);
+        $display("** Total pass cnt = %3d     **", scb.pass_cnt);
+        $display("** Total fail cnt = %3d     **", scb.fail_cnt);
+        $display("------------------------------");
+        $display("______________________________");
+
         $stop;
     endtask  //
 endclass  //environment
