@@ -118,10 +118,20 @@ class scoreboard;
     event gen_next_ev;
 
     int pass_cnt, fail_cnt, try_cnt;
+    
+    // coverage
+    covergroup cg_sram;
+        cp_addr: coverpoint tr.addr {
+            bins min = {0};
+            bins max = {15};
+            bins mid = {[1:14]};
+        }
+    endgroup
 
     function new(mailbox #(transaction) mon2scb_mbox, event gen_next_ev);
         this.mon2scb_mbox = mon2scb_mbox;
         this.gen_next_ev  = gen_next_ev;
+        cg_sram           = new();
     endfunction //new()
 
     task run();
@@ -136,6 +146,7 @@ class scoreboard;
             try_cnt++;
             tr.display("scb");
 
+            cg_sram.sample();
             // pass, fail
             if(tr.we) begin
                 expected_ram[tr.addr] = tr.wdata;
@@ -185,6 +196,7 @@ class environment;
             scb.run();
         join_any
         #10;
+        $display("coverage addr = %d", scb.cg_sram.get_inst_coverage()); //coverage를 몇 개 테스트했는지 출력
 
         // report
         $display("_____________________________");
