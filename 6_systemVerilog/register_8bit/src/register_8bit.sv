@@ -13,7 +13,7 @@
 // Dependencies: 
 // 
 // Revision:
-// Revision 0.01 - File Created
+// Revision 1.01 - add write enable
 // Additional Comments:
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -21,6 +21,7 @@
 module register_8bit (
     input              clk,
     input              rst,
+    input  logic       we,
     input  logic [7:0] wdata,
     output logic [7:0] rdata
 );
@@ -29,7 +30,8 @@ module register_8bit (
         if (rst) begin
             rdata <= 8'b0;
         end else begin
-            rdata <= wdata;
+            if(we)
+                rdata <= wdata;
         end
     end
 
