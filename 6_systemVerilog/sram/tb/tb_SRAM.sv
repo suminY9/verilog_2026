@@ -35,14 +35,13 @@ class transaction;
     rand bit [7:0] wdata;
     logic    [7:0] rdata;
 
-    task display(string name);
-        $display("%t : [%s] we = %d, addr = %2h, wdata = %2h, rdata = %2h", $time, we, name, addr, wdata, rdata);
-    endtask
+    function void display(string name);
+        $display("%t : [%s] we = %d, addr = %2h, wdata = %2h, rdata = %2h", $time, name, we, addr, wdata, rdata);
+    endfunction
 
 endclass //transaction
 
-/************** class **************/
-
+/****************** class *****************/
 class generator;
     transaction tr;
     mailbox #(transaction) gen2drv_mbox;
@@ -50,14 +49,13 @@ class generator;
 
     function new(mailbox #(transaction) gen2drv_mbox, event gen_next_ev);
         this.gen2drv_mbox = gen2drv_mbox;
-        tihs.gen_next_ev  = gen_next_ev;
+        this.gen_next_ev  = gen_next_ev;
     endfunction //new()
 
     task run(int run_count);
         repeat(run_count) begin
             tr = new();
             tr.randomize();
-
             gen2drv_mbox.put(tr);
             tr.display("gen");
             @(gen_next_ev);
@@ -76,18 +74,13 @@ class driver;
         this.ram_if       = ram_if;
     endfunction //new()
 
-    task preset(input clk);
-        // reset
-        clk = 0;
-        ram_if.we = 0;        
-    endtask //
-
     task run();
         forever begin
             gen2drv_mbox.get(tr);
-            ram_if.we    = tr.we;
+            @(negedge ram_if.clk);
+            ram_if.addr  = tr.addr;
             ram_if.wdata = tr.wdata;
-            //ram_if.rdata = tr.rdata;
+            ram_if.we    = tr.we;
             tr.display("drv");
         end
     endtask //
@@ -106,8 +99,10 @@ class monitor;
 
     task run();
         forever begin
-            tr = new();
+            @(posedge ram_if.clk);
             #1;
+            tr = new();
+            tr.addr  = ram_if.addr;
             tr.we    = ram_if.we;
             tr.wdata = ram_if.wdata;
             tr.rdata = ram_if.rdata;
@@ -119,12 +114,10 @@ endclass //monitor
 
 class scoreboard;
     transaction tr;
-    memory mem;
     mailbox #(transaction) mon2scb_mbox;
     event gen_next_ev;
 
     int pass_cnt, fail_cnt, try_cnt;
-    bit [7:0] read_data;
 
     function new(mailbox #(transaction) mon2scb_mbox, event gen_next_ev);
         this.mon2scb_mbox = mon2scb_mbox;
@@ -132,6 +125,8 @@ class scoreboard;
     endfunction //new()
 
     task run();
+        logic [7:0] expected_ram[0:15];
+
         pass_cnt = 0;
         fail_cnt = 0;
         try_cnt  = 0;
@@ -139,44 +134,28 @@ class scoreboard;
         forever begin
             mon2scb_mbox.get(tr);
             try_cnt++;
-
-            if(tr.we) begin
-                mem.write();
-            end else begin
-                if(tr.wdata == mem.read(read_data))
-                $display("%t : Pass : we = %d, addr = %2h, wdata = %2h, rdata = %2h",
-                          $time, tr.we, tr.addr, tr.wdata, tr.rdata);
-                pass_cnt++;
-            end else begin
-                $display("%t : Fail : we = %d, addr = %2h, wdata = %2h, rdata = %2h",
-                          $time, tr.we, tr.addr, tr.wdata, tr.rdata);
-                fail_cnt++;
-            end
             tr.display("scb");
+
+            // pass, fail
+            if(tr.we) begin
+                expected_ram[tr.addr] = tr.wdata;
+                $display("%2h", expected_ram[tr.addr]);
+            end else begin
+                if(expected_ram[tr.addr] === tr.rdata) begin    // '===' x까지 비교
+                    $display("Pass");
+                    pass_cnt++;
+                end else begin
+                    $display("Fail: expected data = %2h, rdata = %2h",
+                             expected_ram[tr.addr], tr.rdata);
+                    fail_cnt++;
+                end
+            end
+
+            // next stimulus
             ->gen_next_ev;
         end
     endtask
 endclass //scoreboard
-
-class memory;
-    transaction tr;
-    mailbox #(transaction) mon2scb_mbox;
-
-    logic [3:0] mem[0:15];
-
-    function new(mailbox #(transaction) mon2scb_mbox);
-        this.mon2scb_mbox = mon2scb_mbox;        
-    endfunction //new()
-
-    task write();
-        mon2scb_mbox.get(tr);
-        mem[tr.addr] = tr.wdata;
-    endtask
-
-    task read(output [7:0] read_data);
-        read_data = mem[tr.addr];
-    endtask
-endclass //memory
 
 class environment;
     generator  gen;
@@ -189,24 +168,23 @@ class environment;
 
     event gen_next_ev;
 
-    function new(virtual register_interface register_if);
+    function new(virtual ram_interface ram_if);
         gen2drv_mbox = new;
         mon2scb_mbox = new;
         gen = new(gen2drv_mbox, gen_next_ev);
-        drv = new(gen2drv_mbox, register_if);
-        mon = new(mon2scb_mbox, register_if);
+        drv = new(gen2drv_mbox, ram_if);
+        mon = new(mon2scb_mbox, ram_if);
         scb = new(mon2scb_mbox, gen_next_ev);
     endfunction  //new()
 
     task run();
-        drv.preset();
         fork
             gen.run(10);
             drv.run();
             mon.run();
             scb.run();
         join_any
-        #20;
+        #10;
 
         // report
         $display("_____________________________");
@@ -230,7 +208,7 @@ module tb_SRAM ();
 
     SRAM #(
         .DEPTH(16)
-    ) dut (
+    )dut (
         .clk(clk),
         .we(ram_if.we),
         .addr(ram_if.addr),
@@ -239,5 +217,10 @@ module tb_SRAM ();
     );
 
     always #5 clk = ~clk;
+
+    initial begin
+        env = new(ram_if);
+        env.run();
+    end
 
 endmodule
