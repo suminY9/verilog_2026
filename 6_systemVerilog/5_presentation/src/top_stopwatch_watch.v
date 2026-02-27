@@ -47,7 +47,6 @@ module top_stopwatch_watch (
     watch_datapath U_WATCH_DATAPATH (
         .clk(clk),
         .reset(reset),
-        .watch_select(sw[1]),
         .count_mode(sw[0]),
         .edit_msec(w_edit_msec),
         .edit_sec(w_edit_sec),
@@ -64,7 +63,6 @@ module top_stopwatch_watch (
     stopwatch_datapath U_STOPWATCH_DATAPATH (
         .clk(clk),
         .reset(reset),
-        .watch_select(sw[1]),
         .count_mode(sw[0]),
         .run_stop(w_run_stop),
         .clear(w_clear),
@@ -100,7 +98,6 @@ endmodule
 module watch_datapath (
     input        clk,
     input        reset,
-    input        watch_select,
     input        count_mode,
     input  [1:0] edit_msec,
     input  [1:0] edit_sec,
@@ -116,12 +113,12 @@ module watch_datapath (
 
     tick_counter #(
         .BIT_WIDTH(5),
-        .TIMES(24)
+        .TIMES(24),
+        .INIT_CNT(12)
     ) hour_counter (
         .clk(clk),
         .reset(reset),
         .i_tick(w_hour_tick),
-        .watch_select(watch_select),
         .count_mode(count_mode),
         .run_stop(),
         .clear(1'b0),
@@ -131,12 +128,12 @@ module watch_datapath (
     );
     tick_counter #(
         .BIT_WIDTH(6),
-        .TIMES(60)
+        .TIMES(60),
+        .INIT_CNT(0)
     ) min_counter (
         .clk(clk),
         .reset(reset),
         .i_tick(w_min_tick),
-        .watch_select(watch_select),
         .count_mode(count_mode),
         .run_stop(),
         .clear(1'b0),
@@ -146,12 +143,12 @@ module watch_datapath (
     );
     tick_counter #(
         .BIT_WIDTH(6),
-        .TIMES(60)
+        .TIMES(60),
+        .INIT_CNT(0)
     ) sec_counter (
         .clk(clk),
         .reset(reset),
         .i_tick(w_sec_tick),
-        .watch_select(watch_select),
         .count_mode(count_mode),
         .run_stop(),
         .clear(1'b0),
@@ -161,12 +158,12 @@ module watch_datapath (
     );
     tick_counter #(
         .BIT_WIDTH(7),
-        .TIMES(100)
+        .TIMES(100),
+        .INIT_CNT(0)
     ) msec_counter (
         .clk(clk),
         .reset(reset),
         .i_tick(w_tick_100hz),
-        .watch_select(watch_select),
         .count_mode(count_mode),
         .run_stop(),
         .clear(1'b0),
@@ -188,7 +185,6 @@ endmodule
 module stopwatch_datapath (
     input        clk,
     input        reset,
-    input        watch_select,
     input        count_mode,
     input        run_stop,
     input        clear,
@@ -202,61 +198,61 @@ module stopwatch_datapath (
 
     tick_counter #(
         .BIT_WIDTH(5),
-        .TIMES(24)
+        .TIMES(24),
+        .INIT_CNT(0)
     ) hour_counter (
         .clk(clk),
         .reset(reset),
         .i_tick(w_hour_tick),
-        .watch_select(watch_select),
         .count_mode(count_mode),
         .run_stop(run_stop),
         .clear(clear),
-        .edit_sign(),
+        .edit_sign(2'b0),
         .o_count(hour),
         .o_tick()
     );
     tick_counter #(
         .BIT_WIDTH(6),
-        .TIMES(60)
+        .TIMES(60),
+        .INIT_CNT(0)
     ) min_counter (
         .clk(clk),
         .reset(reset),
         .i_tick(w_min_tick),
-        .watch_select(watch_select),
         .count_mode(count_mode),
         .run_stop(run_stop),
         .clear(clear),
-        .edit_sign(),
+        .edit_sign(2'b0),
         .o_count(min),
         .o_tick(w_hour_tick)
     );
     tick_counter #(
         .BIT_WIDTH(6),
-        .TIMES(60)
+        .TIMES(60),
+        .INIT_CNT(0)
     ) sec_counter (
         .clk(clk),
         .reset(reset),
         .i_tick(w_sec_tick),
-        .watch_select(watch_select),
         .count_mode(count_mode),
         .run_stop(run_stop),
         .clear(clear),
-        .edit_sign(),
+        .edit_sign(2'b0),
         .o_count(sec),
         .o_tick(w_min_tick)
     );
     tick_counter #(
         .BIT_WIDTH(7),
-        .TIMES(100)
+        .TIMES(100),
+        .INIT_CNT(0)
     ) msec_counter (
         .clk(clk),
         .reset(reset),
         .i_tick(w_tick_100hz),
-        .watch_select(watch_select),
         .count_mode(count_mode),
         .run_stop(run_stop),
         .clear(clear),
-        .edit_sign(),
+        .edit_sign(2'b0),
         .o_count(msec),
         .o_tick(w_sec_tick)
     );
@@ -284,12 +280,12 @@ endmodule
 
 module tick_counter #(
     parameter BIT_WIDTH = 7,
-              TIMES     = 100
+              TIMES     = 100,
+              INIT_CNT  = 0
 ) (
     input                      clk,
     input                      reset,
     input                      i_tick,
-    input                      watch_select,
     input                      count_mode,
     input                      run_stop,
     input                      clear,
@@ -306,11 +302,7 @@ module tick_counter #(
     // state register SL
     always @(posedge clk, posedge reset) begin
         if (reset | clear) begin
-            if((watch_select == 0) && (BIT_WIDTH == 5)) begin
-                counter_reg <= 12;
-            end else begin
-            counter_reg <= 0;
-            end
+            counter_reg <= INIT_CNT;
         end else begin
             counter_reg <= counter_next;
         end
@@ -321,8 +313,8 @@ module tick_counter #(
         counter_next = counter_reg;
         o_tick       = 1'b0;
 
-        // edit mode: up
-        if(edit_sign == 2'b01) begin
+        case (edit_sign)
+        2'b01:          // edit mode: up
             if(counter_reg == (TIMES - 1)) begin
                 counter_next = 0;
                 o_tick       = 1'b1;
@@ -330,8 +322,7 @@ module tick_counter #(
                 counter_next = counter_reg + 1;
                 o_tick      = 1'b0;
             end
-        // edit mode: down
-        end else if(edit_sign == 2'b11) begin
+        2'b11:         // edit mode: down
             if(counter_reg == 0) begin
                 counter_next = (TIMES - 1);
                 o_tick       = 1'b1;
@@ -339,27 +330,27 @@ module tick_counter #(
                 counter_next = counter_reg - 1;
                 o_tick       = 1'b0;
             end
-        end
-        // none edit mode
-        // up count
-        if (i_tick & (count_mode == 0)) begin
-            if (counter_reg == (TIMES - 1)) begin
-                counter_next = 0;
-                o_tick       = 1'b1;
-            end else begin
-                counter_next = counter_reg + 1;
-                o_tick       = 1'b0;
+        default:        // edit mode off
+            // up count
+            if (i_tick & (count_mode == 0)) begin
+                if (counter_reg == (TIMES - 1)) begin
+                    counter_next = 0;
+                    o_tick       = 1'b1;
+                end else begin
+                    counter_next = counter_reg + 1;
+                    o_tick       = 1'b0;
+                end
+            // down count
+            end else if(i_tick & (count_mode == 1)) begin
+                if (counter_reg == 0) begin
+                    counter_next = (TIMES - 1);
+                    o_tick       = 1'b1;
+                end else begin
+                    counter_next = counter_reg - 1;
+                    o_tick       = 1'b0;
+                end
             end
-        // down count
-        end else if(i_tick & (count_mode == 1)) begin
-            if (counter_reg == 0) begin
-                counter_next = (TIMES - 1);
-                o_tick       = 1'b1;
-            end else begin
-                counter_next = counter_reg - 1;
-                o_tick       = 1'b0;
-            end
-        end
+        endcase
     end
 
 endmodule

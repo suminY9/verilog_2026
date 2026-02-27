@@ -46,47 +46,39 @@ module control_unit (
 
     // stopwatch, edit mode off
     always @(*) begin
-        // stopwatch, edit mode don't care
-        if (i_watch_select == 1) begin
-            //initialize
-            next_stopwatch = current_stopwatch;
-            o_run_stop     = 1'b0;
-            o_clear        = 1'b0;
-            o_edit_msec    = 2'b00;
-            o_edit_sec     = 2'b00;
-            o_edit_min     = 2'b00;
-            o_edit_hour    = 2'b00;
-            LED = 4'b0000;
+        // initialize
+        next_stopwatch  = current_stopwatch;
+        next_watch_edit = current_watch_edit;
+        o_run_stop      = 1'b0;
+        o_clear         = 1'b0;
+        o_edit_msec     = 2'b00;
+        o_edit_sec      = 2'b00;
+        o_edit_min      = 2'b00;
+        o_edit_hour     = 2'b00;
+        LED             = 4'b0000;
 
-            case (current_stopwatch)
-                STOP: begin
-                    o_run_stop = 1'b0;
-                    o_clear = 1'b0;
-                    if (i_right) next_stopwatch = RUN;
-                    else if (i_left) next_stopwatch = CLEAR;
-                end
-                RUN: begin
-                    o_run_stop = 1'b1;
-                    o_clear = 1'b0;
-                    if (i_right) next_stopwatch = STOP;
-                end
-                CLEAR: begin
-                    o_run_stop     = 1'b0;
-                    o_clear        = 1'b1;
-                    next_stopwatch = STOP;
-                end
-            endcase
-        end else
+        // stopwatch, edit mode don't care
+        case (current_stopwatch)
+            STOP: begin
+                o_run_stop = 1'b0;
+                o_clear = 1'b0;
+                if (i_watch_select && i_right) next_stopwatch = RUN;
+                else if (i_watch_select && i_left) next_stopwatch = CLEAR;
+            end
+            RUN: begin
+                o_run_stop = 1'b1;
+                o_clear = 1'b0;
+                if (i_watch_select && i_right) next_stopwatch = STOP;
+            end
+            CLEAR: begin
+                o_run_stop     = 1'b0;
+                o_clear        = 1'b1;
+                next_stopwatch = STOP;
+            end
+        endcase
+
         // watch, edit mode on
         if ((i_edit == 1) & (i_watch_select == 0)) begin
-            next_watch_edit = current_watch_edit;
-            o_run_stop      = 1'b0;
-            o_clear         = 1'b0;
-            o_edit_msec     = 2'b00;
-            o_edit_sec      = 2'b00;
-            o_edit_min      = 2'b00;
-            o_edit_hour     = 2'b00;
-
             case (current_watch_edit)
                 MSEC: begin
                     LED = 4'b0001;
@@ -117,16 +109,6 @@ module control_unit (
                     else if (i_left) next_watch_edit = MSEC;
                 end
             endcase
-        end else
-        // watch, edit mode off
-        begin
-            o_run_stop      = 1'b0;
-            o_clear         = 1'b0;
-            o_edit_msec     = 2'b00;
-            o_edit_sec      = 2'b00;
-            o_edit_min      = 2'b00;
-            o_edit_hour     = 2'b00;
-            LED             = 4'b0000;
         end
     end
 
