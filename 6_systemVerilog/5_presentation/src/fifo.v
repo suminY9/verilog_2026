@@ -28,7 +28,7 @@ module fifo #(
         .pop_data(pop_data)
     );
 
-    control_unit #(
+    fifo_control_unit #(
         .DEPTH(DEPTH)
     ) U_CTRL_UNIT (
         .clk  (clk),
@@ -73,7 +73,7 @@ module register_file #(
 endmodule
 
 
-module control_unit #(
+module fifo_control_unit #(
     parameter DEPTH = 4
 ) (
     input                      clk,
