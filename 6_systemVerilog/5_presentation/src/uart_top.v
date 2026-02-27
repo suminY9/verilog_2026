@@ -115,7 +115,7 @@ module uart_top (
     );
 
     // 9600 x 16 baud tick
-    baud_tick U_BOUD_TICK (
+    baud_tick U_BAUD_TICK (
         .clk(clk),
         .reset(rst),
         .b_tick(w_b_tick)
