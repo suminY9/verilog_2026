@@ -317,18 +317,14 @@ module tick_counter #(
         2'b01:          // edit mode: up
             if(counter_reg == (TIMES - 1)) begin
                 counter_next = 0;
-                o_tick       = 1'b1;
             end else begin
                 counter_next = counter_reg + 1;
-                o_tick      = 1'b0;
             end
         2'b11:         // edit mode: down
             if(counter_reg == 0) begin
                 counter_next = (TIMES - 1);
-                o_tick       = 1'b1;
             end else begin
                 counter_next = counter_reg - 1;
-                o_tick       = 1'b0;
             end
         default:        // edit mode off
             // up count
