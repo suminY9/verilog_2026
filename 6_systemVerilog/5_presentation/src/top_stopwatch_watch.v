@@ -306,7 +306,7 @@ module tick_counter #(
     // state register SL
     always @(posedge clk, posedge reset) begin
         if (reset | clear) begin
-            if((watch_select == 0) & (BIT_WIDTH == 5)) begin
+            if((watch_select == 0) && (BIT_WIDTH == 5)) begin
                 counter_reg <= 12;
             end else begin
             counter_reg <= 0;
@@ -321,70 +321,43 @@ module tick_counter #(
         counter_next = counter_reg;
         o_tick       = 1'b0;
 
-        // stopwatch
-        if (watch_select) begin
-            if (i_tick & run_stop) begin
-                if (count_mode == 1'b1) begin
-                    //down
-                    if (counter_reg == 0) begin
-                        counter_next = (TIMES - 1);
-                        o_tick = 1'b1;
-                    end else begin
-                        counter_next = counter_reg - 1;
-                        o_tick = 1'b0;
-                    end
-                end else begin
-                    //up
-                    if (counter_reg == (TIMES - 1)) begin
-                        counter_next = 0;
-                        o_tick = 1'b1;
-                    end else begin
-                        counter_next = counter_reg + 1;
-                        o_tick = 1'b0;
-                    end
-                end
+        // edit mode: up
+        if(edit_sign == 2'b01) begin
+            if(counter_reg == (TIMES - 1)) begin
+                counter_next = 0;
+                o_tick       = 1'b1;
+            end else begin
+                counter_next = counter_reg + 1;
+                o_tick      = 1'b0;
             end
-
-        // watch
-        end else if (!watch_select) begin
-            // edit mode: up
-            if(edit_sign == 2'b01) begin
-                if(counter_reg == (TIMES - 1)) begin
-                    counter_next = 0;
-                    o_tick       = 1'b1;
-                end else begin
-                    counter_next = counter_reg + 1;
-                    o_tick      = 1'b0;
-                end
-            // edit mode: down
-            end else if(edit_sign == 2'b11) begin
-                if(counter_reg == 0) begin
-                    counter_next = (TIMES - 1);
-                    o_tick       = 1'b1;
-                end else begin
-                    counter_next = counter_reg - 1;
-                    o_tick       = 1'b0;
-                end
+        // edit mode: down
+        end else if(edit_sign == 2'b11) begin
+            if(counter_reg == 0) begin
+                counter_next = (TIMES - 1);
+                o_tick       = 1'b1;
+            end else begin
+                counter_next = counter_reg - 1;
+                o_tick       = 1'b0;
             end
-            // none edit mode
-            // up count
-            if (i_tick & (count_mode == 0)) begin
-                if (counter_reg == (TIMES - 1)) begin
-                    counter_next = 0;
-                    o_tick       = 1'b1;
-                end else begin
-                    counter_next = counter_reg + 1;
-                    o_tick       = 1'b0;
-                end
-            // down count
-            end else if(i_tick & (count_mode == 1)) begin
-                if (counter_reg == 0) begin
-                    counter_next = (TIMES - 1);
-                    o_tick       = 1'b1;
-                end else begin
-                    counter_next = counter_reg - 1;
-                    o_tick       = 1'b0;
-                end
+        end
+        // none edit mode
+        // up count
+        if (i_tick & (count_mode == 0)) begin
+            if (counter_reg == (TIMES - 1)) begin
+                counter_next = 0;
+                o_tick       = 1'b1;
+            end else begin
+                counter_next = counter_reg + 1;
+                o_tick       = 1'b0;
+            end
+        // down count
+        end else if(i_tick & (count_mode == 1)) begin
+            if (counter_reg == 0) begin
+                counter_next = (TIMES - 1);
+                o_tick       = 1'b1;
+            end else begin
+                counter_next = counter_reg - 1;
+                o_tick       = 1'b0;
             end
         end
     end
