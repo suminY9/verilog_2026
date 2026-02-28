@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module uart_top (
+module top_uart (
     input        clk,
     input        rst,
     input  [3:0] sw,
@@ -21,11 +21,25 @@ module uart_top (
     wire [3:0] w_control;
     wire w_btn_in_u, w_btn_in_d, w_btn_in_r, w_btn_in_l, w_btn_in_state;
     wire w_sw0, w_sw1, w_sw2, w_sw3;
-    // uart_rx
+    // uart_rx, rx_fifo
     wire w_rx_done;
-    wire [7:0] w_rx_data;
+    wire [7:0] w_rx_data, w_rx_fifo_data;
+    wire w_rx_fifo_full, w_rx_fifo_empty;
+    // ascii_decoder
+    reg r_decoder_wake;
+    // ascii_sender
+    wire [31:0] w_sender_data_in;
+    wire  [7:0] w_sender_data_out;
     // uart_tx
     wire w_b_tick;
+    wire w_tx_done, w_tx_busy;
+    wire [7:0] w_tx_fifo_data;
+    wire w_tx_fifo_push, w_tx_fifo_full, w_tx_fifo_empty;
+
+    always @(posedge clk) begin
+        if(rst) r_decoder_wake <= 0;
+        else    r_decoder_wake <= !w_rx_fifo_empty;
+    end
 
     // button debounce
     btn_debounce U_BD_UP (
@@ -65,7 +79,7 @@ module uart_top (
         .btn_out_down(w_btn_in_d),
         .btn_out_right(w_btn_in_r),
         .btn_out_left(w_btn_in_l),
-        .btn_state(w_btn_state),
+        .btn_state(w_btn_in_state),
         .sw0(w_sw0),
         .sw1(w_sw1),
         .sw2(w_sw2),
@@ -81,15 +95,31 @@ module uart_top (
         .btn_d(w_btn_in_d),
         .btn_r(w_btn_in_r),
         .btn_l(w_btn_in_l),
+        .send(w_btn_in_state),
         .fnd_digit(fnd_digit),
         .fnd_data(fnd_data),
+        .sender_data(w_sender_data_in),
         .LED(LED)
     );
 
     ASCII_decoder U_ASCII_DECODER (
-        .in_data(w_rx_data),
-        .done(w_rx_done),
+        .in_data(w_rx_fifo_data),
+        .done(!w_rx_fifo_empty),
         .control(w_control)
+    );
+
+    fifo #(
+        .DEPTH(4),
+        .BIT_WIDTH(8)
+    ) fifo_rx (
+        .clk(clk),
+        .rst(rst),
+        .push(w_rx_done && !w_rx_fifo_full),
+        .pop(!w_rx_fifo_empty),
+        .push_data(w_rx_data),
+        .pop_data(w_rx_fifo_data),
+        .full(w_rx_fifo_full),
+        .empty(w_rx_fifo_empty)
     );
 
     // uart rx
@@ -102,15 +132,40 @@ module uart_top (
         .rx_done(w_rx_done)
     );
 
+    ASCII_sender U_ASCII_SENDER (
+          .clk(clk),
+          .rst(rst),
+          .module_sel(3'b001),     // 0: watch, 1: SR04, 2: DHT11
+          .data_in(w_sender_data_in),
+          .send_start(w_btn_in_state),
+          .fifo_full(w_tx_fifo_full),
+          .fifo_push(w_tx_fifo_push),
+          .data_out(w_sender_data_out)
+    );
+
+    fifo #(
+        .DEPTH(16),
+        .BIT_WIDTH(8)
+    ) fifo_tx (
+        .clk(clk),
+        .rst(rst),
+        .push(w_tx_fifo_push),
+        .pop(!w_tx_busy && !w_tx_fifo_empty),
+        .push_data(w_sender_data_out),
+        .pop_data(w_tx_fifo_data),
+        .full(w_tx_fifo_full),
+        .empty(w_tx_fifo_empty)
+    );
+
     // uart tx
     uart_tx U_UART_TX (
         .clk(clk),
         .rst(rst),
-        .tx_start(w_rx_done),
+        .tx_start(!w_tx_fifo_empty),
         .b_tick(w_b_tick),
-        .tx_data(w_rx_data),
-        .tx_busy(),
-        .tx_done(),
+        .tx_data(w_tx_fifo_data),
+        .tx_busy(w_tx_busy),
+        .tx_done(w_tx_done),
         .uart_tx(uart_tx)
     );
 
@@ -156,10 +211,10 @@ module signal_select_unit (
         btn_out_left = 1'b0;
         btn_state = 1'b0;
         // button
-        if ((control == 4'b0001) | (btn_in_right)) btn_out_right = 1'b1;
-        else if ((control == 4'b0010) | (btn_in_left)) btn_out_left = 1'b1;
-        else if ((control == 4'b0011) | (btn_in_up)) btn_out_up = 1'b1;
-        else if ((control == 4'b0100) | (btn_in_down)) btn_out_down = 1'b1;
+        btn_out_right = (control == 4'b0001) || btn_in_right;
+        btn_out_left  = (control == 4'b0010) || btn_in_left;
+        btn_out_up    = (control == 4'b0011) || btn_in_up;
+        btn_out_down  = (control == 4'b0100) || btn_in_down;
         // switch
         //if ((control == 4'b0101) | (sw[0] == 1)) sw0 = 1'b1;
         //if ((control == 4'b0110) | (sw[1] == 1)) sw1 = 1'b1;
@@ -177,188 +232,126 @@ module signal_select_unit (
 endmodule
 
 module ASCII_sender (
-    input            clk,
-    input            rst,
-    input      [1:0] fnd_sel,     // 0: watch, 1: SR04, 2: DHT11
-    input      [7:0] fnd_data,    // data input 8-bit
-    input            fnd_collect, // 1(tick): collecting fnd_data
-    input            send_start,  // uart_tx start signal
-    input            tx_done,
-    output reg       tx_start,
-    output reg [7:0] tx_data
+    input             clk,
+    input             rst,
+    // top module
+    input       [2:0] module_sel,  // 001: watch, 010: SR04, 100: DHT11
+    input      [31:0] data_in,
+    input             send_start,  // send start trigger
+    // fifo
+    input             fifo_full,
+    output reg        fifo_push,
+    output reg  [7:0] data_out
 );
 
-    // fnd_sel parameter
-    localparam WATCH = 0,
-               SR04  = 1,
-               DHT11 = 2;
+    // module_sel parameter
+    localparam WATCH = 3'b001, SR04 = 3'b010, DHT11 = 3'b100;
 
     // state
-    localparam IDLE       = 0,
-               FND_SELECT = 1,
-               START      = 2,
-               SENDING    = 3,
-               WAIT       = 4;
-    reg [2:0]  c_state, n_state;
+    localparam IDLE         = 0,
+               WAIT         = 1,
+               DATA_SELECT  = 2,
+               SENDING      = 3;
+    reg [1:0]  c_state, n_state;
 
-    // data buffer
-    reg [63:0] data_buf;
-    // fnd data collecting
-    reg [2:0] collect_cnt;
-    // fnd 자릿수 0~7 count
-    reg [3:0] tx_send_cnt_reg, tx_send_cnt_next;
+    // data buffer for output 8-bit * max 13-digit
+    reg [7:0] data_buf[0:12];
+    integer i;
+    // sending data index count
+    reg [3:0] last_index;
+    reg [3:0] index_cnt_reg, index_cnt_next;
 
     always @(posedge clk, posedge rst) begin
         if(rst) begin
-            c_state         <= 0;
-            data_buf        <= 0;
-            collect_cnt     <= 0;
-            tx_send_cnt_reg <= 0;
-        end else begin
-            c_state         <= n_state;
-            tx_send_cnt_reg <= tx_send_cnt_next;
-
-            // fnd 8자리 or 4자리 collect
-            // current state == IDLE 일 때에만 fnd collect
-            if(c_state == IDLE) begin
-                case(fnd_sel)
-                    WATCH: begin
-                        if(fnd_collect && collect_cnt < 8) begin
-                            data_buf    <= {data_buf[55:0], fnd_data};
-                            collect_cnt <= collect_cnt + 1;
-                        end else begin
-                            collect_cnt <= 0;
-                        end
-                    end
-                    SR04: begin
-                        if(fnd_collect && collect_cnt < 4) begin
-                            data_buf    <= {data_buf[55:0], fnd_data};
-                            collect_cnt <= collect_cnt + 1;
-                        end else begin
-                            collect_cnt <= 0;
-                        end
-                    end
-                    DHT11: begin
-                        if(fnd_collect && collect_cnt < 4) begin
-                            data_buf    <= {data_buf[55:0], fnd_data};
-                            collect_cnt <= collect_cnt + 1;
-                        end else begin
-                            collect_cnt <= 0;
-                        end
-                    end
-                endcase
+            for (i = 0; i <= 12; i = i + 1) begin
+                data_buf[i] <= 8'd0;
             end
+            c_state       <= 0;
+            index_cnt_reg <= 0;
+        end else begin
+            c_state       <= n_state;
+            index_cnt_reg <= index_cnt_next;
         end
     end
 
     always @(*) begin
-        n_state  = c_state;
-        tx_start = 0;
-        tx_data  = 8'd0;
-        tx_send_cnt_next = tx_send_cnt_reg;
+        fifo_push = 0;
+        data_out = 0;
+        n_state = c_state;
+        index_cnt_next = index_cnt_reg;
+
+        case (module_sel)
+            WATCH: last_index = 11;
+            SR04:  last_index = 5;
+            DHT11: last_index = 13;
+        endcase
 
         case(c_state)
-            // IDLE
-            // data_buf에 fnd collecting. send_start 신호가 들어오면 FND_SELECT로
             IDLE: begin
+                index_cnt_next = 0;
+
                 if(send_start) begin
-                    n_state = FND_SELECT;
+                    n_state = DATA_SELECT;
                 end
             end
-
-            // FND_SELECT
-            // uart_tx로 전송할 데이터(tx_data, 8-bit) 결정. ASCII 숫자로 변환.
-            FND_SELECT: begin
-                case(fnd_sel)
-                    WATCH: begin
-                        case(tx_send_cnt_reg)
-                            0: tx_data = data_buf[63:56];
-                            1: tx_data = data_buf[55:48];
-                            2: tx_data = data_buf[47:40];
-                            3: tx_data = data_buf[39:32];
-                            4: tx_data = data_buf[31:24];
-                            5: tx_data = data_buf[23:16];
-                            6: tx_data = data_buf[15: 8];
-                            7: tx_data = data_buf[ 7: 0];
-                            default: tx_data = 0;
-                        endcase
-                    end
-                    SR04: begin
-                        case(tx_send_cnt_reg)
-                            0: tx_data = data_buf[63:56];
-                            1: tx_data = data_buf[55:48];
-                            2: tx_data = data_buf[47:40];
-                            3: tx_data = data_buf[39:32];
-                            default: tx_data = 0;
-                        endcase
-                    end
-                    DHT11: begin
-                        case(tx_send_cnt_reg)
-                            0: tx_data = data_buf[63:56];
-                            1: tx_data = data_buf[55:48];
-                            2: tx_data = data_buf[47:40];
-                            3: tx_data = data_buf[39:32];
-                            default: tx_data = 0;
-                        endcase
-                    end
-                    //default:
-                endcase
-
-                // 0~9 숫자 인풋, ASCII 문자로 변환
-                tx_data = tx_data + 8'h30;
-                
-                n_state = START;
-            end
-
-            // START
-            // tx_start 신호를 내보냄
-            START: begin
-                // uart_tx <- 전송 가능 상태로 전환
-                tx_start = 1;
+            DATA_SELECT: begin
                 n_state = SENDING;
             end
-
-            // SENDING
-            // uart_tx가 done 신호를 보내면 WAIT로
             SENDING: begin
-                if(tx_done) begin // uart_tx <- 전송 done check
-                    n_state = WAIT;
+                if(!fifo_full) begin
+                    // send 1 data to fifo_tx
+                    fifo_push = 1;
+                    data_out = data_buf[index_cnt_reg];
+                    index_cnt_next = index_cnt_reg + 1;
+
+                    // check send all digit
+                    if(index_cnt_reg == last_index - 1) n_state = IDLE;
                 end
             end
-
-            // WAIT
-            // fnd 8 or 4자리 수 모두 전송했는지 확인.
-            // 전송 다 끝남 -> IDLE로 / 안 끝남 -> FND_SELECT로
-            WAIT: begin
-                case(fnd_sel)
-                    WATCH: begin
-                        if(tx_send_cnt_reg == 7) begin
-                            n_state = IDLE;
-                        end else begin
-                            n_state = FND_SELECT;
-                        end
-                    end
-                    SR04: begin
-                        if(tx_send_cnt_reg == 4) begin
-                            n_state = IDLE;
-                        end else begin
-                            n_state = FND_SELECT;
-                        end
-                    end
-                    DHT11: begin
-                        if(tx_send_cnt_reg == 4) begin
-                            n_state = IDLE;
-                        end else begin
-                            n_state = FND_SELECT;
-                        end
-                    end
-                    //default:
-                endcase
-                
-                tx_send_cnt_next = tx_send_cnt_reg + 1;
-            end
-            default: n_state = IDLE;
         endcase
+    end
+
+    // in data update to data_buf
+    always @(posedge clk) begin
+        if(c_state == DATA_SELECT) begin
+            case(module_sel)
+                WATCH: begin
+                    data_buf[0]  <= {4'b0, data_in[31:28]} + 8'h30;
+                    data_buf[1]  <= {4'b0, data_in[27:24]} + 8'h30;
+                    data_buf[2]  <=  8'h3a;                            // :
+                    data_buf[3]  <= {4'b0, data_in[23:20]} + 8'h30;
+                    data_buf[4]  <= {4'b0, data_in[19:16]} + 8'h30;
+                    data_buf[5]  <=  8'h3a;                            // :
+                    data_buf[6]  <= {4'b0, data_in[15:12]} + 8'h30;
+                    data_buf[7]  <= {4'b0, data_in[11:8]} + 8'h30;
+                    data_buf[8]  <=  8'h27;                            // `
+                    data_buf[9]  <= {4'b0, data_in[7:4]} + 8'h30;
+                    data_buf[10] <= {4'b0, data_in[3:0]} + 8'h30;
+                end
+                SR04: begin
+                    data_buf[0] <= {4'b0, data_in[11:8]} + 8'h30;
+                    data_buf[1] <= {4'b0, data_in[7:4]} + 8'h30;
+                    data_buf[2] <= {4'b0, data_in[3:0]} + 8'h30;
+                    data_buf[3] <=  8'h63;                             // c
+                    data_buf[4] <=  8'h6d;                             // m
+                end
+                DHT11: begin
+                    data_buf[0]  <= {4'b0, data_in[31:28]} + 8'h30;
+                    data_buf[1]  <= {4'b0, data_in[27:24]} + 8'h30;
+                    data_buf[2]  <=  8'h2e;                            // .
+                    data_buf[3]  <= {4'b0, data_in[23:20]} + 8'h30;
+                    data_buf[4]  <= {4'b0, data_in[19:16]} + 8'h30;
+                    data_buf[5]  <=  8'h43;                            // C
+                    data_buf[6]  <=  8'h20;                            // space
+                    data_buf[7]  <= {4'b0, data_in[15:12]} + 8'h30;
+                    data_buf[8]  <= {4'b0, data_in[11:8]} + 8'h30;
+                    data_buf[9]  <=  8'h2e;                            // .
+                    data_buf[10] <= {4'b0, data_in[7:4]} + 8'h30;
+                    data_buf[11] <= {4'b0, data_in[3:0]} + 8'h30;
+                    data_buf[12] <=  8'h25;                            // %
+                end
+            endcase
+        end
     end
 
 endmodule

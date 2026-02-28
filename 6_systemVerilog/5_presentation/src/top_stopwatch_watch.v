@@ -1,16 +1,18 @@
 `timescale 1ns / 1ps
 
 module top_stopwatch_watch (
-    input        clk,
-    input        reset,
-    input  [3:0] sw,
-    input        btn_u,
-    input        btn_d,
-    input        btn_r,
-    input        btn_l,
-    output [3:0] fnd_digit,
-    output [7:0] fnd_data,
-    output [3:0] LED
+    input         clk,
+    input         reset,
+    input   [3:0] sw,
+    input         btn_u,
+    input         btn_d,
+    input         btn_r,
+    input         btn_l,
+    input         send,
+    output  [3:0] fnd_digit,
+    output  [7:0] fnd_data,
+    output [31:0] sender_data,
+    output  [3:0] LED
 );
 
     // stopwatch signal
@@ -86,10 +88,12 @@ module top_stopwatch_watch (
     fnd_controller U_FND_CNTL (
         .clk(clk),
         .reset(reset),
+        .send_start(send),
         .sel_display(sw[2]),
         .fnd_in_data(w_mux_2x1_24bit_out),
         .fnd_digit(fnd_digit),
-        .fnd_data(fnd_data)
+        .fnd_data(fnd_data),
+        .sender_data(sender_data)
     );
 
 endmodule

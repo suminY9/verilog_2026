@@ -94,7 +94,7 @@ module fifo_control_unit #(
     reg full_reg, full_next, empty_reg, empty_next;
 
     assign wptr  = wptr_reg;
-    assign rptr  = wptr_reg;
+    assign rptr  = rptr_reg;
     assign full  = full_reg;
     assign empty = empty_reg;
 
@@ -149,9 +149,11 @@ module fifo_control_unit #(
 
             // push, pop
             2'b11: begin
+                // [■ ■ ■ ■] : pop만
                 if(full_reg == 1'b1) begin  // 현재 full이 1이면 rptr_reg만 + 1
                     rptr_next = rptr_reg + 1;
                     full_next = 1'b0;
+                // [□ □ □ □] : push만
                 end else if (empty_reg == 1'b1) begin
                     wptr_next  = wptr_reg + 1;
                     empty_next = 1'b0;

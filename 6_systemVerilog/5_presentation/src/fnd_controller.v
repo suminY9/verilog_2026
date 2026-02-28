@@ -1,12 +1,14 @@
 `timescale 1ns / 1ps
 
 module fnd_controller (
-    input         clk,
-    input         reset,
-    input         sel_display,
-    input  [23:0] fnd_in_data,
-    output [3:0]  fnd_digit,
-    output [7:0]  fnd_data   // 여기서 fnd_data는 연결만하고 값을 저장하지 않는다. wire.
+    input clk,
+    input reset,
+    input send_start,
+    input sel_display,
+    input [23:0] fnd_in_data,
+    output [3:0] fnd_digit,
+    output [7:0]  fnd_data,   // 여기서 fnd_data는 연결만하고 값을 저장하지 않는다. wire.
+    output [31:0] sender_data
 );
     wire [3:0] w_digit_msec_1, w_digit_msec_10;
     wire [3:0] w_digit_sec_1, w_digit_sec_10;
@@ -112,8 +114,48 @@ module fnd_controller (
         .fnd_data(fnd_data)
     );
 
+    digit_out_for_ASCiiSender U_DIGIT_OUT (
+        .send_start(send_start),
+        .module_sel(2'b00),  //swtich control -> 00: watch, 01: SR04, 10: DHT11
+        .watch_digit({
+            w_digit_hour_10,
+            w_digit_hour_1,
+            w_digit_min_10,
+            w_digit_min_1,
+            w_digit_sec_10,
+            w_digit_sec_1,
+            w_digit_msec_10,
+            w_digit_msec_1
+        }),
+        .SR04_digit(),
+        .DHT11_digit(),
+        .out_digit(sender_data)
+    );
+
 endmodule
 
+module digit_out_for_ASCiiSender (
+    input             send_start,
+    input      [ 1:0] module_sel,
+    input      [31:0] watch_digit,
+    input      [31:0] SR04_digit,
+    input      [31:0] DHT11_digit,
+    output reg [31:0] out_digit
+);
+
+    always @(*) begin
+        if(send_start) begin
+            case (module_sel)
+                // watch
+                2'b00: out_digit = watch_digit;
+                // SR04
+                2'b01: out_digit = {16'b0, SR04_digit};
+                //DHT11
+                2'b10: out_digit = DHT11_digit;
+            endcase
+        end
+    end
+endmodule
 
 module dot_onoff_comp (
     input [6:0] msec,
@@ -263,7 +305,8 @@ module bcd (
             4'd13: fnd_data = 8'hff;
             4'd14: fnd_data = 8'h7f;
             4'd15: fnd_data = 8'hff;
-            default: fnd_data = 8'hFF;  // 나머지 경우는 default를 실행.
+            default:
+            fnd_data = 8'hFF;  // 나머지 경우는 default를 실행.
         endcase
     end
 
