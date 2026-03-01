@@ -71,17 +71,14 @@ endclass
 class driver;
     transaction tr;
     mailbox #(transaction) gen2drv_mbox;
-    mailbox #(transaction) gen2scb_mbox;
     virtual top_interface top_if;
 
     // UART baudrate: 9600bps -> 104,167ns
     realtime bit_time = 104167ns;
 
     function new(mailbox #(transaction) gen2drv_mbox,
-                 mailbox #(transaction) gen2scb_mbox,
                  virtual top_interface top_if);
         this.gen2drv_mbox = gen2drv_mbox;
-        this.gen2scb_mbox = gen2scb_mbox;
         this.top_if       = top_if;        
     endfunction
 
@@ -114,7 +111,6 @@ class driver;
     task run();
         forever begin
             gen2drv_mbox.get(tr);
-            gen2scb_mbox.put(tr); // send copy gen2drv_mbox to scb
 
             @(posedge top_if.clk); // wait 1 clk cycle
             #1;                    // delay 1ns for seperate timing from clk
@@ -124,23 +120,59 @@ class driver;
 endclass
 
 
-class monitor;
+class input_monitor;
     transaction tr;
-    mailbox #(transaction) mon2scb_mbox;
+    mailbox #(transaction) inmon2scb_mbox;
     virtual top_interface top_if;
 
-    function new(mailbox #(transaction) mon2scb_mbox,
+    // UART baudrate: 9600bps -> 104,167ns
+    realtime bit_time = 104167ns;
+
+    function new(mailbox #(transaction) inmon2scb_mbox,
                  virtual top_interface top_if);
-        this.mon2scb_mbox = mon2scb_mbox;
-        this.top_if       = top_if;        
-    endfunction //new()
+        this.inmon2scb_mbox = inmon2scb_mbox;
+        this.top_if         = top_if;                 
+    endfunction
+
+    task run();
+        forever begin
+            @(negedge top_if.uart_rx); // detect start bit
+            tr = new;
+
+            #(bit_time / 2); //sampling
+
+            // collect uart_rx data
+            for(int i = 0; i < 8; i++) begin
+                #(bit_time);
+                tr.data_in[i] = top_if.uart_rx;
+            end
+
+            #(bit_time); // wait stop bit
+            inmon2scb_mbox.put(tr);
+            $display("%t: [InMon] Captured UART_RX: 0x%H",
+                      $time, tr.data_in);
+        end
+    endtask
+endclass
+
+
+class output_monitor;
+    transaction tr;
+    mailbox #(transaction) outmon2scb_mbox;
+    virtual top_interface top_if;
+
+    function new(mailbox #(transaction) outmon2scb_mbox,
+                 virtual top_interface top_if);
+        this.outmon2scb_mbox = outmon2scb_mbox;
+        this.top_if          = top_if;
+    endfunction
 
     task run();
         forever begin
             wait(tb_top.dut.U_TOP_UART.fifo_rx.pop == 1); // wait until detect rx_fifo pop rising edge
             tr = new;
             tr.data_out = tb_top.dut.U_TOP_UART.fifo_rx.pop_data; // rx_fifo pop data from top module
-            mon2scb_mbox.put(tr);
+            outmon2scb_mbox.put(tr);
             wait(tb_top.dut.U_TOP_UART.fifo_rx.pop == 0); // wait until detect rx_fifo pop falling edge
         end
     endtask
@@ -149,21 +181,24 @@ endclass
 
 class scoreboard;
     transaction tr;
-    mailbox #(transaction) mon2scb_mbox;
+    mailbox #(transaction) outmon2scb_mbox;
+    mailbox #(transaction) inmon2scb_mbox;
     event gen_next_ev;
 
-    function new(mailbox #(transaction) mon2scb_mbox,
+    function new(mailbox #(transaction) outmon2scb_mbox,
+                 mailbox #(transaction) inmon2scb_mbox,
                  event gen_next_ev);
-        this.mon2scb_mbox = mon2scb_mbox;
-        this.gen_next_ev  = gen_next_ev;
+        this.outmon2scb_mbox = outmon2scb_mbox;
+        this.inmon2scb_mbox  = inmon2scb_mbox;
+        this.gen_next_ev     = gen_next_ev;
     endfunction //new()
 
-    task run(mailbox #(transaction) gen2scb_mbox);
-        transaction exp_tr; // expert data
+    task run();
+        transaction exp_tr; // expect data
         transaction act_tr; // actual data
         forever begin
-            gen2scb_mbox.get(exp_tr); // expert data from drv
-            mon2scb_mbox.get(act_tr); // actual data from mon
+            inmon2scb_mbox.get(exp_tr);  // expected data from inmon
+            outmon2scb_mbox.get(act_tr); // actual data from outmon
 
             // pass/fail
             if(exp_tr.data_in == act_tr.data_out) begin
@@ -181,35 +216,38 @@ endclass
 
 
 class environment;
-    generator   gen;
-    driver      drv;
-    monitor     mon;
-    scoreboard  scb;
+    generator          gen;
+    driver             drv;
+    input_monitor      imon;
+    output_monitor     omon;
+    scoreboard         scb;
 
     transaction tr;
     mailbox #(transaction) gen2drv_mbox;
-    mailbox #(transaction) mon2scb_mbox;
-    mailbox #(transaction) gen2scb_mbox;
+    mailbox #(transaction) outmon2scb_mbox;
+    mailbox #(transaction) inmon2scb_mbox;
     event gen_next_ev;
     virtual top_interface top_if;
 
     function new(virtual top_interface top_if);
         this.top_if = top_if;
         gen2drv_mbox = new;
-        mon2scb_mbox = new;
-        gen2scb_mbox = new;
-        gen = new(gen2drv_mbox, gen_next_ev);
-        drv = new(gen2drv_mbox, gen2scb_mbox, top_if);
-        mon = new(mon2scb_mbox, top_if);
-        scb = new(mon2scb_mbox, gen_next_ev);
+        outmon2scb_mbox = new;
+        inmon2scb_mbox = new;
+        gen  = new(gen2drv_mbox, gen_next_ev);
+        drv  = new(gen2drv_mbox, top_if);
+        imon = new(inmon2scb_mbox, top_if);
+        omon = new(outmon2scb_mbox, top_if);
+        scb  = new(outmon2scb_mbox, inmon2scb_mbox, gen_next_ev);
     endfunction
 
     task run(int count);
         fork
             gen.run(count);
             drv.run();
-            mon.run();
-            scb.run(gen2scb_mbox);
+            imon.run();
+            omon.run();
+            scb.run();
         join_any
     endtask
 endclass
