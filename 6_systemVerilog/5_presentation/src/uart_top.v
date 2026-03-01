@@ -3,67 +3,67 @@
 module top_uart (
     input        clk,
     input        rst,
-    input  [3:0] sw,
-    input        btn_u,
-    input        btn_d,
-    input        btn_r,
-    input        btn_l,
+    input  [3:0] i_sw,
+    input        i_btn_u,
+    input        i_btn_d,
+    input        i_btn_r,
+    input        i_btn_l,
     input        uart_rx,
+    input [31:0] sender_data,
     output       uart_tx,
-    output [3:0] fnd_digit,
-    output [7:0] fnd_data,
-    output [3:0] LED
+    output [3:0] o_sw,
+    output       o_btn_u,
+    output       o_btn_d,
+    output       o_btn_r,
+    output       o_btn_l,
+    output       send
 );
 
-    // button
+    // button_debounce
     wire o_btn_up, o_btn_down, o_btn_right, o_btn_left;
-    // to top_stopwatch_watch
-    wire [3:0] w_control;
-    wire w_btn_in_u, w_btn_in_d, w_btn_in_r, w_btn_in_l, w_btn_in_state;
-    wire w_sw0, w_sw1, w_sw2, w_sw3;
     // uart_rx, rx_fifo
     wire w_rx_done;
     wire [7:0] w_rx_data, w_rx_fifo_data;
     wire w_rx_fifo_full, w_rx_fifo_empty;
     // ascii_decoder
-    reg r_decoder_wake;
+    wire [3:0] w_control;
+    //reg r_decoder_wake;
     // ascii_sender
-    wire [31:0] w_sender_data_in;
-    wire  [7:0] w_sender_data_out;
+    wire [7:0] w_sender_data_out;
     // uart_tx
     wire w_b_tick;
     wire w_tx_done, w_tx_busy;
     wire [7:0] w_tx_fifo_data;
     wire w_tx_fifo_push, w_tx_fifo_full, w_tx_fifo_empty;
 
-    always @(posedge clk) begin
-        if(rst) r_decoder_wake <= 0;
-        else    r_decoder_wake <= !w_rx_fifo_empty;
-    end
+    //always @(posedge clk) begin
+    //    if(rst) r_decoder_wake <= 0;
+    //    else    r_decoder_wake <= !w_rx_fifo_empty;
+    //end
 
     // button debounce
     btn_debounce U_BD_UP (
         .clk  (clk),
         .reset(rst),
-        .i_btn(btn_u),
+        .i_btn(i_btn_u),
         .o_btn(o_btn_up)
     );
     btn_debounce U_BD_DOWN (
         .clk  (clk),
         .reset(rst),
-        .i_btn(btn_d),
+        .i_btn(i_btn_d),
         .o_btn(o_btn_down)
     );
     btn_debounce U_BD_RIGHT (
         .clk  (clk),
         .reset(rst),
-        .i_btn(btn_r),
+        .i_btn(i_btn_r),
         .o_btn(o_btn_right)
     );
     btn_debounce U_BD_LEFT (
         .clk  (clk),
         .reset(rst),
-        .i_btn(btn_l),
+        .i_btn(i_btn_l),
         .o_btn(o_btn_left)
     );
 
@@ -74,32 +74,13 @@ module top_uart (
         .btn_in_down(o_btn_down),
         .btn_in_right(o_btn_right),
         .btn_in_left(o_btn_left),
-        .sw(sw),
-        .btn_out_up(w_btn_in_u),
-        .btn_out_down(w_btn_in_d),
-        .btn_out_right(w_btn_in_r),
-        .btn_out_left(w_btn_in_l),
-        .btn_state(w_btn_in_state),
-        .sw0(w_sw0),
-        .sw1(w_sw1),
-        .sw2(w_sw2),
-        .sw3(w_sw3)
-    );
-
-    // top_stopwatch_watch
-    top_stopwatch_watch U_TOP_STOPWATCH_WATCH (
-        .clk(clk),
-        .reset(rst),
-        .sw({w_sw3, w_sw2, w_sw1, w_sw0}),
-        .btn_u(w_btn_in_u),
-        .btn_d(w_btn_in_d),
-        .btn_r(w_btn_in_r),
-        .btn_l(w_btn_in_l),
-        .send(w_btn_in_state),
-        .fnd_digit(fnd_digit),
-        .fnd_data(fnd_data),
-        .sender_data(w_sender_data_in),
-        .LED(LED)
+        .i_sw(i_sw),
+        .btn_out_up(o_btn_u),
+        .btn_out_down(o_btn_d),
+        .btn_out_right(o_btn_r),
+        .btn_out_left(o_btn_l),
+        .btn_send(send),
+        .o_sw(o_sw)
     );
 
     ASCII_decoder U_ASCII_DECODER (
@@ -133,14 +114,14 @@ module top_uart (
     );
 
     ASCII_sender U_ASCII_SENDER (
-          .clk(clk),
-          .rst(rst),
-          .module_sel(3'b001),     // 0: watch, 1: SR04, 2: DHT11
-          .data_in(w_sender_data_in),
-          .send_start(w_btn_in_state),
-          .fifo_full(w_tx_fifo_full),
-          .fifo_push(w_tx_fifo_push),
-          .data_out(w_sender_data_out)
+        .clk(clk),
+        .rst(rst),
+        .module_sel(3'b001),     // 0: watch, 1: SR04, 2: DHT11
+        .data_in(sender_data),
+        .send_start(send),
+        .fifo_full(w_tx_fifo_full),
+        .fifo_push(w_tx_fifo_push),
+        .data_out(w_sender_data_out)
     );
 
     fifo #(
@@ -185,23 +166,17 @@ module signal_select_unit (
     input            btn_in_down,
     input            btn_in_right,
     input            btn_in_left,
-    input      [3:0] sw,
+    input      [3:0] i_sw,
     output reg       btn_out_up,
     output reg       btn_out_down,
     output reg       btn_out_right,
     output reg       btn_out_left,
-    output reg       btn_state,
-    output           sw0,
-    output           sw1,
-    output           sw2,
-    output           sw3
+    output reg       btn_send,
+    output     [3:0] o_sw
 );
 
     // swtich
-    assign sw0 = sw[0];
-    assign sw1 = sw[1];
-    assign sw2 = sw[2];
-    assign sw3 = sw[3];
+    assign o_sw = i_sw;
 
 
     always @(*) begin
@@ -209,7 +184,7 @@ module signal_select_unit (
         btn_out_down = 1'b0;
         btn_out_right = 1'b0;
         btn_out_left = 1'b0;
-        btn_state = 1'b0;
+        btn_send = 1'b0;
         // button
         btn_out_right = (control == 4'b0001) || btn_in_right;
         btn_out_left  = (control == 4'b0010) || btn_in_left;
@@ -225,8 +200,8 @@ module signal_select_unit (
         //    sw1 = 0;
         //    sw2 = 0;
         //end
-        // state
-        if (control == 4'b1000) btn_state = 1'b1;
+        // send
+        if (control == 4'b1000) btn_send = 1'b1;
     end
 
 endmodule
@@ -235,24 +210,21 @@ module ASCII_sender (
     input             clk,
     input             rst,
     // top module
-    input       [2:0] module_sel,  // 001: watch, 010: SR04, 100: DHT11
+    input      [ 2:0] module_sel,  // 001: watch, 010: SR04, 100: DHT11
     input      [31:0] data_in,
     input             send_start,  // send start trigger
     // fifo
     input             fifo_full,
     output reg        fifo_push,
-    output reg  [7:0] data_out
+    output reg [ 7:0] data_out
 );
 
     // module_sel parameter
     localparam WATCH = 3'b001, SR04 = 3'b010, DHT11 = 3'b100;
 
     // state
-    localparam IDLE         = 0,
-               WAIT         = 1,
-               DATA_SELECT  = 2,
-               SENDING      = 3;
-    reg [1:0]  c_state, n_state;
+    localparam IDLE = 0, DATA_SELECT = 1, WAIT = 2, SENDING = 3;
+    reg [1:0] c_state, n_state;
 
     // data buffer for output 8-bit * max 13-digit
     reg [7:0] data_buf[0:12];
@@ -262,7 +234,7 @@ module ASCII_sender (
     reg [3:0] index_cnt_reg, index_cnt_next;
 
     always @(posedge clk, posedge rst) begin
-        if(rst) begin
+        if (rst) begin
             for (i = 0; i <= 12; i = i + 1) begin
                 data_buf[i] <= 8'd0;
             end
@@ -286,26 +258,29 @@ module ASCII_sender (
             DHT11: last_index = 13;
         endcase
 
-        case(c_state)
+        case (c_state)
             IDLE: begin
                 index_cnt_next = 0;
 
-                if(send_start) begin
+                if (send_start) begin
                     n_state = DATA_SELECT;
                 end
             end
             DATA_SELECT: begin
+                n_state = WAIT;
+            end
+            WAIT: begin
                 n_state = SENDING;
             end
             SENDING: begin
-                if(!fifo_full) begin
+                if (!fifo_full) begin
                     // send 1 data to fifo_tx
                     fifo_push = 1;
                     data_out = data_buf[index_cnt_reg];
                     index_cnt_next = index_cnt_reg + 1;
 
                     // check send all digit
-                    if(index_cnt_reg == last_index - 1) n_state = IDLE;
+                    if (index_cnt_reg == last_index - 1) n_state = IDLE;
                 end
             end
         endcase
@@ -313,18 +288,18 @@ module ASCII_sender (
 
     // in data update to data_buf
     always @(posedge clk) begin
-        if(c_state == DATA_SELECT) begin
-            case(module_sel)
+        if (c_state == DATA_SELECT) begin
+            case (module_sel)
                 WATCH: begin
                     data_buf[0]  <= {4'b0, data_in[31:28]} + 8'h30;
                     data_buf[1]  <= {4'b0, data_in[27:24]} + 8'h30;
-                    data_buf[2]  <=  8'h3a;                            // :
+                    data_buf[2]  <= 8'h3a;  // :
                     data_buf[3]  <= {4'b0, data_in[23:20]} + 8'h30;
                     data_buf[4]  <= {4'b0, data_in[19:16]} + 8'h30;
-                    data_buf[5]  <=  8'h3a;                            // :
+                    data_buf[5]  <= 8'h3a;  // :
                     data_buf[6]  <= {4'b0, data_in[15:12]} + 8'h30;
                     data_buf[7]  <= {4'b0, data_in[11:8]} + 8'h30;
-                    data_buf[8]  <=  8'h27;                            // `
+                    data_buf[8]  <= 8'h27;  // `
                     data_buf[9]  <= {4'b0, data_in[7:4]} + 8'h30;
                     data_buf[10] <= {4'b0, data_in[3:0]} + 8'h30;
                 end
@@ -332,23 +307,23 @@ module ASCII_sender (
                     data_buf[0] <= {4'b0, data_in[11:8]} + 8'h30;
                     data_buf[1] <= {4'b0, data_in[7:4]} + 8'h30;
                     data_buf[2] <= {4'b0, data_in[3:0]} + 8'h30;
-                    data_buf[3] <=  8'h63;                             // c
-                    data_buf[4] <=  8'h6d;                             // m
+                    data_buf[3] <= 8'h63;  // c
+                    data_buf[4] <= 8'h6d;  // m
                 end
                 DHT11: begin
                     data_buf[0]  <= {4'b0, data_in[31:28]} + 8'h30;
                     data_buf[1]  <= {4'b0, data_in[27:24]} + 8'h30;
-                    data_buf[2]  <=  8'h2e;                            // .
+                    data_buf[2]  <= 8'h2e;  // .
                     data_buf[3]  <= {4'b0, data_in[23:20]} + 8'h30;
                     data_buf[4]  <= {4'b0, data_in[19:16]} + 8'h30;
-                    data_buf[5]  <=  8'h43;                            // C
-                    data_buf[6]  <=  8'h20;                            // space
+                    data_buf[5]  <= 8'h43;  // C
+                    data_buf[6]  <= 8'h20;  // space
                     data_buf[7]  <= {4'b0, data_in[15:12]} + 8'h30;
                     data_buf[8]  <= {4'b0, data_in[11:8]} + 8'h30;
-                    data_buf[9]  <=  8'h2e;                            // .
+                    data_buf[9]  <= 8'h2e;  // .
                     data_buf[10] <= {4'b0, data_in[7:4]} + 8'h30;
                     data_buf[11] <= {4'b0, data_in[3:0]} + 8'h30;
-                    data_buf[12] <=  8'h25;                            // %
+                    data_buf[12] <= 8'h25;  // %
                 end
             endcase
         end
