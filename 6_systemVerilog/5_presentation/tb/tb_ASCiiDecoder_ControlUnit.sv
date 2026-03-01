@@ -47,10 +47,10 @@ class transaction;
     bit [7:0] watch_signal;     // { o_edit_hour, min, sec, msec }
     bit [3:0] LED;
 
-    // only generate 'u'=8'h75, 'd'=8'h64, 'r'=8'h72, 'l'=8'h6c, 's'=8'h93
+    // only generate 'u'=8'h75, 'd'=8'h64, 'r'=8'h72, 'l'=8'h6c, 's'=8'h93, 'NULL'=8'h00
     // only state 1000 = watch edit mode, 0000 = watch not edit, 0010 = stopwatch
     constraint gen_ASCii{
-        send inside {8'h75, 8'h64, 8'h72, 8'h6c, 8'h73};
+        send inside {8'h75, 8'h64, 8'h72, 8'h6c, 8'h73, 8'h00};
         switch inside { 4'b1000, 4'b0000, 4'b0010 };
     }
 endclass
@@ -277,7 +277,10 @@ class scoreboard;
                     if(decoder_tr.control == 4'b0010) pf = 1;
                 8'h73: // s
                     if(decoder_tr.control == 4'b1000) pf = 1;
-                default: pf = 0;
+                default: begin
+                    if(decoder_tr.control == 4'b0000) pf = 1;
+                    else pf = 0;
+                end
             endcase
 
             if(pf == 1) begin
