@@ -29,11 +29,7 @@ interface top_interface (
     logic [3:0] fnd_digit;
     logic [7:0] fnd_data;
     logic [3:0] LED;
-<<<<<<< HEAD
 endinterface
-=======
-endinterface  //fifo_interface
->>>>>>> 91dac26b22d0035f3e3d30cfba2f77cf9ac26b36
 
 
 /****************** transaction *****************/
@@ -45,11 +41,7 @@ class transaction;
     constraint gen_ASCii{
         data_in inside {8'h75, 8'h64, 8'h72, 8'h6c, 8'h73};
     }
-<<<<<<< HEAD
 endclass
-=======
-endclass  //transaction
->>>>>>> 91dac26b22d0035f3e3d30cfba2f77cf9ac26b36
 
 
 /******************** class *******************/
