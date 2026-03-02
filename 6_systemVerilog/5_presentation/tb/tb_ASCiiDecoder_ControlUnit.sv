@@ -3,19 +3,22 @@
 // Engineer: suminY9
 // Create Date: 2026/03/01 18:14:13
 // Design Name: top
-// Module Name: tb_top
+// Module Name: tb_ASCiiDecoder_ControlUnit
 // Project Name: sv_verification
 // Target Devices: Basys3
 // Tool Versions: Vaviado 2020.2
 // Description: 
-//  Verificate condection of ASCii_decoder in uart + Control_unit in watch
+//  Verify conduction of ASCii_decoder in uart + Control_unit in watch
 //  random input ASCii_decoder -> monitor control_unit output
-//  check: ASCii_decoder button input, ASCii_decoder output 'control',
-//         control_unit all outputs
+//    input_monitor - check uart input data
+//    monitor1 - monitoring ASCii_decoder output 'control'
+//    monitor2 - monitoring Control_Unit outputs
 // Revision:
 //  Revision 0.01 - File Created
+//  Revision 1.01 - add verify case: none button input
 //////////////////////////////////////////////////////////////////////////////////
 
+/******************* interface ******************/
 interface top_interface (
     input logic clk
 );
