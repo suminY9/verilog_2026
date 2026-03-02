@@ -381,7 +381,7 @@ class scoreboard;
                         endcase
                     end
                     0000: begin // Watch not edit mode
-                        if(controlUnit_tr.stopwatch_signal == 2'b00
+                        if((controlUnit_tr.stopwatch_signal == 2'b00 || controlUnit_tr.stopwatch_signal == 2'b01)
                             && controlUnit_tr.watch_signal == 8'b00_00_00_00
                             && controlUnit_tr.LED == 4'b0000) pf = 1;
                         else pf = 0;
