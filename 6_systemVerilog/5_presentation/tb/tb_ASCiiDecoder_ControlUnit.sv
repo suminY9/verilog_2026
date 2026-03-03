@@ -272,7 +272,7 @@ class scoreboard;
             case(in_tr.in_data)
                 8'h75: // u
                     if(decoder_tr.control == 4'b0011) pf = 1;
-                8'h64: // u
+                8'h64: // d
                     if(decoder_tr.control == 4'b0100) pf = 1;
                 8'h72: // r
                     if(decoder_tr.control == 4'b0001) pf = 1;

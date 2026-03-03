@@ -120,7 +120,7 @@ class monitor1;
         tr = new;
         wait(uart_if.uart_tx == 1); // start bit end
         tr.bit_period = $realtime - tr.current;
-        $display("%t: [mon1] start bit sended -> bit_width = %8dus", $time, tr.bit_period);
+        $display("%t: [mon1] start bit sended -> bit_width = %8dns", $time, tr.bit_period);
         mon12scb_mbox.put(tr);
 
         repeat(7) begin
@@ -128,7 +128,7 @@ class monitor1;
             @(edge uart_if.uart_tx) // 1-bit sended
             tr.bit_period = $realtime - tr.current; // capture time
 
-            $display("%t: [mon1] bit%1d sended -> bit_width = %8dus", $time, bit_cnt, tr.bit_period);
+            $display("%t: [mon1] bit%1d sended -> bit_width = %8dns", $time, bit_cnt, tr.bit_period);
             mon12scb_mbox.put(tr);
             bit_cnt++;
         end
@@ -137,7 +137,7 @@ class monitor1;
         tr = new;
         wait(uart_if.uart_tx == 1); // stop bit start
         tr.bit_period = $realtime - tr.current;
-        $display("%t: [mon1] bit8 sended -> bit_width = %8dus", $time, tr.bit_period);
+        $display("%t: [mon1] bit8 sended -> bit_width = %8dns", $time, tr.bit_period);
         mon12scb_mbox.put(tr);
 
         // end bit
@@ -168,7 +168,7 @@ class monitor2;
         wait(tb_uart_timing.dut.tx_busy == 0); // all sended
         tr.frame_time = $realtime - tr.current; // capture time
 
-        $display("%t: [mon2] every bit sended -> run time = %8dus", $time, tr.frame_time);
+        $display("%t: [mon2] every bit sended -> run time = %8dns", $time, tr.frame_time);
         mon22scb_mbox.put(tr);
     endtask
 endclass
@@ -190,20 +190,20 @@ class scoreboard;
         repeat(10) begin
             mon12scb_mbox.get(mon1_tr);
             if(mon1_tr.bit_period/1us > 103 && mon1_tr.bit_period/1us < 106) begin
-                $display("%t: [scb] bit_period = %8dus = %5d cycle -> PASS",
+                $display("%t: [scb] bit_period = %8dns = %5d cycle -> PASS",
                           $time, mon1_tr.bit_period, mon1_tr.bit_period/1us);
             end else begin
-                $display("%t: [scb] bit_period = %8dus = %5d cycle -> FAIL",
+                $display("%t: [scb] bit_period = %8dns = %5d cycle -> FAIL",
                           $time, mon1_tr.bit_period, mon1_tr.bit_period/1us);
             end
         end
 
         mon22scb_mbox.get(mon2_tr);
         if(mon2_tr.frame_time/1us > 1030 && mon2_tr.frame_time/1us < 1060) begin
-            $display("%t: [scb] frame_period = %8dus = %5d cycle -> PASS",
+            $display("%t: [scb] frame_period = %8dns = %5d cycle -> PASS",
                       $time, mon2_tr.frame_time, mon2_tr.frame_time/1us);
         end else begin
-            $display("%t: [scb] frame_period = %8dus = %5d cycle -> PASS",
+            $display("%t: [scb] frame_period = %8dns = %5d cycle -> PASS",
                       $time, mon2_tr.frame_time, mon2_tr.frame_time/1us);
         end
     endtask
