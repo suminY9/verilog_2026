@@ -42,7 +42,7 @@ module control_unit (
 );
 
     // FSM state
-    typedef enum logic [2:0] {
+    typedef enum logic [4:0] {
         S0,
         S1,
         S2,
@@ -50,9 +50,6 @@ module control_unit (
         S4
     } state_t;
     state_t c_state, n_state;
-
-    logic asrcsel_next;
-    logic aload_next;
 
     always_ff @(posedge clk, posedge rst) begin
         if (rst) begin
