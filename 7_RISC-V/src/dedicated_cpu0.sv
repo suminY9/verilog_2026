@@ -90,7 +90,7 @@ module control_unit (
         case (c_state)
             S0: begin
                 asrcsel = 0;
-                aload   = 0;
+                aload   = 1;
                 outsel  = 0;
                 n_state = S1;
             end
