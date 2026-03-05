@@ -21,13 +21,35 @@ module dedicated_cpu0 (
     output [7:0] out
 );
 
-    logic asrcsel, aload, outsel, alt10;
+    logic asrcsel, aload, outsel;
+    logic alt_a, alt_b;
+    logic [7:0] a_out, b_in;
+
+    always_ff @(posedge clk, posedge rst) begin
+        if(rst) begin
+            b_in <= 8'h0;
+        end else begin
+            if(outsel)
+            b_in <= a_out;
+        end
+    end
 
     control_unit U_CONTROL_UNIT (
-        .*
+        .*,
+        .alt(alt_b)
     );
-    datapath U_DATAPATH (
-        .*
+    datapath U_DATAPATH_A (
+        .*,
+        .alu_in(8'd1),
+        .comp_data(8'd10),
+        .out(a_out),
+        .alt(alt_a)
+    );
+    datapath U_DATAPATH_B (
+        .*,
+        .alu_in(b_in),
+        .comp_data(8'd55),
+        .alt(alt_b)
     );
 endmodule
 
@@ -35,7 +57,7 @@ endmodule
 module control_unit (
     input        clk,
     input        rst,
-    input        alt10,
+    input        alt,
     output logic asrcsel,
     output logic aload,
     output logic outsel
@@ -76,7 +98,7 @@ module control_unit (
                 asrcsel = 0;
                 aload   = 0;
                 outsel  = 0;
-                if(alt10) begin
+                if(alt) begin
                     n_state = S2;
                 end else
                     n_state = S4;
@@ -110,8 +132,10 @@ module datapath (
     input        asrcsel,
     input        aload,
     input        outsel,
+    input  [7:0] alu_in,
+    input  [7:0] comp_data,
     output [7:0] out,
-    output       alt10
+    output       alt
 );
 
     logic [7:0] w_aluout, w_muxout, w_regout;
@@ -133,12 +157,13 @@ module datapath (
     );
     alu U_ALU (
         .a(w_regout),
-        .b(8'h1),
+        .b(alu_in),
         .alu_out(w_aluout)
     );
-    alt10_cmp U_ALT10 (
+    alt_cmp U_ALT10 (
         .in_data(w_regout),
-        .alt10(alt10)
+        .comp_data(comp_data),
+        .alt(alt)
     );
 endmodule
 
@@ -185,9 +210,10 @@ module mux_2x1 (
 endmodule
 
 
-module alt10_cmp (
+module alt_cmp (
     input [7:0] in_data,
-    output      alt10
+    input [7:0] comp_data,
+    output      alt
 );
-    assign alt10 = (in_data < 10);
+    assign alt = (in_data < comp_data);
 endmodule
