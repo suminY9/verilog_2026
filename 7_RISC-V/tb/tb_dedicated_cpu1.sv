@@ -37,7 +37,7 @@ module tb_dedicated_cpu1();
         clk = 0;
         rst = 1;
         @(posedge clk);
-        @(posedge clk);
+        @(negedge clk);
         rst = 0;
         repeat(50)
         @(posedge clk);
