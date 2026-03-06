@@ -93,7 +93,7 @@ module control_unit (
                 alusrcsel = 0;
                 outload   = 0;
                 if (ilq10) n_state = S2;
-                else n_state = S4;
+                else n_state = S5;
             end
             S2: begin
                 isrcsel   = 0;
@@ -176,7 +176,7 @@ module datapath (
         .in_data(ireg_out),
         .ilq10(ilq10)
     );
-    
+
     mux_2x1 U_SUMREG_SRC_MUX (
         .a(0),
         .b(alu_out),
