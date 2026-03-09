@@ -19,3 +19,6 @@
 `define AND  4'b0_111
 
 // S-tupe instruction
+`define SB 4'b0_000
+`define SH 4'b0_001
+`define SW 4'b0_010

@@ -63,7 +63,7 @@ module control_unit (
             `S_TYPE: begin
                 rf_we       = 1'b0;
                 alu_src     = 1'b1;
-                alu_control = 4'b0000;
+                alu_control = {1'b0, funct3};
                 dwe         = 1'b1;
             end
         endcase
