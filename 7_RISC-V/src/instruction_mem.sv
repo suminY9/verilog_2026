@@ -27,11 +27,11 @@ module instruction_mem(
 
     logic [31:0] rom[0:31];
 
-    initial begin
-        rom[0] = 32'h005201b3;
+    initial begin   // for simulation. sysnthesis x
+        rom[0] = 32'h004182b3;
         rom[1] = 32'h005201b3; //나머지 메모리 공간은 모두 x로 채워짐
     end
 
-    assign instr_data = rom[instr_addr[31:2]];
+    assign instr_data = rom[instr_addr[31:2]]; // word adressing
 
 endmodule
