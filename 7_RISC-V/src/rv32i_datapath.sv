@@ -5,12 +5,18 @@ module rv32i_datapath (
     input         clk,
     input         rst,
     input         rf_we,
+    input         alu_src,
     input  [ 3:0] alu_control,
     input  [31:0] instr_data,
-    output [31:0] instr_addr
+    output [31:0] instr_addr,
+    output [31:0] dwaddr,
+    output [31:0] dwdata
 );
 
-    logic [31:0] rd1, rd2, alu_result;
+    logic [31:0] rd1, rd2, alu_result, imm_data, alurs2_data;
+
+    assign dwaddr = alu_result;
+    assign dwdata = rd2;
 
     program_counter U_PC (
         .clk(clk),
@@ -28,9 +34,19 @@ module rv32i_datapath (
         .RD1(rd1),
         .RD2(rd2)
     );
+    imm_extender U_IMM_EXTENDER (
+        .instr_data(instr_data),
+        .imm_data(imm_data)
+    );
+    mux_2x1 U_MUX_ALUSRC_RS2 (
+        .in0(rd2),
+        .in1(imm_data),
+        .sel(alu_src),
+        .out_mux(alurs2_data)
+    );
     alu U_ALU (
         .rd1(rd1),
-        .rd2(rd2),
+        .rd2(alurs2_data),
         .alu_control(alu_control),
         .alu_result(alu_result)
     );
@@ -38,6 +54,33 @@ endmodule
 
 
 /*****************SUB_MODULE*****************/
+module mux_2x1 (
+    input        [31:0] in0, // sel 0
+    input        [31:0] in1, // sel 1
+    input               sel,
+    output logic [31:0] out_mux
+);
+    assign out_mux = (sel) ? in1 : in0;
+endmodule
+
+
+module imm_extender (
+    input        [31:0] instr_data,
+    output logic [31:0] imm_data
+);
+
+    always_comb begin
+        imm_data = 32'd0;
+        
+        case(instr_data[6:0])   // opcode
+            `S_TYPE: begin
+                imm_data = {{20{instr_data[31]}}, instr_data[31:25], instr_data[11:7]}; // instr_data[31]를 20회 반복
+            end
+        endcase 
+    end
+endmodule
+
+
 module register_file (
     input         clk,
     input         rst,

@@ -1,7 +1,10 @@
 `define SIMULATION 1
 
 // OP code
-`define R_TYPE 7'b0110011
+`define R_TYPE  7'b0110011
+`define S_TYPE  7'b0100011
+`define IL_TYPE 7'b0000011
+`define I_TYPE  7'b0010011
 
 // R-type insturction
 `define ADD  4'b0_000
@@ -14,3 +17,5 @@
 `define SRA  4'b1_101
 `define OR   4'b0_110
 `define AND  4'b0_111
+
+// S-tupe instruction
