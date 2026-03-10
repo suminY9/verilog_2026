@@ -6,7 +6,7 @@ module rv32i_datapath (
     input         rst,
     input         rf_we,
     input         alu_src,
-    input  [ 3:0] alu_control,
+    input  [ 9:0] alu_control,
     input  [31:0] instr_data,
     output [31:0] instr_addr,
     output [31:0] dwaddr,
@@ -47,7 +47,6 @@ module rv32i_datapath (
     alu U_ALU (
         .rd1(rd1),
         .rd2(alurs2_data),
-        .opcode(instr_data[6:0]),
         .alu_control(alu_control),
         .alu_result(alu_result)
     );
@@ -119,17 +118,16 @@ endmodule
 module alu (
     input        [31:0] rd1,          // RS1
     input        [31:0] rd2,          // RS2
-    input        [ 6:0] opcode,
-    input        [ 3:0] alu_control,  // func7[6], funct3 : 4-bit
+    input        [ 9:0] alu_control,  // func7[6], funct3 : 4-bit
     output logic [31:0] alu_result
 );
 
     always_comb begin
         alu_result = 0;
         
-        case(opcode)
+        case(alu_control[9:4])
             `R_TYPE: begin
-                case (alu_control)
+                case (alu_control[3:0])
                     `ADD:  alu_result = rd1 + rd2;  // add RD = RS1 + RS2
                     `SUB:  alu_result = rd1 - rd2;  // sub rd = rs1 - rs2
                     `SLL:  alu_result = rd1 << rd2[4:0];     // sll rd = rs1 << rs2 // shift max 5-bit
@@ -143,7 +141,7 @@ module alu (
                 endcase
             end
             `S_TYPE: begin
-                case (alu_control)
+                case (alu_control[3:0])
                     `SB:   alu_result = rd1 + rd2;
                     `SH:   alu_result = rd1 + rd2;
                     `SW:   alu_result = rd1 + rd2;

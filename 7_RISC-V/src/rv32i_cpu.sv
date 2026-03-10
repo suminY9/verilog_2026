@@ -6,13 +6,13 @@ module rv32i_cpu (
     input         rst,
     input  [31:0] instr_data,
     output [31:0] instr_addr,
+    output [ 9:0] alu_control,
     output        dwe,
     output [31:0] dwaddr,
     output [31:0] dwdata
 );
 
     logic rf_we, alu_src;
-    logic [3:0] alu_control;
 
     control_unit U_CONTROL_UNIT (
         .funct7(instr_data[31:25]),
@@ -43,27 +43,27 @@ module control_unit (
     input        [ 6:0] opcode,
     output logic        rf_we,
     output logic        alu_src,
-    output logic [ 3:0] alu_control,
+    output logic [ 9:0] alu_control,
     output logic        dwe
 );
 
     always_comb begin
         rf_we       = 1'b0;
         alu_src     = 1'b0;
-        alu_control = 4'b0_000;  //initialize
+        alu_control = 10'b000000_0_000;  //initialize
         dwe         = 1'b0;
 
         case (opcode)
             `R_TYPE: begin
                 rf_we       = 1'b1;
                 alu_src     = 1'b0;
-                alu_control = {funct7[5], funct3};
+                alu_control = {`R_TYPE, funct7[5], funct3};
                 dwe         = 1'b0;
             end
             `S_TYPE: begin
                 rf_we       = 1'b0;
                 alu_src     = 1'b1;
-                alu_control = {1'b0, funct3};
+                alu_control = {`S_TYPE, 1'b0, funct3};
                 dwe         = 1'b1;
             end
         endcase
