@@ -18,7 +18,7 @@ module tb_rv32i();
         @(negedge clk);
         rst = 0;
 
-        repeat(20)
+        repeat(25)
         @(negedge clk);
         $stop;
     end

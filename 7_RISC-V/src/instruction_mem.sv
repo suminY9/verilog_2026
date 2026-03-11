@@ -30,6 +30,9 @@ module instruction_mem(
         rom[16] = 32'h00309623;
         rom[17] = 32'h003116a3;
         rom[18] = 32'h00322723;
+        // I-type
+        rom[19] = 32'h01002283; // LW x5, 16(x0)
+        rom[20] = 32'h00438413; // ADDI x8, x7, 4
     end
 
     assign instr_data = rom[instr_addr[31:2]]; // word adressing

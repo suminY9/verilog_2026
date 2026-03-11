@@ -5,24 +5,26 @@ module rv32i_cpu (
     input         clk,
     input         rst,
     input  [31:0] instr_data,
+    input  [31:0] drdata,
     output [31:0] instr_addr,
-    output [ 2:0] funct3,
     output        dwe,
-    output [31:0] dwaddr,
+    output [ 2:0] funct3,
+    output [31:0] daddr,
     output [31:0] dwdata
 );
 
-    logic rf_we, alu_src;
+    logic rf_we, alu_src, rf_wd_src;
     logic [3:0] alu_control;
 
     control_unit U_CONTROL_UNIT (
         .funct7(instr_data[31:25]),
         .funct3(instr_data[14:12]),
         .opcode(instr_data[6:0]),
-        .o_funct3(funct3),
         .rf_we(rf_we),
         .alu_src(alu_src),
         .alu_control(alu_control),
+        .rf_wd_src(rf_wd_src),
+        .o_funct3(funct3),
         .dwe(dwe)
     );
     rv32i_datapath U_DATAPATH (
@@ -30,10 +32,12 @@ module rv32i_cpu (
         .rst(rst),
         .rf_we(rf_we),
         .alu_src(alu_src),
+        .rf_wd_src(rf_wd_src),
         .alu_control(alu_control),
         .instr_data(instr_data),
+        .drdata(drdata),
         .instr_addr(instr_addr),
-        .dwaddr(dwaddr),
+        .daddr(daddr),
         .dwdata(dwdata)
     );
 endmodule
@@ -43,10 +47,11 @@ module control_unit (
     input        [ 6:0] funct7,
     input        [ 2:0] funct3,
     input        [ 6:0] opcode,
-    output logic [ 2:0] o_funct3,
     output logic        rf_we,
     output logic        alu_src,
     output logic [ 3:0] alu_control,
+    output logic        rf_wd_src,
+    output logic [ 2:0] o_funct3,
     output logic        dwe
 );
 
@@ -55,6 +60,7 @@ module control_unit (
         alu_src     = 1'b0;
         alu_control = 4'b0_000;  //initialize
         dwe         = 1'b0;
+        rf_wd_src   = 1'b0;
         o_funct3    = 3'b000;
 
         case (opcode)
@@ -63,6 +69,7 @@ module control_unit (
                 alu_src     = 1'b0;
                 alu_control = {funct7[5], funct3};
                 dwe         = 1'b0;
+                rf_wd_src   = 1'b0;
                 o_funct3    = 3'b000;
             end
             `S_TYPE: begin
@@ -70,7 +77,25 @@ module control_unit (
                 alu_src     = 1'b1;
                 alu_control = 4'b0_000; // S-type only do ADD
                 dwe         = 1'b1;
-                o_funct3    = funct3;
+                rf_wd_src   = 1'b0;
+                o_funct3    = funct3; // send funct3 to data_mem(for dw)
+            end
+            `IL_TYPE: begin
+                rf_we       = 1'b1;
+                alu_src     = 1'b1;
+                alu_control = 4'b0_000; // only do ADD
+                dwe         = 1'b0;
+                rf_wd_src   = 1'b1;
+                o_funct3    = funct3; // send funct3 to data_mem(for dr)
+            end
+            `I_TYPE: begin
+                rf_we       = 1'b1;
+                alu_src     = 1'b1;
+                if(funct3 == 3'b101) alu_control = {funct7[5], funct3}; // SRLI: {0, 101}, SRAI: {1, 101}
+                else                 alu_control = {1'b0, funct3};
+                dwe         = 1'b0;
+                rf_wd_src   = 1'b0;
+                o_funct3    = 3'b000;
             end
         endcase
     end

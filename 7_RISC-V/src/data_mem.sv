@@ -5,7 +5,7 @@ module data_mem (
     input         rst,
     input         dwe,
     input  [ 2:0] funct3,
-    input  [31:0] dwaddr,
+    input  [31:0] daddr,
     input  [31:0] dwdata,
     output [31:0] drdata
 );
@@ -43,13 +43,13 @@ module data_mem (
         store_start = 0;
 
         if(dwe) begin
-            block = dwaddr[31:2];
+            block = daddr[31:2];
             case(funct3)
             3'b000: begin //SB
-                store_start = dwaddr;
+                store_start = daddr;
             end
             3'b001: begin //SH
-                store_start = ((4*block) + ((dwaddr[1:0] >> 1) << 1));
+                store_start = ((4*block) + ((daddr[1:0] >> 1) << 1));
             end
             3'b010: begin //SW
                 store_start = (4*block);
@@ -58,6 +58,9 @@ module data_mem (
         end
     end
 
-    assign drdata = {dmem[dwaddr+0], dmem[dwaddr+1],
-                    dmem[dwaddr+2], dmem[dwaddr+3]};
+    // little endian
+    assign drdata = (funct3 == 3'b000) ? {24'b0, dmem[daddr]} : // LB
+                    (funct3 == 3'b001) ? {16'b0, dmem[daddr+1], dmem[daddr+0]} : // LH
+                    (funct3 == 3'b010) ? {dmem[daddr+3], dmem[daddr+2], dmem[daddr+1], dmem[daddr+0]} : // LW
+                    32'b0; // default
 endmodule

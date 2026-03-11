@@ -6,16 +6,18 @@ module rv32i_datapath (
     input         rst,
     input         rf_we,
     input         alu_src,
+    input         rf_wd_src,
     input  [ 3:0] alu_control,
     input  [31:0] instr_data,
+    input  [31:0] drdata,
     output [31:0] instr_addr,
-    output [31:0] dwaddr,
+    output [31:0] daddr,
     output [31:0] dwdata
 );
 
-    logic [31:0] rd1, rd2, alu_result, imm_data, alurs2_data;
+    logic [31:0] rd1, rd2, alu_result, imm_data, alurs2_data, ram2regfile;
 
-    assign dwaddr = alu_result;
+    assign daddr = alu_result;
     assign dwdata = rd2;
 
     program_counter U_PC (
@@ -50,6 +52,12 @@ module rv32i_datapath (
         .alu_control(alu_control),
         .alu_result(alu_result)
     );
+    mux_2x1 U_MUX_WB_REGFILE (
+        .in0(alu_result),
+        .in1(drdata),
+        .sel(rf_wd_src),
+        .out_mux(ram2regfile)
+    );
 endmodule
 
 
@@ -75,6 +83,9 @@ module imm_extender (
         case(instr_data[6:0])   // opcode
             `S_TYPE: begin
                 imm_data = {{20{instr_data[31]}}, instr_data[31:25], instr_data[11:7]}; // instr_data[31]를 20회 반복
+            end
+            `IL_TYPE, `I_TYPE: begin // load
+                imm_data = {{20{instr_data[31]}}, instr_data[31:20]};
             end
         endcase 
     end
@@ -144,7 +155,6 @@ endmodule
 module program_counter (
     input         clk,
     input         rst,
-    //    input  [31:0] instr_addr,
     output [31:0] program_counter
 );
 
