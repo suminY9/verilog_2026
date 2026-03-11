@@ -19,10 +19,10 @@ module rv32i_datapath (
 );
 
     logic btaken;
-    logic [31:0] rd1, rd2, alu_result, imm_data, alurs2_data, ram2regfile, pc2regfile;
+    logic [31:0] rs1, rs2, alu_result, imm_data, alurs2_data, ram2regfile, pc2regfile;
 
     assign daddr = alu_result;
-    assign dwdata = rd2;
+    assign dwdata = rs2;
 
     program_counter U_PC (
         .clk(clk),
@@ -31,7 +31,7 @@ module rv32i_datapath (
         .JAL(JAL),
         .JALR(JALR),
         .btaken(btaken),
-        .RS1(rd1),
+        .rs1(rs1),
         .imm_data(imm_data),
         .pc_add4(pc2regfile),
         .program_counter(instr_addr)
@@ -39,27 +39,27 @@ module rv32i_datapath (
     register_file U_REG_FILE (
         .clk(clk),
         .rst(rst),
-        .RA1(instr_data[19:15]),
-        .RA2(instr_data[24:20]),
-        .WA(instr_data[11:7]),
+        .ra1(instr_data[19:15]),
+        .ra2(instr_data[24:20]),
+        .wa(instr_data[11:7]),
         .wdata(alu_result),
         .rf_we(rf_we),
-        .RD1(rd1),
-        .RD2(rd2)
+        .rs1(rs1),
+        .rs2(rs2)
     );
     imm_extender U_IMM_EXTENDER (
         .instr_data(instr_data),
         .imm_data(imm_data)
     );
     mux_2x1 U_MUX_ALUSRC_RS2 (
-        .in0(rd2),
+        .in0(rs2),
         .in1(imm_data),
         .sel(alu_src),
         .out_mux(alurs2_data)
     );
     alu U_ALU (
-        .rd1(rd1),
-        .rd2(alurs2_data),
+        .rs1(rs1),
+        .rs2(alurs2_data),
         .alu_control(alu_control),
         .alu_result(alu_result),
         .btaken(btaken)
@@ -133,13 +133,13 @@ endmodule
 module register_file (
     input         clk,
     input         rst,
-    input  [ 4:0] RA1,
-    input  [ 4:0] RA2,
-    input  [ 4:0] WA,
+    input  [ 4:0] ra1,
+    input  [ 4:0] ra2,
+    input  [ 4:0] wa,
     input  [31:0] wdata,
     input         rf_we,
-    output [31:0] RD1,
-    output [31:0] RD2
+    output [31:0] rs1,
+    output [31:0] rs2
 );
 
     logic [31:0] register_file[1:31]; // x0 must have zero value
@@ -154,19 +154,19 @@ module register_file (
 
     always_ff @(posedge clk) begin
         if (!rst & rf_we) begin
-            register_file[WA] <= wdata;
+            register_file[wa] <= wdata;
         end
     end
 
     // output CL
-    assign RD1 = (RA1!=0) ? register_file[RA1] : 0;
-    assign RD2 = (RA1!=0) ? register_file[RA2] : 0;
+    assign rs1 = (ra1!=0) ? register_file[ra1] : 0;
+    assign rs2 = (ra1!=0) ? register_file[ra2] : 0;
 endmodule
 
 
 module alu (
-    input        [31:0] rd1,          // RS1
-    input        [31:0] rd2,          // RS2
+    input        [31:0] rs1,          // rs1
+    input        [31:0] rs2,          // RS2
     input        [ 3:0] alu_control,  // func7[5], funct3 : 4-bit
     output logic [31:0] alu_result,
     output logic        btaken
@@ -176,16 +176,16 @@ module alu (
         alu_result = 0;
         
         case (alu_control)
-            `ADD:  alu_result = rd1 + rd2;  // add RD = RS1 + RS2
-            `SUB:  alu_result = rd1 - rd2;  // sub rd = rs1 - rs2
-            `SLL:  alu_result = rd1 << rd2[4:0];     // sll rd = rs1 << rs2 // shift max 5-bit
-            `SLT:  alu_result = ($signed(rd1) < $signed(rd2)) ? 1 : 0;  // slt rd = (rs1 < rs2) ? 1 : 0
-            `SLTU: alu_result = (rd1 < rd2) ? 1 : 0;  // sltu rd = (rs1 < rs2) ? 1 : 0
-            `XOR:  alu_result = rd1 ^ rd2;  // xor rd = rs1 ^ rs2
-            `SRL:  alu_result = rd1 >> rd2[4:0];  // srl rd = rs1 >> rs2
-            `SRA:  alu_result = $signed(rd1) >>> rd2[4:0];  // sra rd = rs1 >> rs2, msb extention
-            `OR:   alu_result = rd1 | rd2;  // or rd = rs1 | rs2
-            `AND:  alu_result = rd1 & rd2;  // and rd = rs1 & rs2
+            `ADD:  alu_result = rs1 + rs2;  // add RD = rs1 + RS2
+            `SUB:  alu_result = rs1 - rs2;  // sub rd = rs1 - rs2
+            `SLL:  alu_result = rs1 << rs2[4:0];     // sll rd = rs1 << rs2 // shift max 5-bit
+            `SLT:  alu_result = ($signed(rs1) < $signed(rs2)) ? 1 : 0;  // slt rd = (rs1 < rs2) ? 1 : 0
+            `SLTU: alu_result = (rs1 < rs2) ? 1 : 0;  // sltu rd = (rs1 < rs2) ? 1 : 0
+            `XOR:  alu_result = rs1 ^ rs2;  // xor rd = rs1 ^ rs2
+            `SRL:  alu_result = rs1 >> rs2[4:0];  // srl rd = rs1 >> rs2
+            `SRA:  alu_result = $signed(rs1) >>> rs2[4:0];  // sra rd = rs1 >> rs2, msb extention
+            `OR:   alu_result = rs1 | rs2;  // or rd = rs1 | rs2
+            `AND:  alu_result = rs1 & rs2;  // and rd = rs1 & rs2
         endcase
         end
 
@@ -193,12 +193,12 @@ module alu (
     always_comb begin
         btaken = 0;
         case(alu_control)
-            `BEQ: if(rd1 == rd2) btaken = 1;  // ture:  pc = pc + IMM
-            `BNE: if(rd1 != rd2) btaken = 1;
-            `BLT: if($signed(rd1) < $signed(rd2))  btaken = 1;
-            `BGE: if($signed(rd1) >= $signed(rd2)) btaken = 1;
-            `BLTU: if(rd1 < rd2)  btaken = 1;
-            `BGEU: if(rd1 >= rd2) btaken = 1;
+            `BEQ: if(rs1 == rs2) btaken = 1;  // ture:  pc = pc + IMM
+            `BNE: if(rs1 != rs2) btaken = 1;
+            `BLT: if($signed(rs1) < $signed(rs2))  btaken = 1;
+            `BGE: if($signed(rs1) >= $signed(rs2)) btaken = 1;
+            `BLTU: if(rs1 < rs2)  btaken = 1;
+            `BGEU: if(rs1 >= rs2) btaken = 1;
             default: btaken = 0;              // false: pc = pc + 4
         endcase
     end
@@ -212,7 +212,7 @@ module program_counter (
     input         JAL,
     input         JALR,
     input         btaken,
-    input  [31:0] RS1,
+    input  [31:0] rs1,
     input  [31:0] imm_data,
     output [31:0] pc_add4,
     output [31:0] program_counter
@@ -223,7 +223,7 @@ module program_counter (
     assign pc_add4 = pc_mux_out;
 
     mux_2x1 U_MUX_RS_IMM (
-        .in0(RS1),
+        .in0(rs1),
         .in1(imm_data),
         .sel(JALR),
         .out_mux(jalr_mux_out)
