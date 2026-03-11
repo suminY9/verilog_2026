@@ -13,7 +13,8 @@ module rv32i_cpu (
     output [31:0] dwdata
 );
 
-    logic rf_we, alu_src, rf_wd_src, branch;
+    logic rf_we, alu_src, branch, JAL, JALR;
+    logic [1:0] rf_wd_src;
     logic [3:0] alu_control;
 
     control_unit U_CONTROL_UNIT (
@@ -22,6 +23,8 @@ module rv32i_cpu (
         .opcode(instr_data[6:0]),
         .rf_we(rf_we),
         .branch(branch),
+        .JAL(JAL),
+        .JALR(JALR),
         .alu_src(alu_src),
         .alu_control(alu_control),
         .rf_wd_src(rf_wd_src),
@@ -35,6 +38,8 @@ module rv32i_cpu (
         .alu_src(alu_src),
         .rf_wd_src(rf_wd_src),
         .branch(branch),
+        .JAL(JAL),
+        .JALR(JALR),
         .alu_control(alu_control),
         .instr_data(instr_data),
         .drdata(drdata),
@@ -51,9 +56,11 @@ module control_unit (
     input        [ 6:0] opcode,
     output logic        rf_we,
     output logic        branch,
+    output logic       JAL,
+    output logic       JALR,
     output logic        alu_src,
     output logic [ 3:0] alu_control,
-    output logic        rf_wd_src,
+    output logic [ 1:0] rf_wd_src,
     output logic [ 2:0] o_funct3,
     output logic        dwe
 );
@@ -61,57 +68,113 @@ module control_unit (
     always_comb begin
         rf_we       = 1'b0;
         branch      = 1'b0;
+        JAL         = 1'b0;
+        JALR        = 1'b0;
         alu_src     = 1'b0;
         alu_control = 4'b0_000;  //initialize
         dwe         = 1'b0;
-        rf_wd_src   = 1'b0;
+        rf_wd_src   = 2'b00;
         o_funct3    = 3'b000;
 
         case (opcode)
             `R_TYPE: begin
                 rf_we       = 1'b1;
                 branch      = 1'b0;
+                JAL         = 1'b0;
+                JALR        = 1'b0;
                 alu_src     = 1'b0;
                 alu_control = {funct7[5], funct3};
                 dwe         = 1'b0;
-                rf_wd_src   = 1'b0;
+                rf_wd_src   = 2'b00;
                 o_funct3    = 3'b000;
             end
             `S_TYPE: begin
                 rf_we       = 1'b0;
                 branch      = 1'b0;
+                JAL         = 1'b0;
+                JALR        = 1'b0;
                 alu_src     = 1'b1;
                 alu_control = 4'b0_000; // S-type only do ADD
                 dwe         = 1'b1;
-                rf_wd_src   = 1'b0;
+                rf_wd_src   = 2'b00;
                 o_funct3    = funct3; // send funct3 to data_mem(for dw)
             end
             `IL_TYPE: begin
                 rf_we       = 1'b1;
                 branch      = 1'b0;
+                JAL         = 1'b0;
+                JALR        = 1'b0;
                 alu_src     = 1'b1;
                 alu_control = 4'b0_000; // only do ADD
                 dwe         = 1'b0;
-                rf_wd_src   = 1'b1;
+                rf_wd_src   = 2'b01;
                 o_funct3    = funct3; // send funct3 to data_mem(for dr)
             end
             `I_TYPE: begin
                 rf_we       = 1'b1;
                 branch      = 1'b0;
+                JAL         = 1'b0;
+                JALR        = 1'b0;
                 alu_src     = 1'b1;
                 if(funct3 == 3'b101) alu_control = {funct7[5], funct3}; // SRLI: {0, 101}, SRAI: {1, 101}
                 else                 alu_control = {1'b0, funct3};
                 dwe         = 1'b0;
-                rf_wd_src   = 1'b0;
+                rf_wd_src   = 2'b00;
                 o_funct3    = 3'b000;
             end
             `B_TYPE: begin
                 rf_we       = 1'b0;
                 branch      = 1'b1;
+                JAL         = 1'b0;
+                JALR        = 1'b0;
                 alu_src     = 1'b0;
                 alu_control = {1'b0, funct3};
                 dwe         = 1'b0;
-                rf_wd_src   = 1'b0;
+                rf_wd_src   = 2'b00;
+                o_funct3    = 3'b000;
+            end
+            `LUI: begin
+                rf_we       = 1'b0;
+                branch      = 1'b0;
+                JAL         = 1'b0;
+                JALR        = 1'b0;
+                alu_src     = 1'b1;
+                alu_control = 4'b0_000;
+                dwe         = 1'b0;
+                rf_wd_src   = 2'b10;
+                o_funct3    = 3'b000;
+            end
+            `AUIPC: begin
+                rf_we       = 1'b0;
+                branch      = 1'b1;
+                JAL         = 1'b0;
+                JALR        = 1'b0;
+                alu_src     = 1'b1;
+                alu_control = 4'b0_000;
+                dwe         = 1'b0;
+                rf_wd_src   = 2'b10;
+                o_funct3    = 3'b000;
+            end
+            `JAL: begin
+                rf_we       = 1'b0;
+                branch      = 1'b1;
+                JAL         = 1'b1;
+                JALR        = 1'b0;
+                alu_src     = 1'b1;
+                alu_control = 4'b0_000;
+                dwe         = 1'b0;
+                rf_wd_src   = 2'b11;
+                o_funct3    = 3'b000;
+            end
+            `JALR: begin
+                rf_we       = 1'b0;
+                branch      = 1'b1;
+                JAL         = 1'b1;
+                JALR        = 1'b1;
+                alu_src     = 1'b1;
+                alu_control = 4'b0_000;
+                dwe         = 1'b0;
+                rf_wd_src   = 2'b11;
                 o_funct3    = 3'b000;
             end
         endcase

@@ -1,11 +1,15 @@
 `define SIMULATION 1
 
 // OP code
-`define R_TYPE  7'b0110011
-`define S_TYPE  7'b0100011
-`define IL_TYPE 7'b0000011
-`define I_TYPE  7'b0010011
+`define R_TYPE  7'b011_0011
+`define S_TYPE  7'b010_0011
+`define IL_TYPE 7'b000_0011
+`define I_TYPE  7'b001_0011
 `define B_TYPE  7'b110_0011
+`define LUI     7'b011_0111
+`define AUIPC   7'b001_0111
+`define JAL     7'b110_1111
+`define JALR    7'b110_0111
 
 // R-type insturction
 `define ADD  4'b0_000
