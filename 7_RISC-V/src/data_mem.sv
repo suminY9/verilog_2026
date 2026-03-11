@@ -4,7 +4,7 @@ module data_mem (
     input         clk,
     input         rst,
     input         dwe,
-    input  [ 9:0] alu_control,
+    input  [ 2:0] funct3,
     input  [31:0] dwaddr,
     input  [31:0] dwdata,
     output [31:0] drdata
@@ -19,15 +19,15 @@ module data_mem (
 
         end else begin
             if(dwe) begin
-                case(alu_control[3:0])
-                    4'b0_000: begin //SB
+                case(funct3)
+                    3'b000: begin //SB
                         dmem[store_start] <= dwdata[7:0];
                     end
-                    4'b0_001: begin //SH
+                    3'b001: begin //SH
                         dmem[store_start]   <= dwdata[7:0];
                         dmem[store_start+1] <= dwdata[15:8];
                     end
-                    4'b0_010: begin //SW
+                    3'b010: begin //SW
                         dmem[store_start+0] <= dwdata[7:0];
                         dmem[store_start+1] <= dwdata[15:8];
                         dmem[store_start+2] <= dwdata[23:16];
@@ -44,14 +44,14 @@ module data_mem (
 
         if(dwe) begin
             block = dwaddr[31:2];
-            case(alu_control[3:0])
-            4'b0_000: begin //SB
+            case(funct3)
+            3'b000: begin //SB
                 store_start = dwaddr;
             end
-            4'b0_001: begin //SH
+            3'b001: begin //SH
                 store_start = ((4*block) + ((dwaddr[1:0] >> 1) << 1));
             end
-            4'b0_010: begin //SW
+            3'b010: begin //SW
                 store_start = (4*block);
             end
             endcase

@@ -6,7 +6,7 @@ module rv32i_datapath (
     input         rst,
     input         rf_we,
     input         alu_src,
-    input  [ 9:0] alu_control,
+    input  [ 3:0] alu_control,
     input  [31:0] instr_data,
     output [31:0] instr_addr,
     output [31:0] dwaddr,
@@ -118,37 +118,26 @@ endmodule
 module alu (
     input        [31:0] rd1,          // RS1
     input        [31:0] rd2,          // RS2
-    input        [ 9:0] alu_control,  // func7[6], funct3 : 4-bit
+    input        [ 3:0] alu_control,  // func7[5], funct3 : 4-bit
     output logic [31:0] alu_result
 );
 
     always_comb begin
         alu_result = 0;
         
-        case(alu_control[9:4])
-            `R_TYPE: begin
-                case (alu_control[3:0])
-                    `ADD:  alu_result = rd1 + rd2;  // add RD = RS1 + RS2
-                    `SUB:  alu_result = rd1 - rd2;  // sub rd = rs1 - rs2
-                    `SLL:  alu_result = rd1 << rd2[4:0];     // sll rd = rs1 << rs2 // shift max 5-bit
-                    `SLT:  alu_result = ($signed(rd1) < $signed(rd2)) ? 1 : 0;  // slt rd = (rs1 < rs2) ? 1 : 0
-                    `SLTU: alu_result = (rd1 < rd2) ? 1 : 0;  // sltu rd = (rs1 < rs2) ? 1 : 0
-                    `XOR:  alu_result = rd1 ^ rd2;  // xor rd = rs1 ^ rs2
-                    `SRL:  alu_result = rd1 >> rd2[4:0];  // srl rd = rs1 >> rs2
-                    `SRA:  alu_result = $signed(rd1) >>> rd2[4:0];  // sra rd = rs1 >> rs2, msb extention
-                    `OR:   alu_result = rd1 | rd2;  // or rd = rs1 | rs2
-                    `AND:  alu_result = rd1 & rd2;  // and rd = rs1 & rs2
-                endcase
-            end
-            `S_TYPE: begin
-                case (alu_control[3:0])
-                    `SB:   alu_result = rd1 + rd2;
-                    `SH:   alu_result = rd1 + rd2;
-                    `SW:   alu_result = rd1 + rd2;
-                endcase
-            end
+        case (alu_control)
+            `ADD:  alu_result = rd1 + rd2;  // add RD = RS1 + RS2
+            `SUB:  alu_result = rd1 - rd2;  // sub rd = rs1 - rs2
+            `SLL:  alu_result = rd1 << rd2[4:0];     // sll rd = rs1 << rs2 // shift max 5-bit
+            `SLT:  alu_result = ($signed(rd1) < $signed(rd2)) ? 1 : 0;  // slt rd = (rs1 < rs2) ? 1 : 0
+            `SLTU: alu_result = (rd1 < rd2) ? 1 : 0;  // sltu rd = (rs1 < rs2) ? 1 : 0
+            `XOR:  alu_result = rd1 ^ rd2;  // xor rd = rs1 ^ rs2
+            `SRL:  alu_result = rd1 >> rd2[4:0];  // srl rd = rs1 >> rs2
+            `SRA:  alu_result = $signed(rd1) >>> rd2[4:0];  // sra rd = rs1 >> rs2, msb extention
+            `OR:   alu_result = rd1 | rd2;  // or rd = rs1 | rs2
+            `AND:  alu_result = rd1 & rd2;  // and rd = rs1 & rs2
         endcase
-    end
+        end
 endmodule
 
 

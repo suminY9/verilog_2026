@@ -6,7 +6,7 @@ module rv32i_top(
     );
 
     logic dwe;
-    logic [9:0] alu_control;
+    logic [2:0] funct3;
     logic [31:0] instr_addr, instr_data, dwaddr, dwdata, drdata;
 
     instruction_mem U_INSTRUCTION_MEM (.*);
