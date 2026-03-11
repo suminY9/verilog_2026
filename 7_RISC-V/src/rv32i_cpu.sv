@@ -13,7 +13,7 @@ module rv32i_cpu (
     output [31:0] dwdata
 );
 
-    logic rf_we, alu_src, rf_wd_src;
+    logic rf_we, alu_src, rf_wd_src, branch;
     logic [3:0] alu_control;
 
     control_unit U_CONTROL_UNIT (
@@ -21,6 +21,7 @@ module rv32i_cpu (
         .funct3(instr_data[14:12]),
         .opcode(instr_data[6:0]),
         .rf_we(rf_we),
+        .branch(branch),
         .alu_src(alu_src),
         .alu_control(alu_control),
         .rf_wd_src(rf_wd_src),
@@ -33,6 +34,7 @@ module rv32i_cpu (
         .rf_we(rf_we),
         .alu_src(alu_src),
         .rf_wd_src(rf_wd_src),
+        .branch(branch),
         .alu_control(alu_control),
         .instr_data(instr_data),
         .drdata(drdata),
@@ -48,6 +50,7 @@ module control_unit (
     input        [ 2:0] funct3,
     input        [ 6:0] opcode,
     output logic        rf_we,
+    output logic        branch,
     output logic        alu_src,
     output logic [ 3:0] alu_control,
     output logic        rf_wd_src,
@@ -57,6 +60,7 @@ module control_unit (
 
     always_comb begin
         rf_we       = 1'b0;
+        branch      = 1'b0;
         alu_src     = 1'b0;
         alu_control = 4'b0_000;  //initialize
         dwe         = 1'b0;
@@ -66,6 +70,7 @@ module control_unit (
         case (opcode)
             `R_TYPE: begin
                 rf_we       = 1'b1;
+                branch      = 1'b0;
                 alu_src     = 1'b0;
                 alu_control = {funct7[5], funct3};
                 dwe         = 1'b0;
@@ -74,6 +79,7 @@ module control_unit (
             end
             `S_TYPE: begin
                 rf_we       = 1'b0;
+                branch      = 1'b0;
                 alu_src     = 1'b1;
                 alu_control = 4'b0_000; // S-type only do ADD
                 dwe         = 1'b1;
@@ -82,6 +88,7 @@ module control_unit (
             end
             `IL_TYPE: begin
                 rf_we       = 1'b1;
+                branch      = 1'b0;
                 alu_src     = 1'b1;
                 alu_control = 4'b0_000; // only do ADD
                 dwe         = 1'b0;
@@ -90,9 +97,19 @@ module control_unit (
             end
             `I_TYPE: begin
                 rf_we       = 1'b1;
+                branch      = 1'b0;
                 alu_src     = 1'b1;
                 if(funct3 == 3'b101) alu_control = {funct7[5], funct3}; // SRLI: {0, 101}, SRAI: {1, 101}
                 else                 alu_control = {1'b0, funct3};
+                dwe         = 1'b0;
+                rf_wd_src   = 1'b0;
+                o_funct3    = 3'b000;
+            end
+            `B_TYPE: begin
+                rf_we       = 1'b0;
+                branch      = 1'b1;
+                alu_src     = 1'b0;
+                alu_control = {1'b0, funct3};
                 dwe         = 1'b0;
                 rf_wd_src   = 1'b0;
                 o_funct3    = 3'b000;

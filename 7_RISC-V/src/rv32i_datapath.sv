@@ -7,6 +7,7 @@ module rv32i_datapath (
     input         rf_we,
     input         alu_src,
     input         rf_wd_src,
+    input         branch,
     input  [ 3:0] alu_control,
     input  [31:0] instr_data,
     input  [31:0] drdata,
@@ -15,6 +16,7 @@ module rv32i_datapath (
     output [31:0] dwdata
 );
 
+    logic btaken;
     logic [31:0] rd1, rd2, alu_result, imm_data, alurs2_data, ram2regfile;
 
     assign daddr = alu_result;
@@ -23,6 +25,9 @@ module rv32i_datapath (
     program_counter U_PC (
         .clk(clk),
         .rst(rst),
+        .branch(branch),
+        .btaken(btaken),
+        .imm_data(imm_data),
         .program_counter(instr_addr)
     );
     register_file U_REG_FILE (
@@ -50,7 +55,8 @@ module rv32i_datapath (
         .rd1(rd1),
         .rd2(alurs2_data),
         .alu_control(alu_control),
-        .alu_result(alu_result)
+        .alu_result(alu_result),
+        .btaken(btaken)
     );
     mux_2x1 U_MUX_WB_REGFILE (
         .in0(alu_result),
@@ -86,6 +92,16 @@ module imm_extender (
             end
             `IL_TYPE, `I_TYPE: begin // load
                 imm_data = {{20{instr_data[31]}}, instr_data[31:20]};
+            end
+            `B_TYPE: begin
+                imm_data = {
+                    {19{instr_data[31]}},
+                    instr_data[31],
+                    instr_data[7],
+                    instr_data[30:25],
+                    instr_data[11:8],
+                    1'b0
+                };
             end
         endcase 
     end
@@ -130,7 +146,8 @@ module alu (
     input        [31:0] rd1,          // RS1
     input        [31:0] rd2,          // RS2
     input        [ 3:0] alu_control,  // func7[5], funct3 : 4-bit
-    output logic [31:0] alu_result
+    output logic [31:0] alu_result,
+    output logic        btaken
 );
 
     always_comb begin
@@ -149,19 +166,42 @@ module alu (
             `AND:  alu_result = rd1 & rd2;  // and rd = rs1 & rs2
         endcase
         end
+
+    // B-type comparator
+    always_comb begin
+        btaken = 0;
+        case(alu_control)
+            `BEQ: if(rd1 == rd2) btaken = 1;  // ture:  pc = pc + IMM
+            `BNE: if(rd1 != rd2) btaken = 1;
+            `BLT: if($signed(rd1) < $signed(rd2))  btaken = 1;
+            `BGE: if($signed(rd1) >= $signed(rd2)) btaken = 1;
+            `BLTU: if(rd1 < rd2)  btaken = 1;
+            `BGEU: if(rd1 >= rd2) btaken = 1;
+            default: btaken = 0;              // false: pc = pc + 4
+        endcase
+    end
 endmodule
 
 
 module program_counter (
     input         clk,
     input         rst,
+    input         branch,
+    input         btaken,
+    input  [31:0] imm_data,
     output [31:0] program_counter
 );
 
-    logic [31:0] pc_alu_out;
+    logic [31:0] pc_alu_out, pc_mux_out;
 
+    mux_2x1 U_MUX_PC4 (
+        .in0(32'h4),
+        .in1(imm_data),
+        .sel(branch && btaken),
+        .out_mux(pc_mux_out)
+    );
     pc_alu U_PC_ALU_4 (
-        .a(32'd4),
+        .a(pc_mux_out),
         .b(program_counter),
         .pc_alu_out(pc_alu_out)
     );

@@ -5,6 +5,7 @@
 `define S_TYPE  7'b0100011
 `define IL_TYPE 7'b0000011
 `define I_TYPE  7'b0010011
+`define B_TYPE  7'b110_0011
 
 // R-type insturction
 `define ADD  4'b0_000
@@ -17,3 +18,11 @@
 `define SRA  4'b1_101
 `define OR   4'b0_110
 `define AND  4'b0_111
+
+// B-type instruction
+`define BEQ  4'b0_000
+`define BNE  4'b0_001
+`define BLT  4'b0_100
+`define BGE  4'b0_101
+`define BLTU 4'b0_110
+`define BGEU 4'b0_111
