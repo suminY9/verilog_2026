@@ -42,7 +42,7 @@ module rv32i_datapath (
         .ra1(instr_data[19:15]),
         .ra2(instr_data[24:20]),
         .wa(instr_data[11:7]),
-        .wdata(alu_result),
+        .wdata(ram2regfile),
         .rf_we(rf_we),
         .rs1(rs1),
         .rs2(rs2)
