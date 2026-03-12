@@ -6,7 +6,7 @@ module rv32i_datapath (
     input         rst,
     input         rf_we,
     input         alu_src,
-    input  [ 1:0] rf_wd_src,
+    input  [ 2:0] rf_wd_src,
     input         branch,
     input         JAL,
     input         JALR,
@@ -19,7 +19,7 @@ module rv32i_datapath (
 );
 
     logic btaken;
-    logic [31:0] rs1, rs2, alu_result, imm_data, alurs2_data, ram2regfile, pc2regfile;
+    logic [31:0] rs1, rs2, alu_result, imm_data, alurs2_data, ram2regfile, pc2regfile, pcimm2regfile;
 
     assign daddr = alu_result;
     assign dwdata = rs2;
@@ -34,6 +34,7 @@ module rv32i_datapath (
         .rs1(rs1),
         .imm_data(imm_data),
         .pc_add4(pc2regfile),
+        .pc_addimm(pcimm2regfile),
         .program_counter(instr_addr)
     );
     register_file U_REG_FILE (
@@ -64,11 +65,12 @@ module rv32i_datapath (
         .alu_result(alu_result),
         .btaken(btaken)
     );
-    mux_4x1 U_MUX_WB_REGFILE (
+    mux_5x1 U_MUX_WB_REGFILE (
         .in0(alu_result),
         .in1(drdata),
         .in2(imm_data),
         .in3(pc2regfile),
+        .in4(pcimm2regfile),
         .sel(rf_wd_src),
         .out_mux(ram2regfile)
     );
@@ -86,17 +88,19 @@ module mux_2x1 (
 endmodule
 
 
-module mux_4x1 (
+module mux_5x1 (
     input        [31:0] in0, // sel 0
     input        [31:0] in1, // sel 1
     input        [31:0] in2, // sel 2
     input        [31:0] in3, // sel 3
-    input        [ 1:0] sel,
+    input        [31:0] in4, // sel4
+    input        [ 2:0] sel,
     output logic [31:0] out_mux
 );
     assign out_mux = (sel == 2'd0) ? in0 :
                      (sel == 2'd1) ? in1 :
-                     (sel == 2'd2) ? in2 : in3;
+                     (sel == 2'd2) ? in2 :
+                     (sel == 2'd3) ? in3 : in4;
 endmodule
 
 
@@ -112,7 +116,7 @@ module imm_extender (
             `S_TYPE: begin
                 imm_data = {{20{instr_data[31]}}, instr_data[31:25], instr_data[11:7]}; // instr_data[31]를 20회 반복
             end
-            `IL_TYPE, `I_TYPE: begin // load
+            `IL_TYPE, `I_TYPE, `JALR: begin // load
                 imm_data = {{20{instr_data[31]}}, instr_data[31:20]};
             end
             `B_TYPE: begin
@@ -124,6 +128,12 @@ module imm_extender (
                     instr_data[11:8],
                     1'b0
                 };
+            end
+            `LUI, `AUIPC: begin
+                imm_data = {instr_data[31:12], 12'b0};
+            end
+            `JAL: begin
+                imm_data = {11'b0, instr_data[31], instr_data[19:12], instr_data[20], instr_data[30:21], 1'b0};
             end
         endcase 
     end
@@ -186,6 +196,7 @@ module alu (
             `SRA:  alu_result = $signed(rs1) >>> rs2[4:0];  // sra rd = rs1 >> rs2, msb extention
             `OR:   alu_result = rs1 | rs2;  // or rd = rs1 | rs2
             `AND:  alu_result = rs1 & rs2;  // and rd = rs1 & rs2
+            default: alu_result = rs1 + rs2; // for U-type
         endcase
         end
 
@@ -215,15 +226,17 @@ module program_counter (
     input  [31:0] rs1,
     input  [31:0] imm_data,
     output [31:0] pc_add4,
+    output [31:0] pc_addimm,
     output [31:0] program_counter
 );
 
     logic [31:0] pc_alu_out, j_alu_out, pc_mux_out, jalr_mux_out;
 
     assign pc_add4 = pc_alu_out;
+    assign pc_addimm = j_alu_out;
 
-    mux_2x1 U_MUX_RS_IMM (
-        .in0(imm_data),
+    mux_2x1 U_MUX_RS_PC (
+        .in0(program_counter),
         .in1(rs1),
         .sel(JALR),
         .out_mux(jalr_mux_out)
@@ -234,8 +247,8 @@ module program_counter (
         .pc_alu_out(pc_alu_out)
     );
     pc_alu U_PC_ALU_J (
-        .a(jalr_mux_out),
-        .b(program_counter),
+        .a(imm_data),
+        .b(jalr_mux_out),
         .pc_alu_out(j_alu_out)
     );
     mux_2x1 U_MUX_PC (
