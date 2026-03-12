@@ -218,31 +218,36 @@ module program_counter (
     output [31:0] program_counter
 );
 
-    logic [31:0] pc_alu_out, pc_mux_out, jalr_mux_out;
+    logic [31:0] pc_alu_out, j_alu_out, pc_mux_out, jalr_mux_out;
 
-    assign pc_add4 = pc_mux_out;
+    assign pc_add4 = pc_alu_out;
 
     mux_2x1 U_MUX_RS_IMM (
-        .in0(rs1),
-        .in1(imm_data),
+        .in0(imm_data),
+        .in1(rs1),
         .sel(JALR),
         .out_mux(jalr_mux_out)
     );
-    mux_2x1 U_MUX_PC4 (
-        .in0(32'h4),
-        .in1(jalr_mux_out),
-        .sel(JAL|(branch && btaken)),
-        .out_mux(pc_mux_out)
-    );
     pc_alu U_PC_ALU_4 (
-        .a(pc_mux_out),
+        .a(32'h4),
         .b(program_counter),
         .pc_alu_out(pc_alu_out)
+    );
+    pc_alu U_PC_ALU_J (
+        .a(jalr_mux_out),
+        .b(program_counter),
+        .pc_alu_out(j_alu_out)
+    );
+    mux_2x1 U_MUX_PC (
+        .in0(pc_alu_out),
+        .in1(j_alu_out),
+        .sel(JAL||(branch && btaken)),
+        .out_mux(pc_mux_out)
     );
     register U_PC_REG (
         .clk(clk),
         .rst(rst),
-        .data_in(pc_alu_out),
+        .data_in(pc_mux_out),
         .data_out(program_counter)
     );
 endmodule
