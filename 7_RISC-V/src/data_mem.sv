@@ -12,7 +12,7 @@ module data_mem (
 
     logic [7:0] dmem[0:31];
     logic [29:0] block;
-    logic [31:0] store_start;
+    logic [31:0] start_addr;
 
     always_ff @(posedge clk, posedge rst) begin
         if(rst) begin
@@ -21,17 +21,17 @@ module data_mem (
             if(dwe) begin
                 case(funct3)
                     3'b000: begin //SB
-                        dmem[store_start] <= dwdata[7:0];
+                        dmem[start_addr] <= dwdata[7:0];
                     end
                     3'b001: begin //SH
-                        dmem[store_start]   <= dwdata[7:0];
-                        dmem[store_start+1] <= dwdata[15:8];
+                        dmem[start_addr]   <= dwdata[7:0];
+                        dmem[start_addr+1] <= dwdata[15:8];
                     end
                     3'b010: begin //SW
-                        dmem[store_start+0] <= dwdata[7:0];
-                        dmem[store_start+1] <= dwdata[15:8];
-                        dmem[store_start+2] <= dwdata[23:16];
-                        dmem[store_start+3] <= dwdata[31:24];
+                        dmem[start_addr+0] <= dwdata[7:0];
+                        dmem[start_addr+1] <= dwdata[15:8];
+                        dmem[start_addr+2] <= dwdata[23:16];
+                        dmem[start_addr+3] <= dwdata[31:24];
                     end
                 endcase
             end
@@ -40,27 +40,33 @@ module data_mem (
 
     always_comb begin
         block       = 0;
-        store_start = 0;
+        start_addr = 0;
 
-        if(dwe) begin
-            block = daddr[31:2];
-            case(funct3)
-            3'b000: begin //SB
-                store_start = daddr;
-            end
-            3'b001: begin //SH
-                store_start = ((4*block) + ((daddr[1:0] >> 1) << 1));
-            end
-            3'b010: begin //SW
-                store_start = (4*block);
-            end
-            endcase
+        block = daddr[31:2];
+        case(funct3)
+        3'b000: begin //SB, LB
+            start_addr = daddr;
         end
+        3'b001: begin //SH, LH
+            start_addr = ((4*block) + ((daddr[1:0] >> 1) << 1));
+        end
+        3'b010: begin //SW, LW
+            start_addr = (4*block);
+        end
+        3'b100: begin //LBU
+            start_addr = daddr;
+        end
+        3'b101: begin //LHU
+            start_addr = ((4*block) + ((daddr[1:0] >> 1) << 1));
+        end
+        endcase
     end
 
     // little endian
-    assign drdata = (funct3 == 3'b000) ? {24'b0, dmem[daddr]} : // LB
-                    (funct3 == 3'b001) ? {16'b0, dmem[daddr+1], dmem[daddr+0]} : // LH
-                    (funct3 == 3'b010) ? {dmem[daddr+3], dmem[daddr+2], dmem[daddr+1], dmem[daddr+0]} : // LW
+    assign drdata = (funct3 == 3'b000) ? {{24{dmem[start_addr][7]}}, dmem[start_addr]} : // LB
+                    (funct3 == 3'b001) ? {{16{dmem[start_addr+1][7]}}, dmem[start_addr+1], dmem[start_addr+0]} : // LH
+                    (funct3 == 3'b010) ? {dmem[start_addr+3], dmem[start_addr+2], dmem[start_addr+1], dmem[start_addr+0]} : // LW
+                    (funct3 == 3'b100) ? {24'b0, dmem[start_addr]} : // LBU
+                    (funct3 == 3'b101) ? {16'b0, dmem[start_addr+1], dmem[start_addr+0]} : // LHU
                     32'b0; // default
 endmodule

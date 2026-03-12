@@ -31,21 +31,21 @@ module instruction_mem(
         rom[17] = 32'h003116a3;
         rom[18] = 32'h00322723;
         // I-type
-        //rom[19] = 32'h01002283; // LW x5, 16(x0)
-        //rom[20] = 32'h01101283; // LH x5, 16(x0)
-        //rom[21] = 32'h01200283; // LB x5, 16(x0)
-        //rom[22] = 32'h01004283; // LBU
-        //rom[23] = 32'h01005283; // LHU
+        rom[19] = 32'h00802283; // LW
+        rom[20] = 32'h00901283; // LH
+        rom[21] = 32'h00a00283; // LB
+        rom[22] = 32'h00804283; // LBU
+        rom[23] = 32'h00805283; // LHU
         // IL-type
-        rom[19] = 32'h00118293; // ADDI x8, x7, 4
-        rom[20] = 32'h0011a293; // SLTI
-        rom[21] = 32'h0011b293; // SLTIU
-        rom[22] = 32'h00aac293; // XORI
-        rom[23] = 32'h00ab6293; // ORI
-        rom[24] = 32'h00ab7293; // ANDI
-        rom[25] = 32'h00219293; // SLLI
-        rom[26] = 32'h0021d293; // SRLI
-        rom[27] = 32'h4021d293; // SRAI
+        //rom[19] = 32'h00118293; // ADDI
+        //rom[20] = 32'h0011a293; // SLTI
+        //rom[21] = 32'h0011b293; // SLTIU
+        //rom[22] = 32'h00aac293; // XORI
+        //rom[23] = 32'h00ab6293; // ORI
+        //rom[24] = 32'h00ab7293; // ANDI
+        //rom[25] = 32'h00219293; // SLLI
+        //rom[26] = 32'h0021d293; // SRLI
+        //rom[27] = 32'h4021d293; // SRAI
         // B-type
         //rom[0] = 32'h402081b3;
         //rom[1] = 32'h00108463; // BEQ true
