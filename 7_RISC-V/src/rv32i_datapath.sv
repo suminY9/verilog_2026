@@ -117,7 +117,8 @@ module imm_extender (
                 imm_data = {{20{instr_data[31]}}, instr_data[31:25], instr_data[11:7]}; // instr_data[31]를 20회 반복
             end
             `IL_TYPE, `I_TYPE, `JALR: begin // load
-                imm_data = {{20{instr_data[31]}}, instr_data[31:20]};
+                if(instr_data[14:12] == 3'b001 | instr_data[14:12] == 3'b101) imm_data = {27'b0, instr_data[24:20]};
+                else imm_data = {{20{instr_data[31]}}, instr_data[31:20]};
             end
             `B_TYPE: begin
                 imm_data = {
