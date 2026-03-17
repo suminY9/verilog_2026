@@ -137,7 +137,7 @@ module control_unit (
             end
             S6: begin
                 rfsrcsel = 0;
-                raddr1   = 0;
+                raddr1   = 2'd2;
                 raddr2   = 0;
                 waddr    = 0;
                 we       = 0;
@@ -206,6 +206,9 @@ module register (
 
     logic [7:0] in_reg[0:3];
 
+    assign rdata1 = in_reg[raddr1];
+    assign rdata2 = in_reg[raddr2];
+
     always_ff @(posedge clk, posedge rst) begin
         if (rst) begin
             in_reg[0] <= 0;
@@ -213,8 +216,8 @@ module register (
             in_reg[2] <= 0;
             in_reg[3] <= 0;
         end else begin
-            rdata1 <= in_reg[raddr1];
-            rdata2 <= in_reg[raddr2];
+            //rdata1 <= in_reg[raddr1];
+            //rdata2 <= in_reg[raddr2];
             if (we) in_reg[waddr] <= wdata;
         end
     end

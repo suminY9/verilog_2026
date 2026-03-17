@@ -33,7 +33,7 @@ module tb_dedicated_cpu2 ();
         @(posedge clk);
         @(negedge clk);
         rst = 0;
-        repeat(500)
+        repeat(100)
         @(posedge clk);
         $stop;
     end
