@@ -155,13 +155,13 @@ module register_file (
 
     logic [31:0] register_file[1:31]; // x0 must have zero value
 
-`ifdef SIMULATION
-    initial begin
-        for (int i = 1; i < 32; i++) begin
-            register_file[i] = i;
-        end
-    end
-`endif
+//`ifdef SIMULATION
+//    initial begin
+//        for (int i = 1; i < 32; i++) begin
+//            register_file[i] = i;
+//        end
+//    end
+//`endif
 
     always_ff @(posedge clk) begin
         if (!rst & rf_we) begin
@@ -171,7 +171,7 @@ module register_file (
 
     // output CL
     assign rs1 = (ra1!=0) ? register_file[ra1] : 0;
-    assign rs2 = (ra1!=0) ? register_file[ra2] : 0;
+    assign rs2 = (ra2!=0) ? register_file[ra2] : 0;
 endmodule
 
 

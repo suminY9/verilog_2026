@@ -10,7 +10,7 @@ module data_mem (
     output [31:0] drdata
 );
 
-    logic [7:0] dmem[0:1023];
+    logic [7:0] dmem[0:511];
     logic [29:0] block;
     logic [31:0] start_addr;
 
