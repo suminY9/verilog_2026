@@ -66,6 +66,11 @@ class transaction;
     rand logic [7:0] wdata;
     logic      [7:0] rdata;
 
+    //특정 영역만 테스트하고 싶을 때 -> 제약사항을 제시
+    //0x00 ~ 0x10 값만 나오도록 제약.
+    constraint c_addr  {addr inside {[8'h00 : 8'h10]};}
+    constraint c_wdata {wdata inside {[8'h10 : 8'h10]};}
+
     function print(string name);
         $display("[name] we:%0d, addr:0x%0x, wdata:0x%0x, rdata:0x%0x",
                  name, we, addr, wdata, rdata);
