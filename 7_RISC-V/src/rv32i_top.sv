@@ -5,7 +5,7 @@ module rv32i_top(
     input rst
     );
 
-    logic dwe;
+    logic dwe, pc_en;
     logic [2:0] funct3;
     logic [31:0] instr_addr, instr_data, daddr, dwdata, drdata;
 
