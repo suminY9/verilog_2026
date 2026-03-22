@@ -149,10 +149,10 @@ module mux_5x1 (
     input        [ 2:0] sel,
     output logic [31:0] out_mux
 );
-    assign out_mux = (sel == 2'd0) ? in0 :
-                     (sel == 2'd1) ? in1 :
-                     (sel == 2'd2) ? in2 :
-                     (sel == 2'd3) ? in3 : in4;
+    assign out_mux = (sel == 3'd0) ? in0 :
+                     (sel == 3'd1) ? in1 :
+                     (sel == 3'd2) ? in2 :
+                     (sel == 3'd3) ? in3 : in4;
 endmodule
 
 
@@ -286,7 +286,7 @@ module program_counter (
 
     logic [31:0] pc_alu_out, j_alu_out, pc_mux_out, jalr_mux_out;
     // execute
-    logic [31:0] i_exe_pc_next, o_exe_pc_next;
+    logic [31:0] o_exe_pc_next;
 
     assign pc_add4 = pc_alu_out;
     assign pc_addimm = j_alu_out;
@@ -316,7 +316,7 @@ module program_counter (
     register U_EXE_REG_PCNEXT (
         .clk(clk),
         .rst(rst),
-        .data_in(i_exe_pc_next),
+        .data_in(pc_mux_out),
         .data_out(o_exe_pc_next)
     );
     /*** Fetch ***/
