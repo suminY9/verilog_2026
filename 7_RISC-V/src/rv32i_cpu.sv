@@ -101,10 +101,18 @@ module control_unit (
                 n_state = EXECUTE;
             end
             EXECUTE: begin
-                n_state = MEM;
+                case(opcode)
+                    `R_TYPE, `I_TYPE, `B_TYPE, `LUI, `AUIPC, `JAL, `JALR: n_state = FETCH;
+                    `S_TYPE, `IL_TYPE: n_state = MEM;
+                    default: n_state = FETCH;
+                endcase
             end
             MEM: begin
-                n_state = WB;
+                case(opcode)
+                    `S_TYPE: n_state = FETCH;
+                    `IL_TYPE: n_state = WB;
+                    default: n_state = FETCH;
+                endcase
             end
             WB: begin
                 n_state = FETCH;
