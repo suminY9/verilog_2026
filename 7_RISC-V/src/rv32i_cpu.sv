@@ -13,7 +13,7 @@ module rv32i_cpu (
     output [31:0] dwdata
 );
 
-    logic rf_we, alu_src, branch, JAL, JALR;
+    logic pc_en, rf_we, alu_src, branch, JAL, JALR;
     logic [2:0] rf_wb_src;
     logic [3:0] alu_control;
 
@@ -23,6 +23,7 @@ module rv32i_cpu (
         .funct7(instr_data[31:25]),
         .funct3(instr_data[14:12]),
         .opcode(instr_data[6:0]),
+        .pc_en(pc_en),
         .rf_we(rf_we),
         .branch(branch),
         .JAL(JAL),
@@ -36,6 +37,7 @@ module rv32i_cpu (
     rv32i_datapath U_DATAPATH (
         .clk(clk),
         .rst(rst),
+        .pc_en(pc_en),
         .rf_we(rf_we),
         .alu_src(alu_src),
         .rf_wb_src(rf_wb_src),
@@ -142,10 +144,12 @@ module control_unit (
             EXECUTE: begin
                 case(opcode)
                     `R_TYPE: begin
+                        rf_we = 1'b1; // 바로 저장 (MEM 접근 안하고 바로 FETCH로 감)
                         alu_src = 1'b0;
                         alu_control = {funct7[5], funct3};
                     end
                     `I_TYPE: begin
+                        rf_we = 1'b1; // 바로 저장
                         alu_src = 1'b1;
                         if(funct3 == 3'b101) alu_control = {funct7[5], funct3};
                         else alu_control = {1'b0, funct3};
@@ -164,20 +168,24 @@ module control_unit (
                         alu_control = 4'b0000;
                     end
                     `LUI: begin
+                        rf_we = 1'b1; // 바로 저장
                         alu_src     = 1'b0;
                         alu_control = 4'b1_111;  // for btaken = 0, ADD
                     end
                     `AUIPC: begin
+                        rf_we = 1'b1; // 바로 저장
                         alu_src     = 1'b1;
                         alu_control = 4'b1_111;  // for btaken = 0
                     end
                     `JAL: begin
+                        rf_we = 1'b1; // 바로 저장
                         alu_src     = 1'b1;
                         alu_control = 4'b0_000;
                         JAL = 1'b1;
                         JALR = 1'b0;
                     end
                     `JALR: begin
+                        rf_we = 1'b1; // 바로 저장
                         alu_src     = 1'b1;
                         alu_control = 4'b0_000;                        
                         JAL = 1'b1;

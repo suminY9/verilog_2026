@@ -40,7 +40,7 @@ module rv32i_datapath (
         .JAL(JAL),
         .JALR(JALR),
         .btaken(btaken),
-        .rs1(rs1),
+        .rs1(o_dec_rs1),
         .imm_data(o_dec_imm),
         .pc_add4(pc2regfile),
         .pc_addimm(pcimm2regfile),
@@ -118,7 +118,7 @@ module rv32i_datapath (
 
     /*** Write Back ***/
     mux_5x1 U_MUX_WB_REGFILE (
-        .in0(o_exe_alu_result),  // alu EXE_ALU Result
+        .in0(alu_result),  // alu EXE_ALU Result
         .in1(o_mem_drdata),            // from data_mem
         .in2(o_dec_imm),         // from imm extend, for LUI
         .in3(pc2regfile),        // from pc + imm extend, for AUIPC
@@ -207,13 +207,13 @@ module register_file (
 
     logic [31:0] register_file[1:31]; // x0 must have zero value
 
-//`ifdef SIMULATION
-//    initial begin
-//        for (int i = 1; i < 32; i++) begin
-//            register_file[i] = i;
-//        end
-//    end
-//`endif
+`ifdef SIMULATION
+    initial begin
+        for (int i = 1; i < 32; i++) begin
+            register_file[i] = i;
+        end
+    end
+`endif
 
     always_ff @(posedge clk) begin
         if (!rst & rf_we) begin

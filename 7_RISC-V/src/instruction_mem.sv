@@ -8,7 +8,7 @@ module instruction_mem(
     logic [31:0] rom[0:127];
 
     initial begin   // for simulation. sysnthesis x
-        $readmemh("rv32i_sum.mem", rom);
+        //$readmemh("rv32i_sum.mem", rom);
 
         // 정의하지 않은 메모리 공간은 모두 x로 채워짐
         // R-type
@@ -49,24 +49,24 @@ module instruction_mem(
         //rom[26] = 32'h0021d293; // SRLI
         //rom[27] = 32'h4021d293; // SRAI
         // B-type
-        //rom[0] = 32'h402081b3;
-        //rom[1] = 32'h00108463; // BEQ true
-        //rom[3] = 32'h00209463; // BNE true
-        //rom[5] = 32'h0011c463; // BLT true
-        //rom[7] = 32'h0030d463; // BGE true
-        //rom[9] = 32'h0030e463; // BLTU true
-        //rom[11] = 32'h0011f463; // BGEU true
-        //rom[13] = 32'h00208463; // BEQ fail
-        //rom[14] = 32'h00109463; // BNE fail
-        //rom[15] = 32'h0010c463; // BLT fail
-        //rom[16] = 32'h0020d463; // BGE fail
-        //rom[17] = 32'h0011e463; // BLTU fail
-        //rom[18] = 32'h0030f463; // BGEU fail
-        //rom[19] = 32'h000012b7; // LUI
-        //rom[20] = 32'h00001297; // AUIPC
-        //rom[21] = 32'h008002ef; // JAL
-        //rom[23] = 32'h060202e7; // JALR
-        //rom[25] = 32'h004182b3;
+        rom[0] = 32'h402081b3;
+        rom[1] = 32'h00108463; // BEQ true
+        rom[3] = 32'h00209463; // BNE true
+        rom[5] = 32'h0011c463; // BLT true
+        rom[7] = 32'h0030d463; // BGE true
+        rom[9] = 32'h0030e463; // BLTU true
+        rom[11] = 32'h0011f463; // BGEU true
+        rom[13] = 32'h00208463; // BEQ fail
+        rom[14] = 32'h00109463; // BNE fail
+        rom[15] = 32'h0010c463; // BLT fail
+        rom[16] = 32'h0020d463; // BGE fail
+        rom[17] = 32'h0011e463; // BLTU fail
+        rom[18] = 32'h0030f463; // BGEU fail
+        rom[19] = 32'h000012b7; // LUI
+        rom[20] = 32'h00001297; // AUIPC
+        rom[21] = 32'h008002ef; // JAL
+        rom[23] = 32'h060202e7; // JALR
+        rom[25] = 32'h004182b3;
     end
 
     assign instr_data = rom[instr_addr[31:2]]; // word adressing
