@@ -171,16 +171,19 @@ module control_unit (
                         rf_we = 1'b1; // 바로 저장
                         alu_src     = 1'b0;
                         alu_control = 4'b1_111;  // for btaken = 0, ADD
+                        rf_wb_src = 3'b010;
                     end
                     `AUIPC: begin
                         rf_we = 1'b1; // 바로 저장
                         alu_src     = 1'b1;
                         alu_control = 4'b1_111;  // for btaken = 0
+                        rf_wb_src = 3'b100;
                     end
                     `JAL: begin
                         rf_we = 1'b1; // 바로 저장
                         alu_src     = 1'b1;
                         alu_control = 4'b0_000;
+                        rf_wb_src = 3'b011;
                         JAL = 1'b1;
                         JALR = 1'b0;
                     end
@@ -188,6 +191,7 @@ module control_unit (
                         rf_we = 1'b1; // 바로 저장
                         alu_src     = 1'b1;
                         alu_control = 4'b0_000;                        
+                        rf_wb_src = 3'b011;
                         JAL = 1'b1;
                         JALR = 1'b1;
                     end
