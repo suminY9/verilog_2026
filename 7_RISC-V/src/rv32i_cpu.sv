@@ -70,7 +70,7 @@ module control_unit (
     output logic       dwe
 );
 
-    typedef enum logic {
+    typedef enum {
         FETCH,
         DECODE,
         EXECUTE,

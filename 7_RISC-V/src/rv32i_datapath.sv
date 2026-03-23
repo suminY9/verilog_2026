@@ -7,7 +7,7 @@ module rv32i_datapath (
     input         pc_en,
     input         rf_we,
     input         alu_src,
-    input  [ 2:0] rf_wd_src,
+    input  [ 2:0] rf_wb_src,
     input         branch,
     input         JAL,
     input         JALR,
@@ -123,7 +123,7 @@ module rv32i_datapath (
         .in2(o_dec_imm),         // from imm extend, for LUI
         .in3(pc2regfile),        // from pc + imm extend, for AUIPC
         .in4(pcimm2regfile),     // from PC + 4, for JAL/JALR
-        .sel(rf_wd_src),
+        .sel(rf_wb_src),
         .out_mux(ram2regfile)
     );
 endmodule
