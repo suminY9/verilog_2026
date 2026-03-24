@@ -47,13 +47,13 @@ module rv32i_mcu (
         .PREADY4(),
         .PREADY5()
     );
-    data_mem U_DATA_MEM (
-        .clk(clk),
-        .rst(rst),
-        .dwe(bus_wreq),
-        .funct3(funct3),
-        .daddr(bus_addr),
-        .dwdata(bus_wdata),
-        .drdata(bus_rdata)
-    );
+    //data_mem U_DATA_MEM (
+    //    .clk(clk),
+    //    .rst(rst),
+    //    .dwe(bus_wreq),
+    //    .funct3(funct3),
+    //    .daddr(bus_addr),
+    //    .dwdata(bus_wdata),
+    //    .drdata(bus_rdata)
+    //);
 endmodule

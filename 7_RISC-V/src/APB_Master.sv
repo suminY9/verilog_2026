@@ -8,8 +8,8 @@ module APB_Master (
     // SoC Internal signal with CPU
     input  [31:0] Addr,
     input  [31:0] Wdata,
-    input         WREQ,     // CPU signal: dwe
-    input         RREQ,     // CPU signal: dre
+    input         WREQ,   // CPU signal: dwe
+    input         RREQ,   // CPU signal: dre
     //output        SlvERR, // option
     output [31:0] Rdata,
     output        Ready,
@@ -25,19 +25,18 @@ module APB_Master (
     output logic        PSEL3,    // GPIO
     output logic        PSEL4,    // FND
     output logic        PSEL5,    // UART
-
-    input [31:0] PRDATA0,  // from RAM 
-    input [31:0] PRDATA1,  // from GPO
-    input [31:0] PRDATA2,  // from GPI
-    input [31:0] PRDATA3,  // from GPIO
-    input [31:0] PRDATA4,  // from FND
-    input [31:0] PRDATA5,  // from UART
-    input        PREADY0,  // from RAM
-    input        PREADY1,  // from GPO
-    input        PREADY2,  // from GPI
-    input        PREADY3,  // from GPIO
-    input        PREADY4,  // from FND
-    input        PREADY5   // from UART
+    input        [31:0] PRDATA0,  // from RAM 
+    input        [31:0] PRDATA1,  // from GPO
+    input        [31:0] PRDATA2,  // from GPI
+    input        [31:0] PRDATA3,  // from GPIO
+    input        [31:0] PRDATA4,  // from FND
+    input        [31:0] PRDATA5,  // from UART
+    input               PREADY0,  // from RAM
+    input               PREADY1,  // from GPO
+    input               PREADY2,  // from GPI
+    input               PREADY3,  // from GPIO
+    input               PREADY4,  // from FND
+    input               PREADY5   // from UART
 );
 
     typedef enum {
@@ -51,11 +50,11 @@ module APB_Master (
     logic [31:0] PADDR_next, PWDATA_next;
 
     always_ff @(posedge PCLK, negedge PRESETn) begin
-        if (!PRESETn) begin // negative edge trigger
-            c_state      <= IDLE;
-            PADDR        <= 32'd0;
-            PWDATA       <= 32'd0;
-            PWRITE_next  <= 1'b0;
+        if (!PRESETn) begin  // negative edge trigger
+            c_state <= IDLE;
+            PADDR   <= 32'd0;
+            PWDATA  <= 32'd0;
+            PWRITE  <= 1'b0;
         end else begin
             c_state <= n_state;
             PADDR   <= PADDR_next;
@@ -80,23 +79,23 @@ module APB_Master (
                 if (WREQ || RREQ) begin
                     PADDR_next  = Addr;
                     PWDATA_next = Wdata;
-                    if(WREQ) begin
-                        PWRITE = 1'b1;
+                    if (WREQ) begin
+                        PWRITE_next = 1'b1;
                     end else begin
-                        PWRITE = 1'b0;
+                        PWRITE_next = 1'b0;
                     end
                     n_state = SETUP;
                 end
             end
             SETUP: begin
-                decode_en = 1; // mean: PSEL = 1
+                decode_en = 1;  // mean: PSEL = 1
                 PENABLE   = 0;
                 if (WREQ) begin
-                    PWRITE = 1'b1;
+                    PWRITE_next = 1'b1;
                 end else begin
-                    PWRITE = 1'b0;
+                    PWRITE_next = 1'b0;
                 end
-                n_state   = ACCESS;
+                n_state = ACCESS;
             end
             ACCESS: begin
                 decode_en = 1;
@@ -111,7 +110,7 @@ module APB_Master (
 
     addr_decoder U_ADDR_DECODER (
         .en(decode_en),
-        .addr(addr),
+        .addr(Addr),
         .psel0(PSEL0),
         .psel1(PSEL1),
         .psel2(PSEL2),
@@ -120,7 +119,7 @@ module APB_Master (
         .psel5(PSEL5)
     );
     apb_mux U_APB_MUX (
-        .sel(addr),
+        .sel(Addr),
         .PRDATA0(PRDATA0),
         .PRDATA1(PRDATA1),
         .PRDATA2(PRDATA2),
@@ -197,7 +196,7 @@ module apb_mux (
     always_comb begin
         Rdata = 32'h0000_0000;
         Ready = 1'b0;
-        
+
         case (sel[31:28])  // instead of casex
             4'h1: begin
                 Rdata = PRDATA0;
