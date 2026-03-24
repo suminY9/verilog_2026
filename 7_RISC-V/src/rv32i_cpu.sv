@@ -25,7 +25,7 @@ module rv32i_cpu (
         .funct7(instr_data[31:25]),
         .funct3(instr_data[14:12]),
         .opcode(instr_data[6:0]),
-        .ready(ready),
+        .ready(bus_ready),
         .pc_en(pc_en),
         .rf_we(rf_we),
         .branch(branch),
@@ -35,8 +35,8 @@ module rv32i_cpu (
         .alu_control(alu_control),
         .rf_wb_src(rf_wb_src),
         .o_funct3(funct3),
-        .dwe(wreq),
-        .dre(rreq)
+        .dwe(bus_wreq),
+        .dre(bus_rreq)
     );
     rv32i_datapath U_DATAPATH (
         .clk(clk),

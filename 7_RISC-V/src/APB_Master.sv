@@ -10,21 +10,21 @@ module APB_Master (
     input  [31:0] Wdata,
     input         WREQ,     // CPU signal: dwe
     input         RREQ,     // CPU signal: dre
-    //output        SlvERR,
+    //output        SlvERR, // option
     output [31:0] Rdata,
     output        Ready,
 
     // APB Interface signal
     output logic [31:0] PADDR,
     output logic [31:0] PWDATA,
+    output logic        PENABLE,
+    output logic        PWRITE,
     output logic        PSEL0,    // RAM
     output logic        PSEL1,    // GPO
     output logic        PSEL2,    // GPI
     output logic        PSEL3,    // GPIO
     output logic        PSEL4,    // FND
     output logic        PSEL5,    // UART
-    output logic        PENABLE,
-    output logic        PWRITE,
 
     input [31:0] PRDATA0,  // from RAM 
     input [31:0] PRDATA1,  // from GPO
@@ -52,10 +52,10 @@ module APB_Master (
 
     always_ff @(posedge PCLK, negedge PRESETn) begin
         if (!PRESETn) begin // negative edge trigger
-            c_state <= IDLE;
-            PADDR   <= 32'd0;
-            PWDATA  <= 32'd0;
-            PWRITE  <= 1'b0;
+            c_state      <= IDLE;
+            PADDR        <= 32'd0;
+            PWDATA       <= 32'd0;
+            PWRITE_next  <= 1'b0;
         end else begin
             c_state <= n_state;
             PADDR   <= PADDR_next;
@@ -76,8 +76,8 @@ module APB_Master (
 
         case (c_state)
             IDLE: begin
-                decode_en = 0;
-                if (WREQ | RREQ) begin
+                decode_en = 0;  // mean: PSEL = 0
+                if (WREQ || RREQ) begin
                     PADDR_next  = Addr;
                     PWDATA_next = Wdata;
                     if(WREQ) begin
@@ -85,12 +85,17 @@ module APB_Master (
                     end else begin
                         PWRITE = 1'b0;
                     end
-                    n_state     = SETUP;
+                    n_state = SETUP;
                 end
             end
             SETUP: begin
-                decode_en = 1;
+                decode_en = 1; // mean: PSEL = 1
                 PENABLE   = 0;
+                if (WREQ) begin
+                    PWRITE = 1'b1;
+                end else begin
+                    PWRITE = 1'b0;
+                end
                 n_state   = ACCESS;
             end
             ACCESS: begin
@@ -156,10 +161,15 @@ module addr_decoder (
         if (en) begin
             case (addr[31:28])  // casex: x -> don't care
                 4'h1: psel0 = 1'b1;
-                4'h2: psel2 = 1'b1;
-                4'h3: psel3 = 1'b1;
-                4'h4: psel4 = 1'b1;
-                4'h5: psel4 = 1'b1;
+                4'h2: begin
+                    case (addr[15:12])
+                        4'h0: psel1 = 1'b1;
+                        4'h1: psel2 = 1'b1;
+                        4'h2: psel3 = 1'b1;
+                        4'h3: psel4 = 1'b1;
+                        4'h4: psel5 = 1'b1;
+                    endcase
+                end
             endcase
         end
     end
@@ -187,6 +197,7 @@ module apb_mux (
     always_comb begin
         Rdata = 32'h0000_0000;
         Ready = 1'b0;
+        
         case (sel[31:28])  // instead of casex
             4'h1: begin
                 Rdata = PRDATA0;
