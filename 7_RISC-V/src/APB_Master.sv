@@ -68,7 +68,6 @@ module APB_Master (
         n_state     = c_state;
         decode_en   = 1'b0;
         PENABLE     = 1'b0;
-        PWRITE      = 1'b0;
         PADDR_next  = PADDR;
         PWDATA_next = PWDATA;
         PWRITE_next = PWRITE;
