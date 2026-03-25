@@ -3,7 +3,7 @@
 module tb_rv32i();
     logic clk, rst;
 
-    rv32i_top dut (
+    rv32i_mcu dut (
         .clk(clk),
         .rst(rst)
     );
