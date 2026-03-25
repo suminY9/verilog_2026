@@ -3,7 +3,7 @@
 module APB_Master (
     // BUS Global signal
     input PCLK,
-    input PRESETn,
+    input PRESET,
 
     // SoC Internal signal with CPU
     input  [31:0] Addr,
@@ -49,8 +49,8 @@ module APB_Master (
     logic decode_en, PWRITE_next;
     logic [31:0] PADDR_next, PWDATA_next;
 
-    always_ff @(posedge PCLK, negedge PRESETn) begin
-        if (!PRESETn) begin  // negative edge trigger
+    always_ff @(posedge PCLK, posedge PRESET) begin
+        if (PRESET) begin  // negative edge trigger
             c_state <= IDLE;
             PADDR   <= 32'd0;
             PWDATA  <= 32'd0;
