@@ -207,13 +207,13 @@ module register_file (
 
     logic [31:0] register_file[1:31]; // x0 must have zero value
 
-`ifdef SIMULATION
-    initial begin
-        for (int i = 1; i < 32; i++) begin
-            register_file[i] = i;
-        end
-    end
-`endif
+//`ifdef SIMULATION
+//    initial begin
+//        for (int i = 1; i < 32; i++) begin
+//            register_file[i] = i;
+//        end
+//    end
+//`endif
 
     always_ff @(posedge clk) begin
         if (!rst & rf_we) begin

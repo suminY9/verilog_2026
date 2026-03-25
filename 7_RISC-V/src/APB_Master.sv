@@ -74,7 +74,12 @@ module APB_Master (
 
         case (c_state)
             IDLE: begin
-                decode_en = 0;  // mean: PSEL = 0
+                decode_en   = 0;  // mean: PSEL = 0
+                PENABLE     = 0;
+                PADDR_next  = 32'b0;
+                PWDATA_next = 32'b0;
+                PWRITE_next = 1'b0;
+
                 if (WREQ || RREQ) begin
                     PADDR_next  = Addr;
                     PWDATA_next = Wdata;
@@ -109,7 +114,7 @@ module APB_Master (
 
     addr_decoder U_ADDR_DECODER (
         .en(decode_en),
-        .addr(Addr),
+        .addr(PADDR),
         .psel0(PSEL0),
         .psel1(PSEL1),
         .psel2(PSEL2),
@@ -118,7 +123,7 @@ module APB_Master (
         .psel5(PSEL5)
     );
     apb_mux U_APB_MUX (
-        .sel(Addr),
+        .sel(PADDR),
         .PRDATA0(PRDATA0),
         .PRDATA1(PRDATA1),
         .PRDATA2(PRDATA2),
