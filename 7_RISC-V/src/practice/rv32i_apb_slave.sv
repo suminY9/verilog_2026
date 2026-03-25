@@ -19,9 +19,6 @@ module apb_slave (
     } state;
     state n_state, c_state;
 
-    logic [31:0] PADDR_RAM;
-    logic PWRITE_RAM;
-
     always_ff @(posedge PCLK, negedge PRESET) begin
         if (!PRESET) begin
             c_state <= IDLE;
@@ -46,8 +43,6 @@ module apb_slave (
                 end
             end
             ACCESS: begin
-                PADDR_RAM = PADDR;
-                PWRITE_RAM = PWRITE;
                 Ready   = 1;
                 n_state = IDLE;
             end
@@ -56,8 +51,8 @@ module apb_slave (
 
     data_ram RAM (
         .clk(PCLK),
-        .dwe(PWRITE_RAM),
-        .daddr(PADDR_RAM),
+        .dwe(PWRITE),
+        .daddr(PADDR),
         .data_in(PWDATA),
         .data_out(PRDATA)
     );
