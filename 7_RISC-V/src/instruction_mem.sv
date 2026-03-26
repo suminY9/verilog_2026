@@ -8,7 +8,7 @@ module instruction_mem(
     logic [31:0] rom[0:127];
 
     initial begin   // for simulation. sysnthesis x
-        $readmemh("U_APB_BRAM.mem", rom);
+        $readmemh("APB_GPO.mem", rom);
 
         // 정의하지 않은 메모리 공간은 모두 x로 채워짐
         // R-type
