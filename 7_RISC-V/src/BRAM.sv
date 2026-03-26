@@ -11,14 +11,15 @@ module BRAM (
     output logic        PREADY
 );
 
-    logic [31:0] bmem[0:1024];  // 1024 * 4byte : 4K
+    logic [31:0] bmem[0:1023];  // 1024 * 4byte : 4K
 
     assign PREADY = (PENABLE & PSEL) ? 1'b1 : 1'b0;
-    assign PRDATA = bmem[PADDR[31:2]];
 
     always_ff @(posedge PCLK) begin
         if (PSEL & PENABLE & PWRITE) begin
-            bmem[PADDR[31:2]] <= PWDATA;
+            bmem[PADDR[11:2]] <= PWDATA;
         end
     end
+    
+    assign PRDATA = bmem[PADDR[11:2]];
 endmodule

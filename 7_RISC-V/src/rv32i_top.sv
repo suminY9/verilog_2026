@@ -55,7 +55,7 @@ module rv32i_mcu (
         .PCLK(clk),
         .PADDR(paddr),
         .PWDATA(pwdata),
-        .PENABLE(penalbe),
+        .PENABLE(penable),
         .PWRITE(pwrite),
         .PSEL(psel0),
         .PRDATA(prdata0),
