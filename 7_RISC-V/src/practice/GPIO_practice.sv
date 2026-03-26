@@ -4,7 +4,7 @@ module GPIO_practice (
     input               PCLK,
     input               PRESET,
     input        [31:0] PADDR,
-    input        [ 7:0] PWDATA,
+    input        [31:0] PWDATA,
     input               PWRITE,
     input               PENABLE,
     input               PSEL,
@@ -19,7 +19,7 @@ module GPIO_practice (
     output logic        GPO7
 );
 
-    logic [7:0] GPO_OREG;
+    logic [7:0] GPO_OREG[0:1];
     logic we;
 
     assign we = PSEL && PENABLE && PWRITE;
@@ -27,16 +27,18 @@ module GPIO_practice (
 
     always_ff @(posedge PCLK, posedge PRESET) begin
         if(PRESET) begin
-            GPO_OREG <= 8'b0;
+            GPO_OREG[0] <= 15'b0;
+            GPO_OREG[1] <= 15'b0;
         end else begin
             if(PADDR == 32'h2000_0000) begin
                 if(we) begin
-                    GPO_OREG <= PWDATA;
+                    GPO_OREG[0] <= PWDATA[31:16];
+                    GPO_OREG[1] <= PWDATA[15:0];
                 end
             end
         end
     end
 
-    assign {GPO7, GPO6, GPO5, GPO4, GPO3, GPO2, GPO1, GPO0} = GPO_OREG;
+    assign {GPO7, GPO6, GPO5, GPO4, GPO3, GPO2, GPO1, GPO0} = GPO_OREG[0];
 
 endmodule

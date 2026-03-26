@@ -2,7 +2,8 @@
 
 module rv32i_mcu (
     input         clk,
-    input         rst
+    input         rst,
+    output  [7:0] LED
 );
 
     logic [2:0] funct3;
@@ -60,6 +61,24 @@ module rv32i_mcu (
         .PSEL(psel0),
         .PRDATA(prdata0),
         .PREADY(pready0)
+    );
+    GPIO_practice U_GPO (
+        .PCLK(clk),
+        .PRESET(rst),
+        .PADDR(paddr),
+        .PWDATA(pwdata),
+        .PWRITE(pwrite),
+        .PENABLE(penable),
+        .PSEL(psel1),
+        .PREADY(pready1),
+        .GPO0(LED[0]),
+        .GPO1(LED[1]),
+        .GPO2(LED[2]),
+        .GPO3(LED[3]),
+        .GPO4(LED[4]),
+        .GPO5(LED[5]),
+        .GPO6(LED[6]),
+        .GPO7(LED[7])
     );
     //data_mem U_DATA_MEM (
     //    .clk(clk),
