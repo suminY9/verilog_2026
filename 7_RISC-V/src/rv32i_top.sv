@@ -3,6 +3,7 @@
 module rv32i_mcu (
     input          clk,
     input          rst,
+    input   [15:0] sw,
     output  [15:0] LED
 );
 
