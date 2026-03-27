@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="555167fs"></ZoomStartTime>
-      <ZoomEndTime time="1203168fs"></ZoomEndTime>
-      <Cursor1Time time="715000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="326001fs"></ZoomEndTime>
+      <Cursor1Time time="1555000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="181"></NameColumnWidth>
+      <NameColumnWidth column_width="177"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="47" />
+   <WVObjectSize size="48" />
    <wvobject fp_name="/tb_rv32i/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -35,7 +35,11 @@
    <wvobject fp_name="/tb_rv32i/dut/instr_addr" type="array">
       <obj_property name="ElementShortName">instr_addr[31:0]</obj_property>
       <obj_property name="ObjectShortName">instr_addr[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_rv32i/dut/bus_addr" type="array">
+      <obj_property name="ElementShortName">bus_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">bus_addr[31:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb_rv32i/dut/instr_data" type="array">
       <obj_property name="ElementShortName">instr_data[31:0]</obj_property>
@@ -50,8 +54,8 @@
       <obj_property name="label">instr_mem</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <wvobject fp_name="/tb_rv32i/dut/U_INSTRUCTION_MEM/rom" type="array">
-         <obj_property name="ElementShortName">rom[0:127][31:0]</obj_property>
-         <obj_property name="ObjectShortName">rom[0:127][31:0]</obj_property>
+         <obj_property name="ElementShortName">rom[0:255][31:0]</obj_property>
+         <obj_property name="ObjectShortName">rom[0:255][31:0]</obj_property>
       </wvobject>
    </wvobject>
    <wvobject fp_name="group10" type="group">
@@ -130,10 +134,11 @@
       <wvobject fp_name="group58" type="group">
          <obj_property name="label">pc</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject fp_name="/tb_rv32i/dut/U_RV32I/U_DATAPATH/U_PC/program_counter" type="array">
             <obj_property name="ElementShortName">program_counter[31:0]</obj_property>
             <obj_property name="ObjectShortName">program_counter[31:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
             <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
             <obj_property name="UseCustomSignalColor">true</obj_property>
          </wvobject>
@@ -160,27 +165,27 @@
          <wvobject fp_name="/tb_rv32i/dut/U_RV32I/U_DATAPATH/U_PC/imm_data" type="array">
             <obj_property name="ElementShortName">imm_data[31:0]</obj_property>
             <obj_property name="ObjectShortName">imm_data[31:0]</obj_property>
-            <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
          </wvobject>
          <wvobject fp_name="/tb_rv32i/dut/U_RV32I/U_DATAPATH/U_PC/jalr_mux_out" type="array">
             <obj_property name="ElementShortName">jalr_mux_out[31:0]</obj_property>
             <obj_property name="ObjectShortName">jalr_mux_out[31:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
          </wvobject>
          <wvobject fp_name="/tb_rv32i/dut/U_RV32I/U_DATAPATH/U_PC/pc_alu_out" type="array">
             <obj_property name="ElementShortName">pc_alu_out[31:0]</obj_property>
             <obj_property name="ObjectShortName">pc_alu_out[31:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
          </wvobject>
          <wvobject fp_name="/tb_rv32i/dut/U_RV32I/U_DATAPATH/U_PC/j_alu_out" type="array">
             <obj_property name="ElementShortName">j_alu_out[31:0]</obj_property>
             <obj_property name="ObjectShortName">j_alu_out[31:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
          </wvobject>
          <wvobject fp_name="/tb_rv32i/dut/U_RV32I/U_DATAPATH/U_PC/pc_mux_out" type="array">
             <obj_property name="ElementShortName">pc_mux_out[31:0]</obj_property>
             <obj_property name="ObjectShortName">pc_mux_out[31:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
          </wvobject>
       </wvobject>
       <wvobject fp_name="group20" type="group">
@@ -441,7 +446,6 @@
    <wvobject fp_name="group3630" type="group">
       <obj_property name="label">GPO</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_rv32i/dut/U_APB_GPO/PCLK" type="logic">
          <obj_property name="ElementShortName">PCLK</obj_property>
          <obj_property name="ObjectShortName">PCLK</obj_property>
@@ -502,7 +506,6 @@
    <wvobject fp_name="group165" type="group">
       <obj_property name="label">GPI</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_rv32i/dut/U_APB_GPI/PADDR" type="array">
          <obj_property name="ElementShortName">PADDR[31:0]</obj_property>
          <obj_property name="ObjectShortName">PADDR[31:0]</obj_property>

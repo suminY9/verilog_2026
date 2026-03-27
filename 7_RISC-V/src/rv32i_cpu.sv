@@ -221,7 +221,10 @@ module control_unit (
                         dwe = 1'b0;
                         o_funct3 = funct3;
                     end
-                    default: dwe = 1'b0;
+                    default: begin
+                        dwe = 1'b0;
+                        dre = 1'b1;
+                    end
                 endcase
             end
             WB: begin
