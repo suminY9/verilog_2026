@@ -5,10 +5,10 @@ module instruction_mem(
     output [31:0] instr_data
     );
 
-    logic [31:0] rom[0:127];
+    logic [31:0] rom[0:255];
 
     initial begin   // for simulation. sysnthesis x
-        $readmemh("APB_BRAM_GPO_GPI.mem", rom);
+        $readmemh("APB_GPIO_LED_BLINK.mem", rom);
 
         // 정의하지 않은 메모리 공간은 모두 x로 채워짐
         // R-type

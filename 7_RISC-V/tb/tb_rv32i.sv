@@ -2,10 +2,15 @@
 
 module tb_rv32i();
     logic clk, rst;
+    logic [7:0] GPI, GPO;
+    wire [15:0] GPIO;
 
     rv32i_mcu dut (
         .clk(clk),
-        .rst(rst)
+        .rst(rst),
+        .GPI(GPI),
+        .GPO(GPO),
+        .GPIO(GPIO)
     );
 
     always #5 clk = ~clk;
@@ -13,13 +18,16 @@ module tb_rv32i();
     initial begin
         clk = 0;
         rst = 1;
+        GPI = 8'h0000;
+        //GPO = 8'h0000;
+        //GPIO = 16'h0000;
 
         @(negedge clk);
         @(negedge clk);
         rst = 0;
+        GPI = 8'haa;
 
-        repeat(300)
-        @(negedge clk);
+        repeat(2000) @(negedge clk);
         $stop;
     end
 endmodule

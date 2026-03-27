@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="674346fs"></ZoomEndTime>
-      <Cursor1Time time="1000000fs"></Cursor1Time>
+      <ZoomStartTime time="555167fs"></ZoomStartTime>
+      <ZoomEndTime time="1203168fs"></ZoomEndTime>
+      <Cursor1Time time="715000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="185"></NameColumnWidth>
+      <NameColumnWidth column_width="181"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="45" />
+   <WVObjectSize size="47" />
    <wvobject fp_name="/tb_rv32i/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -498,9 +498,119 @@
          <obj_property name="ElementShortName">GPO_ODATA_ADDR[11:0]</obj_property>
          <obj_property name="ObjectShortName">GPO_ODATA_ADDR[11:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_rv32i/dut/LED" type="array">
-         <obj_property name="ElementShortName">LED[15:0]</obj_property>
-         <obj_property name="ObjectShortName">LED[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="group165" type="group">
+      <obj_property name="label">GPI</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_rv32i/dut/U_APB_GPI/PADDR" type="array">
+         <obj_property name="ElementShortName">PADDR[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PADDR[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_rv32i/dut/U_APB_GPI/PWDATA" type="array">
+         <obj_property name="ElementShortName">PWDATA[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PWDATA[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_rv32i/dut/U_APB_GPI/PENABLE" type="logic">
+         <obj_property name="ElementShortName">PENABLE</obj_property>
+         <obj_property name="ObjectShortName">PENABLE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_rv32i/dut/U_APB_GPI/PWRITE" type="logic">
+         <obj_property name="ElementShortName">PWRITE</obj_property>
+         <obj_property name="ObjectShortName">PWRITE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_rv32i/dut/U_APB_GPI/PSEL" type="logic">
+         <obj_property name="ElementShortName">PSEL</obj_property>
+         <obj_property name="ObjectShortName">PSEL</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_rv32i/dut/U_APB_GPI/GPI_IN" type="array">
+         <obj_property name="ElementShortName">GPI_IN[15:0]</obj_property>
+         <obj_property name="ObjectShortName">GPI_IN[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_rv32i/dut/U_APB_GPI/PRDATA" type="array">
+         <obj_property name="ElementShortName">PRDATA[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PRDATA[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_rv32i/dut/U_APB_GPI/PREADY" type="logic">
+         <obj_property name="ElementShortName">PREADY</obj_property>
+         <obj_property name="ObjectShortName">PREADY</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_rv32i/dut/U_APB_GPI/GPI_IDATA_REG" type="array">
+         <obj_property name="ElementShortName">GPI_IDATA_REG[15:0]</obj_property>
+         <obj_property name="ObjectShortName">GPI_IDATA_REG[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_rv32i/dut/U_APB_GPI/GPI_CTRL_REG" type="array">
+         <obj_property name="ElementShortName">GPI_CTRL_REG[15:0]</obj_property>
+         <obj_property name="ObjectShortName">GPI_CTRL_REG[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_rv32i/dut/U_APB_GPI/GPI_CTRL_ADDR" type="array">
+         <obj_property name="ElementShortName">GPI_CTRL_ADDR[11:0]</obj_property>
+         <obj_property name="ObjectShortName">GPI_CTRL_ADDR[11:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_rv32i/dut/U_APB_GPI/GPI_IDATA_ADDR" type="array">
+         <obj_property name="ElementShortName">GPI_IDATA_ADDR[11:0]</obj_property>
+         <obj_property name="ObjectShortName">GPI_IDATA_ADDR[11:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group182" type="group">
+      <obj_property name="label">GPIO</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_rv32i/dut/U_APB_GPIO/PADDR" type="array">
+         <obj_property name="ElementShortName">PADDR[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PADDR[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_rv32i/dut/U_APB_GPIO/PWDATA" type="array">
+         <obj_property name="ElementShortName">PWDATA[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PWDATA[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_rv32i/dut/U_APB_GPIO/PENABLE" type="logic">
+         <obj_property name="ElementShortName">PENABLE</obj_property>
+         <obj_property name="ObjectShortName">PENABLE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_rv32i/dut/U_APB_GPIO/PWRITE" type="logic">
+         <obj_property name="ElementShortName">PWRITE</obj_property>
+         <obj_property name="ObjectShortName">PWRITE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_rv32i/dut/U_APB_GPIO/PSEL" type="logic">
+         <obj_property name="ElementShortName">PSEL</obj_property>
+         <obj_property name="ObjectShortName">PSEL</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_rv32i/dut/U_APB_GPIO/PRDATA" type="array">
+         <obj_property name="ElementShortName">PRDATA[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PRDATA[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_rv32i/dut/U_APB_GPIO/PREADY" type="logic">
+         <obj_property name="ElementShortName">PREADY</obj_property>
+         <obj_property name="ObjectShortName">PREADY</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_rv32i/dut/U_APB_GPIO/GPIO_IDATA_ADDR" type="array">
+         <obj_property name="ElementShortName">GPIO_IDATA_ADDR[11:0]</obj_property>
+         <obj_property name="ObjectShortName">GPIO_IDATA_ADDR[11:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_rv32i/dut/U_APB_GPIO/GPIO_ODATA_ADDR" type="array">
+         <obj_property name="ElementShortName">GPIO_ODATA_ADDR[11:0]</obj_property>
+         <obj_property name="ObjectShortName">GPIO_ODATA_ADDR[11:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_rv32i/dut/U_APB_GPIO/GPIO_CTRL_ADDR" type="array">
+         <obj_property name="ElementShortName">GPIO_CTRL_ADDR[11:0]</obj_property>
+         <obj_property name="ObjectShortName">GPIO_CTRL_ADDR[11:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_rv32i/dut/U_APB_GPIO/GPIO_CTRL_REG" type="array">
+         <obj_property name="ElementShortName">GPIO_CTRL_REG[15:0]</obj_property>
+         <obj_property name="ObjectShortName">GPIO_CTRL_REG[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_rv32i/dut/U_APB_GPIO/GPIO_ODATA_REG" type="array">
+         <obj_property name="ElementShortName">GPIO_ODATA_REG[15:0]</obj_property>
+         <obj_property name="ObjectShortName">GPIO_ODATA_REG[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_rv32i/dut/U_APB_GPIO/GPIO_IDATA_REG" type="array">
+         <obj_property name="ElementShortName">GPIO_IDATA_REG[15:0]</obj_property>
+         <obj_property name="ObjectShortName">GPIO_IDATA_REG[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_rv32i/dut/U_APB_GPIO/GPIO" type="array">
+         <obj_property name="ElementShortName">GPIO[15:0]</obj_property>
+         <obj_property name="ObjectShortName">GPIO[15:0]</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>
