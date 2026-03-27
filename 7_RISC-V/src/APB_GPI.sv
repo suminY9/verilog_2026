@@ -4,6 +4,7 @@ module APB_GPI (
     input               PCLK,
     input               PRESET,
     input        [31:0] PADDR,
+    input        [31:0] PWDATA,
     input               PENABLE,
     input               PWRITE,
     input               PSEL,
@@ -18,26 +19,27 @@ module APB_GPI (
 
     assign PREADY = (PENABLE & PSEL) ? 1'b1 : 1'b0;
 
-    //assign PRDATA = (PADDR[11:0] == GPI_CTRL_ADDR) ? GPI_CTRL_REG :
-    //                (PADDR[11:0] == GPI_IDATA_ADDR) ? GPI_IDATA_REG : 16'hxxxx;
+    assign PRDATA = (PADDR[11:0] == GPI_CTRL_ADDR) ? {16'h0000, GPI_CTRL_REG} :
+                    (PADDR[11:0] == GPI_IDATA_ADDR) ? {16'h0000, GPI_IDATA_REG} : 32'hxxxx_xxxx;
 
     always_ff @(posedge PCLK, posedge PRESET) begin
         if(PRESET) begin
-            GPI_IDATA_REG <= 16'h0000;
+            GPI_CTRL_REG <= 16'h0000;
+            //GPI_IDATA_REG <= 16'h0000;
         end else begin
-            GPI_IDATA_REG <= GPI_IN; // data sampling every clk
+            if(PREADY & PWRITE) begin
+                case(PADDR[11:0])
+                    GPI_CTRL_ADDR: GPI_CTRL_REG <= PWDATA[15:0];
+                endcase
+            end
         end
     end
 
-    always_comb begin
-        if(PREADY & !PWRITE) begin
-            case(PADDR[11:0])
-                GPI_CTRL_ADDR:  PRDATA = {16'h0, GPI_CTRL_REG};
-                GPI_IDATA_ADDR: PRDATA = {16'h0, GPI_IDATA_REG};
-            endcase
-        end else begin
-            PRDATA = 32'hxxxx_xxxx;
+    genvar i;
+    generate
+        for (i = 0; i < 16; i++) begin
+            assign GPI_IDATA_REG[i] = (GPI_CTRL_REG[i]) ? GPI_IN[i] : 1'bz;
         end
-    end
+    endgenerate
 
 endmodule

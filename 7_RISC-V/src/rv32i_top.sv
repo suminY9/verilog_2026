@@ -1,14 +1,15 @@
 `timescale 1ns / 1ps
 
 module rv32i_mcu (
-    input          clk,
-    input          rst,
-    input   [15:0] sw,
-    output  [15:0] LED
+    input         clk,
+    input         rst,
+    input  [ 7:0] GPI,
+    output [ 7:0] GPO,
+    inout  [15:0] GPIO
 );
 
     logic [2:0] funct3;
-    logic [31:0] instr_addr, instr_data; //daddr, dwdata, drdata;
+    logic [31:0] instr_addr, instr_data;  //daddr, dwdata, drdata;
     //APB_bus
     logic [31:0] bus_addr, bus_wdata, bus_rdata;
     logic [31:0] paddr, pwdata;
@@ -73,7 +74,31 @@ module rv32i_mcu (
         .PSEL(psel1),
         .PRDATA(prdata1),
         .PREADY(pready1),
-        .GPO_OUT(LED)
+        .GPO_OUT(GPO)
+    );
+    APB_GPI U_APB_GPI (
+        .PCLK(clk),
+        .PRESET(rst),
+        .PADDR(paddr),
+        .PWDATA(pwdata),
+        .PENABLE(penable),
+        .PWRITE(pwrite),
+        .PSEL(psel2),
+        .GPI_IN(GPI),
+        .PRDATA(prdata2),
+        .PREADY(pready2)
+    );
+    APB_GPIO U_APB_GPIO (
+        .PCLK(clk),
+        .PRESET(rst),
+        .PADDR(paddr),
+        .PWDATA(pwdata),
+        .PENABLE(penable),
+        .PWRITE(pwrite),
+        .PSEL(psel3),
+        .PRDATA(prdata3),
+        .PREADY(pready3),
+        .GPIO(GPIO)
     );
     //data_mem U_DATA_MEM (
     //    .clk(clk),
