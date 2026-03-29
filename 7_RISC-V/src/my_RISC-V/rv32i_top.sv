@@ -5,7 +5,9 @@ module rv32i_mcu (
     input         rst,
     input  [ 7:0] GPI,
     output [ 7:0] GPO,
-    inout  [15:0] GPIO
+    inout  [15:0] GPIO,
+    output  [3:0] fnd_digit,
+    output  [7:0] fnd_data
 );
 
     logic [2:0] funct3;
@@ -99,6 +101,19 @@ module rv32i_mcu (
         .PRDATA(prdata3),
         .PREADY(pready3),
         .GPIO(GPIO)
+    );
+    APB_FND U_APB_FND(
+        .PCLK(clk),
+        .PRESET(rst),
+        .PADDR(paddr),
+        .PWDATA(pwdata),
+        .PENABLE(penable),
+        .PWRITE(pwrite),
+        .PSEL(psel4),
+        .PRDATA(prdata4),
+        .PREADY(pready4),
+        .fnd_digit(fnd_digit),
+        .fnd_data(fnd_data)
     );
     //data_mem U_DATA_MEM (
     //    .clk(clk),
