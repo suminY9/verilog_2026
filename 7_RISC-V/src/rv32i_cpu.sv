@@ -215,15 +215,13 @@ module control_unit (
                 case(opcode)
                     `S_TYPE: begin
                         dwe = 1'b1;
+                        dre = 1'b0;
                         o_funct3 = funct3;
                     end
                     `IL_TYPE: begin
                         dwe = 1'b0;
-                        o_funct3 = funct3;
-                    end
-                    default: begin
-                        dwe = 1'b0;
                         dre = 1'b1;
+                        o_funct3 = funct3;
                     end
                 endcase
             end
@@ -248,7 +246,7 @@ module control_unit (
                     `IL_TYPE: begin
                         rf_we = 1'b1;
                         rf_wb_src = 3'd1;
-                        dre = 1'b1;
+//                        dre = 1'b1;
                     end
                     `LUI: begin
                         rf_we = 1'b1;

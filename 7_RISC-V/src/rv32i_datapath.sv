@@ -186,7 +186,7 @@ module imm_extender (
                 imm_data = {instr_data[31:12], 12'b0};
             end
             `JAL: begin
-                imm_data = {11'b0, instr_data[31], instr_data[19:12], instr_data[20], instr_data[30:21], 1'b0};
+                imm_data = {{12{instr_data[31]}}, instr_data[19:12], instr_data[20], instr_data[30:21], 1'b0};
             end
         endcase 
     end

@@ -83,29 +83,20 @@ module APB_Master (
                 if (WREQ || RREQ) begin
                     PADDR_next  = Addr;
                     PWDATA_next = Wdata;
-                    if (WREQ) begin
-                        PWRITE_next = 1'b1;
-                    end else begin
-                        PWRITE_next = 1'b0;
-                    end
-                    n_state = SETUP;
+                    PWRITE_next = WREQ;
+                    n_state     = SETUP;
                 end
             end
             SETUP: begin
-                decode_en = 1;  // mean: PSEL = 1
-                PENABLE   = 0;
-                if (WREQ) begin
-                    PWRITE_next = 1'b1;
-                end else begin
-                    PWRITE_next = 1'b0;
-                end
-                n_state = ACCESS;
+                decode_en   = 1;  // mean: PSEL = 1
+                PENABLE     = 0;
+                n_state     = ACCESS;
             end
             ACCESS: begin
                 decode_en = 1;
                 PENABLE   = 1;
-                //if(PREADY0|PREADY1|PREADY2|PREADY3|PREADY4|PREADY5) begin
                 if (Ready) begin
+                    PWRITE_next = 1'b0;
                     n_state = IDLE;
                 end
             end
