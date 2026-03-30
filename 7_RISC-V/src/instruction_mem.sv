@@ -8,7 +8,8 @@ module instruction_mem(
     logic [31:0] rom[0:255];
 
     initial begin   // for simulation. sysnthesis x
-        $readmemh("APB_GPIO_LED_BLINK.mem", rom);
+        //$readmemh("APB_GPIO_LED_BLINK.mem", rom);
+        $readmemh("multi_cycle_sim.mem", rom);
 
         // 정의하지 않은 메모리 공간은 모두 x로 채워짐
         // R-type
