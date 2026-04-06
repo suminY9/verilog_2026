@@ -204,6 +204,11 @@ class adder_test extends uvm_test;
         `uvm_info(get_type_name(), "Objection Test Message!", UVM_LOW);
         phase.drop_objection(this);
     endtask
+
+    virtual function void end_of_elaboration_phase(uvm_phase phase);
+        super.end_of_elaboration_phase(phase);
+        uvm_top.print_topology();
+    endfunction
 endclass
 
 
