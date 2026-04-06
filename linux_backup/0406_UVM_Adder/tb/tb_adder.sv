@@ -200,6 +200,8 @@ class adder_test extends uvm_test;
     virtual task run_phase(uvm_phase phase);
         phase.raise_objection(this);
         a_seq.start(a_env.a_agt.a_sqr);
+        #3000;
+        `uvm_info(get_type_name(), "Objection Test Message!", UVM_LOW);
         phase.drop_objection(this);
     endtask
 endclass
