@@ -1,0 +1,1400 @@
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
+Chronologic VCS simulator copyright 1991-2024
+Contains Synopsys proprietary information.
+Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  Apr  6 16:47 2026
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+*Verdi* Loading libsscore_vcs202409.so
+FSDB Dumper for VCS, Release Verdi_W-2024.09-SP2, Linux x86_64/64bit, 03/03/2025
+(C) 1996 - 2025 by Synopsys, Inc.
+*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+*Verdi* : Create FSDB file 'novas.fsdb'
+*Verdi* : Begin traversing the scopes, layer (0).
+*Verdi* : End of traversing.
+*Verdi* FSDB WARNING: Failed to open the file named build/wave.fsdb. 
+*Verdi* FSDB WARNING: Error number: 2, reason: No such file or directory.
+*Verdi* ERROR: Failed to create FSDB file: 'build/wave.fsdb'.
+UVM_INFO @ 0: reporter [RNTST] Running test adder_test...
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(589) @ 0: reporter [UVMTOP] UVM testbench topology:
+--------------------------------------------------------------
+Name                       Type                    Size  Value
+--------------------------------------------------------------
+uvm_test_top               adder_test              -     @342 
+  ENV                      adder_environment       -     @361 
+    AGT                    adder_agent             -     @370 
+      DRV                  adder_driver            -     @418 
+        rsp_port           uvm_analysis_port       -     @437 
+        seq_item_port      uvm_seq_item_pull_port  -     @427 
+      MON                  adder_monitor           -     @399 
+        WRITE              uvm_analysis_port       -     @408 
+      SQR                  uvm_sequencer           -     @447 
+        rsp_export         uvm_analysis_export     -     @456 
+        seq_item_export    uvm_seq_item_pull_imp   -     @574 
+        arbitration_queue  array                   0     -    
+        lock_queue         array                   0     -    
+        num_last_reqs      integral                32    'd1  
+        num_last_rsps      integral                32    'd1  
+    SCB                    adder_scoreboard        -     @379 
+      READ                 uvm_analysis_imp        -     @388 
+--------------------------------------------------------------
+
+Display run phase
+UVM_INFO ./tb/tb_adder.sv(45) @ 0: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 10000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 10000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 10000: uvm_test_top.ENV.SCB [SCB] PASS!, a:225 + b:17 = y:242
+UVM_INFO ./tb/tb_adder.sv(45) @ 10000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 20000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 20000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 20000: uvm_test_top.ENV.SCB [SCB] PASS!, a:223 + b:174 = y:397
+UVM_INFO ./tb/tb_adder.sv(45) @ 20000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 30000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 30000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 30000: uvm_test_top.ENV.SCB [SCB] PASS!, a:222 + b:203 = y:425
+UVM_INFO ./tb/tb_adder.sv(45) @ 30000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 40000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 40000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 40000: uvm_test_top.ENV.SCB [SCB] PASS!, a:34 + b:105 = y:139
+UVM_INFO ./tb/tb_adder.sv(45) @ 40000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 50000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 50000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 50000: uvm_test_top.ENV.SCB [SCB] PASS!, a:146 + b:189 = y:335
+UVM_INFO ./tb/tb_adder.sv(45) @ 50000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 60000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 60000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 60000: uvm_test_top.ENV.SCB [SCB] PASS!, a:59 + b:156 = y:215
+UVM_INFO ./tb/tb_adder.sv(45) @ 60000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 70000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 70000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 70000: uvm_test_top.ENV.SCB [SCB] PASS!, a:193 + b:7 = y:200
+UVM_INFO ./tb/tb_adder.sv(45) @ 70000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 80000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 80000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 80000: uvm_test_top.ENV.SCB [SCB] PASS!, a:195 + b:210 = y:405
+UVM_INFO ./tb/tb_adder.sv(45) @ 80000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 90000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 90000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 90000: uvm_test_top.ENV.SCB [SCB] PASS!, a:29 + b:250 = y:279
+UVM_INFO ./tb/tb_adder.sv(45) @ 90000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 100000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 100000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 100000: uvm_test_top.ENV.SCB [SCB] PASS!, a:90 + b:17 = y:107
+UVM_INFO ./tb/tb_adder.sv(45) @ 100000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 110000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 110000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 110000: uvm_test_top.ENV.SCB [SCB] PASS!, a:237 + b:107 = y:344
+UVM_INFO ./tb/tb_adder.sv(45) @ 110000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 120000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 120000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 120000: uvm_test_top.ENV.SCB [SCB] PASS!, a:238 + b:16 = y:254
+UVM_INFO ./tb/tb_adder.sv(45) @ 120000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 130000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 130000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 130000: uvm_test_top.ENV.SCB [SCB] PASS!, a:50 + b:46 = y:96
+UVM_INFO ./tb/tb_adder.sv(45) @ 130000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 140000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 140000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 140000: uvm_test_top.ENV.SCB [SCB] PASS!, a:126 + b:34 = y:160
+UVM_INFO ./tb/tb_adder.sv(45) @ 140000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 150000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 150000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 150000: uvm_test_top.ENV.SCB [SCB] PASS!, a:220 + b:46 = y:266
+UVM_INFO ./tb/tb_adder.sv(45) @ 150000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 160000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 160000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 160000: uvm_test_top.ENV.SCB [SCB] PASS!, a:143 + b:184 = y:327
+UVM_INFO ./tb/tb_adder.sv(45) @ 160000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 170000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 170000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 170000: uvm_test_top.ENV.SCB [SCB] PASS!, a:0 + b:104 = y:104
+UVM_INFO ./tb/tb_adder.sv(45) @ 170000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 180000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 180000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 180000: uvm_test_top.ENV.SCB [SCB] PASS!, a:159 + b:221 = y:380
+UVM_INFO ./tb/tb_adder.sv(45) @ 180000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 190000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 190000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 190000: uvm_test_top.ENV.SCB [SCB] PASS!, a:27 + b:225 = y:252
+UVM_INFO ./tb/tb_adder.sv(45) @ 190000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 200000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 200000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 200000: uvm_test_top.ENV.SCB [SCB] PASS!, a:194 + b:87 = y:281
+UVM_INFO ./tb/tb_adder.sv(45) @ 200000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 210000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 210000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 210000: uvm_test_top.ENV.SCB [SCB] PASS!, a:7 + b:141 = y:148
+UVM_INFO ./tb/tb_adder.sv(45) @ 210000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 220000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 220000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 220000: uvm_test_top.ENV.SCB [SCB] PASS!, a:131 + b:67 = y:198
+UVM_INFO ./tb/tb_adder.sv(45) @ 220000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 230000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 230000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 230000: uvm_test_top.ENV.SCB [SCB] PASS!, a:65 + b:226 = y:291
+UVM_INFO ./tb/tb_adder.sv(45) @ 230000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 240000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 240000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 240000: uvm_test_top.ENV.SCB [SCB] PASS!, a:24 + b:73 = y:97
+UVM_INFO ./tb/tb_adder.sv(45) @ 240000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 250000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 250000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 250000: uvm_test_top.ENV.SCB [SCB] PASS!, a:123 + b:208 = y:331
+UVM_INFO ./tb/tb_adder.sv(45) @ 250000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 260000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 260000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 260000: uvm_test_top.ENV.SCB [SCB] PASS!, a:249 + b:61 = y:310
+UVM_INFO ./tb/tb_adder.sv(45) @ 260000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 270000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 270000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 270000: uvm_test_top.ENV.SCB [SCB] PASS!, a:50 + b:232 = y:282
+UVM_INFO ./tb/tb_adder.sv(45) @ 270000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 280000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 280000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 280000: uvm_test_top.ENV.SCB [SCB] PASS!, a:60 + b:15 = y:75
+UVM_INFO ./tb/tb_adder.sv(45) @ 280000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 290000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 290000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 290000: uvm_test_top.ENV.SCB [SCB] PASS!, a:209 + b:135 = y:344
+UVM_INFO ./tb/tb_adder.sv(45) @ 290000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 300000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 300000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 300000: uvm_test_top.ENV.SCB [SCB] PASS!, a:93 + b:135 = y:228
+UVM_INFO ./tb/tb_adder.sv(45) @ 300000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 310000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 310000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 310000: uvm_test_top.ENV.SCB [SCB] PASS!, a:25 + b:69 = y:94
+UVM_INFO ./tb/tb_adder.sv(45) @ 310000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 320000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 320000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 320000: uvm_test_top.ENV.SCB [SCB] PASS!, a:9 + b:117 = y:126
+UVM_INFO ./tb/tb_adder.sv(45) @ 320000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 330000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 330000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 330000: uvm_test_top.ENV.SCB [SCB] PASS!, a:252 + b:209 = y:461
+UVM_INFO ./tb/tb_adder.sv(45) @ 330000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 340000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 340000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 340000: uvm_test_top.ENV.SCB [SCB] PASS!, a:184 + b:213 = y:397
+UVM_INFO ./tb/tb_adder.sv(45) @ 340000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 350000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 350000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 350000: uvm_test_top.ENV.SCB [SCB] PASS!, a:103 + b:52 = y:155
+UVM_INFO ./tb/tb_adder.sv(45) @ 350000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 360000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 360000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 360000: uvm_test_top.ENV.SCB [SCB] PASS!, a:122 + b:209 = y:331
+UVM_INFO ./tb/tb_adder.sv(45) @ 360000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 370000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 370000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 370000: uvm_test_top.ENV.SCB [SCB] PASS!, a:195 + b:234 = y:429
+UVM_INFO ./tb/tb_adder.sv(45) @ 370000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 380000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 380000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 380000: uvm_test_top.ENV.SCB [SCB] PASS!, a:171 + b:192 = y:363
+UVM_INFO ./tb/tb_adder.sv(45) @ 380000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 390000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 390000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 390000: uvm_test_top.ENV.SCB [SCB] PASS!, a:6 + b:28 = y:34
+UVM_INFO ./tb/tb_adder.sv(45) @ 390000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 400000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 400000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 400000: uvm_test_top.ENV.SCB [SCB] PASS!, a:125 + b:25 = y:150
+UVM_INFO ./tb/tb_adder.sv(45) @ 400000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 410000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 410000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 410000: uvm_test_top.ENV.SCB [SCB] PASS!, a:208 + b:184 = y:392
+UVM_INFO ./tb/tb_adder.sv(45) @ 410000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 420000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 420000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 420000: uvm_test_top.ENV.SCB [SCB] PASS!, a:158 + b:99 = y:257
+UVM_INFO ./tb/tb_adder.sv(45) @ 420000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 430000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 430000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 430000: uvm_test_top.ENV.SCB [SCB] PASS!, a:235 + b:250 = y:485
+UVM_INFO ./tb/tb_adder.sv(45) @ 430000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 440000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 440000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 440000: uvm_test_top.ENV.SCB [SCB] PASS!, a:189 + b:231 = y:420
+UVM_INFO ./tb/tb_adder.sv(45) @ 440000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 450000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 450000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 450000: uvm_test_top.ENV.SCB [SCB] PASS!, a:158 + b:247 = y:405
+UVM_INFO ./tb/tb_adder.sv(45) @ 450000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 460000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 460000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 460000: uvm_test_top.ENV.SCB [SCB] PASS!, a:72 + b:11 = y:83
+UVM_INFO ./tb/tb_adder.sv(45) @ 460000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 470000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 470000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 470000: uvm_test_top.ENV.SCB [SCB] PASS!, a:156 + b:224 = y:380
+UVM_INFO ./tb/tb_adder.sv(45) @ 470000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 480000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 480000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 480000: uvm_test_top.ENV.SCB [SCB] PASS!, a:231 + b:161 = y:392
+UVM_INFO ./tb/tb_adder.sv(45) @ 480000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 490000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 490000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 490000: uvm_test_top.ENV.SCB [SCB] PASS!, a:178 + b:101 = y:279
+UVM_INFO ./tb/tb_adder.sv(45) @ 490000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 500000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 500000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 500000: uvm_test_top.ENV.SCB [SCB] PASS!, a:232 + b:215 = y:447
+UVM_INFO ./tb/tb_adder.sv(45) @ 500000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 510000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 510000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 510000: uvm_test_top.ENV.SCB [SCB] PASS!, a:244 + b:234 = y:478
+UVM_INFO ./tb/tb_adder.sv(45) @ 510000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 520000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 520000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 520000: uvm_test_top.ENV.SCB [SCB] PASS!, a:223 + b:183 = y:406
+UVM_INFO ./tb/tb_adder.sv(45) @ 520000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 530000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 530000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 530000: uvm_test_top.ENV.SCB [SCB] PASS!, a:31 + b:23 = y:54
+UVM_INFO ./tb/tb_adder.sv(45) @ 530000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 540000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 540000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 540000: uvm_test_top.ENV.SCB [SCB] PASS!, a:63 + b:181 = y:244
+UVM_INFO ./tb/tb_adder.sv(45) @ 540000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 550000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 550000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 550000: uvm_test_top.ENV.SCB [SCB] PASS!, a:180 + b:116 = y:296
+UVM_INFO ./tb/tb_adder.sv(45) @ 550000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 560000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 560000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 560000: uvm_test_top.ENV.SCB [SCB] PASS!, a:205 + b:250 = y:455
+UVM_INFO ./tb/tb_adder.sv(45) @ 560000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 570000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 570000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 570000: uvm_test_top.ENV.SCB [SCB] PASS!, a:8 + b:180 = y:188
+UVM_INFO ./tb/tb_adder.sv(45) @ 570000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 580000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 580000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 580000: uvm_test_top.ENV.SCB [SCB] PASS!, a:122 + b:239 = y:361
+UVM_INFO ./tb/tb_adder.sv(45) @ 580000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 590000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 590000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 590000: uvm_test_top.ENV.SCB [SCB] PASS!, a:70 + b:22 = y:92
+UVM_INFO ./tb/tb_adder.sv(45) @ 590000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 600000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 600000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 600000: uvm_test_top.ENV.SCB [SCB] PASS!, a:35 + b:42 = y:77
+UVM_INFO ./tb/tb_adder.sv(45) @ 600000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 610000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 610000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 610000: uvm_test_top.ENV.SCB [SCB] PASS!, a:61 + b:75 = y:136
+UVM_INFO ./tb/tb_adder.sv(45) @ 610000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 620000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 620000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 620000: uvm_test_top.ENV.SCB [SCB] PASS!, a:215 + b:230 = y:445
+UVM_INFO ./tb/tb_adder.sv(45) @ 620000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 630000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 630000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 630000: uvm_test_top.ENV.SCB [SCB] PASS!, a:43 + b:101 = y:144
+UVM_INFO ./tb/tb_adder.sv(45) @ 630000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 640000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 640000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 640000: uvm_test_top.ENV.SCB [SCB] PASS!, a:163 + b:252 = y:415
+UVM_INFO ./tb/tb_adder.sv(45) @ 640000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 650000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 650000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 650000: uvm_test_top.ENV.SCB [SCB] PASS!, a:94 + b:56 = y:150
+UVM_INFO ./tb/tb_adder.sv(45) @ 650000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 660000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 660000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 660000: uvm_test_top.ENV.SCB [SCB] PASS!, a:39 + b:216 = y:255
+UVM_INFO ./tb/tb_adder.sv(45) @ 660000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 670000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 670000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 670000: uvm_test_top.ENV.SCB [SCB] PASS!, a:195 + b:123 = y:318
+UVM_INFO ./tb/tb_adder.sv(45) @ 670000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 680000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 680000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 680000: uvm_test_top.ENV.SCB [SCB] PASS!, a:2 + b:222 = y:224
+UVM_INFO ./tb/tb_adder.sv(45) @ 680000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 690000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 690000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 690000: uvm_test_top.ENV.SCB [SCB] PASS!, a:122 + b:86 = y:208
+UVM_INFO ./tb/tb_adder.sv(45) @ 690000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 700000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 700000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 700000: uvm_test_top.ENV.SCB [SCB] PASS!, a:229 + b:36 = y:265
+UVM_INFO ./tb/tb_adder.sv(45) @ 700000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 710000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 710000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 710000: uvm_test_top.ENV.SCB [SCB] PASS!, a:52 + b:188 = y:240
+UVM_INFO ./tb/tb_adder.sv(45) @ 710000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 720000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 720000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 720000: uvm_test_top.ENV.SCB [SCB] PASS!, a:119 + b:148 = y:267
+UVM_INFO ./tb/tb_adder.sv(45) @ 720000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 730000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 730000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 730000: uvm_test_top.ENV.SCB [SCB] PASS!, a:204 + b:227 = y:431
+UVM_INFO ./tb/tb_adder.sv(45) @ 730000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 740000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 740000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 740000: uvm_test_top.ENV.SCB [SCB] PASS!, a:237 + b:40 = y:277
+UVM_INFO ./tb/tb_adder.sv(45) @ 740000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 750000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 750000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 750000: uvm_test_top.ENV.SCB [SCB] PASS!, a:125 + b:124 = y:249
+UVM_INFO ./tb/tb_adder.sv(45) @ 750000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 760000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 760000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 760000: uvm_test_top.ENV.SCB [SCB] PASS!, a:179 + b:244 = y:423
+UVM_INFO ./tb/tb_adder.sv(45) @ 760000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 770000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 770000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 770000: uvm_test_top.ENV.SCB [SCB] PASS!, a:69 + b:100 = y:169
+UVM_INFO ./tb/tb_adder.sv(45) @ 770000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 780000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 780000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 780000: uvm_test_top.ENV.SCB [SCB] PASS!, a:125 + b:0 = y:125
+UVM_INFO ./tb/tb_adder.sv(45) @ 780000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 790000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 790000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 790000: uvm_test_top.ENV.SCB [SCB] PASS!, a:115 + b:210 = y:325
+UVM_INFO ./tb/tb_adder.sv(45) @ 790000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 800000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 800000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 800000: uvm_test_top.ENV.SCB [SCB] PASS!, a:178 + b:69 = y:247
+UVM_INFO ./tb/tb_adder.sv(45) @ 800000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 810000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 810000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 810000: uvm_test_top.ENV.SCB [SCB] PASS!, a:13 + b:162 = y:175
+UVM_INFO ./tb/tb_adder.sv(45) @ 810000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 820000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 820000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 820000: uvm_test_top.ENV.SCB [SCB] PASS!, a:203 + b:218 = y:421
+UVM_INFO ./tb/tb_adder.sv(45) @ 820000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 830000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 830000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 830000: uvm_test_top.ENV.SCB [SCB] PASS!, a:194 + b:26 = y:220
+UVM_INFO ./tb/tb_adder.sv(45) @ 830000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 840000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 840000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 840000: uvm_test_top.ENV.SCB [SCB] PASS!, a:75 + b:82 = y:157
+UVM_INFO ./tb/tb_adder.sv(45) @ 840000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 850000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 850000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 850000: uvm_test_top.ENV.SCB [SCB] PASS!, a:172 + b:147 = y:319
+UVM_INFO ./tb/tb_adder.sv(45) @ 850000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 860000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 860000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 860000: uvm_test_top.ENV.SCB [SCB] PASS!, a:237 + b:147 = y:384
+UVM_INFO ./tb/tb_adder.sv(45) @ 860000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 870000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 870000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 870000: uvm_test_top.ENV.SCB [SCB] PASS!, a:49 + b:241 = y:290
+UVM_INFO ./tb/tb_adder.sv(45) @ 870000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 880000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 880000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 880000: uvm_test_top.ENV.SCB [SCB] PASS!, a:179 + b:111 = y:290
+UVM_INFO ./tb/tb_adder.sv(45) @ 880000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 890000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 890000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 890000: uvm_test_top.ENV.SCB [SCB] PASS!, a:228 + b:120 = y:348
+UVM_INFO ./tb/tb_adder.sv(45) @ 890000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 900000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 900000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 900000: uvm_test_top.ENV.SCB [SCB] PASS!, a:62 + b:148 = y:210
+UVM_INFO ./tb/tb_adder.sv(45) @ 900000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 910000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 910000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 910000: uvm_test_top.ENV.SCB [SCB] PASS!, a:150 + b:89 = y:239
+UVM_INFO ./tb/tb_adder.sv(45) @ 910000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 920000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 920000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 920000: uvm_test_top.ENV.SCB [SCB] PASS!, a:219 + b:52 = y:271
+UVM_INFO ./tb/tb_adder.sv(45) @ 920000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 930000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 930000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 930000: uvm_test_top.ENV.SCB [SCB] PASS!, a:9 + b:217 = y:226
+UVM_INFO ./tb/tb_adder.sv(45) @ 930000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 940000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 940000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 940000: uvm_test_top.ENV.SCB [SCB] PASS!, a:194 + b:19 = y:213
+UVM_INFO ./tb/tb_adder.sv(45) @ 940000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 950000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 950000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 950000: uvm_test_top.ENV.SCB [SCB] PASS!, a:95 + b:136 = y:231
+UVM_INFO ./tb/tb_adder.sv(45) @ 950000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 960000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 960000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 960000: uvm_test_top.ENV.SCB [SCB] PASS!, a:68 + b:25 = y:93
+UVM_INFO ./tb/tb_adder.sv(45) @ 960000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 970000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 970000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 970000: uvm_test_top.ENV.SCB [SCB] PASS!, a:249 + b:48 = y:297
+UVM_INFO ./tb/tb_adder.sv(45) @ 970000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 980000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 980000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 980000: uvm_test_top.ENV.SCB [SCB] PASS!, a:1 + b:96 = y:97
+UVM_INFO ./tb/tb_adder.sv(45) @ 980000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 990000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 990000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 990000: uvm_test_top.ENV.SCB [SCB] PASS!, a:1 + b:114 = y:115
+UVM_INFO ./tb/tb_adder.sv(45) @ 990000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO ./tb/tb_adder.sv(109) @ 1000000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1000000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1000000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1010000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1010000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1010000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1020000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1020000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1020000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1030000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1030000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1030000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1040000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1040000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1040000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1050000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1050000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1050000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1060000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1060000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1060000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1070000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1070000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1070000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1080000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1080000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1080000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1090000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1090000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1090000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1100000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1100000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1100000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1110000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1110000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1110000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1120000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1120000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1120000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1130000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1130000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1130000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1140000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1140000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1140000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1150000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1150000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1150000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1160000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1160000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1160000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1170000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1170000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1170000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1180000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1180000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1180000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1190000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1190000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1190000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1200000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1200000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1200000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1210000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1210000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1210000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1220000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1220000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1220000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1230000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1230000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1230000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1240000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1240000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1240000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1250000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1250000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1250000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1260000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1260000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1260000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1270000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1270000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1270000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1280000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1280000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1280000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1290000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1290000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1290000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1300000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1300000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1300000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1310000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1310000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1310000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1320000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1320000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1320000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1330000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1330000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1330000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1340000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1340000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1340000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1350000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1350000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1350000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1360000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1360000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1360000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1370000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1370000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1370000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1380000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1380000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1380000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1390000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1390000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1390000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1400000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1400000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1400000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1410000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1410000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1410000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1420000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1420000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1420000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1430000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1430000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1430000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1440000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1440000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1440000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1450000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1450000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1450000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1460000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1460000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1460000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1470000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1470000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1470000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1480000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1480000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1480000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1490000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1490000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1490000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1500000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1500000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1500000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1510000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1510000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1510000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1520000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1520000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1520000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1530000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1530000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1530000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1540000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1540000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1540000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1550000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1550000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1550000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1560000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1560000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1560000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1570000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1570000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1570000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1580000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1580000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1580000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1590000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1590000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1590000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1600000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1600000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1600000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1610000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1610000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1610000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1620000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1620000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1620000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1630000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1630000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1630000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1640000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1640000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1640000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1650000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1650000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1650000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1660000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1660000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1660000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1670000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1670000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1670000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1680000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1680000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1680000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1690000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1690000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1690000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1700000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1700000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1700000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1710000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1710000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1710000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1720000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1720000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1720000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1730000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1730000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1730000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1740000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1740000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1740000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1750000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1750000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1750000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1760000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1760000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1760000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1770000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1770000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1770000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1780000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1780000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1780000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1790000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1790000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1790000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1800000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1800000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1800000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1810000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1810000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1810000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1820000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1820000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1820000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1830000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1830000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1830000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1840000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1840000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1840000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1850000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1850000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1850000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1860000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1860000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1860000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1870000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1870000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1870000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1880000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1880000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1880000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1890000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1890000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1890000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1900000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1900000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1900000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1910000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1910000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1910000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1920000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1920000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1920000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1930000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1930000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1930000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1940000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1940000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1940000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1950000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1950000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1950000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1960000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1960000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1960000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1970000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1970000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1970000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1980000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1980000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1980000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 1990000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 1990000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 1990000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2000000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2000000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2000000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2010000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2010000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2010000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2020000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2020000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2020000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2030000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2030000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2030000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2040000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2040000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2040000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2050000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2050000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2050000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2060000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2060000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2060000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2070000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2070000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2070000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2080000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2080000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2080000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2090000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2090000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2090000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2100000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2100000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2100000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2110000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2110000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2110000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2120000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2120000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2120000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2130000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2130000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2130000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2140000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2140000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2140000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2150000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2150000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2150000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2160000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2160000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2160000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2170000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2170000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2170000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2180000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2180000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2180000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2190000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2190000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2190000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2200000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2200000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2200000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2210000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2210000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2210000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2220000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2220000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2220000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2230000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2230000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2230000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2240000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2240000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2240000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2250000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2250000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2250000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2260000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2260000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2260000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2270000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2270000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2270000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2280000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2280000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2280000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2290000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2290000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2290000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2300000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2300000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2300000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2310000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2310000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2310000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2320000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2320000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2320000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2330000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2330000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2330000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2340000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2340000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2340000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2350000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2350000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2350000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2360000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2360000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2360000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2370000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2370000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2370000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2380000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2380000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2380000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2390000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2390000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2390000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2400000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2400000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2400000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2410000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2410000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2410000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2420000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2420000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2420000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2430000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2430000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2430000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2440000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2440000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2440000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2450000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2450000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2450000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2460000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2460000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2460000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2470000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2470000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2470000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2480000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2480000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2480000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2490000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2490000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2490000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2500000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2500000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2500000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2510000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2510000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2510000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2520000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2520000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2520000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2530000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2530000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2530000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2540000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2540000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2540000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2550000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2550000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2550000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2560000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2560000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2560000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2570000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2570000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2570000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2580000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2580000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2580000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2590000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2590000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2590000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2600000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2600000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2600000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2610000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2610000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2610000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2620000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2620000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2620000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2630000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2630000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2630000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2640000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2640000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2640000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2650000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2650000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2650000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2660000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2660000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2660000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2670000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2670000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2670000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2680000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2680000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2680000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2690000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2690000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2690000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2700000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2700000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2700000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2710000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2710000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2710000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2720000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2720000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2720000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2730000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2730000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2730000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2740000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2740000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2740000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2750000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2750000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2750000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2760000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2760000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2760000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2770000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2770000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2770000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2780000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2780000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2780000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2790000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2790000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2790000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2800000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2800000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2800000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2810000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2810000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2810000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2820000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2820000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2820000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2830000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2830000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2830000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2840000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2840000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2840000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2850000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2850000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2850000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2860000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2860000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2860000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2870000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2870000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2870000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2880000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2880000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2880000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2890000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2890000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2890000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2900000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2900000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2900000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2910000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2910000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2910000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2920000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2920000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2920000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2930000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2930000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2930000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2940000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2940000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2940000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2950000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2950000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2950000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2960000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2960000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2960000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2970000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2970000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2970000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2980000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2980000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2980000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 2990000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 2990000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 2990000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3000000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3000000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3000000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3010000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3010000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3010000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3020000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3020000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3020000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3030000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3030000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3030000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3040000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3040000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3040000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3050000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3050000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3050000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3060000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3060000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3060000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3070000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3070000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3070000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3080000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3080000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3080000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3090000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3090000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3090000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3100000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3100000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3100000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3110000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3110000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3110000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3120000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3120000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3120000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3130000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3130000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3130000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3140000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3140000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3140000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3150000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3150000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3150000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3160000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3160000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3160000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3170000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3170000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3170000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3180000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3180000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3180000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3190000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3190000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3190000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3200000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3200000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3200000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3210000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3210000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3210000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3220000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3220000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3220000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3230000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3230000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3230000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3240000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3240000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3240000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3250000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3250000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3250000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3260000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3260000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3260000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3270000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3270000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3270000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3280000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3280000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3280000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3290000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3290000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3290000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3300000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3300000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3300000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3310000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3310000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3310000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3320000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3320000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3320000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3330000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3330000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3330000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3340000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3340000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3340000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3350000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3350000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3350000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3360000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3360000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3360000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3370000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3370000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3370000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3380000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3380000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3380000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3390000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3390000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3390000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3400000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3400000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3400000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3410000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3410000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3410000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3420000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3420000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3420000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3430000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3430000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3430000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3440000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3440000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3440000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3450000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3450000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3450000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3460000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3460000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3460000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3470000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3470000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3470000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3480000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3480000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3480000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3490000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3490000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3490000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3500000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3500000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3500000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3510000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3510000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3510000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3520000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3520000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3520000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3530000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3530000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3530000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3540000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3540000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3540000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3550000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3550000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3550000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3560000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3560000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3560000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3570000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3570000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3570000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3580000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3580000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3580000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3590000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3590000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3590000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3600000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3600000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3600000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3610000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3610000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3610000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3620000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3620000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3620000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3630000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3630000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3630000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3640000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3640000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3640000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3650000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3650000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3650000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3660000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3660000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3660000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3670000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3670000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3670000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3680000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3680000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3680000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3690000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3690000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3690000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3700000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3700000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3700000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3710000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3710000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3710000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3720000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3720000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3720000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3730000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3730000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3730000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3740000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3740000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3740000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3750000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3750000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3750000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3760000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3760000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3760000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3770000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3770000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3770000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3780000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3780000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3780000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3790000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3790000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3790000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3800000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3800000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3800000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3810000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3810000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3810000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3820000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3820000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3820000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3830000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3830000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3830000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3840000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3840000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3840000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3850000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3850000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3850000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3860000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3860000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3860000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3870000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3870000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3870000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3880000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3880000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3880000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3890000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3890000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3890000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3900000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3900000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3900000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3910000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3910000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3910000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3920000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3920000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3920000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3930000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3930000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3930000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3940000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3940000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3940000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3950000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3950000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3950000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3960000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3960000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3960000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3970000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3970000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3970000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3980000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3980000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3980000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(109) @ 3990000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 3990000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 3990000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO ./tb/tb_adder.sv(204) @ 4000000: uvm_test_top [adder_test] Objection Test Message!
+UVM_INFO ./tb/tb_adder.sv(109) @ 4000000: uvm_test_top.ENV.AGT.MON [MON] Send data to Scoreboard
+UVM_INFO ./tb/tb_adder.sv(126) @ 4000000: uvm_test_top.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO ./tb/tb_adder.sv(128) @ 4000000: uvm_test_top.ENV.SCB [SCB] PASS!, a:84 + b:214 = y:298
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 4000000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 4000000: reporter [UVM/REPORT/CATCHER] 
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_server.svh(904) @ 4000000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO : 1306
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[MON]   400
+[RNTST]     1
+[SCB]   800
+[SEQ]   100
+[TEST_DONE]     1
+[UVM/RELNOTES]     1
+[UVM/REPORT/CATCHER]     1
+[UVMTOP]     1
+[adder_test]     1
+
+$finish called from file "/tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh", line 527.
+$finish at simulation time              4000000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 4000000 ps
+CPU Time:      0.250 seconds;       Data structure size:   0.6Mb
+Mon Apr  6 16:47:04 2026
