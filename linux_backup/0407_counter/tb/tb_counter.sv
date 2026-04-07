@@ -34,7 +34,7 @@ class counter_seq_item extends uvm_sequence_item;
 endclass
 
 
-class counter_reset_seq extends uvm_sequence#(counter_seq_item);
+class counter_reset_seq extends uvm_sequence #(counter_seq_item);
     `uvm_object_utils(counter_reset_seq)
 
     function new(string name = "counter_reset_seq");
@@ -55,9 +55,9 @@ class counter_reset_seq extends uvm_sequence#(counter_seq_item);
 endclass
 
 
-class counter_count_seq extends uvm_sequence#(counter_seq_item);
+class counter_count_seq extends uvm_sequence #(counter_seq_item);
     `uvm_object_utils(counter_count_seq)
-    int num_transactions = 0;
+    int num_transactions;
 
     function new(string name = "counter_count_seq");
         super.new(name);
@@ -84,7 +84,7 @@ class counter_count_seq extends uvm_sequence#(counter_seq_item);
 endclass
 
 
-class counter_master_seq extends uvm_sequence#(counter_seq_item);
+class counter_master_seq extends uvm_sequence #(counter_seq_item);
     `uvm_object_utils(counter_master_seq)
 
     function new(string name = "counter_master_seq");
@@ -177,7 +177,7 @@ class counter_monitor extends uvm_monitor;
             end else if (c_if.enable) begin
                 expected_count = (expected_count + 1) % 16; // count 0~15
 
-                if(c_if.count != expected_count) begin
+                if(c_if.count !== expected_count) begin
                     `uvm_error(get_type_name(), $sformatf("불일치! 예상=%0d, 실제=%0d", expected_count, c_if.count))
                 end else begin
                     `uvm_info(get_type_name(), $sformatf("일치! count=%0d", c_if.count), UVM_LOW)
@@ -258,11 +258,20 @@ class counter_test extends uvm_test;
     endfunction
    
     virtual task run_phase(uvm_phase phase);
-        counter_master_seq seq;
+        //counter_master_seq seq;
+        counter_reset_seq reset_seq;
+        counter_count_seq count_seq;
 
         phase.raise_objection(this);
-        seq = counter_master_seq::type_id::create("seq");
-        seq.start(env.agt.sqr);
+        //seq = counter_master_seq::type_id::create("seq");
+        //seq.start(env.agt.sqr);
+        reset_seq = counter_reset_seq::type_id::create("reset_seq");
+        reset_seq.start(env.agt.sqr);
+
+        count_seq = counter_count_seq::type_id::create("count_seq");
+        count_seq.num_transactions = 10;
+        count_seq.start(env.agt.sqr);
+
         #100;
         phase.drop_objection(this);
     endtask

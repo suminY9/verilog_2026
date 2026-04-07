@@ -2,7 +2,7 @@ Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detec
 Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
 Chronologic VCS simulator copyright 1991-2024
 Contains Synopsys proprietary information.
-Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  Apr  7 15:30 2026
+Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  Apr  7 22:26 2026
 UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
 ----------------------------------------------------------------
 UVM-1.2.Synopsys
@@ -26,27 +26,52 @@ UVM-1.2.Synopsys
       (Specify +UVM_NO_RELNOTES to turn off this notice)
 
 UVM_INFO @ 0: reporter [RNTST] Running test counter_test...
-UVM_INFO ./tb/tb_counter.sv(98) @ 0: uvm_test_top.env.agt.sqr@@seq [counter_master_seq] ===== Phase 1: Reset =====
+UVM_INFO ./tb/tb_counter.sv(127) @ 0: uvm_test_top.env.agt.drv [counter_driver] build_phase 실행 완료.
+UVM_INFO ./tb/tb_counter.sv(163) @ 0: uvm_test_top.env.agt.mon [counter_monitor] build_phase 실행 완료.
+UVM_INFO ./tb/tb_counter.sv(134) @ 0: uvm_test_top.env.agt.drv [counter_driver] drive_cycles: 0
 UVM_INFO ./tb/tb_counter.sv(53) @ 0: uvm_test_top.env.agt.sqr@@reset_seq [counter_reset_seq] Reset Done!
-UVM_INFO ./tb/tb_counter.sv(102) @ 0: uvm_test_top.env.agt.sqr@@seq [counter_master_seq] ===== Phase 2: Count =====
+UVM_INFO ./tb/tb_counter.sv(134) @ 5000: uvm_test_top.env.agt.drv [counter_driver] drive_cycles: 1
+UVM_INFO ./tb/tb_counter.sv(81) @ 5000: uvm_test_top.env.agt.sqr@@count_seq [counter_count_seq] [1/10] rst_n=1 enable=1 cycles=1 count=x
 UVM_INFO ./tb/tb_counter.sv(183) @ 6000: uvm_test_top.env.agt.mon [counter_monitor] 일치! count=1
+UVM_INFO ./tb/tb_counter.sv(134) @ 15000: uvm_test_top.env.agt.drv [counter_driver] drive_cycles: 1
+UVM_INFO ./tb/tb_counter.sv(81) @ 15000: uvm_test_top.env.agt.sqr@@count_seq [counter_count_seq] [2/10] rst_n=1 enable=1 cycles=1 count=x
 UVM_INFO ./tb/tb_counter.sv(183) @ 16000: uvm_test_top.env.agt.mon [counter_monitor] 일치! count=2
+UVM_INFO ./tb/tb_counter.sv(134) @ 25000: uvm_test_top.env.agt.drv [counter_driver] drive_cycles: 1
+UVM_INFO ./tb/tb_counter.sv(81) @ 25000: uvm_test_top.env.agt.sqr@@count_seq [counter_count_seq] [3/10] rst_n=1 enable=1 cycles=1 count=x
 UVM_INFO ./tb/tb_counter.sv(183) @ 26000: uvm_test_top.env.agt.mon [counter_monitor] 일치! count=3
+UVM_INFO ./tb/tb_counter.sv(134) @ 35000: uvm_test_top.env.agt.drv [counter_driver] drive_cycles: 1
+UVM_INFO ./tb/tb_counter.sv(81) @ 35000: uvm_test_top.env.agt.sqr@@count_seq [counter_count_seq] [4/10] rst_n=1 enable=1 cycles=1 count=x
 UVM_INFO ./tb/tb_counter.sv(183) @ 36000: uvm_test_top.env.agt.mon [counter_monitor] 일치! count=4
-UVM_INFO ./tb/tb_counter.sv(107) @ 45000: uvm_test_top.env.agt.sqr@@seq [counter_master_seq] ===== Master Sequence DONE =====
+UVM_INFO ./tb/tb_counter.sv(134) @ 45000: uvm_test_top.env.agt.drv [counter_driver] drive_cycles: 1
+UVM_INFO ./tb/tb_counter.sv(81) @ 45000: uvm_test_top.env.agt.sqr@@count_seq [counter_count_seq] [5/10] rst_n=1 enable=1 cycles=1 count=x
 UVM_INFO ./tb/tb_counter.sv(183) @ 46000: uvm_test_top.env.agt.mon [counter_monitor] 일치! count=5
+UVM_INFO ./tb/tb_counter.sv(134) @ 55000: uvm_test_top.env.agt.drv [counter_driver] drive_cycles: 1
+UVM_INFO ./tb/tb_counter.sv(81) @ 55000: uvm_test_top.env.agt.sqr@@count_seq [counter_count_seq] [6/10] rst_n=1 enable=1 cycles=1 count=x
 UVM_INFO ./tb/tb_counter.sv(183) @ 56000: uvm_test_top.env.agt.mon [counter_monitor] 일치! count=6
+UVM_INFO ./tb/tb_counter.sv(134) @ 65000: uvm_test_top.env.agt.drv [counter_driver] drive_cycles: 1
+UVM_INFO ./tb/tb_counter.sv(81) @ 65000: uvm_test_top.env.agt.sqr@@count_seq [counter_count_seq] [7/10] rst_n=1 enable=1 cycles=1 count=x
 UVM_INFO ./tb/tb_counter.sv(183) @ 66000: uvm_test_top.env.agt.mon [counter_monitor] 일치! count=7
+UVM_INFO ./tb/tb_counter.sv(134) @ 75000: uvm_test_top.env.agt.drv [counter_driver] drive_cycles: 1
+UVM_INFO ./tb/tb_counter.sv(81) @ 75000: uvm_test_top.env.agt.sqr@@count_seq [counter_count_seq] [8/10] rst_n=1 enable=1 cycles=1 count=x
 UVM_INFO ./tb/tb_counter.sv(183) @ 76000: uvm_test_top.env.agt.mon [counter_monitor] 일치! count=8
+UVM_INFO ./tb/tb_counter.sv(134) @ 85000: uvm_test_top.env.agt.drv [counter_driver] drive_cycles: 1
+UVM_INFO ./tb/tb_counter.sv(81) @ 85000: uvm_test_top.env.agt.sqr@@count_seq [counter_count_seq] [9/10] rst_n=1 enable=1 cycles=1 count=x
 UVM_INFO ./tb/tb_counter.sv(183) @ 86000: uvm_test_top.env.agt.mon [counter_monitor] 일치! count=9
+UVM_INFO ./tb/tb_counter.sv(134) @ 95000: uvm_test_top.env.agt.drv [counter_driver] drive_cycles: 1
+UVM_INFO ./tb/tb_counter.sv(81) @ 95000: uvm_test_top.env.agt.sqr@@count_seq [counter_count_seq] [10/10] rst_n=1 enable=1 cycles=1 count=x
 UVM_INFO ./tb/tb_counter.sv(183) @ 96000: uvm_test_top.env.agt.mon [counter_monitor] 일치! count=10
 UVM_INFO ./tb/tb_counter.sv(183) @ 106000: uvm_test_top.env.agt.mon [counter_monitor] 일치! count=11
 UVM_INFO ./tb/tb_counter.sv(183) @ 116000: uvm_test_top.env.agt.mon [counter_monitor] 일치! count=12
 UVM_INFO ./tb/tb_counter.sv(183) @ 126000: uvm_test_top.env.agt.mon [counter_monitor] 일치! count=13
 UVM_INFO ./tb/tb_counter.sv(183) @ 136000: uvm_test_top.env.agt.mon [counter_monitor] 일치! count=14
-UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 145000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-UVM_INFO ./tb/tb_counter.sv(273) @ 145000: uvm_test_top [counter_test] ===== TEST PASS ! =====
-UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 145000: reporter [UVM/REPORT/CATCHER] 
+UVM_INFO ./tb/tb_counter.sv(183) @ 146000: uvm_test_top.env.agt.mon [counter_monitor] 일치! count=15
+UVM_INFO ./tb/tb_counter.sv(183) @ 156000: uvm_test_top.env.agt.mon [counter_monitor] 일치! count=0
+UVM_INFO ./tb/tb_counter.sv(183) @ 166000: uvm_test_top.env.agt.mon [counter_monitor] 일치! count=1
+UVM_INFO ./tb/tb_counter.sv(183) @ 176000: uvm_test_top.env.agt.mon [counter_monitor] 일치! count=2
+UVM_INFO ./tb/tb_counter.sv(183) @ 186000: uvm_test_top.env.agt.mon [counter_monitor] 일치! count=3
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 195000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO ./tb/tb_counter.sv(282) @ 195000: uvm_test_top [counter_test] ===== TEST PASS ! =====
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 195000: reporter [UVM/REPORT/CATCHER] 
 --- UVM Report catcher Summary ---
 
 
@@ -57,11 +82,11 @@ Number of caught UVM_FATAL reports   :    0
 Number of caught UVM_ERROR reports   :    0
 Number of caught UVM_WARNING reports :    0
 
-UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_server.svh(904) @ 145000: reporter [UVM/REPORT/SERVER] 
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_server.svh(904) @ 195000: reporter [UVM/REPORT/SERVER] 
 --- UVM Report Summary ---
 
 ** Report counts by severity
-UVM_INFO :   23
+UVM_INFO :   48
 UVM_WARNING :    0
 UVM_ERROR :    0
 UVM_FATAL :    0
@@ -70,14 +95,15 @@ UVM_FATAL :    0
 [TEST_DONE]     1
 [UVM/RELNOTES]     1
 [UVM/REPORT/CATCHER]     1
-[counter_master_seq]     3
-[counter_monitor]    14
+[counter_count_seq]    10
+[counter_driver]    12
+[counter_monitor]    20
 [counter_reset_seq]     1
 [counter_test]     1
 
 $finish called from file "/tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh", line 527.
-$finish at simulation time               145000
+$finish at simulation time               195000
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 145000 ps
+Time: 195000 ps
 CPU Time:      0.190 seconds;       Data structure size:   0.6Mb
-Tue Apr  7 15:30:13 2026
+Tue Apr  7 22:26:12 2026
