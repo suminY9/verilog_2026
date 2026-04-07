@@ -25,7 +25,6 @@ class counter_driver extends uvm_component;
         `uvm_info(get_type_name(), "build_phase 실행 완료.", UVM_HIGH);
     endfunction
 
-
     virtual task drive_count(int num_clocks);
         c_if.enable = 1;
         repeat(num_clocks) @(posedge c_if.clk);
@@ -78,6 +77,7 @@ class counter_monitor extends uvm_component;
     
     virtual task run_phase(uvm_phase phase);
         @(posedge c_if.rst_n); // wait until reset == 1
+        `uvm_info(get_type_name(), "@(posedge c_if.clk) 대기 실행", UVM_DEBUG);
         
         forever begin
             @(posedge c_if.clk);
@@ -139,7 +139,7 @@ class counter_environment extends uvm_component;
 endclass
 
 
-class counter_test extends uvm_component;
+class counter_test extends uvm_test;
     `uvm_component_utils(counter_test)
 
     counter_environment env;
