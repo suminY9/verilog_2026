@@ -193,16 +193,35 @@ class counter_monitor extends uvm_monitor;
 endclass
 
 
-class counter_subscriber extends uvm_subscriber#(counter_seq_item);
-    `uvm_component_utils(counter_subscriber)
+class counter_coverage extends uvm_subscriber#(counter_seq_item);
+    `uvm_component_utils(counter_coverage)
+
+    counter_seq_item item;
+
+    covergroup counter_cg;
+        cp_rst_n:  coverpoint item.rst_n { bins active = {0}; bins inactice = {1}; }
+        cp_enable: coverpoint item.enable { bins on = {1}; bins off = {0}; }
+        cp_count:  coverpoint item.count { bins zero = {0}; bins low = {[1:7]}; bins high = {[8:14]}; bins max = {15}; }
+    endgroup
 
     function new(string name, uvm_component parent);
         super.new(name, parent);
+        counter_cg = new();
     endfunction
 
     /*** 주의: function은 delay 내용을 넣으면 안됨 ***/
-    virtual function void write(counter_seq_item item);
-            `uvm_info(get_type_name(), $sformatf("Subscriber received items: %s", item.convert2string()), UVM_MEDIUM)
+    virtual function void write(counter_seq_item t);
+            item = t;
+            counter_cg.sample();
+            `uvm_info(get_type_name(), $sformatf("counter_cg sampled: %s", item.convert2string()), UVM_MEDIUM)
+    endfunction
+    virtual function void report_phase(uvm_phase phase);
+        `uvm_info(get_type_name(), "\n\n===== Coverage Summary =====", UVM_LOW);
+        `uvm_info(get_type_name(), $sformatf("   Overall: %.1f%%", counter_cg.get_coverage()), UVM_LOW);
+        `uvm_info(get_type_name(), $sformatf("   rst_n  : %.1f%%", counter_cg.cp_rst_n.get_coverage()), UVM_LOW);
+        `uvm_info(get_type_name(), $sformatf("   enable : %.1f%%", counter_cg.cp_enable.get_coverage()), UVM_LOW);
+        `uvm_info(get_type_name(), $sformatf("   count  : %.1f%%", counter_cg.cp_count.get_coverage()), UVM_LOW);
+        `uvm_info(get_type_name(), "===== Coverage Summary =====\n\n", UVM_LOW);
     endfunction
 endclass
 
@@ -267,7 +286,8 @@ class counter_scoreboard extends uvm_scoreboard;
 
         if(error_count > 0) begin
             `uvm_error(get_type_name(), $sformatf("TEST FAILED: %0d mismataches detected!", error_count))
-        end else begin
+        end
+        else begin
             `uvm_info(get_type_name(), $sformatf("TEST PASSED: %0d matches detected!", match_count), UVM_LOW)
         end
     endfunction
@@ -308,7 +328,7 @@ class counter_environment extends uvm_env;
 
     counter_agent agt;
     counter_scoreboard scb;
-    counter_subscriber sbr;
+    counter_coverage cov;
 
     function new(string name, uvm_component parent);
         super.new(name, parent);
@@ -319,13 +339,13 @@ class counter_environment extends uvm_env;
         super.build_phase(phase);
         agt = counter_agent::type_id::create("agt", this);
         scb = counter_scoreboard::type_id::create("scb", this);
-        sbr = counter_subscriber::type_id::create("sbr", this);
+        cov = counter_coverage::type_id::create("cov", this);
     endfunction
 
     virtual function void connect_phase(uvm_phase phase);
         super.connect_phase(phase);
         agt.mon.ap.connect(scb.ap_imp); // caller: monitor, callee: scoreboard
-        agt.mon.ap.connect(sbr.analysis_export);
+        agt.mon.ap.connect(cov.analysis_export);
     endfunction
 endclass
 
