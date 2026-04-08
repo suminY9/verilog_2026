@@ -2,7 +2,7 @@ Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detec
 Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
 Chronologic VCS simulator copyright 1991-2024
 Contains Synopsys proprietary information.
-Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  Apr  8 14:22 2026
+Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  Apr  8 15:37 2026
 UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
 ----------------------------------------------------------------
 UVM-1.2.Synopsys
@@ -26,135 +26,90 @@ UVM-1.2.Synopsys
       (Specify +UVM_NO_RELNOTES to turn off this notice)
 
 UVM_INFO @ 0: reporter [RNTST] Running test counter_test...
-UVM_INFO ./tb/tb_counter.sv(140) @ 0: uvm_test_top.env.agt.drv [counter_driver] build_phase 실행 완료.
-UVM_INFO ./tb/tb_counter.sv(220) @ 6000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=0 enable=0 cycles=0 count=x
-UVM_INFO ./tb/tb_counter.sv(224) @ 6000: uvm_test_top.env.scb [counter_scoreboard] Initial state: rst_n=0 enable=0 cycles=0 count=x
-UVM_INFO ./tb/tb_counter.sv(190) @ 6000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=0 enable=0 cycles=0 count=x
-UVM_INFO ./tb/tb_counter.sv(148) @ 15000: uvm_test_top.env.agt.drv [counter_driver] drive_cycles: 2
-UVM_INFO ./tb/tb_counter.sv(149) @ 15000: uvm_test_top.env.agt.drv [counter_driver] rst_n=0 enable=0 cycles=2 count=x
-UVM_INFO ./tb/tb_counter.sv(66) @ 15000: uvm_test_top.env.agt.sqr@@reset_seq [counter_reset_seq] Reset Done!
-UVM_INFO ./tb/tb_counter.sv(220) @ 16000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=0 enable=0 cycles=0 count=0
-UVM_INFO ./tb/tb_counter.sv(234) @ 16000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=0, count=0 (rst_n=0, enable=0)
-UVM_INFO ./tb/tb_counter.sv(190) @ 16000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=0 enable=0 cycles=0 count=0
-UVM_INFO ./tb/tb_counter.sv(220) @ 26000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=0
-UVM_INFO ./tb/tb_counter.sv(234) @ 26000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=0, count=0 (rst_n=1, enable=1)
-UVM_INFO ./tb/tb_counter.sv(190) @ 26000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=0
-UVM_INFO ./tb/tb_counter.sv(220) @ 36000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=1
-UVM_INFO ./tb/tb_counter.sv(234) @ 36000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=1, count=1 (rst_n=1, enable=1)
-UVM_INFO ./tb/tb_counter.sv(190) @ 36000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=1
-UVM_INFO ./tb/tb_counter.sv(220) @ 46000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=2
-UVM_INFO ./tb/tb_counter.sv(234) @ 46000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=2, count=2 (rst_n=1, enable=1)
-UVM_INFO ./tb/tb_counter.sv(190) @ 46000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=2
-UVM_INFO ./tb/tb_counter.sv(220) @ 56000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=3
-UVM_INFO ./tb/tb_counter.sv(234) @ 56000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=3, count=3 (rst_n=1, enable=1)
-UVM_INFO ./tb/tb_counter.sv(190) @ 56000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=3
-UVM_INFO ./tb/tb_counter.sv(148) @ 65000: uvm_test_top.env.agt.drv [counter_driver] drive_cycles: 5
-UVM_INFO ./tb/tb_counter.sv(149) @ 65000: uvm_test_top.env.agt.drv [counter_driver] rst_n=1 enable=1 cycles=5 count=x
-UVM_INFO ./tb/tb_counter.sv(94) @ 65000: uvm_test_top.env.agt.sqr@@count_seq [counter_count_seq] [1/10] rst_n=1 enable=1 cycles=5 count=x
-UVM_INFO ./tb/tb_counter.sv(220) @ 66000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=4
-UVM_INFO ./tb/tb_counter.sv(234) @ 66000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=4, count=4 (rst_n=1, enable=1)
-UVM_INFO ./tb/tb_counter.sv(190) @ 66000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=4
-UVM_INFO ./tb/tb_counter.sv(148) @ 75000: uvm_test_top.env.agt.drv [counter_driver] drive_cycles: 1
-UVM_INFO ./tb/tb_counter.sv(149) @ 75000: uvm_test_top.env.agt.drv [counter_driver] rst_n=1 enable=1 cycles=1 count=x
-UVM_INFO ./tb/tb_counter.sv(94) @ 75000: uvm_test_top.env.agt.sqr@@count_seq [counter_count_seq] [2/10] rst_n=1 enable=1 cycles=1 count=x
-UVM_INFO ./tb/tb_counter.sv(220) @ 76000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=5
-UVM_INFO ./tb/tb_counter.sv(234) @ 76000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=5, count=5 (rst_n=1, enable=1)
-UVM_INFO ./tb/tb_counter.sv(190) @ 76000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=5
-UVM_INFO ./tb/tb_counter.sv(220) @ 86000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=6
-UVM_INFO ./tb/tb_counter.sv(234) @ 86000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=6, count=6 (rst_n=1, enable=1)
-UVM_INFO ./tb/tb_counter.sv(190) @ 86000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=6
-UVM_INFO ./tb/tb_counter.sv(148) @ 95000: uvm_test_top.env.agt.drv [counter_driver] drive_cycles: 2
-UVM_INFO ./tb/tb_counter.sv(149) @ 95000: uvm_test_top.env.agt.drv [counter_driver] rst_n=1 enable=1 cycles=2 count=x
-UVM_INFO ./tb/tb_counter.sv(94) @ 95000: uvm_test_top.env.agt.sqr@@count_seq [counter_count_seq] [3/10] rst_n=1 enable=1 cycles=2 count=x
-UVM_INFO ./tb/tb_counter.sv(220) @ 96000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=7
-UVM_INFO ./tb/tb_counter.sv(234) @ 96000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=7, count=7 (rst_n=1, enable=1)
-UVM_INFO ./tb/tb_counter.sv(190) @ 96000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=7
-UVM_INFO ./tb/tb_counter.sv(148) @ 105000: uvm_test_top.env.agt.drv [counter_driver] drive_cycles: 1
-UVM_INFO ./tb/tb_counter.sv(149) @ 105000: uvm_test_top.env.agt.drv [counter_driver] rst_n=1 enable=1 cycles=1 count=x
-UVM_INFO ./tb/tb_counter.sv(94) @ 105000: uvm_test_top.env.agt.sqr@@count_seq [counter_count_seq] [4/10] rst_n=1 enable=1 cycles=1 count=x
-UVM_INFO ./tb/tb_counter.sv(220) @ 106000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=8
-UVM_INFO ./tb/tb_counter.sv(234) @ 106000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=8, count=8 (rst_n=1, enable=1)
-UVM_INFO ./tb/tb_counter.sv(190) @ 106000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=8
-UVM_INFO ./tb/tb_counter.sv(220) @ 116000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=9
-UVM_INFO ./tb/tb_counter.sv(234) @ 116000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=9, count=9 (rst_n=1, enable=1)
-UVM_INFO ./tb/tb_counter.sv(190) @ 116000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=9
-UVM_INFO ./tb/tb_counter.sv(220) @ 126000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=a
-UVM_INFO ./tb/tb_counter.sv(234) @ 126000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=10, count=10 (rst_n=1, enable=1)
-UVM_INFO ./tb/tb_counter.sv(190) @ 126000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=a
-UVM_INFO ./tb/tb_counter.sv(220) @ 136000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=b
-UVM_INFO ./tb/tb_counter.sv(234) @ 136000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=11, count=11 (rst_n=1, enable=1)
-UVM_INFO ./tb/tb_counter.sv(190) @ 136000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=b
-UVM_INFO ./tb/tb_counter.sv(220) @ 146000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=c
-UVM_INFO ./tb/tb_counter.sv(234) @ 146000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=12, count=12 (rst_n=1, enable=1)
-UVM_INFO ./tb/tb_counter.sv(190) @ 146000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=c
-UVM_INFO ./tb/tb_counter.sv(148) @ 155000: uvm_test_top.env.agt.drv [counter_driver] drive_cycles: 5
-UVM_INFO ./tb/tb_counter.sv(149) @ 155000: uvm_test_top.env.agt.drv [counter_driver] rst_n=1 enable=1 cycles=5 count=x
-UVM_INFO ./tb/tb_counter.sv(94) @ 155000: uvm_test_top.env.agt.sqr@@count_seq [counter_count_seq] [5/10] rst_n=1 enable=1 cycles=5 count=x
-UVM_INFO ./tb/tb_counter.sv(220) @ 156000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=d
-UVM_INFO ./tb/tb_counter.sv(234) @ 156000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=13, count=13 (rst_n=1, enable=1)
-UVM_INFO ./tb/tb_counter.sv(190) @ 156000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=d
-UVM_INFO ./tb/tb_counter.sv(220) @ 166000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=e
-UVM_INFO ./tb/tb_counter.sv(234) @ 166000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=14, count=14 (rst_n=1, enable=1)
-UVM_INFO ./tb/tb_counter.sv(190) @ 166000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=e
-UVM_INFO ./tb/tb_counter.sv(220) @ 176000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=f
-UVM_INFO ./tb/tb_counter.sv(234) @ 176000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=15, count=15 (rst_n=1, enable=1)
-UVM_INFO ./tb/tb_counter.sv(190) @ 176000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=f
-UVM_INFO ./tb/tb_counter.sv(220) @ 186000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=0
-UVM_INFO ./tb/tb_counter.sv(234) @ 186000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=0, count=0 (rst_n=1, enable=1)
-UVM_INFO ./tb/tb_counter.sv(190) @ 186000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=0
-UVM_INFO ./tb/tb_counter.sv(148) @ 195000: uvm_test_top.env.agt.drv [counter_driver] drive_cycles: 4
-UVM_INFO ./tb/tb_counter.sv(149) @ 195000: uvm_test_top.env.agt.drv [counter_driver] rst_n=1 enable=1 cycles=4 count=x
-UVM_INFO ./tb/tb_counter.sv(94) @ 195000: uvm_test_top.env.agt.sqr@@count_seq [counter_count_seq] [6/10] rst_n=1 enable=1 cycles=4 count=x
-UVM_INFO ./tb/tb_counter.sv(220) @ 196000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=1
-UVM_INFO ./tb/tb_counter.sv(234) @ 196000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=1, count=1 (rst_n=1, enable=1)
-UVM_INFO ./tb/tb_counter.sv(190) @ 196000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=1
-UVM_INFO ./tb/tb_counter.sv(220) @ 206000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=2
-UVM_INFO ./tb/tb_counter.sv(234) @ 206000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=2, count=2 (rst_n=1, enable=1)
-UVM_INFO ./tb/tb_counter.sv(190) @ 206000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=2
-UVM_INFO ./tb/tb_counter.sv(148) @ 215000: uvm_test_top.env.agt.drv [counter_driver] drive_cycles: 2
-UVM_INFO ./tb/tb_counter.sv(149) @ 215000: uvm_test_top.env.agt.drv [counter_driver] rst_n=1 enable=1 cycles=2 count=x
-UVM_INFO ./tb/tb_counter.sv(94) @ 215000: uvm_test_top.env.agt.sqr@@count_seq [counter_count_seq] [7/10] rst_n=1 enable=1 cycles=2 count=x
-UVM_INFO ./tb/tb_counter.sv(220) @ 216000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=3
-UVM_INFO ./tb/tb_counter.sv(234) @ 216000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=3, count=3 (rst_n=1, enable=1)
-UVM_INFO ./tb/tb_counter.sv(190) @ 216000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=3
-UVM_INFO ./tb/tb_counter.sv(220) @ 226000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=4
-UVM_INFO ./tb/tb_counter.sv(234) @ 226000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=4, count=4 (rst_n=1, enable=1)
-UVM_INFO ./tb/tb_counter.sv(190) @ 226000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=4
-UVM_INFO ./tb/tb_counter.sv(148) @ 235000: uvm_test_top.env.agt.drv [counter_driver] drive_cycles: 2
-UVM_INFO ./tb/tb_counter.sv(149) @ 235000: uvm_test_top.env.agt.drv [counter_driver] rst_n=1 enable=1 cycles=2 count=x
-UVM_INFO ./tb/tb_counter.sv(94) @ 235000: uvm_test_top.env.agt.sqr@@count_seq [counter_count_seq] [8/10] rst_n=1 enable=1 cycles=2 count=x
-UVM_INFO ./tb/tb_counter.sv(220) @ 236000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=5
-UVM_INFO ./tb/tb_counter.sv(234) @ 236000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=5, count=5 (rst_n=1, enable=1)
-UVM_INFO ./tb/tb_counter.sv(190) @ 236000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=5
-UVM_INFO ./tb/tb_counter.sv(220) @ 246000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=6
-UVM_INFO ./tb/tb_counter.sv(234) @ 246000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=6, count=6 (rst_n=1, enable=1)
-UVM_INFO ./tb/tb_counter.sv(190) @ 246000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=6
-UVM_INFO ./tb/tb_counter.sv(220) @ 256000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=7
-UVM_INFO ./tb/tb_counter.sv(234) @ 256000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=7, count=7 (rst_n=1, enable=1)
-UVM_INFO ./tb/tb_counter.sv(190) @ 256000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=7
-UVM_INFO ./tb/tb_counter.sv(220) @ 266000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=8
-UVM_INFO ./tb/tb_counter.sv(234) @ 266000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=8, count=8 (rst_n=1, enable=1)
-UVM_INFO ./tb/tb_counter.sv(190) @ 266000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=8
-UVM_INFO ./tb/tb_counter.sv(220) @ 276000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=9
-UVM_INFO ./tb/tb_counter.sv(234) @ 276000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=9, count=9 (rst_n=1, enable=1)
-UVM_INFO ./tb/tb_counter.sv(190) @ 276000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=9
-UVM_INFO ./tb/tb_counter.sv(148) @ 285000: uvm_test_top.env.agt.drv [counter_driver] drive_cycles: 5
-UVM_INFO ./tb/tb_counter.sv(149) @ 285000: uvm_test_top.env.agt.drv [counter_driver] rst_n=1 enable=1 cycles=5 count=x
-UVM_INFO ./tb/tb_counter.sv(94) @ 285000: uvm_test_top.env.agt.sqr@@count_seq [counter_count_seq] [9/10] rst_n=1 enable=1 cycles=5 count=x
-UVM_INFO ./tb/tb_counter.sv(220) @ 286000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=a
-UVM_INFO ./tb/tb_counter.sv(234) @ 286000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=10, count=10 (rst_n=1, enable=1)
-UVM_INFO ./tb/tb_counter.sv(190) @ 286000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=a
-UVM_INFO ./tb/tb_counter.sv(148) @ 295000: uvm_test_top.env.agt.drv [counter_driver] drive_cycles: 1
-UVM_INFO ./tb/tb_counter.sv(149) @ 295000: uvm_test_top.env.agt.drv [counter_driver] rst_n=1 enable=1 cycles=1 count=x
-UVM_INFO ./tb/tb_counter.sv(94) @ 295000: uvm_test_top.env.agt.sqr@@count_seq [counter_count_seq] [10/10] rst_n=1 enable=1 cycles=1 count=x
-UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 295000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-UVM_INFO ./tb/tb_counter.sv(249) @ 295000: uvm_test_top.env.scb [counter_scoreboard]  ===== Scoreboad Summary =====
-UVM_INFO ./tb/tb_counter.sv(250) @ 295000: uvm_test_top.env.scb [counter_scoreboard]   Total transactions: 28
-UVM_INFO ./tb/tb_counter.sv(251) @ 295000: uvm_test_top.env.scb [counter_scoreboard]   Matches: 28
-UVM_INFO ./tb/tb_counter.sv(252) @ 295000: uvm_test_top.env.scb [counter_scoreboard]   Error: 0
-UVM_INFO ./tb/tb_counter.sv(258) @ 295000: uvm_test_top.env.scb [counter_scoreboard] TEST PASSED: 28 matches detected!
-UVM_INFO ./tb/tb_counter.sv(356) @ 295000: uvm_test_top [counter_test] ===== TEST PASS ! =====
-UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 295000: reporter [UVM/REPORT/CATCHER] 
+UVM_INFO ./tb/tb_counter_subscriber.sv(205) @ 6000: uvm_test_top.env.sbr [counter_subscriber] Subscriber received items: rst_n=0 enable=0 cycles=0 count=x
+UVM_INFO ./tb/tb_counter_subscriber.sv(234) @ 6000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=0 enable=0 cycles=0 count=x
+UVM_INFO ./tb/tb_counter_subscriber.sv(238) @ 6000: uvm_test_top.env.scb [counter_scoreboard] Initial state: rst_n=0 enable=0 cycles=0 count=x
+UVM_INFO ./tb/tb_counter_subscriber.sv(190) @ 6000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=0 enable=0 cycles=0 count=x
+UVM_INFO ./tb/tb_counter_subscriber.sv(149) @ 15000: uvm_test_top.env.agt.drv [counter_driver] rst_n=0 enable=0 cycles=2 count=x
+UVM_INFO ./tb/tb_counter_subscriber.sv(66) @ 15000: uvm_test_top.env.agt.sqr@@reset_seq [counter_reset_seq] Reset Done!
+UVM_INFO ./tb/tb_counter_subscriber.sv(205) @ 16000: uvm_test_top.env.sbr [counter_subscriber] Subscriber received items: rst_n=0 enable=0 cycles=0 count=0
+UVM_INFO ./tb/tb_counter_subscriber.sv(234) @ 16000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=0 enable=0 cycles=0 count=0
+UVM_INFO ./tb/tb_counter_subscriber.sv(248) @ 16000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=0, count=0 (rst_n=0, enable=0)
+UVM_INFO ./tb/tb_counter_subscriber.sv(190) @ 16000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=0 enable=0 cycles=0 count=0
+UVM_INFO ./tb/tb_counter_subscriber.sv(205) @ 26000: uvm_test_top.env.sbr [counter_subscriber] Subscriber received items: rst_n=1 enable=1 cycles=0 count=0
+UVM_INFO ./tb/tb_counter_subscriber.sv(234) @ 26000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=0
+UVM_INFO ./tb/tb_counter_subscriber.sv(248) @ 26000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=0, count=0 (rst_n=1, enable=1)
+UVM_INFO ./tb/tb_counter_subscriber.sv(190) @ 26000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=0
+UVM_INFO ./tb/tb_counter_subscriber.sv(149) @ 35000: uvm_test_top.env.agt.drv [counter_driver] rst_n=1 enable=1 cycles=2 count=x
+UVM_INFO ./tb/tb_counter_subscriber.sv(205) @ 36000: uvm_test_top.env.sbr [counter_subscriber] Subscriber received items: rst_n=1 enable=1 cycles=0 count=1
+UVM_INFO ./tb/tb_counter_subscriber.sv(234) @ 36000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=1
+UVM_INFO ./tb/tb_counter_subscriber.sv(248) @ 36000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=1, count=1 (rst_n=1, enable=1)
+UVM_INFO ./tb/tb_counter_subscriber.sv(190) @ 36000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=1
+UVM_INFO ./tb/tb_counter_subscriber.sv(149) @ 45000: uvm_test_top.env.agt.drv [counter_driver] rst_n=1 enable=1 cycles=1 count=x
+UVM_INFO ./tb/tb_counter_subscriber.sv(205) @ 46000: uvm_test_top.env.sbr [counter_subscriber] Subscriber received items: rst_n=1 enable=1 cycles=0 count=2
+UVM_INFO ./tb/tb_counter_subscriber.sv(234) @ 46000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=2
+UVM_INFO ./tb/tb_counter_subscriber.sv(248) @ 46000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=2, count=2 (rst_n=1, enable=1)
+UVM_INFO ./tb/tb_counter_subscriber.sv(190) @ 46000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=2
+UVM_INFO ./tb/tb_counter_subscriber.sv(205) @ 56000: uvm_test_top.env.sbr [counter_subscriber] Subscriber received items: rst_n=1 enable=1 cycles=0 count=3
+UVM_INFO ./tb/tb_counter_subscriber.sv(234) @ 56000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=3
+UVM_INFO ./tb/tb_counter_subscriber.sv(248) @ 56000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=3, count=3 (rst_n=1, enable=1)
+UVM_INFO ./tb/tb_counter_subscriber.sv(190) @ 56000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=3
+UVM_INFO ./tb/tb_counter_subscriber.sv(205) @ 66000: uvm_test_top.env.sbr [counter_subscriber] Subscriber received items: rst_n=1 enable=1 cycles=0 count=4
+UVM_INFO ./tb/tb_counter_subscriber.sv(234) @ 66000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=4
+UVM_INFO ./tb/tb_counter_subscriber.sv(248) @ 66000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=4, count=4 (rst_n=1, enable=1)
+UVM_INFO ./tb/tb_counter_subscriber.sv(190) @ 66000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=4
+UVM_INFO ./tb/tb_counter_subscriber.sv(205) @ 76000: uvm_test_top.env.sbr [counter_subscriber] Subscriber received items: rst_n=1 enable=1 cycles=0 count=5
+UVM_INFO ./tb/tb_counter_subscriber.sv(234) @ 76000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=5
+UVM_INFO ./tb/tb_counter_subscriber.sv(248) @ 76000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=5, count=5 (rst_n=1, enable=1)
+UVM_INFO ./tb/tb_counter_subscriber.sv(190) @ 76000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=5
+UVM_INFO ./tb/tb_counter_subscriber.sv(149) @ 85000: uvm_test_top.env.agt.drv [counter_driver] rst_n=1 enable=1 cycles=4 count=x
+UVM_INFO ./tb/tb_counter_subscriber.sv(205) @ 86000: uvm_test_top.env.sbr [counter_subscriber] Subscriber received items: rst_n=1 enable=1 cycles=0 count=6
+UVM_INFO ./tb/tb_counter_subscriber.sv(234) @ 86000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=6
+UVM_INFO ./tb/tb_counter_subscriber.sv(248) @ 86000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=6, count=6 (rst_n=1, enable=1)
+UVM_INFO ./tb/tb_counter_subscriber.sv(190) @ 86000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=6
+UVM_INFO ./tb/tb_counter_subscriber.sv(149) @ 95000: uvm_test_top.env.agt.drv [counter_driver] rst_n=1 enable=1 cycles=1 count=x
+UVM_INFO ./tb/tb_counter_subscriber.sv(205) @ 96000: uvm_test_top.env.sbr [counter_subscriber] Subscriber received items: rst_n=1 enable=1 cycles=0 count=7
+UVM_INFO ./tb/tb_counter_subscriber.sv(234) @ 96000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=7
+UVM_INFO ./tb/tb_counter_subscriber.sv(248) @ 96000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=7, count=7 (rst_n=1, enable=1)
+UVM_INFO ./tb/tb_counter_subscriber.sv(190) @ 96000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=7
+UVM_INFO ./tb/tb_counter_subscriber.sv(205) @ 106000: uvm_test_top.env.sbr [counter_subscriber] Subscriber received items: rst_n=1 enable=1 cycles=0 count=8
+UVM_INFO ./tb/tb_counter_subscriber.sv(234) @ 106000: uvm_test_top.env.scb [counter_scoreboard] Received: rst_n=1 enable=1 cycles=0 count=8
+UVM_INFO ./tb/tb_counter_subscriber.sv(248) @ 106000: uvm_test_top.env.scb [counter_scoreboard] MATCH!: expected=8, count=8 (rst_n=1, enable=1)
+UVM_INFO ./tb/tb_counter_subscriber.sv(190) @ 106000: uvm_test_top.env.agt.mon [counter_monitor] rst_n=1 enable=1 cycles=0 count=8
+UVM_INFO ./tb/tb_counter_subscriber.sv(149) @ 115000: uvm_test_top.env.agt.drv [counter_driver] rst_n=1 enable=1 cycles=2 count=x
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 115000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO ./tb/tb_counter_subscriber.sv(263) @ 115000: uvm_test_top.env.scb [counter_scoreboard]  ===== Scoreboad Summary =====
+UVM_INFO ./tb/tb_counter_subscriber.sv(264) @ 115000: uvm_test_top.env.scb [counter_scoreboard]   Total transactions: 10
+UVM_INFO ./tb/tb_counter_subscriber.sv(265) @ 115000: uvm_test_top.env.scb [counter_scoreboard]   Matches: 10
+UVM_INFO ./tb/tb_counter_subscriber.sv(266) @ 115000: uvm_test_top.env.scb [counter_scoreboard]   Error: 0
+UVM_INFO ./tb/tb_counter_subscriber.sv(271) @ 115000: uvm_test_top.env.scb [counter_scoreboard] TEST PASSED: 10 matches detected!
+UVM_INFO ./tb/tb_counter_subscriber.sv(372) @ 115000: uvm_test_top [counter_test] ===== TEST PASS ! =====
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(589) @ 115000: reporter [UVMTOP] UVM testbench topology:
+--------------------------------------------------------------
+Name                       Type                    Size  Value
+--------------------------------------------------------------
+uvm_test_top               counter_test            -     @342 
+  env                      counter_environment     -     @355 
+    agt                    counter_agent           -     @364 
+      drv                  counter_driver          -     @549 
+        rsp_port           uvm_analysis_port       -     @568 
+        seq_item_port      uvm_seq_item_pull_port  -     @558 
+      mon                  counter_monitor         -     @578 
+        ap                 uvm_analysis_port       -     @587 
+      sqr                  uvm_sequencer           -     @412 
+        rsp_export         uvm_analysis_export     -     @421 
+        seq_item_export    uvm_seq_item_pull_imp   -     @539 
+        arbitration_queue  array                   0     -    
+        lock_queue         array                   0     -    
+        num_last_reqs      integral                32    'd1  
+        num_last_rsps      integral                32    'd1  
+    sbr                    counter_subscriber      -     @392 
+      analysis_imp         uvm_analysis_imp        -     @401 
+    scb                    counter_scoreboard      -     @373 
+      ap_imp               uvm_analysis_imp        -     @382 
+--------------------------------------------------------------
+
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 115000: reporter [UVM/REPORT/CATCHER] 
 --- UVM Report catcher Summary ---
 
 
@@ -165,11 +120,11 @@ Number of caught UVM_FATAL reports   :    0
 Number of caught UVM_ERROR reports   :    0
 Number of caught UVM_WARNING reports :    0
 
-UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_server.svh(904) @ 295000: reporter [UVM/REPORT/SERVER] 
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_server.svh(904) @ 115000: reporter [UVM/REPORT/SERVER] 
 --- UVM Report Summary ---
 
 ** Report counts by severity
-UVM_INFO :  131
+UVM_INFO :   62
 UVM_WARNING :    0
 UVM_ERROR :    0
 UVM_FATAL :    0
@@ -178,16 +133,17 @@ UVM_FATAL :    0
 [TEST_DONE]     1
 [UVM/RELNOTES]     1
 [UVM/REPORT/CATCHER]     1
-[counter_count_seq]    10
-[counter_driver]    23
-[counter_monitor]    29
+[UVMTOP]     1
+[counter_driver]     6
+[counter_monitor]    11
 [counter_reset_seq]     1
-[counter_scoreboard]    63
+[counter_scoreboard]    27
+[counter_subscriber]    11
 [counter_test]     1
 
 $finish called from file "/tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh", line 527.
-$finish at simulation time               295000
+$finish at simulation time               115000
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 295000 ps
-CPU Time:      0.190 seconds;       Data structure size:   0.6Mb
-Wed Apr  8 14:22:07 2026
+Time: 115000 ps
+CPU Time:      0.180 seconds;       Data structure size:   0.6Mb
+Wed Apr  8 15:37:49 2026

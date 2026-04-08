@@ -193,6 +193,20 @@ class counter_monitor extends uvm_monitor;
 endclass
 
 
+class counter_subscriber extends uvm_subscriber#(counter_seq_item);
+    `uvm_component_utils(counter_subscriber)
+
+    function new(string name, uvm_component parent);
+        super.new(name, parent);
+    endfunction
+
+    /*** 주의: function은 delay 내용을 넣으면 안됨 ***/
+    virtual function void write(counter_seq_item item);
+            `uvm_info(get_type_name(), $sformatf("Subscriber received items: %s", item.convert2string()), UVM_MEDIUM)
+    endfunction
+endclass
+
+
 class counter_scoreboard extends uvm_scoreboard;
     `uvm_component_utils(counter_scoreboard)
     // analysis implementation 선언, write 함수를 구현하는 부분
@@ -253,8 +267,7 @@ class counter_scoreboard extends uvm_scoreboard;
 
         if(error_count > 0) begin
             `uvm_error(get_type_name(), $sformatf("TEST FAILED: %0d mismataches detected!", error_count))
-        end
-        else begin
+        end else begin
             `uvm_info(get_type_name(), $sformatf("TEST PASSED: %0d matches detected!", match_count), UVM_LOW)
         end
     endfunction
@@ -295,6 +308,7 @@ class counter_environment extends uvm_env;
 
     counter_agent agt;
     counter_scoreboard scb;
+    counter_subscriber sbr;
 
     function new(string name, uvm_component parent);
         super.new(name, parent);
@@ -305,11 +319,13 @@ class counter_environment extends uvm_env;
         super.build_phase(phase);
         agt = counter_agent::type_id::create("agt", this);
         scb = counter_scoreboard::type_id::create("scb", this);
+        sbr = counter_subscriber::type_id::create("sbr", this);
     endfunction
 
     virtual function void connect_phase(uvm_phase phase);
         super.connect_phase(phase);
         agt.mon.ap.connect(scb.ap_imp); // caller: monitor, callee: scoreboard
+        agt.mon.ap.connect(sbr.analysis_export);
     endfunction
 endclass
 
@@ -343,7 +359,7 @@ class counter_test extends uvm_test;
         reset_seq.start(env.agt.sqr);
 
         count_seq = counter_count_seq::type_id::create("count_seq");
-        count_seq.num_transactions = 10;
+        count_seq.num_transactions = 5;
         count_seq.start(env.agt.sqr);
 
         //#100;
@@ -355,6 +371,7 @@ class counter_test extends uvm_test;
         if(svr.get_severity_count(UVM_ERROR) == 0)
             `uvm_info(get_type_name(), "===== TEST PASS ! =====", UVM_LOW)
         else `uvm_info(get_type_name(), "===== TEST FAIL ! =====", UVM_LOW)
+        uvm_top.print_topology();
     endfunction
 endclass
 
