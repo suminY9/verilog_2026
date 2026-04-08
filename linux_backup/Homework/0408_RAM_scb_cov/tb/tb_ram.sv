@@ -148,6 +148,7 @@ class ram_driver extends uvm_driver #(ram_seq_item);
 		`uvm_info(get_type_name(), "build_phase COMPLETE.", UVM_HIGH);
 	endfunction
 	virtual task drive_item(ram_seq_item item);
+		@(r_if.drv_cb);
 		r_if.drv_cb.we <= item.we;
 		r_if.drv_cb.addr <= item.addr;
 		r_if.drv_cb.wdata <= item.wdata;
@@ -250,12 +251,14 @@ class ram_scoreboard extends uvm_scoreboard;
 	logic [15:0] comp_ram[0:255];
 	int error_cnt;
 	int match_cnt;
+	bit first_tr;
 
 	function new(string name, uvm_component parent);
 		super.new(name, parent);
 		ap_imp = new("ap_imp", this);
 		error_cnt = 0;
 		match_cnt = 0;
+		first_tr = 1;
 	endfunction
 
 	virtual function void build_phase(uvm_phase phase);
@@ -265,13 +268,23 @@ class ram_scoreboard extends uvm_scoreboard;
 	virtual function void write(ram_seq_item item);
 		`uvm_info(get_type_name(), $sformatf("Reveibed: %s", item.convert2string()), UVM_MEDIUM);
 
-		// Verificatio Logic
-		if(comp_ram[item.addr] !== item.rdata) begin
-			`uvm_error(get_type_name(), $sformatf("==MISMATCH!== comp_ram[%0d]=%0h, actual ram[%0d]=%0h", item.addr, comp_ram[item.addr], item.addr, item.rdata))
-			error_cnt++;
+		// Write comp_ram, dut
+		if(first_tr) begin
+			`uvm_info(get_type_name(), $sformatf("Initial"), UVM_MEDIUM)
+			first_tr = 0;
+			return;
+		end
+		if(item.we) begin
+			comp_ram[item.addr] = item.wdata;
 		end else begin
-			`uvm_info(get_type_name(), $sformatf("== MATCH! == comp_ram[%0d]=%0h, actual ram[%0d]=%0h", item.addr, comp_ram[item.addr], item.addr, item.rdata), UVM_LOW)
-			match_cnt++;
+		// Read & compare -> verification
+			if(comp_ram[item.addr] !== item.rdata) begin
+				`uvm_error(get_type_name(), $sformatf("==MISMATCH!== comp_ram[%0d]=%0h, actual ram[%0d]=%0h", item.addr, comp_ram[item.addr], item.addr, item.rdata))
+				error_cnt++;
+			end else begin
+				`uvm_info(get_type_name(), $sformatf("== MATCH! == comp_ram[%0d]=%0h, actual ram[%0d]=%0h", item.addr, comp_ram[item.addr], item.addr, item.rdata), UVM_LOW)
+				match_cnt++;
+			end
 		end
 	endfunction
 	virtual function void report_phase(uvm_phase phase);
@@ -284,7 +297,7 @@ class ram_scoreboard extends uvm_scoreboard;
 		if(error_cnt > 0) begin
 			`uvm_error(get_type_name(), $sformatf("TEST FAILED: %0d mismatches detected.", error_cnt))
 		end else begin
-			`uvm_error(get_type_name(), $sformatf("TEST PASSED: %0d mtches detected.", error_cnt))
+			`uvm_info(get_type_name(), $sformatf("TEST PASSED: %0d mtches detected.", error_cnt), UVM_LOW)
 		end
 	endfunction
 endclass
@@ -354,15 +367,12 @@ class ram_test extends uvm_test;
 		`uvm_info(get_type_name(), "CREATE env", UVM_DEBUG);
 	endfunction
 	virtual task run_phase(uvm_phase phase);
-		ram_write_seq write_seq;
-		ram_read_seq read_seq;
+		ram_master_seq master_seq;
 
 		phase.raise_objection(this);
-			write_seq = ram_write_seq::type_id::create("write_seq");
-			write_seq.start(env.agt.sqr);
-
-			read_seq = ram_read_seq::type_id::create("read_seq");
-			read_seq.start(env.agt.sqr);
+			master_seq = ram_master_seq::type_id::create("master_seq");
+			master_seq.start(env.agt.sqr);
+			#100;
 		phase.drop_objection(this);
 	endtask
 	virtual function void report_phase(uvm_phase phase);
