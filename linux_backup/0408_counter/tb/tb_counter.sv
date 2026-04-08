@@ -202,6 +202,9 @@ class counter_coverage extends uvm_subscriber#(counter_seq_item);
         cp_rst_n:  coverpoint item.rst_n { bins active = {0}; bins inactice = {1}; }
         cp_enable: coverpoint item.enable { bins on = {1}; bins off = {0}; }
         cp_count:  coverpoint item.count { bins zero = {0}; bins low = {[1:7]}; bins high = {[8:14]}; bins max = {15}; }
+        // cross coverage
+        cx_rst_en: cross cp_rst_n, cp_enable;
+        cx_en_count: cross cp_enable, cp_count;
     endgroup
 
     function new(string name, uvm_component parent);
@@ -221,6 +224,8 @@ class counter_coverage extends uvm_subscriber#(counter_seq_item);
         `uvm_info(get_type_name(), $sformatf("   rst_n  : %.1f%%", counter_cg.cp_rst_n.get_coverage()), UVM_LOW);
         `uvm_info(get_type_name(), $sformatf("   enable : %.1f%%", counter_cg.cp_enable.get_coverage()), UVM_LOW);
         `uvm_info(get_type_name(), $sformatf("   count  : %.1f%%", counter_cg.cp_count.get_coverage()), UVM_LOW);
+        `uvm_info(get_type_name(), $sformatf("   cross(rst, en)    : %.1f%%", counter_cg.cx_rst_en.get_coverage()), UVM_LOW);
+        `uvm_info(get_type_name(), $sformatf("   cross(eb, count)  : %.1f%%", counter_cg.cx_en_count.get_coverage()), UVM_LOW);
         `uvm_info(get_type_name(), "===== Coverage Summary =====\n\n", UVM_LOW);
     endfunction
 endclass
