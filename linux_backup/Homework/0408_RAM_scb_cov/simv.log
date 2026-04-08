@@ -1,0 +1,678 @@
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
+Chronologic VCS simulator copyright 1991-2024
+Contains Synopsys proprietary information.
+Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  Apr  9 01:33 2026
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test ram_test...
+UVM_INFO ./tb/tb_ram.sv(233) @ 6000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=00 addr=xx wdata=xxxx rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 6000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=00 addr=xx wdata=xxxx rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 6000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[x]=xxxx, actual ram[x]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 6000: uvm_test_top.env.agt.mon [ram_monitor] we=00 addr=xx wdata=xxxx rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 16000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=dc wdata=4ce3 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 16000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=dc wdata=4ce3 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 16000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[220]=xxxx, actual ram[220]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 16000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=dc wdata=4ce3 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 26000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=58 wdata=5455 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 26000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=58 wdata=5455 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 26000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[88]=xxxx, actual ram[88]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 26000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=58 wdata=5455 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 36000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=c4 wdata=3c61 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 36000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=c4 wdata=3c61 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 36000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[196]=xxxx, actual ram[196]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 36000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=c4 wdata=3c61 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 46000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=9d wdata=77e0 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 46000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=9d wdata=77e0 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 46000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[157]=xxxx, actual ram[157]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 46000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=9d wdata=77e0 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 56000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=b2 wdata=f695 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 56000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=b2 wdata=f695 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 56000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[178]=xxxx, actual ram[178]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 56000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=b2 wdata=f695 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 66000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=1d wdata=cc rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 66000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=1d wdata=cc rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 66000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[29]=xxxx, actual ram[29]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 66000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=1d wdata=cc rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 76000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=17 wdata=7b3f rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 76000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=17 wdata=7b3f rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 76000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[23]=xxxx, actual ram[23]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 76000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=17 wdata=7b3f rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 86000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=35 wdata=63d3 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 86000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=35 wdata=63d3 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 86000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[53]=xxxx, actual ram[53]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 86000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=35 wdata=63d3 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 96000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=c4 wdata=b99a rdata=3c61
+UVM_INFO ./tb/tb_ram.sv(266) @ 96000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=c4 wdata=b99a rdata=3c61
+UVM_ERROR ./tb/tb_ram.sv(270) @ 96000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[196]=xxxx, actual ram[196]=3c61
+UVM_INFO ./tb/tb_ram.sv(193) @ 96000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=c4 wdata=b99a rdata=3c61
+UVM_INFO ./tb/tb_ram.sv(233) @ 106000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=49 wdata=a42c rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 106000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=49 wdata=a42c rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 106000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[73]=xxxx, actual ram[73]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 106000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=49 wdata=a42c rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 116000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=cd wdata=641d rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 116000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=cd wdata=641d rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 116000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[205]=xxxx, actual ram[205]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 116000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=cd wdata=641d rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 126000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=18 wdata=b5ac rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 126000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=18 wdata=b5ac rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 126000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[24]=xxxx, actual ram[24]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 126000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=18 wdata=b5ac rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 136000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=92 wdata=9c16 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 136000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=92 wdata=9c16 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 136000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[146]=xxxx, actual ram[146]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 136000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=92 wdata=9c16 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 146000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=88 wdata=f1ab rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 146000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=88 wdata=f1ab rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 146000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[136]=xxxx, actual ram[136]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 146000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=88 wdata=f1ab rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 156000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=8 wdata=dcb8 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 156000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=8 wdata=dcb8 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 156000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[8]=xxxx, actual ram[8]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 156000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=8 wdata=dcb8 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 166000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=49 wdata=cfee rdata=a42c
+UVM_INFO ./tb/tb_ram.sv(266) @ 166000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=49 wdata=cfee rdata=a42c
+UVM_ERROR ./tb/tb_ram.sv(270) @ 166000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[73]=xxxx, actual ram[73]=a42c
+UVM_INFO ./tb/tb_ram.sv(193) @ 166000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=49 wdata=cfee rdata=a42c
+UVM_INFO ./tb/tb_ram.sv(233) @ 176000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=43 wdata=2393 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 176000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=43 wdata=2393 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 176000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[67]=xxxx, actual ram[67]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 176000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=43 wdata=2393 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 186000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=5b wdata=e2fc rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 186000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=5b wdata=e2fc rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 186000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[91]=xxxx, actual ram[91]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 186000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=5b wdata=e2fc rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 196000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=50 wdata=c536 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 196000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=50 wdata=c536 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 196000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[80]=xxxx, actual ram[80]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 196000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=50 wdata=c536 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 206000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=bb wdata=ed45 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 206000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=bb wdata=ed45 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 206000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[187]=xxxx, actual ram[187]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 206000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=bb wdata=ed45 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 216000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=15 wdata=ba37 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 216000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=15 wdata=ba37 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 216000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[21]=xxxx, actual ram[21]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 216000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=15 wdata=ba37 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 226000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=2 wdata=e142 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 226000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=2 wdata=e142 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 226000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[2]=xxxx, actual ram[2]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 226000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=2 wdata=e142 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 236000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=4a wdata=8e54 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 236000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=4a wdata=8e54 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 236000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[74]=xxxx, actual ram[74]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 236000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=4a wdata=8e54 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 246000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=11 wdata=eabf rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 246000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=11 wdata=eabf rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 246000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[17]=xxxx, actual ram[17]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 246000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=11 wdata=eabf rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 256000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=51 wdata=abca rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 256000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=51 wdata=abca rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 256000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[81]=xxxx, actual ram[81]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 256000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=51 wdata=abca rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 266000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=69 wdata=dde7 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 266000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=69 wdata=dde7 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 266000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[105]=xxxx, actual ram[105]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 266000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=69 wdata=dde7 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 276000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=a4 wdata=6c8b rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 276000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=a4 wdata=6c8b rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 276000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[164]=xxxx, actual ram[164]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 276000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=a4 wdata=6c8b rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 286000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=36 wdata=f27f rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 286000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=36 wdata=f27f rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 286000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[54]=xxxx, actual ram[54]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 286000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=36 wdata=f27f rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 296000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=55 wdata=7f9b rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 296000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=55 wdata=7f9b rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 296000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[85]=xxxx, actual ram[85]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 296000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=55 wdata=7f9b rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 306000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=3e wdata=b540 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 306000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=3e wdata=b540 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 306000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[62]=xxxx, actual ram[62]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 306000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=3e wdata=b540 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 316000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=38 wdata=3ffe rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 316000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=38 wdata=3ffe rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 316000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[56]=xxxx, actual ram[56]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 316000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=38 wdata=3ffe rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 326000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=1d wdata=b160 rdata=cc
+UVM_INFO ./tb/tb_ram.sv(266) @ 326000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=1d wdata=b160 rdata=cc
+UVM_ERROR ./tb/tb_ram.sv(270) @ 326000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[29]=xxxx, actual ram[29]=cc
+UVM_INFO ./tb/tb_ram.sv(193) @ 326000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=1d wdata=b160 rdata=cc
+UVM_INFO ./tb/tb_ram.sv(233) @ 336000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=6 wdata=df8f rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 336000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=6 wdata=df8f rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 336000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[6]=xxxx, actual ram[6]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 336000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=6 wdata=df8f rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 346000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=58 wdata=5403 rdata=5455
+UVM_INFO ./tb/tb_ram.sv(266) @ 346000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=58 wdata=5403 rdata=5455
+UVM_ERROR ./tb/tb_ram.sv(270) @ 346000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[88]=xxxx, actual ram[88]=5455
+UVM_INFO ./tb/tb_ram.sv(193) @ 346000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=58 wdata=5403 rdata=5455
+UVM_INFO ./tb/tb_ram.sv(233) @ 356000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=a0 wdata=d3e2 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 356000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=a0 wdata=d3e2 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 356000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[160]=xxxx, actual ram[160]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 356000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=a0 wdata=d3e2 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 366000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=92 wdata=5b16 rdata=9c16
+UVM_INFO ./tb/tb_ram.sv(266) @ 366000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=92 wdata=5b16 rdata=9c16
+UVM_ERROR ./tb/tb_ram.sv(270) @ 366000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[146]=xxxx, actual ram[146]=9c16
+UVM_INFO ./tb/tb_ram.sv(193) @ 366000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=92 wdata=5b16 rdata=9c16
+UVM_INFO ./tb/tb_ram.sv(233) @ 376000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=87 wdata=40de rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 376000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=87 wdata=40de rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 376000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[135]=xxxx, actual ram[135]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 376000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=87 wdata=40de rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 386000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=b1 wdata=895a rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 386000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=b1 wdata=895a rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 386000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[177]=xxxx, actual ram[177]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 386000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=b1 wdata=895a rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 396000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=22 wdata=b214 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 396000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=22 wdata=b214 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 396000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[34]=xxxx, actual ram[34]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 396000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=22 wdata=b214 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 406000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=e1 wdata=165 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 406000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=e1 wdata=165 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 406000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[225]=xxxx, actual ram[225]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 406000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=e1 wdata=165 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 416000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=d2 wdata=acdf rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 416000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=d2 wdata=acdf rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 416000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[210]=xxxx, actual ram[210]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 416000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=d2 wdata=acdf rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 426000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=bf wdata=b06 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 426000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=bf wdata=b06 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 426000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[191]=xxxx, actual ram[191]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 426000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=bf wdata=b06 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 436000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=bf wdata=56b7 rdata=b06
+UVM_INFO ./tb/tb_ram.sv(266) @ 436000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=bf wdata=56b7 rdata=b06
+UVM_ERROR ./tb/tb_ram.sv(270) @ 436000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[191]=xxxx, actual ram[191]=b06
+UVM_INFO ./tb/tb_ram.sv(193) @ 436000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=bf wdata=56b7 rdata=b06
+UVM_INFO ./tb/tb_ram.sv(233) @ 446000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=ab wdata=1aef rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 446000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=ab wdata=1aef rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 446000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[171]=xxxx, actual ram[171]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 446000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=ab wdata=1aef rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 456000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=9f wdata=7b76 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 456000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=9f wdata=7b76 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 456000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[159]=xxxx, actual ram[159]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 456000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=9f wdata=7b76 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 466000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=7c wdata=77da rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 466000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=7c wdata=77da rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 466000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[124]=xxxx, actual ram[124]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 466000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=7c wdata=77da rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 476000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=bc wdata=ffbb rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 476000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=bc wdata=ffbb rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 476000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[188]=xxxx, actual ram[188]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 476000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=bc wdata=ffbb rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 486000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=e6 wdata=c975 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 486000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=e6 wdata=c975 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 486000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[230]=xxxx, actual ram[230]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 486000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=e6 wdata=c975 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 496000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=27 wdata=b92f rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 496000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=27 wdata=b92f rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 496000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[39]=xxxx, actual ram[39]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 496000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=27 wdata=b92f rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 506000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=b wdata=909a rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 506000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=b wdata=909a rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 506000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[11]=xxxx, actual ram[11]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 506000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=b wdata=909a rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 516000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=ab wdata=3cf8 rdata=1aef
+UVM_INFO ./tb/tb_ram.sv(266) @ 516000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=ab wdata=3cf8 rdata=1aef
+UVM_ERROR ./tb/tb_ram.sv(270) @ 516000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[171]=xxxx, actual ram[171]=1aef
+UVM_INFO ./tb/tb_ram.sv(193) @ 516000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=ab wdata=3cf8 rdata=1aef
+UVM_INFO ./tb/tb_ram.sv(233) @ 526000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=1f wdata=6313 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 526000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=1f wdata=6313 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 526000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[31]=xxxx, actual ram[31]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 526000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=1f wdata=6313 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 536000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=c3 wdata=eb52 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 536000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=c3 wdata=eb52 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 536000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[195]=xxxx, actual ram[195]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 536000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=c3 wdata=eb52 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 546000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=fa wdata=ca65 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 546000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=fa wdata=ca65 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 546000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[250]=xxxx, actual ram[250]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 546000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=fa wdata=ca65 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 556000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=94 wdata=752d rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 556000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=94 wdata=752d rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 556000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[148]=xxxx, actual ram[148]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 556000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=94 wdata=752d rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 566000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=27 wdata=7ca8 rdata=b92f
+UVM_INFO ./tb/tb_ram.sv(266) @ 566000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=27 wdata=7ca8 rdata=b92f
+UVM_ERROR ./tb/tb_ram.sv(270) @ 566000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[39]=xxxx, actual ram[39]=b92f
+UVM_INFO ./tb/tb_ram.sv(193) @ 566000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=27 wdata=7ca8 rdata=b92f
+UVM_INFO ./tb/tb_ram.sv(233) @ 576000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=7e wdata=e1f7 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 576000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=7e wdata=e1f7 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 576000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[126]=xxxx, actual ram[126]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 576000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=7e wdata=e1f7 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 586000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=17 wdata=cb29 rdata=7b3f
+UVM_INFO ./tb/tb_ram.sv(266) @ 586000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=17 wdata=cb29 rdata=7b3f
+UVM_ERROR ./tb/tb_ram.sv(270) @ 586000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[23]=xxxx, actual ram[23]=7b3f
+UVM_INFO ./tb/tb_ram.sv(193) @ 586000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=17 wdata=cb29 rdata=7b3f
+UVM_INFO ./tb/tb_ram.sv(233) @ 596000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=cc wdata=8ea7 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 596000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=cc wdata=8ea7 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 596000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[204]=xxxx, actual ram[204]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 596000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=cc wdata=8ea7 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 606000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=af wdata=1d44 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 606000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=af wdata=1d44 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 606000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[175]=xxxx, actual ram[175]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 606000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=af wdata=1d44 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 616000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=b4 wdata=b51 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 616000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=b4 wdata=b51 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 616000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[180]=xxxx, actual ram[180]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 616000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=b4 wdata=b51 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 626000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=80 wdata=e809 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 626000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=80 wdata=e809 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 626000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[128]=xxxx, actual ram[128]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 626000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=80 wdata=e809 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 636000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=6c wdata=7098 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 636000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=6c wdata=7098 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 636000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[108]=xxxx, actual ram[108]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 636000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=6c wdata=7098 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 646000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=fd wdata=52ab rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 646000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=fd wdata=52ab rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 646000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[253]=xxxx, actual ram[253]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 646000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=fd wdata=52ab rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 656000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=3f wdata=c91d rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 656000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=3f wdata=c91d rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 656000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[63]=xxxx, actual ram[63]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 656000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=3f wdata=c91d rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 666000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=b4 wdata=f03c rdata=b51
+UVM_INFO ./tb/tb_ram.sv(266) @ 666000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=b4 wdata=f03c rdata=b51
+UVM_ERROR ./tb/tb_ram.sv(270) @ 666000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[180]=xxxx, actual ram[180]=b51
+UVM_INFO ./tb/tb_ram.sv(193) @ 666000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=b4 wdata=f03c rdata=b51
+UVM_INFO ./tb/tb_ram.sv(233) @ 676000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=72 wdata=fc15 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 676000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=72 wdata=fc15 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 676000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[114]=xxxx, actual ram[114]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 676000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=72 wdata=fc15 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 686000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=fd wdata=6a1e rdata=52ab
+UVM_INFO ./tb/tb_ram.sv(266) @ 686000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=fd wdata=6a1e rdata=52ab
+UVM_ERROR ./tb/tb_ram.sv(270) @ 686000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[253]=xxxx, actual ram[253]=52ab
+UVM_INFO ./tb/tb_ram.sv(193) @ 686000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=fd wdata=6a1e rdata=52ab
+UVM_INFO ./tb/tb_ram.sv(233) @ 696000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=ac wdata=1efe rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 696000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=ac wdata=1efe rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 696000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[172]=xxxx, actual ram[172]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 696000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=ac wdata=1efe rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 706000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=a6 wdata=5616 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 706000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=a6 wdata=5616 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 706000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[166]=xxxx, actual ram[166]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 706000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=a6 wdata=5616 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 716000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=2 wdata=9305 rdata=e142
+UVM_INFO ./tb/tb_ram.sv(266) @ 716000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=2 wdata=9305 rdata=e142
+UVM_ERROR ./tb/tb_ram.sv(270) @ 716000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[2]=xxxx, actual ram[2]=e142
+UVM_INFO ./tb/tb_ram.sv(193) @ 716000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=2 wdata=9305 rdata=e142
+UVM_INFO ./tb/tb_ram.sv(233) @ 726000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=5a wdata=aeea rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 726000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=5a wdata=aeea rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 726000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[90]=xxxx, actual ram[90]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 726000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=5a wdata=aeea rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 736000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=d3 wdata=6782 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 736000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=d3 wdata=6782 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 736000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[211]=xxxx, actual ram[211]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 736000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=d3 wdata=6782 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 746000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=1f wdata=6cd4 rdata=6313
+UVM_INFO ./tb/tb_ram.sv(266) @ 746000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=1f wdata=6cd4 rdata=6313
+UVM_ERROR ./tb/tb_ram.sv(270) @ 746000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[31]=xxxx, actual ram[31]=6313
+UVM_INFO ./tb/tb_ram.sv(193) @ 746000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=1f wdata=6cd4 rdata=6313
+UVM_INFO ./tb/tb_ram.sv(233) @ 756000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=69 wdata=285a rdata=dde7
+UVM_INFO ./tb/tb_ram.sv(266) @ 756000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=69 wdata=285a rdata=dde7
+UVM_ERROR ./tb/tb_ram.sv(270) @ 756000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[105]=xxxx, actual ram[105]=dde7
+UVM_INFO ./tb/tb_ram.sv(193) @ 756000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=69 wdata=285a rdata=dde7
+UVM_INFO ./tb/tb_ram.sv(233) @ 766000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=28 wdata=4d0d rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 766000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=28 wdata=4d0d rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 766000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[40]=xxxx, actual ram[40]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 766000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=28 wdata=4d0d rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 776000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=84 wdata=8e29 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 776000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=84 wdata=8e29 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 776000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[132]=xxxx, actual ram[132]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 776000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=84 wdata=8e29 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 786000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=21 wdata=2539 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 786000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=21 wdata=2539 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 786000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[33]=xxxx, actual ram[33]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 786000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=21 wdata=2539 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 796000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=97 wdata=98b7 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 796000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=97 wdata=98b7 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 796000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[151]=xxxx, actual ram[151]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 796000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=97 wdata=98b7 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 806000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=79 wdata=effb rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 806000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=79 wdata=effb rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 806000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[121]=xxxx, actual ram[121]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 806000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=79 wdata=effb rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 816000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=31 wdata=9c1f rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 816000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=31 wdata=9c1f rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 816000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[49]=xxxx, actual ram[49]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 816000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=31 wdata=9c1f rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 826000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=f4 wdata=6c77 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 826000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=f4 wdata=6c77 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 826000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[244]=xxxx, actual ram[244]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 826000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=f4 wdata=6c77 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 836000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=8e wdata=22c1 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 836000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=8e wdata=22c1 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 836000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[142]=xxxx, actual ram[142]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 836000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=8e wdata=22c1 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 846000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=5d wdata=8f1a rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 846000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=5d wdata=8f1a rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 846000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[93]=xxxx, actual ram[93]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 846000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=5d wdata=8f1a rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 856000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=68 wdata=534b rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 856000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=68 wdata=534b rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 856000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[104]=xxxx, actual ram[104]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 856000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=68 wdata=534b rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 866000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=a4 wdata=3d2f rdata=6c8b
+UVM_INFO ./tb/tb_ram.sv(266) @ 866000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=a4 wdata=3d2f rdata=6c8b
+UVM_ERROR ./tb/tb_ram.sv(270) @ 866000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[164]=xxxx, actual ram[164]=6c8b
+UVM_INFO ./tb/tb_ram.sv(193) @ 866000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=a4 wdata=3d2f rdata=6c8b
+UVM_INFO ./tb/tb_ram.sv(233) @ 876000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=2b wdata=23d2 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 876000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=2b wdata=23d2 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 876000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[43]=xxxx, actual ram[43]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 876000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=2b wdata=23d2 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 886000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=0 wdata=3577 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 886000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=0 wdata=3577 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 886000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[0]=xxxx, actual ram[0]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 886000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=0 wdata=3577 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 896000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=af wdata=dd38 rdata=1d44
+UVM_INFO ./tb/tb_ram.sv(266) @ 896000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=af wdata=dd38 rdata=1d44
+UVM_ERROR ./tb/tb_ram.sv(270) @ 896000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[175]=xxxx, actual ram[175]=1d44
+UVM_INFO ./tb/tb_ram.sv(193) @ 896000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=af wdata=dd38 rdata=1d44
+UVM_INFO ./tb/tb_ram.sv(233) @ 906000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=d8 wdata=c35b rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 906000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=d8 wdata=c35b rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 906000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[216]=xxxx, actual ram[216]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 906000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=d8 wdata=c35b rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 916000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=1e wdata=e379 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 916000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=1e wdata=e379 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 916000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[30]=xxxx, actual ram[30]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 916000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=1e wdata=e379 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 926000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=12 wdata=f844 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 926000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=12 wdata=f844 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 926000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[18]=xxxx, actual ram[18]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 926000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=12 wdata=f844 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 936000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=b9 wdata=4431 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 936000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=b9 wdata=4431 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 936000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[185]=xxxx, actual ram[185]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 936000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=b9 wdata=4431 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 946000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=17 wdata=170b rdata=cb29
+UVM_INFO ./tb/tb_ram.sv(266) @ 946000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=17 wdata=170b rdata=cb29
+UVM_ERROR ./tb/tb_ram.sv(270) @ 946000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[23]=xxxx, actual ram[23]=cb29
+UVM_INFO ./tb/tb_ram.sv(193) @ 946000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=17 wdata=170b rdata=cb29
+UVM_INFO ./tb/tb_ram.sv(233) @ 956000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=99 wdata=7567 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 956000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=99 wdata=7567 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 956000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[153]=xxxx, actual ram[153]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 956000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=99 wdata=7567 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 966000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=a wdata=10f rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 966000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=a wdata=10f rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 966000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[10]=xxxx, actual ram[10]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 966000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=a wdata=10f rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 976000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=86 wdata=11dc rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 976000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=86 wdata=11dc rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 976000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[134]=xxxx, actual ram[134]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 976000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=86 wdata=11dc rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 986000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=ce wdata=2602 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 986000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=ce wdata=2602 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 986000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[206]=xxxx, actual ram[206]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 986000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=ce wdata=2602 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 996000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=6f wdata=165e rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 996000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=6f wdata=165e rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 996000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[111]=xxxx, actual ram[111]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 996000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=6f wdata=165e rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 1006000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=7f wdata=acc8 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 1006000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=7f wdata=acc8 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 1006000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[127]=xxxx, actual ram[127]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 1006000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=7f wdata=acc8 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 1016000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=aa wdata=af82 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 1016000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=aa wdata=af82 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 1016000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[170]=xxxx, actual ram[170]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 1016000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=aa wdata=af82 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 1026000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=6d wdata=2f34 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 1026000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=6d wdata=2f34 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 1026000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[109]=xxxx, actual ram[109]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 1026000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=6d wdata=2f34 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 1036000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=64 wdata=4e58 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 1036000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=64 wdata=4e58 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 1036000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[100]=xxxx, actual ram[100]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 1036000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=64 wdata=4e58 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 1046000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=6 wdata=6bbc rdata=df8f
+UVM_INFO ./tb/tb_ram.sv(266) @ 1046000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=6 wdata=6bbc rdata=df8f
+UVM_ERROR ./tb/tb_ram.sv(270) @ 1046000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[6]=xxxx, actual ram[6]=df8f
+UVM_INFO ./tb/tb_ram.sv(193) @ 1046000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=6 wdata=6bbc rdata=df8f
+UVM_INFO ./tb/tb_ram.sv(233) @ 1056000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=7 wdata=64aa rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 1056000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=7 wdata=64aa rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 1056000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[7]=xxxx, actual ram[7]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 1056000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=7 wdata=64aa rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 1066000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=ab wdata=dc09 rdata=3cf8
+UVM_INFO ./tb/tb_ram.sv(266) @ 1066000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=ab wdata=dc09 rdata=3cf8
+UVM_ERROR ./tb/tb_ram.sv(270) @ 1066000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[171]=xxxx, actual ram[171]=3cf8
+UVM_INFO ./tb/tb_ram.sv(193) @ 1066000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=ab wdata=dc09 rdata=3cf8
+UVM_INFO ./tb/tb_ram.sv(233) @ 1076000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=91 wdata=ebd3 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 1076000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=91 wdata=ebd3 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 1076000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[145]=xxxx, actual ram[145]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 1076000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=91 wdata=ebd3 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 1086000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=62 wdata=33b1 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 1086000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=62 wdata=33b1 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 1086000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[98]=xxxx, actual ram[98]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 1086000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=62 wdata=33b1 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 1096000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=ab wdata=3b84 rdata=dc09
+UVM_INFO ./tb/tb_ram.sv(266) @ 1096000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=ab wdata=3b84 rdata=dc09
+UVM_ERROR ./tb/tb_ram.sv(270) @ 1096000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[171]=xxxx, actual ram[171]=dc09
+UVM_INFO ./tb/tb_ram.sv(193) @ 1096000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=ab wdata=3b84 rdata=dc09
+UVM_INFO ./tb/tb_ram.sv(233) @ 1106000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=21 wdata=14c rdata=2539
+UVM_INFO ./tb/tb_ram.sv(266) @ 1106000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=21 wdata=14c rdata=2539
+UVM_ERROR ./tb/tb_ram.sv(270) @ 1106000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[33]=xxxx, actual ram[33]=2539
+UVM_INFO ./tb/tb_ram.sv(193) @ 1106000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=21 wdata=14c rdata=2539
+UVM_INFO ./tb/tb_ram.sv(233) @ 1116000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=cb wdata=9b73 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 1116000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=cb wdata=9b73 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 1116000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[203]=xxxx, actual ram[203]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 1116000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=cb wdata=9b73 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 1126000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=d3 wdata=8413 rdata=6782
+UVM_INFO ./tb/tb_ram.sv(266) @ 1126000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=d3 wdata=8413 rdata=6782
+UVM_ERROR ./tb/tb_ram.sv(270) @ 1126000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[211]=xxxx, actual ram[211]=6782
+UVM_INFO ./tb/tb_ram.sv(193) @ 1126000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=d3 wdata=8413 rdata=6782
+UVM_INFO ./tb/tb_ram.sv(233) @ 1136000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=bd wdata=dc30 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 1136000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=bd wdata=dc30 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 1136000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[189]=xxxx, actual ram[189]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 1136000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=bd wdata=dc30 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 1146000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=b3 wdata=cba1 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 1146000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=b3 wdata=cba1 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 1146000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[179]=xxxx, actual ram[179]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 1146000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=b3 wdata=cba1 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 1156000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=62 wdata=843 rdata=33b1
+UVM_INFO ./tb/tb_ram.sv(266) @ 1156000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=62 wdata=843 rdata=33b1
+UVM_ERROR ./tb/tb_ram.sv(270) @ 1156000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[98]=xxxx, actual ram[98]=33b1
+UVM_INFO ./tb/tb_ram.sv(193) @ 1156000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=62 wdata=843 rdata=33b1
+UVM_INFO ./tb/tb_ram.sv(233) @ 1166000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=8d wdata=567 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 1166000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=8d wdata=567 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 1166000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[141]=xxxx, actual ram[141]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 1166000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=8d wdata=567 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 1176000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=68 wdata=7350 rdata=534b
+UVM_INFO ./tb/tb_ram.sv(266) @ 1176000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=68 wdata=7350 rdata=534b
+UVM_ERROR ./tb/tb_ram.sv(270) @ 1176000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[104]=xxxx, actual ram[104]=534b
+UVM_INFO ./tb/tb_ram.sv(193) @ 1176000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=68 wdata=7350 rdata=534b
+UVM_INFO ./tb/tb_ram.sv(233) @ 1186000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=c2 wdata=9c24 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 1186000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=c2 wdata=9c24 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 1186000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[194]=xxxx, actual ram[194]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 1186000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=c2 wdata=9c24 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 1196000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=67 wdata=d7a5 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 1196000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=67 wdata=d7a5 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 1196000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[103]=xxxx, actual ram[103]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 1196000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=67 wdata=d7a5 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 1206000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=e8 wdata=33c rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 1206000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=e8 wdata=33c rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 1206000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[232]=xxxx, actual ram[232]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 1206000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=e8 wdata=33c rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 1216000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=fb wdata=7508 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 1216000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=fb wdata=7508 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 1216000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[251]=xxxx, actual ram[251]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 1216000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=fb wdata=7508 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 1226000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=32 wdata=165d rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 1226000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=32 wdata=165d rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 1226000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[50]=xxxx, actual ram[50]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 1226000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=32 wdata=165d rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 1236000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=2b wdata=6b76 rdata=23d2
+UVM_INFO ./tb/tb_ram.sv(266) @ 1236000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=2b wdata=6b76 rdata=23d2
+UVM_ERROR ./tb/tb_ram.sv(270) @ 1236000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[43]=xxxx, actual ram[43]=23d2
+UVM_INFO ./tb/tb_ram.sv(193) @ 1236000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=2b wdata=6b76 rdata=23d2
+UVM_INFO ./tb/tb_ram.sv(233) @ 1246000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=ee wdata=e313 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 1246000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=ee wdata=e313 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 1246000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[238]=xxxx, actual ram[238]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 1246000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=ee wdata=e313 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 1256000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=4f wdata=e4bc rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 1256000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=4f wdata=e4bc rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 1256000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[79]=xxxx, actual ram[79]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 1256000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=4f wdata=e4bc rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 1266000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=36 wdata=44d0 rdata=f27f
+UVM_INFO ./tb/tb_ram.sv(266) @ 1266000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=36 wdata=44d0 rdata=f27f
+UVM_ERROR ./tb/tb_ram.sv(270) @ 1266000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[54]=xxxx, actual ram[54]=f27f
+UVM_INFO ./tb/tb_ram.sv(193) @ 1266000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=36 wdata=44d0 rdata=f27f
+UVM_INFO ./tb/tb_ram.sv(233) @ 1276000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=01 addr=7b wdata=6f29 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 1276000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=01 addr=7b wdata=6f29 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 1276000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[123]=xxxx, actual ram[123]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 1276000: uvm_test_top.env.agt.mon [ram_monitor] we=01 addr=7b wdata=6f29 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 1286000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=00 addr=0 wdata=4a9c rdata=3577
+UVM_INFO ./tb/tb_ram.sv(266) @ 1286000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=00 addr=0 wdata=4a9c rdata=3577
+UVM_ERROR ./tb/tb_ram.sv(270) @ 1286000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[0]=xxxx, actual ram[0]=3577
+UVM_INFO ./tb/tb_ram.sv(193) @ 1286000: uvm_test_top.env.agt.mon [ram_monitor] we=00 addr=0 wdata=4a9c rdata=3577
+UVM_INFO ./tb/tb_ram.sv(233) @ 1296000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=00 addr=1 wdata=f096 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 1296000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=00 addr=1 wdata=f096 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 1296000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[1]=xxxx, actual ram[1]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 1296000: uvm_test_top.env.agt.mon [ram_monitor] we=00 addr=1 wdata=f096 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 1306000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=00 addr=2 wdata=b532 rdata=9305
+UVM_INFO ./tb/tb_ram.sv(266) @ 1306000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=00 addr=2 wdata=b532 rdata=9305
+UVM_ERROR ./tb/tb_ram.sv(270) @ 1306000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[2]=xxxx, actual ram[2]=9305
+UVM_INFO ./tb/tb_ram.sv(193) @ 1306000: uvm_test_top.env.agt.mon [ram_monitor] we=00 addr=2 wdata=b532 rdata=9305
+UVM_INFO ./tb/tb_ram.sv(233) @ 1316000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=00 addr=3 wdata=258a rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 1316000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=00 addr=3 wdata=258a rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 1316000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[3]=xxxx, actual ram[3]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 1316000: uvm_test_top.env.agt.mon [ram_monitor] we=00 addr=3 wdata=258a rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 1326000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=00 addr=4 wdata=f728 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 1326000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=00 addr=4 wdata=f728 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 1326000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[4]=xxxx, actual ram[4]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 1326000: uvm_test_top.env.agt.mon [ram_monitor] we=00 addr=4 wdata=f728 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 1336000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=00 addr=5 wdata=4edd rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 1336000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=00 addr=5 wdata=4edd rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 1336000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[5]=xxxx, actual ram[5]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 1336000: uvm_test_top.env.agt.mon [ram_monitor] we=00 addr=5 wdata=4edd rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 1346000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=00 addr=6 wdata=fac8 rdata=6bbc
+UVM_INFO ./tb/tb_ram.sv(266) @ 1346000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=00 addr=6 wdata=fac8 rdata=6bbc
+UVM_ERROR ./tb/tb_ram.sv(270) @ 1346000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[6]=xxxx, actual ram[6]=6bbc
+UVM_INFO ./tb/tb_ram.sv(193) @ 1346000: uvm_test_top.env.agt.mon [ram_monitor] we=00 addr=6 wdata=fac8 rdata=6bbc
+UVM_INFO ./tb/tb_ram.sv(233) @ 1356000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=00 addr=7 wdata=e888 rdata=64aa
+UVM_INFO ./tb/tb_ram.sv(266) @ 1356000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=00 addr=7 wdata=e888 rdata=64aa
+UVM_ERROR ./tb/tb_ram.sv(270) @ 1356000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[7]=xxxx, actual ram[7]=64aa
+UVM_INFO ./tb/tb_ram.sv(193) @ 1356000: uvm_test_top.env.agt.mon [ram_monitor] we=00 addr=7 wdata=e888 rdata=64aa
+UVM_INFO ./tb/tb_ram.sv(233) @ 1366000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=00 addr=8 wdata=2f00 rdata=dcb8
+UVM_INFO ./tb/tb_ram.sv(266) @ 1366000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=00 addr=8 wdata=2f00 rdata=dcb8
+UVM_ERROR ./tb/tb_ram.sv(270) @ 1366000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[8]=xxxx, actual ram[8]=dcb8
+UVM_INFO ./tb/tb_ram.sv(193) @ 1366000: uvm_test_top.env.agt.mon [ram_monitor] we=00 addr=8 wdata=2f00 rdata=dcb8
+UVM_INFO ./tb/tb_ram.sv(233) @ 1376000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=00 addr=9 wdata=f092 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 1376000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=00 addr=9 wdata=f092 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 1376000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[9]=xxxx, actual ram[9]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 1376000: uvm_test_top.env.agt.mon [ram_monitor] we=00 addr=9 wdata=f092 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 1386000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=00 addr=a wdata=2c5d rdata=10f
+UVM_INFO ./tb/tb_ram.sv(266) @ 1386000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=00 addr=a wdata=2c5d rdata=10f
+UVM_ERROR ./tb/tb_ram.sv(270) @ 1386000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[10]=xxxx, actual ram[10]=10f
+UVM_INFO ./tb/tb_ram.sv(193) @ 1386000: uvm_test_top.env.agt.mon [ram_monitor] we=00 addr=a wdata=2c5d rdata=10f
+UVM_INFO ./tb/tb_ram.sv(233) @ 1396000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=00 addr=b wdata=902f rdata=909a
+UVM_INFO ./tb/tb_ram.sv(266) @ 1396000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=00 addr=b wdata=902f rdata=909a
+UVM_ERROR ./tb/tb_ram.sv(270) @ 1396000: uvm_test_top.env.scb [ram_scoreboard] ==MISMATCH!== comp_ram[11]=xxxx, actual ram[11]=909a
+UVM_INFO ./tb/tb_ram.sv(193) @ 1396000: uvm_test_top.env.agt.mon [ram_monitor] we=00 addr=b wdata=902f rdata=909a
+UVM_INFO ./tb/tb_ram.sv(233) @ 1406000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=00 addr=c wdata=b5 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 1406000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=00 addr=c wdata=b5 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 1406000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[12]=xxxx, actual ram[12]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 1406000: uvm_test_top.env.agt.mon [ram_monitor] we=00 addr=c wdata=b5 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 1416000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=00 addr=d wdata=b434 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 1416000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=00 addr=d wdata=b434 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 1416000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[13]=xxxx, actual ram[13]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 1416000: uvm_test_top.env.agt.mon [ram_monitor] we=00 addr=d wdata=b434 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(233) @ 1426000: uvm_test_top.env.cov [ram_coverage] counter_cb sampled: we=00 addr=e wdata=53c7 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(266) @ 1426000: uvm_test_top.env.scb [ram_scoreboard] Reveibed: we=00 addr=e wdata=53c7 rdata=xxxx
+UVM_INFO ./tb/tb_ram.sv(273) @ 1426000: uvm_test_top.env.scb [ram_scoreboard] == MATCH! == comp_ram[14]=xxxx, actual ram[14]=xxxx
+UVM_INFO ./tb/tb_ram.sv(193) @ 1426000: uvm_test_top.env.agt.mon [ram_monitor] we=00 addr=e wdata=53c7 rdata=xxxx
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 1435000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO ./tb/tb_ram.sv(236) @ 1435000: uvm_test_top.env.cov [ram_coverage] 
+
+===== Coverage Summary =====
+UVM_INFO ./tb/tb_ram.sv(237) @ 1435000: uvm_test_top.env.cov [ram_coverage]    Overall: 79.2%
+UVM_INFO ./tb/tb_ram.sv(238) @ 1435000: uvm_test_top.env.cov [ram_coverage]    we: 100.0%
+UVM_INFO ./tb/tb_ram.sv(239) @ 1435000: uvm_test_top.env.cov [ram_coverage]    addr: 75.0%
+UVM_INFO ./tb/tb_ram.sv(240) @ 1435000: uvm_test_top.env.cov [ram_coverage]    cross(we, addr): 62.5%
+UVM_INFO ./tb/tb_ram.sv(241) @ 1435000: uvm_test_top.env.cov [ram_coverage] ===== Coverage Summary =====
+
+
+UVM_INFO ./tb/tb_ram.sv(279) @ 1435000: uvm_test_top.env.scb [ram_scoreboard]  ===== Scoreboard Summary =====
+UVM_INFO ./tb/tb_ram.sv(280) @ 1435000: uvm_test_top.env.scb [ram_scoreboard]   Total transactions: 143
+UVM_INFO ./tb/tb_ram.sv(281) @ 1435000: uvm_test_top.env.scb [ram_scoreboard]   Matches: 110
+UVM_INFO ./tb/tb_ram.sv(282) @ 1435000: uvm_test_top.env.scb [ram_scoreboard]   Error: 33
+UVM_ERROR ./tb/tb_ram.sv(285) @ 1435000: uvm_test_top.env.scb [ram_scoreboard] TEST FAILED: 33 mismatches detected.
+UVM_INFO ./tb/tb_ram.sv(372) @ 1435000: uvm_test_top [ram_test] ===== TEST FAIL! =====
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(589) @ 1435000: reporter [UVMTOP] UVM testbench topology:
+--------------------------------------------------------------
+Name                       Type                    Size  Value
+--------------------------------------------------------------
+uvm_test_top               ram_test                -     @342 
+  env                      ram_environment         -     @355 
+    agt                    ram_agent               -     @364 
+      drv                  ram_driver              -     @549 
+        rsp_port           uvm_analysis_port       -     @568 
+        seq_item_port      uvm_seq_item_pull_port  -     @558 
+      mon                  ram_monitor             -     @578 
+        ap                 uvm_analysis_port       -     @587 
+      sqr                  uvm_sequencer           -     @412 
+        rsp_export         uvm_analysis_export     -     @421 
+        seq_item_export    uvm_seq_item_pull_imp   -     @539 
+        arbitration_queue  array                   0     -    
+        lock_queue         array                   0     -    
+        num_last_reqs      integral                32    'd1  
+        num_last_rsps      integral                32    'd1  
+    cov                    ram_coverage            -     @392 
+      analysis_imp         uvm_analysis_imp        -     @401 
+    scb                    ram_scoreboard          -     @373 
+      ap_imp               uvm_analysis_imp        -     @382 
+--------------------------------------------------------------
+
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 1435000: reporter [UVM/REPORT/CATCHER] 
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_server.svh(904) @ 1435000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  555
+UVM_WARNING :    0
+UVM_ERROR :   34
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[TEST_DONE]     1
+[UVM/RELNOTES]     1
+[UVM/REPORT/CATCHER]     1
+[UVMTOP]     1
+[ram_coverage]   149
+[ram_monitor]   143
+[ram_scoreboard]   291
+[ram_test]     1
+
+$finish called from file "/tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh", line 527.
+$finish at simulation time              1435000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 1435000 ps
+CPU Time:      0.220 seconds;       Data structure size:   0.6Mb
+Thu Apr  9 01:33:30 2026
