@@ -1,0 +1,89 @@
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
+Chronologic VCS simulator copyright 1991-2024
+Contains Synopsys proprietary information.
+Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  Apr  9 15:33 2026
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test ram_base_test...
+UVM_INFO tb/ram_scoreboard.sv(39) @ 5000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0xxx, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 5000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xf2 wdata=0xf3cb rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 15000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x7b, data=0x08bf
+UVM_INFO tb/ram_driver.sv(38) @ 15000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x7b wdata=0x08bf rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 35000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x7a, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 35000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x7a wdata=0x6701 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 45000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xd2, data=0xdaa3
+UVM_INFO tb/ram_driver.sv(38) @ 45000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xd2 wdata=0xdaa3 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 65000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x89, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 65000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x89 wdata=0x7e5e rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 75000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x61, data=0x5d73
+UVM_INFO tb/ram_driver.sv(38) @ 75000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x61 wdata=0x5d73 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 95000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x2a, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 95000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x2a wdata=0x4cc7 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 105000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x0a, data=0x3f40
+UVM_INFO tb/ram_driver.sv(38) @ 105000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x0a wdata=0x3f40 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 125000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x2e, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 125000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x2e wdata=0xee17 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 145000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x47, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 145000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x47 wdata=0x84a6 rdata=0xxxxx
+UVM_INFO tb/ram_test.sv(28) @ 145000: uvm_test_top [TEST] ram test 완료
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 145000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO tb/ram_scoreboard.sv(48) @ 145000: uvm_test_top.env.scb [ram_scoreboard]  ===== Scoreboard Summay =====
+UVM_INFO tb/ram_scoreboard.sv(49) @ 145000: uvm_test_top.env.scb [ram_scoreboard]    Total transactions: 10
+UVM_INFO tb/ram_scoreboard.sv(50) @ 145000: uvm_test_top.env.scb [ram_scoreboard]    Pass: 10
+UVM_INFO tb/ram_scoreboard.sv(51) @ 145000: uvm_test_top.env.scb [ram_scoreboard]    Fail: 0
+UVM_INFO tb/ram_scoreboard.sv(55) @ 145000: uvm_test_top.env.scb [ram_scoreboard] TEST PASSED; 10 all matches detected.
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 145000: reporter [UVM/REPORT/CATCHER] 
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_server.svh(904) @ 145000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   30
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[TEST]     1
+[TEST_DONE]     1
+[UVM/RELNOTES]     1
+[UVM/REPORT/CATCHER]     1
+[ram_driver]    10
+[ram_scoreboard]    15
+
+$finish called from file "/tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh", line 527.
+$finish at simulation time               145000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 145000 ps
+CPU Time:      0.190 seconds;       Data structure size:   0.6Mb
+Thu Apr  9 15:33:09 2026

@@ -1,12 +1,14 @@
-`ifndef COMPONENT_SV
-`define COMPONENT_SV
+`ifndef RAM_TEST_SV
+`define RAM_TEST_SV
 
 `timescale 1ns/1ps
 `include "uvm_macros.svh"
 import uvm_pkg::*;
 
-class component extends uvm_comoponent;
-    `uvm_component_utils(component)
+class ram_base_test extends uvm_test;
+    `uvm_component_utils(ram_base_test)
+
+    ram_env env;
 
     function new(string name, uvm_component parent);
         super.new(name, parent);
@@ -14,17 +16,17 @@ class component extends uvm_comoponent;
 
     virtual function void build_phase(uvm_phase phase);
         super.build_phase(phase);
-
+        env = ram_env::type_id::create("env", this);
     endfunction
-    virtual function void connect_phase(uvm_phase phase);
+    virtual task run_phase(uvm_phase phase);
+        ram_sequence seq = ram_sequence::type_id::create("seq");
 
-    endfunction
-    virtual task run_phase(uvm_phase pahse);
-
+        phase.raise_objection(this);
+        seq.num_transaction = 10;
+        seq.start(env.agt.sqr);
+        phase.drop_objection(this);
+        `uvm_info("TEST", "ram test 완료", UVM_NONE) // UVM_NONE: always display
     endtask
-    virtual function void report_phase(uvm_phase phase);
-        
-    endfunction
 endclass
 
 
