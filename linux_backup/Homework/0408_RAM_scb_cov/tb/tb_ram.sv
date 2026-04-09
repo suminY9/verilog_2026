@@ -59,7 +59,7 @@ class ram_write_seq extends uvm_sequence #(ram_seq_item);
 
 	function new(string name = "ram_write_seq");
 		super.new(name);
-		write_cnt = 128;
+		write_cnt = 256;
 	endfunction
 
 	virtual task body();
@@ -152,7 +152,9 @@ class ram_driver extends uvm_driver #(ram_seq_item);
 		r_if.drv_cb.we <= item.we;
 		r_if.drv_cb.addr <= item.addr;
 		r_if.drv_cb.wdata <= item.wdata;
-		@(posedge r_if.clk);
+		if(!item.we) begin
+			@(r_if.drv_cb);
+		end
 	endtask
 	virtual task run_phase(uvm_phase phase);
 		ram_seq_item item;
@@ -181,15 +183,20 @@ class ram_monitor extends uvm_monitor;
 			`uvm_fatal(get_type_name(), "FAIL: CAN NOT FIND <r_if>")
 	endfunction
 	virtual task run_phase(uvm_phase phase);
+		logic [7:0] last_addr;
+
 		forever begin
 			ram_seq_item item = ram_seq_item::type_id::create("item");
-			@(r_if.mon_cb)
-			#1;
-			
+
+			@(r_if.mon_cb);
 			item.we = r_if.mon_cb.we;
 			item.addr = r_if.mon_cb.addr;
 			item.wdata = r_if.mon_cb.wdata;
-			item.rdata = r_if.mon_cb.rdata;
+			if(!r_if.mon_cb.we) begin
+				@(r_if.mon_cb);
+				item.rdata = r_if.mon_cb.rdata;
+			end
+
 			ap.write(item);
 			`uvm_info(get_type_name(), item.convert2string(), UVM_MEDIUM);
 			//if(r_if.we) begin
@@ -372,7 +379,7 @@ class ram_test extends uvm_test;
 		phase.raise_objection(this);
 			master_seq = ram_master_seq::type_id::create("master_seq");
 			master_seq.start(env.agt.sqr);
-			#100;
+			#1000;
 		phase.drop_objection(this);
 	endtask
 	virtual function void report_phase(uvm_phase phase);

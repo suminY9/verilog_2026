@@ -10,9 +10,6 @@ module ram(
 
 	always_ff @(posedge clk) begin
 		if(we)	ram[addr] <= wdata;
-	end
-
-	always_comb begin
-		rdata = ram[addr];
+		else rdata <= ram[addr];
 	end
 endmodule
