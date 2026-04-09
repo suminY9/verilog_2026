@@ -2,7 +2,7 @@ Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detec
 Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
 Chronologic VCS simulator copyright 1991-2024
 Contains Synopsys proprietary information.
-Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  Apr  9 15:33 2026
+Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  Apr  9 16:29 2026
 UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
 ----------------------------------------------------------------
 UVM-1.2.Synopsys
@@ -25,35 +25,85 @@ UVM-1.2.Synopsys
 
       (Specify +UVM_NO_RELNOTES to turn off this notice)
 
-UVM_INFO @ 0: reporter [RNTST] Running test ram_base_test...
+UVM_INFO @ 0: reporter [RNTST] Running test ram_write_read_test...
+*Verdi* Loading libsscore_vcs202409.so
+FSDB Dumper for VCS, Release Verdi_W-2024.09-SP2, Linux x86_64/64bit, 03/03/2025
+(C) 1996 - 2025 by Synopsys, Inc.
+*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+*Verdi* : Create FSDB file 'novas.fsdb'
+*Verdi* ERROR: The #1 argument is invalid
+*Verdi* ERROR: The #2 argument is invalid
+*Verdi* ERROR: The #3 argument is invalid
+*Verdi* ERROR: Syntax - $fsdbDumpfile("FSDB_Name"[,Limit_Size]);	: ./tb/tb_ram.sv(38)
+UVM_INFO tb/ram_monitor.sv(41) @ 5000: uvm_test_top.env.agt.mon [ram_monitor] wr=x addr=0xxx wdata=0xxxxx rdata=0xxxxx
 UVM_INFO tb/ram_scoreboard.sv(39) @ 5000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0xxx, expected=0xxxxx, real=0xxxxx
-UVM_INFO tb/ram_driver.sv(38) @ 5000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xf2 wdata=0xf3cb rdata=0xxxxx
-UVM_INFO tb/ram_scoreboard.sv(34) @ 15000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x7b, data=0x08bf
-UVM_INFO tb/ram_driver.sv(38) @ 15000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x7b wdata=0x08bf rdata=0xxxxx
-UVM_INFO tb/ram_scoreboard.sv(39) @ 35000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x7a, expected=0xxxxx, real=0xxxxx
-UVM_INFO tb/ram_driver.sv(38) @ 35000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x7a wdata=0x6701 rdata=0xxxxx
-UVM_INFO tb/ram_scoreboard.sv(34) @ 45000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xd2, data=0xdaa3
-UVM_INFO tb/ram_driver.sv(38) @ 45000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xd2 wdata=0xdaa3 rdata=0xxxxx
-UVM_INFO tb/ram_scoreboard.sv(39) @ 65000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x89, expected=0xxxxx, real=0xxxxx
-UVM_INFO tb/ram_driver.sv(38) @ 65000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x89 wdata=0x7e5e rdata=0xxxxx
-UVM_INFO tb/ram_scoreboard.sv(34) @ 75000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x61, data=0x5d73
-UVM_INFO tb/ram_driver.sv(38) @ 75000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x61 wdata=0x5d73 rdata=0xxxxx
-UVM_INFO tb/ram_scoreboard.sv(39) @ 95000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x2a, expected=0xxxxx, real=0xxxxx
-UVM_INFO tb/ram_driver.sv(38) @ 95000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x2a wdata=0x4cc7 rdata=0xxxxx
-UVM_INFO tb/ram_scoreboard.sv(34) @ 105000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x0a, data=0x3f40
-UVM_INFO tb/ram_driver.sv(38) @ 105000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x0a wdata=0x3f40 rdata=0xxxxx
-UVM_INFO tb/ram_scoreboard.sv(39) @ 125000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x2e, expected=0xxxxx, real=0xxxxx
-UVM_INFO tb/ram_driver.sv(38) @ 125000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x2e wdata=0xee17 rdata=0xxxxx
-UVM_INFO tb/ram_scoreboard.sv(39) @ 145000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x47, expected=0xxxxx, real=0xxxxx
-UVM_INFO tb/ram_driver.sv(38) @ 145000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x47 wdata=0x84a6 rdata=0xxxxx
-UVM_INFO tb/ram_test.sv(28) @ 145000: uvm_test_top [TEST] ram test 완료
-UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 145000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-UVM_INFO tb/ram_scoreboard.sv(48) @ 145000: uvm_test_top.env.scb [ram_scoreboard]  ===== Scoreboard Summay =====
-UVM_INFO tb/ram_scoreboard.sv(49) @ 145000: uvm_test_top.env.scb [ram_scoreboard]    Total transactions: 10
-UVM_INFO tb/ram_scoreboard.sv(50) @ 145000: uvm_test_top.env.scb [ram_scoreboard]    Pass: 10
-UVM_INFO tb/ram_scoreboard.sv(51) @ 145000: uvm_test_top.env.scb [ram_scoreboard]    Fail: 0
-UVM_INFO tb/ram_scoreboard.sv(55) @ 145000: uvm_test_top.env.scb [ram_scoreboard] TEST PASSED; 10 all matches detected.
-UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 145000: reporter [UVM/REPORT/CATCHER] 
+UVM_INFO tb/ram_driver.sv(38) @ 5000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xab wdata=0x5185 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 25000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0xab wdata=0x5185 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 25000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0xab, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 25000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0xab wdata=0x5185 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 35000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x59 wdata=0x503d rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 35000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x59, data=0x503d
+UVM_INFO tb/ram_driver.sv(38) @ 35000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x59 wdata=0x503d rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 55000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x59 wdata=0x503d rdata=0x503d
+UVM_INFO tb/ram_scoreboard.sv(39) @ 55000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x59, expected=0x503d, real=0x503d
+UVM_INFO tb/ram_driver.sv(38) @ 55000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x59 wdata=0x503d rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 65000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0xb2 wdata=0x7ff5 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 65000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xb2, data=0x7ff5
+UVM_INFO tb/ram_driver.sv(38) @ 65000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xb2 wdata=0x7ff5 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 85000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0xb2 wdata=0x7ff5 rdata=0x7ff5
+UVM_INFO tb/ram_scoreboard.sv(39) @ 85000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0xb2, expected=0x7ff5, real=0x7ff5
+UVM_INFO tb/ram_driver.sv(38) @ 85000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0xb2 wdata=0x7ff5 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 95000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x21 wdata=0x3d17 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 95000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x21, data=0x3d17
+UVM_INFO tb/ram_driver.sv(38) @ 95000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x21 wdata=0x3d17 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 115000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x21 wdata=0x3d17 rdata=0x3d17
+UVM_INFO tb/ram_scoreboard.sv(39) @ 115000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x21, expected=0x3d17, real=0x3d17
+UVM_INFO tb/ram_driver.sv(38) @ 115000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x21 wdata=0x3d17 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 125000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x40 wdata=0x336d rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 125000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x40, data=0x336d
+UVM_INFO tb/ram_driver.sv(38) @ 125000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x40 wdata=0x336d rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 145000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x40 wdata=0x336d rdata=0x336d
+UVM_INFO tb/ram_scoreboard.sv(39) @ 145000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x40, expected=0x336d, real=0x336d
+UVM_INFO tb/ram_driver.sv(38) @ 145000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x40 wdata=0x336d rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 155000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x67 wdata=0xa10f rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 155000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x67, data=0xa10f
+UVM_INFO tb/ram_driver.sv(38) @ 155000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x67 wdata=0xa10f rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 175000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x67 wdata=0xa10f rdata=0xa10f
+UVM_INFO tb/ram_scoreboard.sv(39) @ 175000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x67, expected=0xa10f, real=0xa10f
+UVM_INFO tb/ram_driver.sv(38) @ 175000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x67 wdata=0xa10f rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 185000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x51 wdata=0x191a rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 185000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x51, data=0x191a
+UVM_INFO tb/ram_driver.sv(38) @ 185000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x51 wdata=0x191a rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 205000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x51 wdata=0x191a rdata=0x191a
+UVM_INFO tb/ram_scoreboard.sv(39) @ 205000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x51, expected=0x191a, real=0x191a
+UVM_INFO tb/ram_driver.sv(38) @ 205000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x51 wdata=0x191a rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 215000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x0f wdata=0xf47c rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 215000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x0f, data=0xf47c
+UVM_INFO tb/ram_driver.sv(38) @ 215000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x0f wdata=0xf47c rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 235000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x0f wdata=0xf47c rdata=0xf47c
+UVM_INFO tb/ram_scoreboard.sv(39) @ 235000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x0f, expected=0xf47c, real=0xf47c
+UVM_INFO tb/ram_driver.sv(38) @ 235000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x0f wdata=0xf47c rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 245000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0xc2 wdata=0x127b rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 245000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xc2, data=0x127b
+UVM_INFO tb/ram_driver.sv(38) @ 245000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xc2 wdata=0x127b rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 265000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0xc2 wdata=0x127b rdata=0x127b
+UVM_INFO tb/ram_scoreboard.sv(39) @ 265000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0xc2, expected=0x127b, real=0x127b
+UVM_INFO tb/ram_driver.sv(38) @ 265000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0xc2 wdata=0x127b rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 275000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x08 wdata=0xac3e rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 275000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x08, data=0xac3e
+UVM_INFO tb/ram_driver.sv(38) @ 275000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x08 wdata=0xac3e rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 295000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x08 wdata=0xac3e rdata=0xac3e
+UVM_INFO tb/ram_scoreboard.sv(39) @ 295000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x08, expected=0xac3e, real=0xac3e
+UVM_INFO tb/ram_driver.sv(38) @ 295000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x08 wdata=0xac3e rdata=0xxxxx
+UVM_INFO tb/ram_test.sv(47) @ 295000: uvm_test_top [TEST] ram_write_read_sequence test 완료
+UVM_INFO tb/ram_test.sv(29) @ 295000: uvm_test_top [TEST] ram test 완료
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 295000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO tb/ram_scoreboard.sv(48) @ 295000: uvm_test_top.env.scb [ram_scoreboard]  ===== Scoreboard Summay =====
+UVM_INFO tb/ram_scoreboard.sv(49) @ 295000: uvm_test_top.env.scb [ram_scoreboard]    Total transactions: 20
+UVM_INFO tb/ram_scoreboard.sv(50) @ 295000: uvm_test_top.env.scb [ram_scoreboard]    Pass: 20
+UVM_INFO tb/ram_scoreboard.sv(51) @ 295000: uvm_test_top.env.scb [ram_scoreboard]    Fail: 0
+UVM_INFO tb/ram_scoreboard.sv(55) @ 295000: uvm_test_top.env.scb [ram_scoreboard] TEST PASSED; 20 all matches detected.
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 295000: reporter [UVM/REPORT/CATCHER] 
 --- UVM Report catcher Summary ---
 
 
@@ -64,26 +114,27 @@ Number of caught UVM_FATAL reports   :    0
 Number of caught UVM_ERROR reports   :    0
 Number of caught UVM_WARNING reports :    0
 
-UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_server.svh(904) @ 145000: reporter [UVM/REPORT/SERVER] 
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_server.svh(904) @ 295000: reporter [UVM/REPORT/SERVER] 
 --- UVM Report Summary ---
 
 ** Report counts by severity
-UVM_INFO :   30
+UVM_INFO :   71
 UVM_WARNING :    0
 UVM_ERROR :    0
 UVM_FATAL :    0
 ** Report counts by id
 [RNTST]     1
-[TEST]     1
+[TEST]     2
 [TEST_DONE]     1
 [UVM/RELNOTES]     1
 [UVM/REPORT/CATCHER]     1
-[ram_driver]    10
-[ram_scoreboard]    15
+[ram_driver]    20
+[ram_monitor]    20
+[ram_scoreboard]    25
 
 $finish called from file "/tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh", line 527.
-$finish at simulation time               145000
+$finish at simulation time               295000
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 145000 ps
+Time: 295000 ps
 CPU Time:      0.190 seconds;       Data structure size:   0.6Mb
-Thu Apr  9 15:33:09 2026
+Thu Apr  9 16:29:40 2026

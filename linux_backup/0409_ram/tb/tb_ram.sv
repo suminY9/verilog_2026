@@ -32,4 +32,9 @@ module tb_ram();
         uvm_config_db#(virtual ram_interface)::set(null, "*", "r_if", r_if);
         run_test("ram_base_test");
     end
+
+    initial begin
+        $fsdbDumpfile("novas.fsdb");
+        $fsdbDumpfile(0, tb_ram, "+all");
+    end
 endmodule

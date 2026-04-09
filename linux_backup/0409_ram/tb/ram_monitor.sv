@@ -38,6 +38,7 @@ class ram_monitor extends uvm_monitor;
                 @(r_if.mon_cb);
                 item.rdata = r_if.mon_cb.rdata;
             end
+            `uvm_info(get_type_name(), item.convert2string(), UVM_MEDIUM);
             // interface로부터 받은 값을 item에 넣어서 itme을 scb, cov에 전송
             
             ap.write(item);
