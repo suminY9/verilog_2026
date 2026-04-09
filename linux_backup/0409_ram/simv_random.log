@@ -1,0 +1,500 @@
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
+Chronologic VCS simulator copyright 1991-2024
+Contains Synopsys proprietary information.
+Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  Apr  9 19:22 2026
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+
+ VCS Coverage Metrics Release W-2024.09-SP1_Full64 Copyright (c) 1991-2024 by Synopsys Inc.
+UVM_INFO @ 0: reporter [RNTST] Running test ram_random_test...
+*Verdi* Loading libsscore_vcs202409.so
+FSDB Dumper for VCS, Release Verdi_W-2024.09-SP2, Linux x86_64/64bit, 03/03/2025
+(C) 1996 - 2025 by Synopsys, Inc.
+*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+*Verdi* : Create FSDB file 'novas.fsdb'
+*Verdi* ERROR: The #1 argument is invalid
+*Verdi* ERROR: The #2 argument is invalid
+*Verdi* ERROR: The #3 argument is invalid
+*Verdi* ERROR: Syntax - $fsdbDumpfile("FSDB_Name"[,Limit_Size]);	: ./tb/tb_ram.sv(38)
+UVM_INFO tb/ram_monitor.sv(41) @ 5000: uvm_test_top.env.agt.mon [ram_monitor] wr=x addr=0xxx wdata=0xxxxx rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 5000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=x addr=0xxx wdata=0xxxxx rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 5000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0xxx, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 5000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x85 wdata=0x12ed rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 15000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x8d wdata=0xd133 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 15000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x8d wdata=0xd133 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 15000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x8d, data=0xd133
+UVM_INFO tb/ram_driver.sv(38) @ 15000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x8d wdata=0xd133 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 25000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x3d wdata=0x5a5d rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 25000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x3d wdata=0x5a5d rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 25000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x3d, data=0x5a5d
+UVM_INFO tb/ram_driver.sv(38) @ 25000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x3d wdata=0x5a5d rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 45000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x05 wdata=0xd4a6 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 45000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x05 wdata=0xd4a6 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 45000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x05, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 45000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x05 wdata=0xd4a6 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 65000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0xf5 wdata=0xa368 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 65000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0xf5 wdata=0xa368 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 65000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0xf5, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 65000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0xf5 wdata=0xa368 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 85000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x8c wdata=0x1740 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 85000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x8c wdata=0x1740 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 85000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x8c, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 85000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x8c wdata=0x1740 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 95000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x17 wdata=0xd5df rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 95000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x17 wdata=0xd5df rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 95000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x17, data=0xd5df
+UVM_INFO tb/ram_driver.sv(38) @ 95000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x17 wdata=0xd5df rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 115000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0xe3 wdata=0xe538 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 115000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0xe3 wdata=0xe538 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 115000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0xe3, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 115000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0xe3 wdata=0xe538 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 135000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x6d wdata=0x5a6b rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 135000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x6d wdata=0x5a6b rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 135000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x6d, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 135000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x6d wdata=0x5a6b rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 155000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x3d wdata=0xd88e rdata=0x5a5d
+UVM_INFO tb/ram_coverage.sv(39) @ 155000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x3d wdata=0xd88e rdata=0x5a5d
+UVM_INFO tb/ram_scoreboard.sv(39) @ 155000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x3d, expected=0x5a5d, real=0x5a5d
+UVM_INFO tb/ram_driver.sv(38) @ 155000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x3d wdata=0xd88e rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 165000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x0f wdata=0xbabd rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 165000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x0f wdata=0xbabd rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 165000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x0f, data=0xbabd
+UVM_INFO tb/ram_driver.sv(38) @ 165000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x0f wdata=0xbabd rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 185000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x01 wdata=0x18f5 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 185000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x01 wdata=0x18f5 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 185000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x01, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 185000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x01 wdata=0x18f5 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 195000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x1a wdata=0x58fe rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 195000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x1a wdata=0x58fe rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 195000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x1a, data=0x58fe
+UVM_INFO tb/ram_driver.sv(38) @ 195000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x1a wdata=0x58fe rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 215000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x71 wdata=0xadb1 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 215000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x71 wdata=0xadb1 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 215000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x71, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 215000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x71 wdata=0xadb1 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 225000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x7c wdata=0xf350 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 225000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x7c wdata=0xf350 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 225000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x7c, data=0xf350
+UVM_INFO tb/ram_driver.sv(38) @ 225000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x7c wdata=0xf350 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 245000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x15 wdata=0xa3a5 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 245000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x15 wdata=0xa3a5 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 245000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x15, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 245000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x15 wdata=0xa3a5 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 265000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x7b wdata=0x1ef0 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 265000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x7b wdata=0x1ef0 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 265000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x7b, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 265000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x7b wdata=0x1ef0 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 275000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x24 wdata=0xcd88 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 275000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x24 wdata=0xcd88 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 275000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x24, data=0xcd88
+UVM_INFO tb/ram_driver.sv(38) @ 275000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x24 wdata=0xcd88 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 295000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x3e wdata=0xd466 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 295000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x3e wdata=0xd466 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 295000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x3e, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 295000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x3e wdata=0xd466 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 305000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0xb0 wdata=0x8a80 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 305000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0xb0 wdata=0x8a80 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 305000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xb0, data=0x8a80
+UVM_INFO tb/ram_driver.sv(38) @ 305000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xb0 wdata=0x8a80 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 325000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x0b wdata=0x9f26 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 325000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x0b wdata=0x9f26 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 325000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x0b, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 325000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x0b wdata=0x9f26 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 335000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0xee wdata=0xa445 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 335000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0xee wdata=0xa445 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 335000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xee, data=0xa445
+UVM_INFO tb/ram_driver.sv(38) @ 335000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xee wdata=0xa445 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 345000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x29 wdata=0xd722 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 345000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x29 wdata=0xd722 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 345000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x29, data=0xd722
+UVM_INFO tb/ram_driver.sv(38) @ 345000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x29 wdata=0xd722 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 365000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0xf5 wdata=0x36a4 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 365000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0xf5 wdata=0x36a4 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 365000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0xf5, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 365000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0xf5 wdata=0x36a4 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 375000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0xbc wdata=0x8a5e rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 375000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0xbc wdata=0x8a5e rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 375000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xbc, data=0x8a5e
+UVM_INFO tb/ram_driver.sv(38) @ 375000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xbc wdata=0x8a5e rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 385000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x72 wdata=0x752b rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 385000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x72 wdata=0x752b rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 385000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x72, data=0x752b
+UVM_INFO tb/ram_driver.sv(38) @ 385000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x72 wdata=0x752b rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 395000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x2d wdata=0x6f02 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 395000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x2d wdata=0x6f02 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 395000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x2d, data=0x6f02
+UVM_INFO tb/ram_driver.sv(38) @ 395000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x2d wdata=0x6f02 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 405000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x7e wdata=0xfe8d rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 405000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x7e wdata=0xfe8d rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 405000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x7e, data=0xfe8d
+UVM_INFO tb/ram_driver.sv(38) @ 405000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x7e wdata=0xfe8d rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 425000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x2e wdata=0x7be2 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 425000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x2e wdata=0x7be2 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 425000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x2e, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 425000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x2e wdata=0x7be2 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 435000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x6b wdata=0x82ca rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 435000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x6b wdata=0x82ca rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 435000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x6b, data=0x82ca
+UVM_INFO tb/ram_driver.sv(38) @ 435000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x6b wdata=0x82ca rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 455000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0xf6 wdata=0x6de3 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 455000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0xf6 wdata=0x6de3 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 455000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0xf6, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 455000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0xf6 wdata=0x6de3 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 475000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x31 wdata=0x009c rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 475000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x31 wdata=0x009c rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 475000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x31, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 475000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x31 wdata=0x009c rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 485000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0xb2 wdata=0xca72 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 485000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0xb2 wdata=0xca72 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 485000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xb2, data=0xca72
+UVM_INFO tb/ram_driver.sv(38) @ 485000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xb2 wdata=0xca72 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 495000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x65 wdata=0xb489 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 495000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x65 wdata=0xb489 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 495000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x65, data=0xb489
+UVM_INFO tb/ram_driver.sv(38) @ 495000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x65 wdata=0xb489 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 505000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0xad wdata=0xf705 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 505000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0xad wdata=0xf705 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 505000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xad, data=0xf705
+UVM_INFO tb/ram_driver.sv(38) @ 505000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xad wdata=0xf705 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 525000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0xbb wdata=0x526b rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 525000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0xbb wdata=0x526b rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 525000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0xbb, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 525000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0xbb wdata=0x526b rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 545000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0xe3 wdata=0x00df rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 545000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0xe3 wdata=0x00df rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 545000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0xe3, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 545000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0xe3 wdata=0x00df rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 555000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x1c wdata=0xbf24 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 555000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x1c wdata=0xbf24 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 555000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x1c, data=0xbf24
+UVM_INFO tb/ram_driver.sv(38) @ 555000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x1c wdata=0xbf24 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 565000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x69 wdata=0xedf4 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 565000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x69 wdata=0xedf4 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 565000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x69, data=0xedf4
+UVM_INFO tb/ram_driver.sv(38) @ 565000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x69 wdata=0xedf4 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 585000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x8a wdata=0x6801 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 585000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x8a wdata=0x6801 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 585000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x8a, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 585000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x8a wdata=0x6801 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 595000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0xe0 wdata=0x6d63 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 595000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0xe0 wdata=0x6d63 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 595000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xe0, data=0x6d63
+UVM_INFO tb/ram_driver.sv(38) @ 595000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xe0 wdata=0x6d63 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 605000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x20 wdata=0x2170 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 605000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x20 wdata=0x2170 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 605000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x20, data=0x2170
+UVM_INFO tb/ram_driver.sv(38) @ 605000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x20 wdata=0x2170 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 625000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0xc7 wdata=0x3b64 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 625000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0xc7 wdata=0x3b64 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 625000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0xc7, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 625000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0xc7 wdata=0x3b64 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 635000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0xa6 wdata=0x29eb rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 635000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0xa6 wdata=0x29eb rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 635000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xa6, data=0x29eb
+UVM_INFO tb/ram_driver.sv(38) @ 635000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xa6 wdata=0x29eb rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 645000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0xbf wdata=0xc4ac rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 645000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0xbf wdata=0xc4ac rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 645000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xbf, data=0xc4ac
+UVM_INFO tb/ram_driver.sv(38) @ 645000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xbf wdata=0xc4ac rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 665000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0xbb wdata=0x9ce5 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 665000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0xbb wdata=0x9ce5 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 665000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0xbb, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 665000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0xbb wdata=0x9ce5 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 675000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0xd4 wdata=0x0d93 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 675000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0xd4 wdata=0x0d93 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 675000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xd4, data=0x0d93
+UVM_INFO tb/ram_driver.sv(38) @ 675000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xd4 wdata=0x0d93 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 695000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x85 wdata=0x4ba8 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 695000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x85 wdata=0x4ba8 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 695000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x85, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 695000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x85 wdata=0x4ba8 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 705000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x00 wdata=0xf7ee rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 705000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x00 wdata=0xf7ee rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 705000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x00, data=0xf7ee
+UVM_INFO tb/ram_driver.sv(38) @ 705000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x00 wdata=0xf7ee rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 725000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x79 wdata=0xccf6 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 725000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x79 wdata=0xccf6 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 725000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x79, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 725000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x79 wdata=0xccf6 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 735000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0xd9 wdata=0x211c rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 735000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0xd9 wdata=0x211c rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 735000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xd9, data=0x211c
+UVM_INFO tb/ram_driver.sv(38) @ 735000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xd9 wdata=0x211c rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 755000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x5d wdata=0x515c rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 755000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x5d wdata=0x515c rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 755000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x5d, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 755000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x5d wdata=0x515c rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 775000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x76 wdata=0xf9e2 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 775000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x76 wdata=0xf9e2 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 775000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x76, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 775000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x76 wdata=0xf9e2 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 795000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x95 wdata=0x6cfa rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 795000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x95 wdata=0x6cfa rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 795000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x95, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 795000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x95 wdata=0x6cfa rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 815000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x8d wdata=0xf977 rdata=0xd133
+UVM_INFO tb/ram_coverage.sv(39) @ 815000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x8d wdata=0xf977 rdata=0xd133
+UVM_INFO tb/ram_scoreboard.sv(39) @ 815000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x8d, expected=0xd133, real=0xd133
+UVM_INFO tb/ram_driver.sv(38) @ 815000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x8d wdata=0xf977 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 825000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x64 wdata=0x1062 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 825000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x64 wdata=0x1062 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 825000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x64, data=0x1062
+UVM_INFO tb/ram_driver.sv(38) @ 825000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x64 wdata=0x1062 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 845000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0xdb wdata=0x1f87 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 845000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0xdb wdata=0x1f87 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 845000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0xdb, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 845000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0xdb wdata=0x1f87 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 865000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x55 wdata=0xc663 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 865000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x55 wdata=0xc663 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 865000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x55, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 865000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x55 wdata=0xc663 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 885000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x4f wdata=0x3c6d rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 885000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x4f wdata=0x3c6d rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 885000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x4f, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 885000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x4f wdata=0x3c6d rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 895000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0xad wdata=0xf48f rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 895000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0xad wdata=0xf48f rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 895000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xad, data=0xf48f
+UVM_INFO tb/ram_driver.sv(38) @ 895000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xad wdata=0xf48f rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 905000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x18 wdata=0x3cbe rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 905000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x18 wdata=0x3cbe rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 905000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x18, data=0x3cbe
+UVM_INFO tb/ram_driver.sv(38) @ 905000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x18 wdata=0x3cbe rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 925000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x67 wdata=0xe0db rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 925000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x67 wdata=0xe0db rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 925000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x67, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 925000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x67 wdata=0xe0db rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 945000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x75 wdata=0x4f8e rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 945000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x75 wdata=0x4f8e rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 945000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x75, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 945000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x75 wdata=0x4f8e rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 965000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0xbe wdata=0x2e70 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 965000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0xbe wdata=0x2e70 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 965000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0xbe, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 965000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0xbe wdata=0x2e70 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 975000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0xba wdata=0x1a89 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 975000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0xba wdata=0x1a89 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 975000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xba, data=0x1a89
+UVM_INFO tb/ram_driver.sv(38) @ 975000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xba wdata=0x1a89 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 995000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0xac wdata=0xb19c rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 995000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0xac wdata=0xb19c rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 995000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0xac, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 995000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0xac wdata=0xb19c rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1005000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x75 wdata=0xeead rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1005000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x75 wdata=0xeead rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 1005000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x75, data=0xeead
+UVM_INFO tb/ram_driver.sv(38) @ 1005000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x75 wdata=0xeead rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1015000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0xb6 wdata=0x82e3 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1015000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0xb6 wdata=0x82e3 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 1015000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xb6, data=0x82e3
+UVM_INFO tb/ram_driver.sv(38) @ 1015000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xb6 wdata=0x82e3 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1025000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x5f wdata=0x6b0d rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1025000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x5f wdata=0x6b0d rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 1025000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x5f, data=0x6b0d
+UVM_INFO tb/ram_driver.sv(38) @ 1025000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x5f wdata=0x6b0d rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1045000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x07 wdata=0xca6e rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1045000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x07 wdata=0xca6e rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 1045000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x07, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 1045000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x07 wdata=0xca6e rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1055000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0xf0 wdata=0x9999 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1055000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0xf0 wdata=0x9999 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 1055000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xf0, data=0x9999
+UVM_INFO tb/ram_driver.sv(38) @ 1055000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xf0 wdata=0x9999 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1065000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x7c wdata=0xf957 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1065000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x7c wdata=0xf957 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 1065000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x7c, data=0xf957
+UVM_INFO tb/ram_driver.sv(38) @ 1065000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x7c wdata=0xf957 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1085000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x52 wdata=0x954b rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1085000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x52 wdata=0x954b rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 1085000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x52, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 1085000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x52 wdata=0x954b rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1095000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0xe2 wdata=0xd37b rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1095000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0xe2 wdata=0xd37b rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 1095000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xe2, data=0xd37b
+UVM_INFO tb/ram_driver.sv(38) @ 1095000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xe2 wdata=0xd37b rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1105000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x19 wdata=0x40b3 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1105000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x19 wdata=0x40b3 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 1105000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x19, data=0x40b3
+UVM_INFO tb/ram_driver.sv(38) @ 1105000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x19 wdata=0x40b3 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1125000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x50 wdata=0xb3ee rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1125000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x50 wdata=0xb3ee rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 1125000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x50, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 1125000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x50 wdata=0xb3ee rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1135000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0xba wdata=0xf76e rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1135000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0xba wdata=0xf76e rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 1135000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xba, data=0xf76e
+UVM_INFO tb/ram_driver.sv(38) @ 1135000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xba wdata=0xf76e rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1155000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0xc4 wdata=0xa5d7 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1155000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0xc4 wdata=0xa5d7 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 1155000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0xc4, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 1155000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0xc4 wdata=0xa5d7 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1165000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0xff wdata=0x01c2 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1165000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0xff wdata=0x01c2 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 1165000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xff, data=0x01c2
+UVM_INFO tb/ram_driver.sv(38) @ 1165000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xff wdata=0x01c2 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1175000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0xa6 wdata=0xe01f rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1175000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0xa6 wdata=0xe01f rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 1175000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xa6, data=0xe01f
+UVM_INFO tb/ram_driver.sv(38) @ 1175000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xa6 wdata=0xe01f rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1195000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x73 wdata=0x0948 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1195000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x73 wdata=0x0948 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 1195000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x73, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 1195000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x73 wdata=0x0948 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1205000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x70 wdata=0x988d rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1205000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x70 wdata=0x988d rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 1205000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x70, data=0x988d
+UVM_INFO tb/ram_driver.sv(38) @ 1205000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x70 wdata=0x988d rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1225000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0xaf wdata=0x948f rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1225000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0xaf wdata=0x948f rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 1225000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0xaf, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 1225000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0xaf wdata=0x948f rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1235000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0xd5 wdata=0x9bbd rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1235000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0xd5 wdata=0x9bbd rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 1235000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xd5, data=0x9bbd
+UVM_INFO tb/ram_driver.sv(38) @ 1235000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xd5 wdata=0x9bbd rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1245000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x72 wdata=0x38e8 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1245000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x72 wdata=0x38e8 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 1245000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x72, data=0x38e8
+UVM_INFO tb/ram_driver.sv(38) @ 1245000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x72 wdata=0x38e8 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1255000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x9c wdata=0xe453 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1255000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x9c wdata=0xe453 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 1255000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x9c, data=0xe453
+UVM_INFO tb/ram_driver.sv(38) @ 1255000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x9c wdata=0xe453 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1265000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x08 wdata=0x93f6 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1265000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x08 wdata=0x93f6 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 1265000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x08, data=0x93f6
+UVM_INFO tb/ram_driver.sv(38) @ 1265000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x08 wdata=0x93f6 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1275000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0xcc wdata=0xcfe1 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1275000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0xcc wdata=0xcfe1 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 1275000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xcc, data=0xcfe1
+UVM_INFO tb/ram_driver.sv(38) @ 1275000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xcc wdata=0xcfe1 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1285000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0xe9 wdata=0xe0c1 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1285000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0xe9 wdata=0xe0c1 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 1285000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xe9, data=0xe0c1
+UVM_INFO tb/ram_driver.sv(38) @ 1285000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xe9 wdata=0xe0c1 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1305000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x42 wdata=0x4ca8 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1305000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x42 wdata=0x4ca8 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 1305000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x42, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 1305000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x42 wdata=0x4ca8 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1325000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0x00 wdata=0xa93b rdata=0xf7ee
+UVM_INFO tb/ram_coverage.sv(39) @ 1325000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0x00 wdata=0xa93b rdata=0xf7ee
+UVM_INFO tb/ram_scoreboard.sv(39) @ 1325000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0x00, expected=0xf7ee, real=0xf7ee
+UVM_INFO tb/ram_driver.sv(38) @ 1325000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0x00 wdata=0xa93b rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1335000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0xe7 wdata=0xba07 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1335000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0xe7 wdata=0xba07 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 1335000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xe7, data=0xba07
+UVM_INFO tb/ram_driver.sv(38) @ 1335000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xe7 wdata=0xba07 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1355000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0xa1 wdata=0x71bd rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1355000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0xa1 wdata=0x71bd rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 1355000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0xa1, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 1355000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0xa1 wdata=0x71bd rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1375000: uvm_test_top.env.agt.mon [ram_monitor] wr=0 addr=0xfc wdata=0xb854 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1375000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=0 addr=0xfc wdata=0xb854 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(39) @ 1375000: uvm_test_top.env.scb [ram_scoreboard] PASS: addr=0xfc, expected=0xxxxx, real=0xxxxx
+UVM_INFO tb/ram_driver.sv(38) @ 1375000: uvm_test_top.env.agt.drv [ram_driver] wr=0 addr=0xfc wdata=0xb854 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1385000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x4f wdata=0x402d rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1385000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x4f wdata=0x402d rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 1385000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x4f, data=0x402d
+UVM_INFO tb/ram_driver.sv(38) @ 1385000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x4f wdata=0x402d rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1395000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0xb1 wdata=0x5929 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1395000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0xb1 wdata=0x5929 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 1395000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xb1, data=0x5929
+UVM_INFO tb/ram_driver.sv(38) @ 1395000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xb1 wdata=0x5929 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1405000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0xf7 wdata=0x47f1 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1405000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0xf7 wdata=0x47f1 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 1405000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xf7, data=0x47f1
+UVM_INFO tb/ram_driver.sv(38) @ 1405000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xf7 wdata=0x47f1 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1415000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x3d wdata=0xeea9 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1415000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x3d wdata=0xeea9 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 1415000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x3d, data=0xeea9
+UVM_INFO tb/ram_driver.sv(38) @ 1415000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x3d wdata=0xeea9 rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1425000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0xb2 wdata=0x8b3f rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1425000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0xb2 wdata=0x8b3f rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 1425000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0xb2, data=0x8b3f
+UVM_INFO tb/ram_driver.sv(38) @ 1425000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0xb2 wdata=0x8b3f rdata=0xxxxx
+UVM_INFO tb/ram_monitor.sv(41) @ 1435000: uvm_test_top.env.agt.mon [ram_monitor] wr=1 addr=0x2c wdata=0xaa79 rdata=0xxxxx
+UVM_INFO tb/ram_coverage.sv(39) @ 1435000: uvm_test_top.env.cov [ram_coverage] ram_cg sampled: wr=1 addr=0x2c wdata=0xaa79 rdata=0xxxxx
+UVM_INFO tb/ram_scoreboard.sv(34) @ 1435000: uvm_test_top.env.scb [ram_scoreboard] 쓰기 기록: addr=0x2c, data=0xaa79
+UVM_INFO tb/ram_driver.sv(38) @ 1435000: uvm_test_top.env.agt.drv [ram_driver] wr=1 addr=0x2c wdata=0xaa79 rdata=0xxxxx
+UVM_INFO tb/ram_test.sv(76) @ 1435000: uvm_test_top [TEST] ram_random_sequence test 완료
+UVM_INFO tb/ram_test.sv(29) @ 1435000: uvm_test_top [TEST] ram test 완료
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 1435000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO tb/ram_coverage.sv(42) @ 1435000: uvm_test_top.env.cov [ram_coverage] ===== Coverage Summary =====
+UVM_INFO tb/ram_coverage.sv(43) @ 1435000: uvm_test_top.env.cov [ram_coverage]    Overall: 76.3%
+UVM_INFO tb/ram_coverage.sv(44) @ 1435000: uvm_test_top.env.cov [ram_coverage]    wr     : 100.0%
+UVM_INFO tb/ram_coverage.sv(45) @ 1435000: uvm_test_top.env.cov [ram_coverage]    addr   : 100.0%
+UVM_INFO tb/ram_coverage.sv(46) @ 1435000: uvm_test_top.env.cov [ram_coverage]    data   : 50.0%
+UVM_INFO tb/ram_coverage.sv(47) @ 1435000: uvm_test_top.env.cov [ram_coverage]    cross(wr, addr): 90.0%
+UVM_INFO tb/ram_coverage.sv(48) @ 1435000: uvm_test_top.env.cov [ram_coverage]    cross(wr, data): 41.7%
+UVM_INFO tb/ram_coverage.sv(49) @ 1435000: uvm_test_top.env.cov [ram_coverage]  ===== Coverage Summary =====
+
+
+UVM_INFO tb/ram_scoreboard.sv(48) @ 1435000: uvm_test_top.env.scb [ram_scoreboard]  ===== Scoreboard Summay =====
+UVM_INFO tb/ram_scoreboard.sv(49) @ 1435000: uvm_test_top.env.scb [ram_scoreboard]    Total transactions: 100
+UVM_INFO tb/ram_scoreboard.sv(50) @ 1435000: uvm_test_top.env.scb [ram_scoreboard]    Pass: 100
+UVM_INFO tb/ram_scoreboard.sv(51) @ 1435000: uvm_test_top.env.scb [ram_scoreboard]    Fail: 0
+UVM_INFO tb/ram_scoreboard.sv(55) @ 1435000: uvm_test_top.env.scb [ram_scoreboard] TEST PASSED; 100 all matches detected.
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 1435000: reporter [UVM/REPORT/CATCHER] 
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_server.svh(904) @ 1435000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  419
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[TEST]     2
+[TEST_DONE]     1
+[UVM/RELNOTES]     1
+[UVM/REPORT/CATCHER]     1
+[ram_coverage]   108
+[ram_driver]   100
+[ram_monitor]   100
+[ram_scoreboard]   105
+
+$finish called from file "/tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh", line 527.
+$finish at simulation time              1435000
+
+---------------------------------------------------------------------------
+VCS Coverage Metrics: during simulation line, cond, FSM, branch, tgl was monitored
+---------------------------------------------------------------------------
+
+ Coverage status: End of All Coverages ...
+
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 1435000 ps
+CPU Time:      0.230 seconds;       Data structure size:   0.6Mb
+Thu Apr  9 19:22:45 2026

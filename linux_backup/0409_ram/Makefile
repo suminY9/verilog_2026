@@ -6,14 +6,14 @@ VCS_OPTS += -ntb_opts uvm-1.2
 VCS_OPTS += -timescale=1ns/1ps
 VCS_OPTS += -debug_access+all -kdb -lca
 VCS_OPTS += +incdir+tb
-#VCS_OPTS += -cm line+cond+fsm+tgl+branch+assert
+VCS_OPTS += -cm line+cond+fsm+tgl+branch+assert
 
 #SIM_OPTS := +UVM_TESTNAME=$(TC)
 SIM_OPTS += +UVM_VERBOSITY=UVM_HIGH
 SIM_OPTS += +ntb_random_seed=$(SEED)
-#SIM_OPTS += -cm line+cond+fsm+tgl+branch+assert
-#SIM_OPTS += -cm_dir coverage.vdb
-#SIM_OPTS += -cm_name sim1
+SIM_OPTS += -cm line+cond+fsm+tgl+branch+assert
+SIM_OPTS += -cm_dir coverage.vdb
+SIM_OPTS += -cm_name sim1
 
 VERDI_OPTS := -dbdir simv.daidir -ssf novas.fsdb
 
@@ -25,17 +25,21 @@ compile:
 sim: compile
 	./simv $(SIM_OPTS) +UVM_TESTNAME=ram_write_read_test
 
+# simv
 writeread: compile
 	./simv $(SIM_OPTS) +UVM_TESTNAME=ram_write_read_test
-
+full: compile
+	./simv $(SIM_OPTS) +UVM_TESTNAME=ram_full_sweep_test
 random: compile
 	./simv $(SIM_OPTS) +UVM_TESTNAME=ram_random_test
 
-full: compile
-	./simv $(SIM_OPTS) +UVM_TESTNAME=ram_full_sweep_test
-
-log: compile
-	./simv $(SIM_OPTS) +UVM_TESTNAME=ram_write_read_test > simv.log
+# make simv.log
+writeread_log: compile
+	./simv $(SIM_OPTS) +UVM_TESTNAME=ram_write_read_test > simv_write_read.log
+full_log: compile
+	./simv $(SIM_OPTS) +UVM_TESTNAME=ram_full_sweep_test > simv_full_sweep.log
+random_log: compile
+	./simv $(SIM_OPTS) +UVM_TESTNAME=ram_random_test > simv_random.log
 
 verdi: sim
 	verdi $(VERDI_OPTS)

@@ -8,3 +8,4 @@
 ./tb/ram_seq_item.sv
 ./tb/ram_sequence.sv
 ./tb/ram_test.sv
+./tb/ram_coverage.sv

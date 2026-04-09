@@ -51,7 +51,6 @@ endclass
 
 class ram_full_sweep_sequence extends uvm_sequence#(ram_seq_item);
     `uvm_object_utils(ram_full_sweep_sequence)
-    int num_transaction = 0;
 
     function new(string name = "ram_sequence");
         super.new(name);
@@ -59,20 +58,22 @@ class ram_full_sweep_sequence extends uvm_sequence#(ram_seq_item);
 
     virtual task body();
         ram_seq_item item = ram_seq_item::type_id::create("item");
-        
-        start_item(item);
-        for (int i = 0; i < 2**8; i++) begin
-            if(!item.randomize() with { wr == 1; addr == 1; })
-            `uvm_fatal(get_type_name(), "Randomization Fail!");
-        end
-        finish_item(item);
 
-        start_item(item);
+        // Write
         for(int i = 0; i < 2**8; i++) begin
+            start_item(item);
+            if(!item.randomize() with { wr == 1; addr == i; })
+                `uvm_fatal(get_type_name(), "Randomization Fail!");
+            finish_item(item);
+        end
+
+        // Read
+        for(int i = 0; i < 2**8; i++) begin
+            start_item(item);
             item.wr = 0;
             item.addr = i;
-        end
-        finish_item(item);
+            finish_item(item);
+        end   
     endtask
 endclass
 `endif 
