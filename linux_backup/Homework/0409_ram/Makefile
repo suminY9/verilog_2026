@@ -15,7 +15,7 @@ SIM_OPTS += -cm line+cond+fsm+tgl+branch+assert
 SIM_OPTS += -cm_dir coverage.vdb
 SIM_OPTS += -cm_name sim1
 
-VERDI_OPTS := -dbdir simv.daidir -ssf novas.fsdb
+VERDI_OPTS := -dbdir simv.daidir -ssf novas.fsdb 
 
 .PHONY: compile sim clear
 
@@ -41,9 +41,9 @@ full_log: compile
 random_log: compile
 	./simv $(SIM_OPTS) +UVM_TESTNAME=ram_random_test > simv_random.log
 
-verdi: sim
+verdi: 
 	verdi $(VERDI_OPTS)
 
 clean:
-	@rm -rf simv* csrc *.key *.h *.log *.fsdb novas* *.conf *LOG
+	@rm -rf simv* csrc *.key *.h *.log *.fsdb novas* *.conf *Log coverage.*
 	@echo "결과물 정리 중..."
