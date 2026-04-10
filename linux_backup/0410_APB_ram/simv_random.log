@@ -1,0 +1,151 @@
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
+Chronologic VCS simulator copyright 1991-2024
+Contains Synopsys proprietary information.
+Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  Apr 11 04:46 2026
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+
+ VCS Coverage Metrics Release W-2024.09-SP1_Full64 Copyright (c) 1991-2024 by Synopsys Inc.
+UVM_INFO @ 0: reporter [RNTST] Running test apb_rand_test...
+*Verdi* Loading libsscore_vcs202409.so
+FSDB Dumper for VCS, Release Verdi_W-2024.09-SP2, Linux x86_64/64bit, 03/03/2025
+(C) 1996 - 2025 by Synopsys, Inc.
+*Verdi* : Create FSDB file 'novas.fsdb'
+*Verdi* : Begin traversing the scope (tb_apb), layer (0).
+*Verdi* : Enable +all dumping.
+*Verdi* : End of traversing.
+UVM_INFO tb/apb_ram_test.sv(19) @ 0: uvm_test_top [apb_rand_test] ===== UVM 계층 구조 =====
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(589) @ 0: reporter [UVMTOP] UVM testbench topology:
+--------------------------------------------------------------
+Name                       Type                    Size  Value
+--------------------------------------------------------------
+uvm_test_top               apb_rand_test           -     @342 
+  env                      apb_env                 -     @355 
+    agt                    apb_agent               -     @364 
+      drv                  apb_driver              -     @402 
+        rsp_port           uvm_analysis_port       -     @421 
+        seq_item_port      uvm_seq_item_pull_port  -     @411 
+      mon                  apb_monitor             -     @431 
+        ap                 uvm_analysis_port       -     @578 
+      sqr                  uvm_sequencer           -     @440 
+        rsp_export         uvm_analysis_export     -     @449 
+        seq_item_export    uvm_seq_item_pull_imp   -     @567 
+        arbitration_queue  array                   0     -    
+        lock_queue         array                   0     -    
+        num_last_reqs      integral                32    'd1  
+        num_last_rsps      integral                32    'd1  
+    cov                    apb_coverage            -     @382 
+      analysis_imp         uvm_analysis_imp        -     @391 
+    scb                    apb_scoreboard          -     @373 
+      ap_imp               uvm_analysis_imp        -     @594 
+--------------------------------------------------------------
+
+UVM_INFO tb/apb_ram_monitor.sv(23) @ 0: uvm_test_top.env.agt.mon [apb_monitor] APB 버스 모니터링 시작...
+UVM_INFO tb/apb_ram_driver.sv(23) @ 45000: uvm_test_top.env.agt.drv [apb_driver] 리셋 해제 확인. 트랜잭션 대기 중...
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 65000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: WRITE paddr=0xd8 pwdata=0xc1106ceb prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_driver.sv(62) @ 65000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: WRITE paddr=0xd8 pwdata=0xc1106ceb prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 95000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: WRITE paddr=0x88 pwdata=0x7b9ef3e0 prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_driver.sv(62) @ 95000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: WRITE paddr=0x88 pwdata=0x7b9ef3e0 prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 125000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: WRITE paddr=0x4c pwdata=0x1e76fe0f prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_driver.sv(62) @ 125000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: WRITE paddr=0x4c pwdata=0x1e76fe0f prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 155000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: WRITE paddr=0x24 pwdata=0x2f80ed8c prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_driver.sv(62) @ 155000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: WRITE paddr=0x24 pwdata=0x2f80ed8c prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 185000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: READ paddr=0xbc pwdata=0x00000000 prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_scoreboard.sv(36) @ 185000: uvm_test_top.env.scb [apb_scoreboard] == PASS == paddr=0xbc, expected=0xxxxxxxxx, prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_driver.sv(62) @ 185000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: READ paddr=0xbc pwdata=0x17d3400f prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 215000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: READ paddr=0x3c pwdata=0x00000000 prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_scoreboard.sv(36) @ 215000: uvm_test_top.env.scb [apb_scoreboard] == PASS == paddr=0x3c, expected=0xxxxxxxxx, prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_driver.sv(62) @ 215000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: READ paddr=0x3c pwdata=0xd6c9c32e prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 245000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: READ paddr=0xa0 pwdata=0x00000000 prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_scoreboard.sv(36) @ 245000: uvm_test_top.env.scb [apb_scoreboard] == PASS == paddr=0xa0, expected=0xxxxxxxxx, prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_driver.sv(62) @ 245000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: READ paddr=0xa0 pwdata=0xc25c3fff prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 275000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: WRITE paddr=0x48 pwdata=0x9fa7548d prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_driver.sv(62) @ 275000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: WRITE paddr=0x48 pwdata=0x9fa7548d prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 305000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: READ paddr=0x98 pwdata=0x00000000 prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_scoreboard.sv(36) @ 305000: uvm_test_top.env.scb [apb_scoreboard] == PASS == paddr=0x98, expected=0xxxxxxxxx, prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_driver.sv(62) @ 305000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: READ paddr=0x98 pwdata=0x83b17e27 prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 335000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: READ paddr=0x9c pwdata=0x00000000 prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_scoreboard.sv(36) @ 335000: uvm_test_top.env.scb [apb_scoreboard] == PASS == paddr=0x9c, expected=0xxxxxxxxx, prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_driver.sv(62) @ 335000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: READ paddr=0x9c pwdata=0x3dba1a76 prdata=0xxxxxxxxx
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 335000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO tb/apb_ram_coverage.sv(40) @ 335000: uvm_test_top.env.cov [apb_coverage]   ===== Coverage Summary =====  
+UVM_INFO tb/apb_ram_coverage.sv(41) @ 335000: uvm_test_top.env.cov [apb_coverage]    Overall: 60.0%
+UVM_INFO tb/apb_ram_coverage.sv(42) @ 335000: uvm_test_top.env.cov [apb_coverage]    addr   : 100.0%
+UVM_INFO tb/apb_ram_coverage.sv(43) @ 335000: uvm_test_top.env.cov [apb_coverage]    write  : 100.0%
+UVM_INFO tb/apb_ram_coverage.sv(44) @ 335000: uvm_test_top.env.cov [apb_coverage]    wdata  : 25.0%
+UVM_INFO tb/apb_ram_coverage.sv(45) @ 335000: uvm_test_top.env.cov [apb_coverage]    radta  : 0.0%
+UVM_INFO tb/apb_ram_coverage.sv(46) @ 335000: uvm_test_top.env.cov [apb_coverage]    cross(addr, write) : 75.0%
+UVM_INFO tb/apb_ram_coverage.sv(47) @ 335000: uvm_test_top.env.cov [apb_coverage]   ===== Coverage Summary =====  
+
+
+UVM_INFO tb/apb_ram_scoreboard.sv(42) @ 335000: uvm_test_top.env.scb [apb_scoreboard] ********** summary report **********
+UVM_INFO tb/apb_ram_scoreboard.sv(43) @ 335000: uvm_test_top.env.scb [apb_scoreboard] Result    : ** PASS **
+UVM_INFO tb/apb_ram_scoreboard.sv(44) @ 335000: uvm_test_top.env.scb [apb_scoreboard] write num : 5
+UVM_INFO tb/apb_ram_scoreboard.sv(45) @ 335000: uvm_test_top.env.scb [apb_scoreboard] read num  : 5
+UVM_INFO tb/apb_ram_scoreboard.sv(46) @ 335000: uvm_test_top.env.scb [apb_scoreboard] error num : 0
+UVM_INFO tb/apb_ram_scoreboard.sv(47) @ 335000: uvm_test_top.env.scb [apb_scoreboard] ************************************
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 335000: reporter [UVM/REPORT/CATCHER] 
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_server.svh(904) @ 335000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   47
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[TEST_DONE]     1
+[UVM/RELNOTES]     1
+[UVM/REPORT/CATCHER]     1
+[UVMTOP]     1
+[apb_coverage]     8
+[apb_driver]    11
+[apb_monitor]    11
+[apb_rand_test]     1
+[apb_scoreboard]    11
+
+$finish called from file "/tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh", line 527.
+$finish at simulation time               335000
+
+---------------------------------------------------------------------------
+VCS Coverage Metrics: during simulation line, cond, FSM, branch, tgl was monitored
+---------------------------------------------------------------------------
+
+ Coverage status: End of All Coverages ...
+
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 335000 ps
+CPU Time:      0.230 seconds;       Data structure size:   0.6Mb
+Sat Apr 11 04:46:53 2026

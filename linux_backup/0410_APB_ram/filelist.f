@@ -1,0 +1,11 @@
+./rtl/apb_ram.sv
+./tb/tb_apb_ram.sv
+./tb/apb_ram_agent.sv
+./tb/apb_ram_driver.sv
+./tb/apb_ram_env.sv
+./tb/apb_ram_monitor.sv
+./tb/apb_ram_scoreboard.sv
+./tb/apb_ram_seq_item.sv
+./tb/apb_ram_sequence.sv
+./tb/apb_ram_test.sv
+./tb/apb_ram_coverage.sv

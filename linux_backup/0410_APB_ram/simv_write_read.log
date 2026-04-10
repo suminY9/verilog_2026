@@ -1,0 +1,197 @@
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
+Chronologic VCS simulator copyright 1991-2024
+Contains Synopsys proprietary information.
+Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  Apr 11 04:45 2026
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+
+ VCS Coverage Metrics Release W-2024.09-SP1_Full64 Copyright (c) 1991-2024 by Synopsys Inc.
+UVM_INFO @ 0: reporter [RNTST] Running test apb_write_read_test...
+*Verdi* Loading libsscore_vcs202409.so
+FSDB Dumper for VCS, Release Verdi_W-2024.09-SP2, Linux x86_64/64bit, 03/03/2025
+(C) 1996 - 2025 by Synopsys, Inc.
+*Verdi* : Create FSDB file 'novas.fsdb'
+*Verdi* : Begin traversing the scope (tb_apb), layer (0).
+*Verdi* : Enable +all dumping.
+*Verdi* : End of traversing.
+UVM_INFO tb/apb_ram_test.sv(19) @ 0: uvm_test_top [apb_write_read_test] ===== UVM 계층 구조 =====
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(589) @ 0: reporter [UVMTOP] UVM testbench topology:
+--------------------------------------------------------------
+Name                       Type                    Size  Value
+--------------------------------------------------------------
+uvm_test_top               apb_write_read_test     -     @342 
+  env                      apb_env                 -     @355 
+    agt                    apb_agent               -     @364 
+      drv                  apb_driver              -     @402 
+        rsp_port           uvm_analysis_port       -     @421 
+        seq_item_port      uvm_seq_item_pull_port  -     @411 
+      mon                  apb_monitor             -     @431 
+        ap                 uvm_analysis_port       -     @578 
+      sqr                  uvm_sequencer           -     @440 
+        rsp_export         uvm_analysis_export     -     @449 
+        seq_item_export    uvm_seq_item_pull_imp   -     @567 
+        arbitration_queue  array                   0     -    
+        lock_queue         array                   0     -    
+        num_last_reqs      integral                32    'd1  
+        num_last_rsps      integral                32    'd1  
+    cov                    apb_coverage            -     @382 
+      analysis_imp         uvm_analysis_imp        -     @391 
+    scb                    apb_scoreboard          -     @373 
+      ap_imp               uvm_analysis_imp        -     @594 
+--------------------------------------------------------------
+
+UVM_INFO tb/apb_ram_monitor.sv(23) @ 0: uvm_test_top.env.agt.mon [apb_monitor] APB 버스 모니터링 시작...
+UVM_INFO tb/apb_ram_driver.sv(23) @ 45000: uvm_test_top.env.agt.drv [apb_driver] 리셋 해제 확인. 트랜잭션 대기 중...
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 65000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: WRITE paddr=0x00 pwdata=0xeac758a3 prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_driver.sv(62) @ 65000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: WRITE paddr=0x00 pwdata=0xeac758a3 prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_sequence.sv(21) @ 65000: uvm_test_top.env.agt.sqr@@seq [apb_write_read_seq] do_write() write 전송 완료: addr=0x00 data=0xeac758a3
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 95000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: READ paddr=0x00 pwdata=0x00000000 prdata=0xeac758a3
+UVM_INFO tb/apb_ram_scoreboard.sv(36) @ 95000: uvm_test_top.env.scb [apb_scoreboard] == PASS == paddr=0x00, expected=0xeac758a3, prdata=0xeac758a3
+UVM_INFO tb/apb_ram_driver.sv(62) @ 95000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: READ paddr=0x00 pwdata=0xe7523ff4 prdata=0xeac758a3
+UVM_INFO tb/apb_ram_sequence.sv(32) @ 95000: uvm_test_top.env.agt.sqr@@seq [apb_write_read_seq] do_read() write 전송 완료: addr=0x00 rdata=0xeac758a3
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 125000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: WRITE paddr=0x04 pwdata=0x8befb12a prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_driver.sv(62) @ 125000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: WRITE paddr=0x04 pwdata=0x8befb12a prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_sequence.sv(21) @ 125000: uvm_test_top.env.agt.sqr@@seq [apb_write_read_seq] do_write() write 전송 완료: addr=0x04 data=0x8befb12a
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 155000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: READ paddr=0x04 pwdata=0x00000000 prdata=0x8befb12a
+UVM_INFO tb/apb_ram_scoreboard.sv(36) @ 155000: uvm_test_top.env.scb [apb_scoreboard] == PASS == paddr=0x04, expected=0x8befb12a, prdata=0x8befb12a
+UVM_INFO tb/apb_ram_driver.sv(62) @ 155000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: READ paddr=0x04 pwdata=0x03ef07cb prdata=0x8befb12a
+UVM_INFO tb/apb_ram_sequence.sv(32) @ 155000: uvm_test_top.env.agt.sqr@@seq [apb_write_read_seq] do_read() write 전송 완료: addr=0x04 rdata=0x8befb12a
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 185000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: WRITE paddr=0x08 pwdata=0xd63bcce8 prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_driver.sv(62) @ 185000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: WRITE paddr=0x08 pwdata=0xd63bcce8 prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_sequence.sv(21) @ 185000: uvm_test_top.env.agt.sqr@@seq [apb_write_read_seq] do_write() write 전송 완료: addr=0x08 data=0xd63bcce8
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 215000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: READ paddr=0x08 pwdata=0x00000000 prdata=0xd63bcce8
+UVM_INFO tb/apb_ram_scoreboard.sv(36) @ 215000: uvm_test_top.env.scb [apb_scoreboard] == PASS == paddr=0x08, expected=0xd63bcce8, prdata=0xd63bcce8
+UVM_INFO tb/apb_ram_driver.sv(62) @ 215000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: READ paddr=0x08 pwdata=0x2cf8abd2 prdata=0xd63bcce8
+UVM_INFO tb/apb_ram_sequence.sv(32) @ 215000: uvm_test_top.env.agt.sqr@@seq [apb_write_read_seq] do_read() write 전송 완료: addr=0x08 rdata=0xd63bcce8
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 245000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: WRITE paddr=0x0c pwdata=0x8e8b92b0 prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_driver.sv(62) @ 245000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: WRITE paddr=0x0c pwdata=0x8e8b92b0 prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_sequence.sv(21) @ 245000: uvm_test_top.env.agt.sqr@@seq [apb_write_read_seq] do_write() write 전송 완료: addr=0x0c data=0x8e8b92b0
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 275000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: READ paddr=0x0c pwdata=0x00000000 prdata=0x8e8b92b0
+UVM_INFO tb/apb_ram_scoreboard.sv(36) @ 275000: uvm_test_top.env.scb [apb_scoreboard] == PASS == paddr=0x0c, expected=0x8e8b92b0, prdata=0x8e8b92b0
+UVM_INFO tb/apb_ram_driver.sv(62) @ 275000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: READ paddr=0x0c pwdata=0x20bbc211 prdata=0x8e8b92b0
+UVM_INFO tb/apb_ram_sequence.sv(32) @ 275000: uvm_test_top.env.agt.sqr@@seq [apb_write_read_seq] do_read() write 전송 완료: addr=0x0c rdata=0x8e8b92b0
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 305000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: WRITE paddr=0x10 pwdata=0x1b157f17 prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_driver.sv(62) @ 305000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: WRITE paddr=0x10 pwdata=0x1b157f17 prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_sequence.sv(21) @ 305000: uvm_test_top.env.agt.sqr@@seq [apb_write_read_seq] do_write() write 전송 완료: addr=0x10 data=0x1b157f17
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 335000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: READ paddr=0x10 pwdata=0x00000000 prdata=0x1b157f17
+UVM_INFO tb/apb_ram_scoreboard.sv(36) @ 335000: uvm_test_top.env.scb [apb_scoreboard] == PASS == paddr=0x10, expected=0x1b157f17, prdata=0x1b157f17
+UVM_INFO tb/apb_ram_driver.sv(62) @ 335000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: READ paddr=0x10 pwdata=0x1dabb01f prdata=0x1b157f17
+UVM_INFO tb/apb_ram_sequence.sv(32) @ 335000: uvm_test_top.env.agt.sqr@@seq [apb_write_read_seq] do_read() write 전송 완료: addr=0x10 rdata=0x1b157f17
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 365000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: WRITE paddr=0x14 pwdata=0xfb106e58 prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_driver.sv(62) @ 365000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: WRITE paddr=0x14 pwdata=0xfb106e58 prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_sequence.sv(21) @ 365000: uvm_test_top.env.agt.sqr@@seq [apb_write_read_seq] do_write() write 전송 완료: addr=0x14 data=0xfb106e58
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 395000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: READ paddr=0x14 pwdata=0x00000000 prdata=0xfb106e58
+UVM_INFO tb/apb_ram_scoreboard.sv(36) @ 395000: uvm_test_top.env.scb [apb_scoreboard] == PASS == paddr=0x14, expected=0xfb106e58, prdata=0xfb106e58
+UVM_INFO tb/apb_ram_driver.sv(62) @ 395000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: READ paddr=0x14 pwdata=0x0f0c6efd prdata=0xfb106e58
+UVM_INFO tb/apb_ram_sequence.sv(32) @ 395000: uvm_test_top.env.agt.sqr@@seq [apb_write_read_seq] do_read() write 전송 완료: addr=0x14 rdata=0xfb106e58
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 425000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: WRITE paddr=0x18 pwdata=0x52397e1f prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_driver.sv(62) @ 425000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: WRITE paddr=0x18 pwdata=0x52397e1f prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_sequence.sv(21) @ 425000: uvm_test_top.env.agt.sqr@@seq [apb_write_read_seq] do_write() write 전송 완료: addr=0x18 data=0x52397e1f
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 455000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: READ paddr=0x18 pwdata=0x00000000 prdata=0x52397e1f
+UVM_INFO tb/apb_ram_scoreboard.sv(36) @ 455000: uvm_test_top.env.scb [apb_scoreboard] == PASS == paddr=0x18, expected=0x52397e1f, prdata=0x52397e1f
+UVM_INFO tb/apb_ram_driver.sv(62) @ 455000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: READ paddr=0x18 pwdata=0x3f489169 prdata=0x52397e1f
+UVM_INFO tb/apb_ram_sequence.sv(32) @ 455000: uvm_test_top.env.agt.sqr@@seq [apb_write_read_seq] do_read() write 전송 완료: addr=0x18 rdata=0x52397e1f
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 485000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: WRITE paddr=0x1c pwdata=0x07edcf42 prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_driver.sv(62) @ 485000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: WRITE paddr=0x1c pwdata=0x07edcf42 prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_sequence.sv(21) @ 485000: uvm_test_top.env.agt.sqr@@seq [apb_write_read_seq] do_write() write 전송 완료: addr=0x1c data=0x07edcf42
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 515000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: READ paddr=0x1c pwdata=0x00000000 prdata=0x07edcf42
+UVM_INFO tb/apb_ram_scoreboard.sv(36) @ 515000: uvm_test_top.env.scb [apb_scoreboard] == PASS == paddr=0x1c, expected=0x07edcf42, prdata=0x07edcf42
+UVM_INFO tb/apb_ram_driver.sv(62) @ 515000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: READ paddr=0x1c pwdata=0xa8f676f3 prdata=0x07edcf42
+UVM_INFO tb/apb_ram_sequence.sv(32) @ 515000: uvm_test_top.env.agt.sqr@@seq [apb_write_read_seq] do_read() write 전송 완료: addr=0x1c rdata=0x07edcf42
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 545000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: WRITE paddr=0x20 pwdata=0x3da0e3c6 prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_driver.sv(62) @ 545000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: WRITE paddr=0x20 pwdata=0x3da0e3c6 prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_sequence.sv(21) @ 545000: uvm_test_top.env.agt.sqr@@seq [apb_write_read_seq] do_write() write 전송 완료: addr=0x20 data=0x3da0e3c6
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 575000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: READ paddr=0x20 pwdata=0x00000000 prdata=0x3da0e3c6
+UVM_INFO tb/apb_ram_scoreboard.sv(36) @ 575000: uvm_test_top.env.scb [apb_scoreboard] == PASS == paddr=0x20, expected=0x3da0e3c6, prdata=0x3da0e3c6
+UVM_INFO tb/apb_ram_driver.sv(62) @ 575000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: READ paddr=0x20 pwdata=0x2364bb1c prdata=0x3da0e3c6
+UVM_INFO tb/apb_ram_sequence.sv(32) @ 575000: uvm_test_top.env.agt.sqr@@seq [apb_write_read_seq] do_read() write 전송 완료: addr=0x20 rdata=0x3da0e3c6
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 605000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: WRITE paddr=0x24 pwdata=0x24841d9e prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_driver.sv(62) @ 605000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: WRITE paddr=0x24 pwdata=0x24841d9e prdata=0xxxxxxxxx
+UVM_INFO tb/apb_ram_sequence.sv(21) @ 605000: uvm_test_top.env.agt.sqr@@seq [apb_write_read_seq] do_write() write 전송 완료: addr=0x24 data=0x24841d9e
+UVM_INFO tb/apb_ram_monitor.sv(44) @ 635000: uvm_test_top.env.agt.mon [apb_monitor] mon tx: READ paddr=0x24 pwdata=0x00000000 prdata=0x24841d9e
+UVM_INFO tb/apb_ram_scoreboard.sv(36) @ 635000: uvm_test_top.env.scb [apb_scoreboard] == PASS == paddr=0x24, expected=0x24841d9e, prdata=0x24841d9e
+UVM_INFO tb/apb_ram_driver.sv(62) @ 635000: uvm_test_top.env.agt.drv [apb_driver] drv apb 구동 완료: READ paddr=0x24 pwdata=0xf0266c6b prdata=0x24841d9e
+UVM_INFO tb/apb_ram_sequence.sv(32) @ 635000: uvm_test_top.env.agt.sqr@@seq [apb_write_read_seq] do_read() write 전송 완료: addr=0x24 rdata=0x24841d9e
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 635000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO tb/apb_ram_coverage.sv(40) @ 635000: uvm_test_top.env.cov [apb_coverage]   ===== Coverage Summary =====  
+UVM_INFO tb/apb_ram_coverage.sv(41) @ 635000: uvm_test_top.env.cov [apb_coverage]    Overall: 35.0%
+UVM_INFO tb/apb_ram_coverage.sv(42) @ 635000: uvm_test_top.env.cov [apb_coverage]    addr   : 25.0%
+UVM_INFO tb/apb_ram_coverage.sv(43) @ 635000: uvm_test_top.env.cov [apb_coverage]    write  : 100.0%
+UVM_INFO tb/apb_ram_coverage.sv(44) @ 635000: uvm_test_top.env.cov [apb_coverage]    wdata  : 25.0%
+UVM_INFO tb/apb_ram_coverage.sv(45) @ 635000: uvm_test_top.env.cov [apb_coverage]    radta  : 0.0%
+UVM_INFO tb/apb_ram_coverage.sv(46) @ 635000: uvm_test_top.env.cov [apb_coverage]    cross(addr, write) : 25.0%
+UVM_INFO tb/apb_ram_coverage.sv(47) @ 635000: uvm_test_top.env.cov [apb_coverage]   ===== Coverage Summary =====  
+
+
+UVM_INFO tb/apb_ram_scoreboard.sv(42) @ 635000: uvm_test_top.env.scb [apb_scoreboard] ********** summary report **********
+UVM_INFO tb/apb_ram_scoreboard.sv(43) @ 635000: uvm_test_top.env.scb [apb_scoreboard] Result    : ** PASS **
+UVM_INFO tb/apb_ram_scoreboard.sv(44) @ 635000: uvm_test_top.env.scb [apb_scoreboard] write num : 10
+UVM_INFO tb/apb_ram_scoreboard.sv(45) @ 635000: uvm_test_top.env.scb [apb_scoreboard] read num  : 10
+UVM_INFO tb/apb_ram_scoreboard.sv(46) @ 635000: uvm_test_top.env.scb [apb_scoreboard] error num : 0
+UVM_INFO tb/apb_ram_scoreboard.sv(47) @ 635000: uvm_test_top.env.scb [apb_scoreboard] ************************************
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 635000: reporter [UVM/REPORT/CATCHER] 
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_server.svh(904) @ 635000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   92
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[TEST_DONE]     1
+[UVM/RELNOTES]     1
+[UVM/REPORT/CATCHER]     1
+[UVMTOP]     1
+[apb_coverage]     8
+[apb_driver]    21
+[apb_monitor]    21
+[apb_scoreboard]    16
+[apb_write_read_seq]    20
+[apb_write_read_test]     1
+
+$finish called from file "/tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh", line 527.
+$finish at simulation time               635000
+
+---------------------------------------------------------------------------
+VCS Coverage Metrics: during simulation line, cond, FSM, branch, tgl was monitored
+---------------------------------------------------------------------------
+
+ Coverage status: End of All Coverages ...
+
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 635000 ps
+CPU Time:      0.230 seconds;       Data structure size:   0.6Mb
+Sat Apr 11 04:45:26 2026
