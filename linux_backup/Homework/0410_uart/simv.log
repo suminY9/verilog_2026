@@ -1,0 +1,68 @@
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
+Chronologic VCS simulator copyright 1991-2024
+Contains Synopsys proprietary information.
+Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  Apr 13 04:52 2026
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test uart_rand_test...
+*Verdi* Loading libsscore_vcs202409.so
+FSDB Dumper for VCS, Release Verdi_W-2024.09-SP2, Linux x86_64/64bit, 03/03/2025
+(C) 1996 - 2025 by Synopsys, Inc.
+*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+*Verdi* : Create FSDB file 'novas.fsdb'
+*Verdi* : Begin traversing the scope (tb_uart), layer (0).
+*Verdi* : Enable +all dumping.
+*Verdi* : End of traversing.
+UVM_INFO tb/uart_test.sv(17) @ 0: uvm_test_top [uart_rand_test] ===== UVM 계층 구조 =====
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(589) @ 0: reporter [UVMTOP] UVM testbench topology:
+--------------------------------------------------------------
+Name                       Type                    Size  Value
+--------------------------------------------------------------
+uvm_test_top               uart_rand_test          -     @342 
+  env                      uart_env                -     @355 
+    agt                    uart_agent              -     @364 
+      drv                  uart_driver             -     @402 
+        ap                 uvm_analysis_port       -     @577 
+        rsp_port           uvm_analysis_port       -     @421 
+        seq_item_port      uvm_seq_item_pull_port  -     @411 
+      mon                  uart_monitor            -     @431 
+        ap                 uvm_analysis_port       -     @588 
+      sqr                  uvm_sequencer           -     @440 
+        rsp_export         uvm_analysis_export     -     @449 
+        seq_item_export    uvm_seq_item_pull_imp   -     @567 
+        arbitration_queue  array                   0     -    
+        lock_queue         array                   0     -    
+        num_last_reqs      integral                32    'd1  
+        num_last_rsps      integral                32    'd1  
+    cov                    uart_coverage           -     @382 
+      analysis_imp         uvm_analysis_imp        -     @391 
+    scb                    uart_scoreboard         -     @373 
+      ap_drv_imp           uvm_analysis_imp_drv    -     @604 
+      ap_mon_imp           uvm_analysis_imp_mon    -     @614 
+--------------------------------------------------------------
+
+UVM_INFO tb/uart_monitor.sv(21) @ 0: uvm_test_top.env.agt.mon [uart_monitor] Start UART monitoring...
+UVM_INFO tb/uart_sequence.sv(33) @ 0: uvm_test_top.env.agt.sqr@@seq [uart_rand_seq] Loop count is: 10
+UVM_INFO tb/uart_driver.sv(25) @ 45000: uvm_test_top.env.agt.drv [uart_driver] finish reset. waiting for transaction...
+UVM_INFO tb/uart_driver.sv(44) @ 45000: uvm_test_top.env.agt.drv [DEBUG] Entering drive_uart

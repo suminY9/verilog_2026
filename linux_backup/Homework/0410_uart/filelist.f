@@ -1,0 +1,11 @@
+./rtl/uart.sv
+./tb/tb_uart.sv
+./tb/uart_agent.sv
+./tb/uart_driver.sv
+./tb/uart_monitor.sv
+./tb/uart_scoreboard.sv
+./tb/uart_seq_item.sv
+./tb/uart_sequence.sv
+./tb/uart_test.sv
+./tb/uart_coverage.sv
+./tb/uart_env.sv
