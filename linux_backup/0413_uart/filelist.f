@@ -3,4 +3,4 @@
 ./rtl/uart_rx.sv
 ./rtl/uart.sv
 ./rtl/sync_2ff.sv
-./tb/tb_uart_test.sv
+./tb/tb_uart.sv
