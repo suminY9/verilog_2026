@@ -20,7 +20,7 @@ uart #(
     .tx_start(tx_start),
     .tx(tx),
     .tx_busy(tx_busy),
-    .rx(rx),
+    .rx(tx),
     .rx_data(rx_data),
     .rx_valid(rx_valid)
 );
