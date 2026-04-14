@@ -25,37 +25,37 @@ uart #(
     .rx_valid(rx_valid)
 );
 
-    assign rx = tx;
-    
     always #5 clk = ~clk;
 
-    task send_data(logic [7:0] data);
-//    task send_data(int loop);
-//        repeat(loop) begin
-            tx_data = data;
-            //tx_data_temp = $urandom();
-            //tx_data = tx_data_temp; 
+//    task send_data(logic [7:0] data);
+    task send_data(int loop);
+        repeat(loop) begin
+            //tx_data = data;
+            tx_data_temp = $urandom();
+            tx_data = tx_data_temp; 
+            uart_que.push_back(tx_data_temp);
             tx_start = 1'b1;
             @(posedge clk);
             tx_start = 1'b0;
             @(posedge clk);
             wait(tx_busy == 1'b0);
+            //wait(rx_valid == 1'b1);
             @(posedge clk);
-//        end
+        end
     endtask
 
-    //task receive_data();
-    //    forever begin
-    //        wait(rx_valid == 1'b1);
-    //        rx_data_temp = rx_data;
-    //        @(posedge clk);
-    //        if (rx_data_temp == tx_data_temp) begin
-    //            $display("PASS! rx_data and tx_data is same.");
-    //        end else begin
-    //            $display("PASS! rx_data and tx_data is different.");
-    //        end
-    //    end
-    //endtask
+    task receive_data();
+        forever begin
+            wait(rx_valid == 1'b1);
+            rx_data_temp = rx_data;
+            @(posedge clk);
+            if (rx_data_temp == uart_que.pop_front()) begin
+                $display("PASS! rx_data and tx_data is same.");
+            end else begin
+                $display("FAIL! rx_data and tx_data is different.");
+            end
+        end
+    endtask
 
     initial begin
         clk = 0;
