@@ -3,6 +3,8 @@
 module tb_spi_master ();
     logic       clk;
     logic       reset;
+    logic       cpol;
+    logic       cpha;
     logic [7:0] clk_div;
     logic [7:0] tx_data;
     logic       start;
@@ -21,6 +23,8 @@ module tb_spi_master ();
     spi_master dut (
         .clk(clk),
         .reset(reset),
+        .cpol(cpol),
+        .cpha(cpha),
         .clk_div(clk_div),
         .tx_data(tx_data),
         .start(start),
@@ -33,6 +37,21 @@ module tb_spi_master ();
         .cs_n(cs_n)
     );
 
+    task spi_set_mode(logic [1:0] mode);
+        {cpol, cpha} = mode;
+        @(posedge clk);
+    endtask
+
+    task spi_send_data(logic [7:0] data);
+        tx_data = data; 
+        start   = 1'b1;
+        @(posedge clk);
+        start   = 1'b0;
+        @(posedge clk);
+        wait(done);
+        @(posedge clk);
+    endtask
+
     initial begin
         clk   = 0;
         reset = 1;
@@ -40,19 +59,23 @@ module tb_spi_master ();
         reset = 0;
         @(posedge clk);
 
-        clk_div = 4;    // 0~4
+        clk_div = 4;    // SCLK = 10Mhz = (100mhz / (10mhz*2)) -1
         // miso    = 1'b0;
         @(posedge clk);
 
-        // send data
-        tx_data = 8'haa;
-        start   = 1'b1;
-        @(posedge clk);
-        start   = 1'b0;
-        @(posedge clk);
-        wait(done);
-        @(posedge clk);
+        spi_set_mode(0);
+        spi_send_data(8'haa);
+        
+        spi_set_mode(1);
+        spi_send_data(8'haa);
 
+        spi_set_mode(2);
+        spi_send_data(8'haa);
+
+        spi_set_mode(3);
+        spi_send_data(8'haa);
+
+        @(posedge clk);
         #20;
         $finish;
     end
