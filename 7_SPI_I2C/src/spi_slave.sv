@@ -1,12 +1,16 @@
 `timescale 1ns / 1ps
 
 module spi_slave (
-    input  logic clk,
-    input  logic reset,
-    input  logic SCLK,
-    input  logic MOSI,
-    output logic MISO,
-    input  logic SS
+    // master
+    input  logic       clk,
+    input  logic       reset,
+    input  logic       SCLK,
+    input  logic       MOSI,
+    output logic       MISO,
+    input  logic       SS,
+    // logic
+    output logic       i_done,
+    output logic [7:0] i_data
 );
 
     // synchronizer
@@ -34,9 +38,11 @@ module spi_slave (
 
     input_state_e state;
     // to Master
-    logic [7:0] tx_shift_reg, rx_shift_reg;
+    logic [7:0] tx_shift_reg, rx_shift_reg, data_reg;
     logic [2:0] bit_cnt;
     logic done;
+    
+    assign i_done = done;
 
     always_ff @(posedge clk or posedge reset) begin
         if (reset) begin
@@ -53,7 +59,7 @@ module spi_slave (
                     bit_cnt <= 3'b0;
                     if (!SS) begin
                         state <= DATA;
-                        MISO  <= tx_shift_reg[7];
+                        MISO <= tx_shift_reg[7];
                         tx_shift_reg <= {tx_shift_reg[6:0], 1'b0};
                     end
                 end
@@ -67,6 +73,7 @@ module spi_slave (
                             if (bit_cnt == 3'd7) begin
                                 state <= IDLE;
                                 done  <= 1'b1;
+                                i_data <= {rx_shift_reg[6:0], MOSI};
                             end else begin
                                 bit_cnt <= bit_cnt + 1;
                             end
