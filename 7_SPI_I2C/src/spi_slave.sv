@@ -4,10 +4,10 @@ module spi_slave (
     // master
     input  logic       clk,
     input  logic       reset,
-    input  logic       SCLK,
-    input  logic       MOSI,
-    output logic       MISO,
-    input  logic       SS,
+    input  logic       sclk,
+    input  logic       mosi,
+    output logic       miso,
+    input  logic       cs_n,
     // logic
     output logic       i_done,
     output logic [7:0] i_data
@@ -22,7 +22,7 @@ module spi_slave (
             sclk_sync0 <= 0;
             sclk_sync1 <= 0;
         end else begin
-            sclk_sync0 <= SCLK;
+            sclk_sync0 <= sclk;
             sclk_sync1 <= sclk_sync0;
         end
     end
@@ -51,36 +51,40 @@ module spi_slave (
             rx_shift_reg <= 0;
             bit_cnt      <= 3'b0;
             done         <= 1'b0;
-            MISO         <= 1'b0;
+            miso         <= 1'b0;
         end else begin
             done <= 1'b0;
             case (state)
                 IDLE: begin
                     bit_cnt <= 3'b0;
-                    if (!SS) begin
+                    if (!cs_n) begin
                         state <= DATA;
-                        MISO <= tx_shift_reg[7];
-                        tx_shift_reg <= {tx_shift_reg[6:0], 1'b0};
+                        tx_shift_reg <= i_data;
+                        miso <= i_data[7];
+                        // miso <= tx_shift_reg[7];
+                        // tx_shift_reg <= {tx_shift_reg[6:0], 1'b0};
                     end
                 end
                 DATA: begin
-                    if (SS) begin
+                    if (cs_n) begin
                         state <= IDLE;
                     end else begin
                         if (sclk_posedge) begin
-                            rx_shift_reg <= {rx_shift_reg[6:0], MOSI};
+                            rx_shift_reg <= {rx_shift_reg[6:0], mosi};
 
                             if (bit_cnt == 3'd7) begin
                                 state <= IDLE;
                                 done  <= 1'b1;
-                                i_data <= {rx_shift_reg[6:0], MOSI};
+                                i_data <= {rx_shift_reg[6:0], mosi};
                             end else begin
                                 bit_cnt <= bit_cnt + 1;
                             end
                         end
                         if (sclk_negedge) begin
-                            MISO <= tx_shift_reg[7];
-                            tx_shift_reg <= {tx_shift_reg[6:0], 1'b0};
+                            //if (bit_cnt < 7) begin
+                                miso <= tx_shift_reg[6];
+                                tx_shift_reg <= {tx_shift_reg[6:0], 1'b0};
+                            //end
                         end
                     end
                 end

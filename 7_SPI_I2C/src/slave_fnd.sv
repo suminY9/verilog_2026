@@ -3,25 +3,26 @@
 module slave_FND (
     input  logic       clk,
     input  logic       reset,
-    input  logic       SCLK,
-    input  logic       MOSI,
-    input  logic       MISO,
-    input  logic       SS,
-    // internal signal
+    input  logic       sclk,
+    input  logic       mosi,
+    input  logic       miso,
+    input  logic       cs_n,
+    // fnd signal
     output logic [7:0] fnd_data,
     output logic [3:0] fnd_digit
 );
 
+    // internal signal
     logic i_done;
     logic [7:0] i_data;
 
     spi_slave U_SPI_SLAVE (
         .clk(clk),
         .reset(reset),
-        .SCLK(SCLK),
-        .MOSI(MOSI),
-        .MISO(MISO),
-        .SS(SS),
+        .sclk(sclk),
+        .mosi(mosi),
+        .miso(miso),
+        .cs_n(cs_n),
         .i_done(i_done),
         .i_data(i_data)
     );
@@ -92,9 +93,9 @@ module fnd_controller (
     logic [2:0] digit_sel;
     logic w_1khz;
     // digit splitter
-    logic [3:0] digit_1, digit_10;
+    logic [4:0] digit_1, digit_10;
     //mux
-    logic [3:0] mux_out;
+    logic [4:0] mux_out;
 
     clk_div U_CLK_DIV (
         .clk(clk),
@@ -107,7 +108,7 @@ module fnd_controller (
         .digit_sel(digit_sel)
     );
     decoder_2x4 U_DECODER_2x4 (
-        .digit_sel  (digit_sel),
+        .digit_sel  (digit_sel[1:0]),
         .decoder_out(fnd_digit)
     );
     digit_splitter #(
@@ -121,12 +122,12 @@ module fnd_controller (
         .sel(digit_sel),
         .digit_1(digit_1),
         .digit_10(digit_10),
-        .digit_100(4'hf),
-        .digit_1000(4'hf),
-        .digit_dot_1(4'hf),
-        .digit_dot_10(4'hf),
-        .digit_dot_100(4'hf),
-        .digit_dot_1000(4'hf),
+        .digit_100(5'd16),
+        .digit_1000(5'd16),
+        .digit_dot_1(5'd16),
+        .digit_dot_10(5'd16),
+        .digit_dot_100(5'd16),
+        .digit_dot_1000(5'd16),
         .mux_out(mux_out)
     );
     BCD U_BCD (
@@ -191,15 +192,15 @@ endmodule
 
 module mux_8x1 (
     input  logic [2:0] sel,
-    input  logic [3:0] digit_1,
-    input  logic [3:0] digit_10,
-    input  logic [3:0] digit_100,
-    input  logic [3:0] digit_1000,
-    input  logic [3:0] digit_dot_1,
-    input  logic [3:0] digit_dot_10,
-    input  logic [3:0] digit_dot_100,
-    input  logic [3:0] digit_dot_1000,
-    output logic [3:0] mux_out
+    input  logic [4:0] digit_1,
+    input  logic [4:0] digit_10,
+    input  logic [4:0] digit_100,
+    input  logic [4:0] digit_1000,
+    input  logic [4:0] digit_dot_1,
+    input  logic [4:0] digit_dot_10,
+    input  logic [4:0] digit_dot_100,
+    input  logic [4:0] digit_dot_1000,
+    output logic [4:0] mux_out
 );
     always @(*) begin
         case (sel)
@@ -219,37 +220,37 @@ module digit_splitter #(
     parameter BIT_WIDTH = 8
 ) (
     input  logic [BIT_WIDTH - 1:0] in_data,
-    output logic [            3:0] digit_1,
-    output logic [            3:0] digit_10
+    output logic [            4:0] digit_1,
+    output logic [            4:0] digit_10
 );
 
-    assign digit_1  = in_data % 10;
-    assign digit_10 = (in_data / 10) % 10;
+    assign digit_1  = {1'b0, in_data[3:0]};
+    assign digit_10 = {1'b0, in_data[7:4]};
 endmodule
 
 module BCD (
-    input  logic [3:0] bcd,
+    input  logic [4:0] bcd,
     output logic [7:0] fnd_data
 );
 
     always @(bcd) begin
         case (bcd)
-            4'd0: fnd_data = 8'hC0;
-            4'd1: fnd_data = 8'hf9;
-            4'd2: fnd_data = 8'ha4;
-            4'd3: fnd_data = 8'hb0;
-            4'd4: fnd_data = 8'h99;
-            4'd5: fnd_data = 8'h92;
-            4'd6: fnd_data = 8'h82;
-            4'd7: fnd_data = 8'hf8;
-            4'd8: fnd_data = 8'h80;
-            4'd9: fnd_data = 8'h90;
-            4'd10: fnd_data = 8'h88;
-            4'd11: fnd_data = 8'h83;
-            4'd12: fnd_data = 8'hc6;
-            4'd13: fnd_data = 8'ha1;
-            4'd14: fnd_data = 8'h86;
-            4'd15: fnd_data = 8'h8e;
+            5'd0: fnd_data = 8'hC0;
+            5'd1: fnd_data = 8'hf9;
+            5'd2: fnd_data = 8'ha4;
+            5'd3: fnd_data = 8'hb0;
+            5'd4: fnd_data = 8'h99;
+            5'd5: fnd_data = 8'h92;
+            5'd6: fnd_data = 8'h82;
+            5'd7: fnd_data = 8'hf8;
+            5'd8: fnd_data = 8'h80;
+            5'd9: fnd_data = 8'h90;
+            5'd10: fnd_data = 8'h88;
+            5'd11: fnd_data = 8'h83;
+            5'd12: fnd_data = 8'hc6;
+            5'd13: fnd_data = 8'ha1;
+            5'd14: fnd_data = 8'h86;
+            5'd15: fnd_data = 8'h8e;
             default: fnd_data = 8'hFF;
         endcase
     end
