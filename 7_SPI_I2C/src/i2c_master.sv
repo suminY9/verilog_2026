@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module top_I2C_Master(
+module I2C_Master(
     input  logic       clk,
     input  logic       reset,
     // command port

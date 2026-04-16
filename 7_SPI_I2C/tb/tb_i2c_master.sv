@@ -22,7 +22,7 @@ module tb_i2c_master();
 
     localparam SLA = 8'h12;
 
-    top_I2C_Master dut (.*);
+    I2C_Master dut (.*);
 
     always #5 clk = ~clk;
 
