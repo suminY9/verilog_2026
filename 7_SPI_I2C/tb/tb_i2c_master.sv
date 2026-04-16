@@ -26,14 +26,7 @@ module tb_i2c_master();
 
     always #5 clk = ~clk;
 
-    initial begin
-        clk   = 0;
-        reset = 1;
-        repeat(3) @(posedge clk);
-        reset = 0;
-        @(posedge clk);
-
-        // start
+    task i2c_start();
         cmd_start = 1'b1;
         cmd_write = 1'b0;
         cmd_read  = 1'b0;
@@ -41,9 +34,9 @@ module tb_i2c_master();
         @(posedge clk);
         wait(done);
         @(posedge clk);
-
-        // tx_data = address & R/W
-        tx_data = (SLA << 1) + 1'b0; 
+    endtask
+    task i2c_address(byte addr);
+        tx_data   = addr; 
         cmd_start = 1'b0;
         cmd_write = 1'b1;
         cmd_read  = 1'b0;
@@ -51,9 +44,9 @@ module tb_i2c_master();
         @(posedge clk);
         wait(done);
         @(posedge clk);
-
-        // tx_data = data
-        tx_data = 8'h55;
+    endtask
+    task i2c_write(byte data);
+        tx_data   = data;
         cmd_start = 1'b0;
         cmd_write = 1'b1;
         cmd_read  = 1'b0;
@@ -61,8 +54,17 @@ module tb_i2c_master();
         @(posedge clk);
         wait(done);
         @(posedge clk);
-
-        // stop 
+    endtask
+    task i2c_read();
+        cmd_start = 1'b0;
+        cmd_write = 1'b0;
+        cmd_read  = 1'b1;
+        cmd_stop  = 1'b0;
+        @(posedge clk);
+        wait(done);
+        @(posedge clk);
+    endtask
+    task i2c_stop();
         cmd_start = 1'b0;
         cmd_write = 1'b0;
         cmd_read  = 1'b0;
@@ -70,6 +72,26 @@ module tb_i2c_master();
         @(posedge clk);
         wait(done);
         @(posedge clk);
+    endtask
+
+    initial begin
+        clk   = 0;
+        reset = 1;
+        repeat(3) @(posedge clk);
+        reset = 0;
+        @(posedge clk);
+
+        i2c_start();
+        i2c_address(SLA << 1 + 1'b0);
+        i2c_write(8'h55);
+        i2c_write(8'haa);
+        i2c_write(8'h01);
+        i2c_write(8'h02);
+        i2c_write(8'h03);
+        i2c_write(8'h04);
+        i2c_write(8'h05);
+        i2c_write(8'hff);
+        i2c_stop();
 
         // IDLE state
         #100;
