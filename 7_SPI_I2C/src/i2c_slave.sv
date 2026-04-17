@@ -43,15 +43,17 @@ module i2c_slave (
         START,
         ADDR,
         ACK_ADDR,
-        DATA,
-        ACK_DATA,
-        STOP
+        RX_DATA,
+        RX_ACK,
+        TX_DATA,
+        TX_ACK
     } slave_state_e;
     slave_state_e state;
 
     logic [3:0] bit_cnt;
     logic [7:0] shift_reg;
     logic sda_out, sda_en;
+    logic is_read;
 
     assign sda = sda_en ? (sda_out ? 1'bz : 1'b0) : 1'bz;
 
@@ -60,7 +62,7 @@ module i2c_slave (
             i_data <= 8'h00;
             i_done <= 1'b0;
         end else begin
-            if (state == DATA && bit_cnt == 8 && scl_nege) begin
+            if (state == RX_DATA && bit_cnt == 8 && scl_nege) begin
                 i_data <= shift_reg;
                 i_done <= 1'b1;
             end else begin
@@ -75,7 +77,6 @@ module i2c_slave (
             bit_cnt   <= 0;
             sda_out   <= 1;
             sda_en    <= 0;
-            shift_reg <= 0;
         end else begin
             if (scl_sync1 && sda_nege) begin
                 state   <= ADDR;
@@ -97,6 +98,7 @@ module i2c_slave (
                         if (bit_cnt == 8 && scl_nege) begin
                             bit_cnt <= 0;
                             if (shift_reg[7:1] == slave_ADDR) begin
+                                is_read <= shift_reg[0];
                                 state   <= ACK_ADDR;
                                 sda_en  <= 1'b1;
                                 sda_out <= 1'b0;
@@ -107,26 +109,59 @@ module i2c_slave (
                     end
                     ACK_ADDR: begin
                         if (scl_nege) begin
-                            sda_en <= 1'b0;
-                            state  <= DATA;
+                            bit_cnt <= 0;
+                            if (is_read) begin
+                                state <= TX_DATA;
+                                sda_en <= 1'b1;
+                                shift_reg <= i_data;
+                                sda_out   <= i_data[7];
+                            end else begin
+                                state  <= RX_DATA;
+                                sda_en <= 1'b0;
+                            end
                         end
                     end
-                    DATA: begin
+                    RX_DATA: begin
                         if (scl_pose) begin
                             shift_reg <= {shift_reg[6:0], sda_sync1};
                             bit_cnt   <= bit_cnt + 1;
                         end
                         if (bit_cnt == 8 && scl_nege) begin
                             bit_cnt <= 0;
-                            state   <= ACK_DATA;
+                            state   <= RX_ACK;
                             sda_en  <= 1'b1;
                             sda_out <= 1'b0;
                         end
                     end
-                    ACK_DATA: begin
+                    RX_ACK: begin
                         if (scl_nege) begin
                             sda_en <= 1'b0;
-                            state  <= DATA;
+                            state  <= RX_DATA;
+                        end
+                    end
+                    TX_DATA: begin
+                        if (scl_nege) begin
+                            if (bit_cnt < 7) begin
+                                sda_out   <= shift_reg[6];
+                                shift_reg <= {shift_reg[6:0], 1'b0};
+                                bit_cnt   <= bit_cnt + 1;
+                            end else if (bit_cnt == 7) begin
+                                bit_cnt <= 8;
+                            end
+                        end
+                        if (bit_cnt == 8 & scl_nege) begin
+                            bit_cnt <= 1'b0;
+                            state   <= TX_ACK;
+                            sda_en  <= 1'b0;
+                        end
+                    end
+                    TX_ACK: begin
+                        if (scl_pose) begin
+                            if (sda_sync1 == 1'b0) begin
+                                state <= TX_DATA;
+                            end else begin
+                                state <= IDLE;
+                            end
                         end
                     end
                 endcase
