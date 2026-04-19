@@ -1,0 +1,224 @@
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
+Chronologic VCS simulator copyright 1991-2024
+Contains Synopsys proprietary information.
+Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  Apr 19 23:52 2026
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test i2cS_test...
+*Verdi* Loading libsscore_vcs202409.so
+FSDB Dumper for VCS, Release Verdi_W-2024.09-SP2, Linux x86_64/64bit, 03/03/2025
+(C) 1996 - 2025 by Synopsys, Inc.
+*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+*Verdi* : Create FSDB file 'novas.fsdb'
+*Verdi* : Begin traversing the scope (tb_i2c_slave_uvm), layer (0).
+*Verdi* : Enable +all dumping.
+*Verdi* : End of traversing.
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 690000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(214) @ 770000: uvm_test_top.env.scb [i2cS_scoreboard] ==PASS== Input:99, collected:99
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 770000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=99
+UVM_WARNING ./tb/tb_i2c_slave_uvm_fix.sv(141) @ 1111000: uvm_test_top.env.agt.mon [MON_DEBUG] Bit 7 is floating (Z/X)!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 1520000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_ERROR ./tb/tb_i2c_slave_uvm_fix.sv(211) @ 1540000: uvm_test_top.env.scb [i2cS_scoreboard] collected_data Error! Input:ae, collected:Z7
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 1540000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=ae
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 2290000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(214) @ 2310000: uvm_test_top.env.scb [i2cS_scoreboard] ==PASS== Input:26, collected:26
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 2310000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=26
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 3060000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(214) @ 3080000: uvm_test_top.env.scb [i2cS_scoreboard] ==PASS== Input:18, collected:18
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 3080000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=18
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 3830000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(214) @ 3850000: uvm_test_top.env.scb [i2cS_scoreboard] ==PASS== Input:f6, collected:f6
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 3850000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=f6
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 4540000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(214) @ 4620000: uvm_test_top.env.scb [i2cS_scoreboard] ==PASS== Input:29, collected:29
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 4620000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=29
+UVM_WARNING ./tb/tb_i2c_slave_uvm_fix.sv(141) @ 4961000: uvm_test_top.env.agt.mon [MON_DEBUG] Bit 7 is floating (Z/X)!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 5370000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_ERROR ./tb/tb_i2c_slave_uvm_fix.sv(211) @ 5390000: uvm_test_top.env.scb [i2cS_scoreboard] collected_data Error! Input:fe, collected:Zf
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 5390000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=fe
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 6080000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(214) @ 6160000: uvm_test_top.env.scb [i2cS_scoreboard] ==PASS== Input:d5, collected:d5
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 6160000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=d5
+UVM_WARNING ./tb/tb_i2c_slave_uvm_fix.sv(141) @ 6501000: uvm_test_top.env.agt.mon [MON_DEBUG] Bit 7 is floating (Z/X)!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 6820000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_ERROR ./tb/tb_i2c_slave_uvm_fix.sv(211) @ 6930000: uvm_test_top.env.scb [i2cS_scoreboard] collected_data Error! Input:dd, collected:Ze
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 6930000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=dd
+UVM_WARNING ./tb/tb_i2c_slave_uvm_fix.sv(141) @ 7271000: uvm_test_top.env.agt.mon [MON_DEBUG] Bit 7 is floating (Z/X)!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 7590000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_ERROR ./tb/tb_i2c_slave_uvm_fix.sv(211) @ 7700000: uvm_test_top.env.scb [i2cS_scoreboard] collected_data Error! Input:81, collected:Z0
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 7700000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=81
+UVM_WARNING ./tb/tb_i2c_slave_uvm_fix.sv(141) @ 8041000: uvm_test_top.env.agt.mon [MON_DEBUG] Bit 7 is floating (Z/X)!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 8450000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_ERROR ./tb/tb_i2c_slave_uvm_fix.sv(211) @ 8470000: uvm_test_top.env.scb [i2cS_scoreboard] collected_data Error! Input:fa, collected:Zd
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 8470000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=fa
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 9160000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(214) @ 9240000: uvm_test_top.env.scb [i2cS_scoreboard] ==PASS== Input:6d, collected:6d
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 9240000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=6d
+UVM_WARNING ./tb/tb_i2c_slave_uvm_fix.sv(141) @ 9581000: uvm_test_top.env.agt.mon [MON_DEBUG] Bit 7 is floating (Z/X)!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 9900000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_ERROR ./tb/tb_i2c_slave_uvm_fix.sv(211) @ 10010000: uvm_test_top.env.scb [i2cS_scoreboard] collected_data Error! Input:a3, collected:Z1
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 10010000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=a3
+UVM_WARNING ./tb/tb_i2c_slave_uvm_fix.sv(141) @ 10351000: uvm_test_top.env.agt.mon [MON_DEBUG] Bit 7 is floating (Z/X)!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 10670000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_ERROR ./tb/tb_i2c_slave_uvm_fix.sv(211) @ 10780000: uvm_test_top.env.scb [i2cS_scoreboard] collected_data Error! Input:a1, collected:Z0
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 10780000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=a1
+UVM_WARNING ./tb/tb_i2c_slave_uvm_fix.sv(141) @ 11121000: uvm_test_top.env.agt.mon [MON_DEBUG] Bit 7 is floating (Z/X)!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 11530000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_ERROR ./tb/tb_i2c_slave_uvm_fix.sv(211) @ 11550000: uvm_test_top.env.scb [i2cS_scoreboard] collected_data Error! Input:d2, collected:Z9
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 11550000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=d2
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 12240000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(214) @ 12320000: uvm_test_top.env.scb [i2cS_scoreboard] ==PASS== Input:65, collected:65
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 12320000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=65
+UVM_WARNING ./tb/tb_i2c_slave_uvm_fix.sv(141) @ 12661000: uvm_test_top.env.agt.mon [MON_DEBUG] Bit 7 is floating (Z/X)!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 12980000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_ERROR ./tb/tb_i2c_slave_uvm_fix.sv(211) @ 13090000: uvm_test_top.env.scb [i2cS_scoreboard] collected_data Error! Input:9d, collected:Ze
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 13090000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=9d
+UVM_WARNING ./tb/tb_i2c_slave_uvm_fix.sv(141) @ 13431000: uvm_test_top.env.agt.mon [MON_DEBUG] Bit 7 is floating (Z/X)!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 13840000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_ERROR ./tb/tb_i2c_slave_uvm_fix.sv(211) @ 13860000: uvm_test_top.env.scb [i2cS_scoreboard] collected_data Error! Input:7c, collected:Ze
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 13860000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=7c
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 14550000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(214) @ 14630000: uvm_test_top.env.scb [i2cS_scoreboard] ==PASS== Input:5b, collected:5b
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 14630000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=5b
+UVM_WARNING ./tb/tb_i2c_slave_uvm_fix.sv(141) @ 14971000: uvm_test_top.env.agt.mon [MON_DEBUG] Bit 7 is floating (Z/X)!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 15380000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_ERROR ./tb/tb_i2c_slave_uvm_fix.sv(211) @ 15400000: uvm_test_top.env.scb [i2cS_scoreboard] collected_data Error! Input:da, collected:Zd
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 15400000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=da
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 16150000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(214) @ 16170000: uvm_test_top.env.scb [i2cS_scoreboard] ==PASS== Input:7e, collected:7e
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 16170000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=7e
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 16920000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(214) @ 16940000: uvm_test_top.env.scb [i2cS_scoreboard] ==PASS== Input:20, collected:20
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 16940000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=20
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 17690000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(214) @ 17710000: uvm_test_top.env.scb [i2cS_scoreboard] ==PASS== Input:6c, collected:6c
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 17710000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=6c
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 18400000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(214) @ 18480000: uvm_test_top.env.scb [i2cS_scoreboard] ==PASS== Input:77, collected:77
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 18480000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=77
+UVM_WARNING ./tb/tb_i2c_slave_uvm_fix.sv(141) @ 18821000: uvm_test_top.env.agt.mon [MON_DEBUG] Bit 7 is floating (Z/X)!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 19140000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_ERROR ./tb/tb_i2c_slave_uvm_fix.sv(211) @ 19250000: uvm_test_top.env.scb [i2cS_scoreboard] collected_data Error! Input:bb, collected:Zd
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 19250000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=bb
+UVM_WARNING ./tb/tb_i2c_slave_uvm_fix.sv(141) @ 19591000: uvm_test_top.env.agt.mon [MON_DEBUG] Bit 7 is floating (Z/X)!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 20000000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_ERROR ./tb/tb_i2c_slave_uvm_fix.sv(211) @ 20020000: uvm_test_top.env.scb [i2cS_scoreboard] collected_data Error! Input:14, collected:Za
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 20020000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=14
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 20710000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(214) @ 20790000: uvm_test_top.env.scb [i2cS_scoreboard] ==PASS== Input:95, collected:95
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 20790000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=95
+UVM_WARNING ./tb/tb_i2c_slave_uvm_fix.sv(141) @ 21131000: uvm_test_top.env.agt.mon [MON_DEBUG] Bit 7 is floating (Z/X)!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 21540000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_ERROR ./tb/tb_i2c_slave_uvm_fix.sv(211) @ 21560000: uvm_test_top.env.scb [i2cS_scoreboard] collected_data Error! Input:1c, collected:Ze
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 21560000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=1c
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 22250000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(214) @ 22330000: uvm_test_top.env.scb [i2cS_scoreboard] ==PASS== Input:35, collected:35
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 22330000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=35
+UVM_WARNING ./tb/tb_i2c_slave_uvm_fix.sv(141) @ 22671000: uvm_test_top.env.agt.mon [MON_DEBUG] Bit 7 is floating (Z/X)!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 22990000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_ERROR ./tb/tb_i2c_slave_uvm_fix.sv(211) @ 23100000: uvm_test_top.env.scb [i2cS_scoreboard] collected_data Error! Input:e5, collected:Z2
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 23100000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=e5
+UVM_WARNING ./tb/tb_i2c_slave_uvm_fix.sv(141) @ 23441000: uvm_test_top.env.agt.mon [MON_DEBUG] Bit 7 is floating (Z/X)!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 23850000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_ERROR ./tb/tb_i2c_slave_uvm_fix.sv(211) @ 23870000: uvm_test_top.env.scb [i2cS_scoreboard] collected_data Error! Input:ee, collected:Z7
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 23870000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=ee
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 24560000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(214) @ 24640000: uvm_test_top.env.scb [i2cS_scoreboard] ==PASS== Input:51, collected:51
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 24640000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=51
+UVM_WARNING ./tb/tb_i2c_slave_uvm_fix.sv(141) @ 24981000: uvm_test_top.env.agt.mon [MON_DEBUG] Bit 7 is floating (Z/X)!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 25300000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_ERROR ./tb/tb_i2c_slave_uvm_fix.sv(211) @ 25410000: uvm_test_top.env.scb [i2cS_scoreboard] collected_data Error! Input:0b, collected:Z5
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 25410000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=b
+UVM_WARNING ./tb/tb_i2c_slave_uvm_fix.sv(141) @ 25751000: uvm_test_top.env.agt.mon [MON_DEBUG] Bit 7 is floating (Z/X)!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 26160000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_ERROR ./tb/tb_i2c_slave_uvm_fix.sv(211) @ 26180000: uvm_test_top.env.scb [i2cS_scoreboard] collected_data Error! Input:28, collected:Z4
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 26180000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=28
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 26870000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(214) @ 26950000: uvm_test_top.env.scb [i2cS_scoreboard] ==PASS== Input:63, collected:63
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 26950000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=63
+UVM_WARNING ./tb/tb_i2c_slave_uvm_fix.sv(141) @ 27291000: uvm_test_top.env.agt.mon [MON_DEBUG] Bit 7 is floating (Z/X)!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 27610000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_ERROR ./tb/tb_i2c_slave_uvm_fix.sv(211) @ 27720000: uvm_test_top.env.scb [i2cS_scoreboard] collected_data Error! Input:db, collected:Zd
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 27720000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=db
+UVM_WARNING ./tb/tb_i2c_slave_uvm_fix.sv(141) @ 28061000: uvm_test_top.env.agt.mon [MON_DEBUG] Bit 7 is floating (Z/X)!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 28470000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_ERROR ./tb/tb_i2c_slave_uvm_fix.sv(211) @ 28490000: uvm_test_top.env.scb [i2cS_scoreboard] collected_data Error! Input:44, collected:Z2
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 28490000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=44
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 29240000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(214) @ 29260000: uvm_test_top.env.scb [i2cS_scoreboard] ==PASS== Input:06, collected:06
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 29260000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=6
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 29950000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(214) @ 30030000: uvm_test_top.env.scb [i2cS_scoreboard] ==PASS== Input:93, collected:93
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 30030000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=93
+UVM_WARNING ./tb/tb_i2c_slave_uvm_fix.sv(141) @ 30371000: uvm_test_top.env.agt.mon [MON_DEBUG] Bit 7 is floating (Z/X)!
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(149) @ 30780000: uvm_test_top.env.agt.mon [i2cS_monitor] Data Collected!
+UVM_ERROR ./tb/tb_i2c_slave_uvm_fix.sv(211) @ 30800000: uvm_test_top.env.scb [i2cS_scoreboard] collected_data Error! Input:90, collected:Z8
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(54) @ 30800000: uvm_test_top.env.agt.sqr@@seq [i2cS_rand_seq] input_data=90
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 30800000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(249) @ 30800000: uvm_test_top.env.cov [i2cS_coverage]   ===== Coverage Summary =====  
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(250) @ 30800000: uvm_test_top.env.cov [i2cS_coverage]  input_data : 0.0%
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(251) @ 30800000: uvm_test_top.env.cov [i2cS_coverage]   ===== Coverage Summary =====  
+
+
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(220) @ 30800000: uvm_test_top.env.scb [i2cS_scoreboard] ========== I2C SLAVE Summary ==========
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(221) @ 30800000: uvm_test_top.env.scb [i2cS_scoreboard]  Result      : ** FAIL **
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(222) @ 30800000: uvm_test_top.env.scb [i2cS_scoreboard]  PASSED      :          19
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(223) @ 30800000: uvm_test_top.env.scb [i2cS_scoreboard]  ERROR       :          21
+UVM_INFO ./tb/tb_i2c_slave_uvm_fix.sv(224) @ 30800000: uvm_test_top.env.scb [i2cS_scoreboard] =======================================
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 30800000: reporter [UVM/REPORT/CATCHER] 
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_server.svh(904) @ 30800000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  111
+UVM_WARNING :   21
+UVM_ERROR :   21
+UVM_FATAL :    0
+** Report counts by id
+[MON_DEBUG]    21
+[RNTST]     1
+[TEST_DONE]     1
+[UVM/RELNOTES]     1
+[UVM/REPORT/CATCHER]     1
+[i2cS_coverage]     3
+[i2cS_monitor]    40
+[i2cS_rand_seq]    40
+[i2cS_scoreboard]    45
+
+$finish called from file "/tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh", line 527.
+$finish at simulation time             30800000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 30800000 ps
+CPU Time:      0.220 seconds;       Data structure size:   0.6Mb
+Sun Apr 19 23:52:47 2026
