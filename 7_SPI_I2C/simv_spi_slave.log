@@ -2,7 +2,7 @@ Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detec
 Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
 Chronologic VCS simulator copyright 1991-2024
 Contains Synopsys proprietary information.
-Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  Apr 19 19:51 2026
+Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  Apr 20 00:48 2026
 UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
 ----------------------------------------------------------------
 UVM-1.2.Synopsys
@@ -25,179 +25,1234 @@ UVM-1.2.Synopsys
 
       (Specify +UVM_NO_RELNOTES to turn off this notice)
 
+
+ VCS Coverage Metrics Release W-2024.09-SP1_Full64 Copyright (c) 1991-2024 by Synopsys Inc.
 UVM_INFO @ 0: reporter [RNTST] Running test spiS_test...
 *Verdi* Loading libsscore_vcs202409.so
 FSDB Dumper for VCS, Release Verdi_W-2024.09-SP2, Linux x86_64/64bit, 03/03/2025
 (C) 1996 - 2025 by Synopsys, Inc.
+*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
 *Verdi* : Create FSDB file 'novas.fsdb'
 *Verdi* : Begin traversing the scope (tb_spi_slave_uvm), layer (0).
 *Verdi* : Enable +all dumping.
 *Verdi* : End of traversing.
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(119) @ 0: uvm_test_top.env.agt.drv [spiS_driver] Waiting for reset release...
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(123) @ 65000: uvm_test_top.env.agt.drv [spiS_driver] Reset released. Start driving!
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 2055000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: e6
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 2055000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=13 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 2055000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: e6 | Recv: e6]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 2825000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 05
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 2825000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 2825000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 05 | Recv: 05]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 5005000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: b4
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 5005000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=14 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 5005000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: b4 | Recv: b4]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 6385000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 6e
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 6385000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=8 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 6385000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 6e | Recv: 6e]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 6955000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: d5
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 6955000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 6955000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: d5 | Recv: d5]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 7625000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 8b
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 7625000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 7625000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 8b | Recv: 8b]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 9205000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 8d
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 9205000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 9205000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 8d | Recv: 8d]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 10095000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: e3
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 10095000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=5 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 10095000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: e3 | Recv: e3]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 10485000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: af
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 10485000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=2 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 10485000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: af | Recv: af]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 12645000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: fc
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 12645000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=14 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 12645000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: fc | Recv: fc]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 13425000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 6c
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 13425000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 13425000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 6c | Recv: 6c]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 13955000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 71
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 13955000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 13955000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 71 | Recv: 71]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 16125000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: d3
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 16125000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=14 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 16125000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: d3 | Recv: d3]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 18705000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 6e
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 18705000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=16 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 18705000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 6e | Recv: 6e]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 21605000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 3c
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 21605000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=18 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 21605000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 3c | Recv: 3c]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 24225000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 0a
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 24225000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=16 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 24225000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 0a | Recv: 0a]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 26375000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: c1
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 26375000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=13 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 26375000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: c1 | Recv: c1]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 28195000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 14
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 28195000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=11 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 28195000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 14 | Recv: 14]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 31345000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: e0
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 31345000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=20 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 31345000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: e0 | Recv: e0]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 32935000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 36
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 32935000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=9 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 32935000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 36 | Recv: 36]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 34565000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: ad
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 34565000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 34565000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: ad | Recv: ad]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 35305000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: c2
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 35305000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 35305000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: c2 | Recv: c2]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 36435000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: e3
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 36435000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=7 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 36435000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: e3 | Recv: e3]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 37895000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 89
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 37895000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=9 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 37895000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 89 | Recv: 89]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 39525000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 71
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 39525000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 39525000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 71 | Recv: 71]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 42365000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 9e
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 42365000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=18 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 42365000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 9e | Recv: 9e]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 44835000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 44
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 44835000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 44835000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 44 | Recv: 44]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 47875000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 22
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 47875000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=19 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 47875000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 22 | Recv: 22]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 49005000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: a0
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 49005000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=6 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 49005000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: a0 | Recv: a0]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 51805000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 32
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 51805000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=18 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 51805000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 32 | Recv: 32]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 53525000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 8a
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 53525000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 53525000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 8a | Recv: 8a]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 54115000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: e6
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 54115000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 54115000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: e6 | Recv: e6]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 57035000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 35
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 57035000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=19 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 57035000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 35 | Recv: 35]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 59965000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 34
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 59965000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=18 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 59965000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 34 | Recv: 34]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 62735000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 09
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 62735000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=17 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 62735000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 09 | Recv: 09]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 65045000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 5e
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 65045000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=14 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 65045000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 5e | Recv: 5e]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 66875000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 64
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 66875000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=11 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 66875000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 64 | Recv: 64]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 68825000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 7d
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 68825000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=12 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 68825000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 7d | Recv: 7d]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 70485000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 82
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 70485000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 70485000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 82 | Recv: 82]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 71975000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 5d
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 71975000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=9 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 71975000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 5d | Recv: 5d]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 72405000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 1e
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 72405000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=2 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 72405000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 1e | Recv: 1e]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 73365000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 42
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 73365000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=6 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 73365000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 42 | Recv: 42]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 75415000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 4b
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 75415000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=13 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 75415000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 4b | Recv: 4b]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 78585000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 06
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 78585000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=20 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 78585000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 06 | Recv: 06]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 81675000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 76
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 81675000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=19 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 81675000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 76 | Recv: 76]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 82505000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: df
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 82505000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 82505000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: df | Recv: df]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 84985000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: cb
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 84985000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=16 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 84985000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: cb | Recv: cb]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 85785000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: cd
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 85785000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 85785000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: cd | Recv: cd]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 86465000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 97
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 86465000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 86465000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 97 | Recv: 97]
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(166) @ 87145000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 7a
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(228) @ 87145000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(234) @ 87145000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 7a | Recv: 7a]
-UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 87185000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(298) @ 87185000: uvm_test_top.env.cov [spiS_coverage]   ===== Slave Coverage Summary =====  
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(299) @ 87185000: uvm_test_top.env.cov [spiS_coverage]  mosi_data  : 0.0%
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(300) @ 87185000: uvm_test_top.env.cov [spiS_coverage]  sclk_speed : 0.0%
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(301) @ 87185000: uvm_test_top.env.cov [spiS_coverage]  cross_sync : 0.0%
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(302) @ 87185000: uvm_test_top.env.cov [spiS_coverage]   ====================================  
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(91) @ 0: uvm_test_top.env.agt.drv [spiS_driver] build_phase COMPLETE.
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(153) @ 0: uvm_test_top.env.agt.mon [spiS_monitor] build_phase COMPLETE.
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(122) @ 0: uvm_test_top.env.agt.drv [spiS_driver] Waiting for reset release...
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(126) @ 65000: uvm_test_top.env.agt.drv [spiS_driver] Reset released. Start driving!
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 2655000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 67
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 2655000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=17 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 2655000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 67 | Recv: 67]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 4365000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 12
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 4365000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 4365000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 12 | Recv: 12]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 5555000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 3b
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 5555000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=7 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 5555000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 3b | Recv: 3b]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 7165000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 2e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 7165000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 7165000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 2e | Recv: 2e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 8205000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: f1
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 8205000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=6 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 8205000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: f1 | Recv: f1]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 9355000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 85
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 9355000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=7 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 9355000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 85 | Recv: 85]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 11865000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: f8
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 11865000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=16 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 11865000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: f8 | Recv: f8]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 13715000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 16
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 13715000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=11 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 13715000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 16 | Recv: 16]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 15365000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: ad
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 15365000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 15365000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: ad | Recv: ad]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 18055000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 5c
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 18055000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=17 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 18055000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 5c | Recv: 5c]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 18715000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 2a
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 18715000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 18715000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 2a | Recv: 2a]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 20135000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 23
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 20135000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=9 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 20135000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 23 | Recv: 23]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 21165000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 43
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 21165000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=6 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 21165000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 43 | Recv: 43]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 23965000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: e8
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 23965000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=18 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 23965000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: e8 | Recv: e8]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 24935000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 4b
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 24935000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=5 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 24935000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 4b | Recv: 4b]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 25625000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: cd
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 25625000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 25625000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: cd | Recv: cd]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 27355000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 8b
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 27355000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=11 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 27355000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 8b | Recv: 8b]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 28405000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 5e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 28405000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=6 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 28405000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 5e | Recv: 5e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 29705000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: e4
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 29705000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=8 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 29705000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: e4 | Recv: e4]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 30125000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: a0
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 30125000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=2 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 30125000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: a0 | Recv: a0]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 30635000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 35
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 30635000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 30635000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 35 | Recv: 35]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 31605000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: a3
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 31605000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=6 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 31605000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: a3 | Recv: a3]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 34705000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 96
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 34705000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=20 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 34705000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 96 | Recv: 96]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 35395000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: bb
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 35395000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 35395000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: bb | Recv: bb]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 36815000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: a6
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 36815000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=9 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 36815000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: a6 | Recv: a6]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 39795000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: ec
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 39795000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=19 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 39795000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: ec | Recv: ec]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 42275000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: ab
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 42275000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 42275000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: ab | Recv: ab]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 43065000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 0c
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 43065000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 43065000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 0c | Recv: 0c]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 45245000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 73
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 45245000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=14 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 45245000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 73 | Recv: 73]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 46175000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 47
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 46175000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=5 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 46175000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 47 | Recv: 47]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 47915000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 77
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 47915000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=11 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 47915000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 77 | Recv: 77]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 48665000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 6e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 48665000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 48665000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 6e | Recv: 6e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 49195000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 0b
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 49195000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 49195000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 0b | Recv: 0b]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 52115000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: cc
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 52115000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=19 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 52115000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: cc | Recv: cc]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 55345000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: d9
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 55345000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=20 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 55345000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: d9 | Recv: d9]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 57535000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 0b
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 57535000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=13 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 57535000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 0b | Recv: 0b]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 59955000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 04
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 59955000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 59955000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 04 | Recv: 04]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 62995000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: db
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 62995000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=19 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 62995000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: db | Recv: db]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 66225000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 09
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 66225000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=20 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 66225000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 09 | Recv: 09]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 68415000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 0e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 68415000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=13 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 68415000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 0e | Recv: 0e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 69335000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: f2
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 69335000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=5 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 69335000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: f2 | Recv: f2]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 70925000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 20
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 70925000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 70925000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 20 | Recv: 20]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 72265000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 17
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 72265000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=8 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 72265000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 17 | Recv: 17]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 75235000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: e9
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 75235000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=19 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 75235000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: e9 | Recv: e9]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 77415000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: b2
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 77415000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=13 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 77415000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: b2 | Recv: b2]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 78185000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 7a
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 78185000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 78185000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 7a | Recv: 7a]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 81115000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 6b
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 81115000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=19 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 81115000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 6b | Recv: 6b]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 82995000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: e5
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 82995000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=11 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 82995000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: e5 | Recv: e5]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 84645000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 73
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 84645000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 84645000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 73 | Recv: 73]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 85835000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 23
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 85835000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=7 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 85835000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 23 | Recv: 23]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 88495000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 3f
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 88495000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=17 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 88495000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 3f | Recv: 3f]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 91405000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 0c
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 91405000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=18 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 91405000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 0c | Recv: 0c]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 94025000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 96
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 94025000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=16 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 94025000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 96 | Recv: 96]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 95275000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 56
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 95275000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=7 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 95275000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 56 | Recv: 56]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 98085000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: fe
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 98085000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=18 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 98085000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: fe | Recv: fe]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 98905000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: dc
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 98905000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 98905000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: dc | Recv: dc]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 100485000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 95
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 100485000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 100485000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 95 | Recv: 95]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 101525000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 44
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 101525000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=6 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 101525000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 44 | Recv: 44]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 102975000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 91
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 102975000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=9 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 102975000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 91 | Recv: 91]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 106105000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: f8
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 106105000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=20 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 106105000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: f8 | Recv: f8]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 108745000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 03
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 108745000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=16 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 108745000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 03 | Recv: 03]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 109995000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: d2
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 109995000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=7 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 109995000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: d2 | Recv: d2]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 111455000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 40
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 111455000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=9 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 111455000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 40 | Recv: 40]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 113535000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 8e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 113535000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=13 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 113535000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 8e | Recv: 8e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 114155000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 86
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 114155000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 114155000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 86 | Recv: 86]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 116475000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 8f
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 116475000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 116475000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 8f | Recv: 8f]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 119515000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: ea
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 119515000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=19 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 119515000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: ea | Recv: ea]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 120195000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 70
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 120195000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 120195000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 70 | Recv: 70]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 121465000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: ee
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 121465000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=8 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 121465000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: ee | Recv: ee]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 121885000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 0b
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 121885000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=2 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 121885000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 0b | Recv: 0b]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 124645000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 89
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 124645000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=18 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 124645000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 89 | Recv: 89]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 125615000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: d2
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 125615000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=5 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 125615000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: d2 | Recv: d2]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 127955000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 75
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 127955000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 127955000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 75 | Recv: 75]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 129795000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: fa
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 129795000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=11 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 129795000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: fa | Recv: fa]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 131745000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 1d
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 131745000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=12 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 131745000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 1d | Recv: 1d]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 134905000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 9e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 134905000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=20 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 134905000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 9e | Recv: 9e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 136495000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: c6
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 136495000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=9 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 136495000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: c6 | Recv: c6]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 137075000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 83
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 137075000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 137075000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 83 | Recv: 83]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 139845000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 6f
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 139845000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=18 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 139845000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 6f | Recv: 6f]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 141265000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 97
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 141265000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=8 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 141265000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 97 | Recv: 97]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 144385000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 4a
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 144385000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=20 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 144385000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 4a | Recv: 4a]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 145225000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 4d
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 145225000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 145225000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 4d | Recv: 4d]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 147705000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 2b
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 147705000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=16 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 147705000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 2b | Recv: 2b]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 150305000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 6e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 150305000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=16 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 150305000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 6e | Recv: 6e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 152905000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 46
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 152905000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=16 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 152905000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 46 | Recv: 46]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 155505000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: fa
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 155505000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=16 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 155505000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: fa | Recv: fa]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 158705000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 06
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 158705000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=20 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 158705000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 06 | Recv: 06]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 159545000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 3b
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 159545000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 159545000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 3b | Recv: 3b]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 160075000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 6e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 160075000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 160075000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 6e | Recv: 6e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 160895000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: e6
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 160895000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=5 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 160895000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: e6 | Recv: e6]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 163985000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 57
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 163985000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=20 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 163985000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 57 | Recv: 57]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 167075000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 9a
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 167075000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=19 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 167075000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 9a | Recv: 9a]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 170305000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 56
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 170305000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=20 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 170305000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 56 | Recv: 56]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 171295000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: c6
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 171295000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=5 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 171295000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: c6 | Recv: c6]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 172435000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 26
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 172435000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=7 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 172435000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 26 | Recv: 26]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 174945000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: c1
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 174945000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=16 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 174945000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: c1 | Recv: c1]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 176495000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 33
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 176495000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=9 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 176495000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 33 | Recv: 33]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 177525000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 94
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 177525000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=6 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 177525000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 94 | Recv: 94]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 179725000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 2d
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 179725000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=14 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 179725000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 2d | Recv: 2d]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 182155000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 5d
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 182155000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 182155000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 5d | Recv: 5d]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 182645000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: a1
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 182645000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=2 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 182645000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: a1 | Recv: a1]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 184655000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: e7
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 184655000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=13 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 184655000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: e7 | Recv: e7]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 187525000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: b7
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 187525000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=18 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 187525000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: b7 | Recv: b7]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 189995000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: ac
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 189995000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 189995000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: ac | Recv: ac]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 191985000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: b8
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 191985000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=12 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 191985000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: b8 | Recv: b8]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 194695000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 8c
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 194695000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=17 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 194695000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 8c | Recv: 8c]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 196555000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 9c
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 196555000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=11 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 196555000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 9c | Recv: 9c]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 197755000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 1a
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 197755000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=7 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 197755000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 1a | Recv: 1a]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 200715000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: e3
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 200715000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=19 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 200715000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: e3 | Recv: e3]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 201395000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: fa
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 201395000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 201395000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: fa | Recv: fa]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 203115000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 61
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 203115000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=11 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 203115000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 61 | Recv: 61]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 205965000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: ad
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 205965000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=18 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 205965000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: ad | Recv: ad]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 208435000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 12
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 208435000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 208435000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 12 | Recv: 12]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 210425000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 64
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 210425000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=12 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 210425000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 64 | Recv: 64]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 212835000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 1e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 212835000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 212835000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 1e | Recv: 1e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 214525000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: cd
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 214525000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 214525000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: cd | Recv: cd]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 214965000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 0d
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 214965000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=2 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 214965000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 0d | Recv: 0d]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 216225000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 5d
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 216225000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=8 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 216225000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 5d | Recv: 5d]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 218145000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 33
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 218145000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=12 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 218145000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 33 | Recv: 33]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 218755000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 2d
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 218755000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 218755000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 2d | Recv: 2d]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 219275000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: dc
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 219275000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 219275000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: dc | Recv: dc]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 221295000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 5e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 221295000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=13 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 221295000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 5e | Recv: 5e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 223715000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: b1
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 223715000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 223715000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: b1 | Recv: b1]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 225255000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: a9
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 225255000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=9 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 225255000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: a9 | Recv: a9]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 227935000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 75
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 227935000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=17 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 227935000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 75 | Recv: 75]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 230545000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 30
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 230545000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=16 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 230545000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 30 | Recv: 30]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 233295000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: d9
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 233295000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=17 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 233295000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: d9 | Recv: d9]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 235605000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 15
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 235605000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=14 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 235605000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 15 | Recv: 15]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 238635000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 50
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 238635000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=19 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 238635000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 50 | Recv: 50]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 239465000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: a1
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 239465000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 239465000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: a1 | Recv: a1]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 242545000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 18
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 242545000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=20 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 242545000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 18 | Recv: 18]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 245785000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 29
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 245785000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=20 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 245785000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 29 | Recv: 29]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 247525000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 45
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 247525000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 247525000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 45 | Recv: 45]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 248115000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: aa
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 248115000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 248115000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: aa | Recv: aa]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 250285000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 25
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 250285000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=14 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 250285000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 25 | Recv: 25]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 251965000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: bc
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 251965000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 251965000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: bc | Recv: bc]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 254655000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 96
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 254655000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=17 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 254655000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 96 | Recv: 96]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 257715000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 66
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 257715000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=19 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 257715000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 66 | Recv: 66]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 258395000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: c9
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 258395000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 258395000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: c9 | Recv: c9]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 259965000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 3c
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 259965000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 259965000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 3c | Recv: 3c]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 261155000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 7c
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 261155000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=7 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 261155000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 7c | Recv: 7c]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 262765000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 72
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 262765000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 262765000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 72 | Recv: 72]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 265155000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: e0
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 265155000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 265155000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: e0 | Recv: e0]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 266695000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 0f
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 266695000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=9 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 266695000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 0f | Recv: 0f]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 269825000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: e0
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 269825000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=20 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 269825000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: e0 | Recv: e0]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 272315000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 1e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 272315000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 272315000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 1e | Recv: 1e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 275355000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: fd
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 275355000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=19 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 275355000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: fd | Recv: fd]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 276035000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 30
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 276035000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 276035000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 30 | Recv: 30]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 276705000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 0c
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 276705000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 276705000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 0c | Recv: 0c]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 279785000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: ea
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 279785000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=20 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 279785000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: ea | Recv: ea]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 282125000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 3e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 282125000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=14 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 282125000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 3e | Recv: 3e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 284555000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: b6
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 284555000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 284555000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: b6 | Recv: b6]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 285045000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: f8
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 285045000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=2 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 285045000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: f8 | Recv: f8]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 286005000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: a1
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 286005000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=6 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 286005000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: a1 | Recv: a1]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 289105000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 19
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 289105000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=20 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 289105000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 19 | Recv: 19]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 290545000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 38
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 290545000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=8 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 290545000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 38 | Recv: 38]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 293215000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 0e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 293215000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=17 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 293215000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 0e | Recv: 0e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 293725000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 88
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 293725000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=2 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 293725000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 88 | Recv: 88]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 295285000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 9b
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 295285000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 295285000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 9b | Recv: 9b]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 296025000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 6e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 296025000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 296025000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 6e | Recv: 6e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 298055000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 07
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 298055000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=13 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 298055000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 07 | Recv: 07]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 300325000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 71
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 300325000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=14 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 300325000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 71 | Recv: 71]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 303355000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: bd
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 303355000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=19 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 303355000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: bd | Recv: bd]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 305835000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: aa
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 305835000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 305835000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: aa | Recv: aa]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 307675000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: cf
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 307675000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=11 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 307675000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: cf | Recv: cf]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 308875000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 1e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 308875000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=7 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 308875000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 1e | Recv: 1e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 311685000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 10
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 311685000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=18 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 311685000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 10 | Recv: 10]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 314005000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: e3
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 314005000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=14 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 314005000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: e3 | Recv: e3]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 315835000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: b4
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 315835000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=11 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 315835000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: b4 | Recv: b4]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 317035000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 3d
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 317035000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=7 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 317035000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 3d | Recv: 3d]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 319395000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: c6
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 319395000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 319395000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: c6 | Recv: c6]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 321985000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: e5
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 321985000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=16 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 321985000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: e5 | Recv: e5]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 324885000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 96
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 324885000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=18 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 324885000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 96 | Recv: 96]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 326455000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 83
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 326455000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=9 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 326455000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 83 | Recv: 83]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 328835000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 46
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 328835000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 328835000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 46 | Recv: 46]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 329475000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: f0
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 329475000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 329475000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: f0 | Recv: f0]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 331045000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 78
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 331045000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 331045000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 78 | Recv: 78]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 333435000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: e0
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 333435000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 333435000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: e0 | Recv: e0]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 334375000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 23
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 334375000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=5 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 334375000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 23 | Recv: 23]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 335515000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 41
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 335515000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=7 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 335515000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 41 | Recv: 41]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 338175000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: dd
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 338175000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=17 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 338175000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: dd | Recv: dd]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 341385000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: bd
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 341385000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=20 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 341385000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: bd | Recv: bd]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 342675000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 93
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 342675000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=7 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 342675000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 93 | Recv: 93]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 345335000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: d5
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 345335000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=17 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 345335000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: d5 | Recv: d5]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 346445000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: a2
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 346445000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=6 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 346445000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: a2 | Recv: a2]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 347295000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: b3
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 347295000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=5 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 347295000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: b3 | Recv: b3]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 347835000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 9e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 347835000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 347835000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 9e | Recv: 9e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 348505000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 5d
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 348505000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 348505000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 5d | Recv: 5d]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 351135000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: e1
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 351135000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=17 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 351135000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: e1 | Recv: e1]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 351945000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 66
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 351945000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 351945000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 66 | Recv: 66]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 353825000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 8c
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 353825000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=12 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 353825000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 8c | Recv: 8c]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 356385000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 49
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 356385000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=16 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 356385000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 49 | Recv: 49]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 358685000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: c6
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 358685000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=14 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 358685000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: c6 | Recv: c6]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 360065000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 5b
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 360065000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=8 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 360065000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 5b | Recv: 5b]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 362135000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 14
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 362135000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=13 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 362135000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 14 | Recv: 14]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 364555000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: a1
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 364555000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 364555000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: a1 | Recv: a1]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 365345000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 13
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 365345000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 365345000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 13 | Recv: 13]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 366025000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 20
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 366025000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 366025000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 20 | Recv: 20]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 368355000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 30
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 368355000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 368355000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 30 | Recv: 30]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 370645000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 05
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 370645000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=14 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 370645000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 05 | Recv: 05]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 373075000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: c5
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 373075000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 373075000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: c5 | Recv: c5]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 375515000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: f5
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 375515000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 375515000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: f5 | Recv: f5]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 376455000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 7e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 376455000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=5 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 376455000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 7e | Recv: 7e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 376845000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: cc
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 376845000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=2 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 376845000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: cc | Recv: cc]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 377205000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 00
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 377205000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=2 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 377205000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 00 | Recv: 00]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 380265000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: cd
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 380265000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=20 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 380265000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: cd | Recv: cd]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 381105000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 9e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 381105000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 381105000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 9e | Recv: 9e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 382085000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: c7
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 382085000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=6 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 382085000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: c7 | Recv: c7]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 382485000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 35
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 382485000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=2 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 382485000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 35 | Recv: 35]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 384795000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 02
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 384795000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 384795000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 02 | Recv: 02]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 387535000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 83
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 387535000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=17 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 387535000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 83 | Recv: 83]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 388195000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: a6
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 388195000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 388195000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: a6 | Recv: a6]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 388565000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 94
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 388565000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=2 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 388565000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 94 | Recv: 94]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 390275000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 7f
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 390275000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=11 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 390275000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 7f | Recv: 7f]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 391925000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 60
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 391925000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 391925000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 60 | Recv: 60]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 392515000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 6d
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 392515000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 392515000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 6d | Recv: 6d]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 394235000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 30
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 394235000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=11 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 394235000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 30 | Recv: 30]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 394685000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: c2
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 394685000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=2 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 394685000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: c2 | Recv: c2]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 395045000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 1d
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 395045000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=2 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 395045000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 1d | Recv: 1d]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 396605000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: bd
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 396605000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 396605000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: bd | Recv: bd]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 397495000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: e1
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 397495000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=5 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 397495000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: e1 | Recv: e1]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 400285000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: ca
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 400285000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=18 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 400285000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: ca | Recv: ca]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 402605000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 4c
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 402605000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=14 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 402605000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 4c | Recv: 4c]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 405485000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 4a
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 405485000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=18 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 405485000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 4a | Recv: 4a]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 407055000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 07
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 407055000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=9 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 407055000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 07 | Recv: 07]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 407785000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 96
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 407785000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 407785000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 96 | Recv: 96]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 408765000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 11
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 408765000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=6 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 408765000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 11 | Recv: 11]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 411865000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 7e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 411865000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=20 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 411865000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 7e | Recv: 7e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 415105000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 61
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 415105000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=20 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 415105000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 61 | Recv: 61]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 416395000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 4b
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 416395000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=7 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 416395000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 4b | Recv: 4b]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 417555000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 5d
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 417555000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=7 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 417555000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 5d | Recv: 5d]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 419015000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 42
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 419015000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=9 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 419015000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 42 | Recv: 42]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 420495000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 9c
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 420495000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=9 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 420495000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 9c | Recv: 9c]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 422725000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 80
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 422725000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=14 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 422725000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 80 | Recv: 80]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 424855000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 44
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 424855000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=13 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 424855000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 44 | Recv: 44]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 425475000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 23
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 425475000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 425475000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 23 | Recv: 23]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 426895000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 77
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 426895000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=9 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 426895000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 77 | Recv: 77]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 428975000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 31
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 428975000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=13 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 428975000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 31 | Recv: 31]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 430645000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 5b
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 430645000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 430645000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 5b | Recv: 5b]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 433335000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: ec
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 433335000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=17 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 433335000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: ec | Recv: ec]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 434445000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 3c
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 434445000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=6 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 434445000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 3c | Recv: 3c]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 436795000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 7e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 436795000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 436795000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 7e | Recv: 7e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 437885000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: dc
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 437885000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=6 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 437885000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: dc | Recv: dc]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 440835000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 11
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 440835000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=19 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 440835000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 11 | Recv: 11]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 442565000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 6c
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 442565000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 442565000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 6c | Recv: 6c]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 443305000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: b7
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 443305000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 443305000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: b7 | Recv: b7]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 446235000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: f4
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 446235000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=19 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 446235000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: f4 | Recv: f4]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 447665000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: ae
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 447665000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=8 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 447665000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: ae | Recv: ae]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 450335000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: bf
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 450335000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=17 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 450335000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: bf | Recv: bf]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 451745000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 36
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 451745000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=8 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 451745000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 36 | Recv: 36]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 453515000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 28
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 453515000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=11 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 453515000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 28 | Recv: 28]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 455315000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 3c
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 455315000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=11 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 455315000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 3c | Recv: 3c]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 457565000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 03
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 457565000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=14 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 457565000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 03 | Recv: 03]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 458195000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 7e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 458195000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 458195000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 7e | Recv: 7e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 459165000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 3d
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 459165000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=6 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 459165000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 3d | Recv: 3d]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 459565000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 46
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 459565000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=2 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 459565000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 46 | Recv: 46]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 461125000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 8b
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 461125000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 461125000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 8b | Recv: 8b]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 462165000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 8c
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 462165000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=6 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 462165000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 8c | Recv: 8c]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 463615000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 68
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 463615000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=9 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 463615000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 68 | Recv: 68]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 465095000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 4b
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 465095000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=9 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 465095000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 4b | Recv: 4b]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 467025000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 5b
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 467025000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=12 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 467025000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 5b | Recv: 5b]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 470185000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 94
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 470185000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=20 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 470185000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 94 | Recv: 94]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 473275000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 86
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 473275000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=19 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 473275000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 86 | Recv: 86]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 474105000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 7e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 474105000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 474105000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 7e | Recv: 7e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 475535000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 57
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 475535000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=9 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 475535000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 57 | Recv: 57]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 476115000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: ac
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 476115000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 476115000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: ac | Recv: ac]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 477835000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 00
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 477835000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=11 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 477835000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 00 | Recv: 00]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 480085000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: dc
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 480085000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=14 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 480085000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: dc | Recv: dc]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 482965000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 4c
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 482965000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=18 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 482965000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 4c | Recv: 4c]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 485735000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 06
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 485735000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=17 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 485735000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 06 | Recv: 06]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 488495000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 58
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 488495000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=17 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 488495000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 58 | Recv: 58]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 490655000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 5d
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 490655000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=13 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 490655000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 5d | Recv: 5d]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 493075000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 7f
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 493075000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 493075000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 7f | Recv: 7f]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 494915000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 08
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 494915000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=11 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 494915000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 08 | Recv: 08]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 497765000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 03
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 497765000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=18 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 497765000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 03 | Recv: 03]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 500685000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 0f
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 500685000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=18 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 500685000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 0f | Recv: 0f]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 503755000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 0d
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 503755000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=19 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 503755000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 0d | Recv: 0d]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 504885000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 53
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 504885000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=6 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 504885000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 53 | Recv: 53]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 506935000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 57
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 506935000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=13 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 506935000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 57 | Recv: 57]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 508605000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 20
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 508605000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 508605000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 20 | Recv: 20]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 511445000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 5e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 511445000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=18 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 511445000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 5e | Recv: 5e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 512115000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: d7
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 512115000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 512115000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: d7 | Recv: d7]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 513235000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: ef
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 513235000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=7 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 513235000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: ef | Recv: ef]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 515595000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 76
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 515595000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 515595000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 76 | Recv: 76]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 517435000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: aa
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 517435000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=11 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 517435000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: aa | Recv: aa]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 519235000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 08
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 519235000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=11 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 519235000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 08 | Recv: 08]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 520435000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 2d
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 520435000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=7 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 520435000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 2d | Recv: 2d]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 522495000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 90
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 522495000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=13 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 522495000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 90 | Recv: 90]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 524315000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: bf
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 524315000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=11 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 524315000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: bf | Recv: bf]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 526115000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: d4
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 526115000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=11 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 526115000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: d4 | Recv: d4]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 528815000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 8f
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 528815000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=17 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 528815000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 8f | Recv: 8f]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 529325000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: e7
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 529325000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=2 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 529325000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: e7 | Recv: e7]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 530885000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 84
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 530885000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 530885000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 84 | Recv: 84]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 532375000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: b7
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 532375000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=9 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 532375000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: b7 | Recv: b7]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 535055000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: be
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 535055000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=17 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 535055000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: be | Recv: be]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 536765000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 7f
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 536765000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 536765000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 7f | Recv: 7f]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 537355000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: b0
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 537355000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 537355000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: b0 | Recv: b0]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 538775000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 4c
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 538775000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=9 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 538775000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 4c | Recv: 4c]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 541605000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 34
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 541605000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=18 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 541605000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 34 | Recv: 34]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 544675000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 5e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 544675000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=19 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 544675000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 5e | Recv: 5e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 545805000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: d3
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 545805000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=6 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 545805000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: d3 | Recv: d3]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 547105000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 54
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 547105000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=8 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 547105000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 54 | Recv: 54]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 548275000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: b3
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 548275000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=7 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 548275000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: b3 | Recv: b3]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 548985000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: e5
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 548985000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 548985000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: e5 | Recv: e5]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 550265000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 01
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 550265000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=8 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 550265000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 01 | Recv: 01]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 552785000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 93
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 552785000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=16 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 552785000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 93 | Recv: 93]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 555385000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: ec
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 555385000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=16 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 555385000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: ec | Recv: ec]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 556035000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 40
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 556035000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 556035000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 40 | Recv: 40]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 558955000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 5e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 558955000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=19 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 558955000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 5e | Recv: 5e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 560685000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 92
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 560685000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 560685000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 92 | Recv: 92]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 562775000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: ef
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 562775000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=13 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 562775000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: ef | Recv: ef]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 563395000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: cd
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 563395000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 563395000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: cd | Recv: cd]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 565115000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 5b
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 565115000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=11 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 565115000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 5b | Recv: 5b]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 567815000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: bb
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 567815000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=17 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 567815000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: bb | Recv: bb]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 568325000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 9a
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 568325000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=2 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 568325000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 9a | Recv: 9a]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 570635000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 7b
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 570635000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 570635000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 7b | Recv: 7b]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 571725000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: ac
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 571725000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=6 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 571725000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: ac | Recv: ac]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 573475000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: f8
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 573475000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=11 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 573475000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: f8 | Recv: f8]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 574675000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: c5
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 574675000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=7 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 574675000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: c5 | Recv: c5]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 575385000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: d0
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 575385000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 575385000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: d0 | Recv: d0]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 576065000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: b1
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 576065000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 576065000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: b1 | Recv: b1]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 577495000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: cd
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 577495000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=9 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 577495000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: cd | Recv: cd]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 580175000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 80
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 580175000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=17 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 580175000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 80 | Recv: 80]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 582785000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: ff
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 582785000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=16 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 582785000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: ff | Recv: ff]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 585835000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 87
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 585835000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=19 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 585835000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 87 | Recv: 87]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 588315000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 0b
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 588315000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 588315000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 0b | Recv: 0b]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 591205000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: ce
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 591205000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=18 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 591205000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: ce | Recv: ce]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 593375000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: cf
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 593375000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=13 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 593375000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: cf | Recv: cf]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 596545000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 51
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 596545000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=20 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 596545000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 51 | Recv: 51]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 599485000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 67
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 599485000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=18 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 599485000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 67 | Recv: 67]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 602705000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 3c
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 602705000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=20 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 602705000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 3c | Recv: 3c]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 604445000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 3a
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 604445000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 604445000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 3a | Recv: 3a]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 607435000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: ab
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 607435000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=19 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 607435000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: ab | Recv: ab]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 608115000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: a0
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 608115000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 608115000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: a0 | Recv: a0]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 609235000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: f1
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 609235000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=7 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 609235000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: f1 | Recv: f1]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 609945000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 60
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 609945000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 609945000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 60 | Recv: 60]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 612875000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: b0
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 612875000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=19 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 612875000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: b0 | Recv: b0]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 614905000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 9c
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 614905000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=12 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 614905000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 9c | Recv: 9c]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 617015000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 3a
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 617015000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=13 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 617015000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 3a | Recv: 3a]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 620035000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 38
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 620035000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=19 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 620035000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 38 | Recv: 38]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 622065000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: ec
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 622065000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=12 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 622065000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: ec | Recv: ec]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 625225000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 1c
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 625225000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=20 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 625225000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 1c | Recv: 1c]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 626665000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: f4
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 626665000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=8 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 626665000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: f4 | Recv: f4]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 627835000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 5a
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 627835000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=7 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 627835000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 5a | Recv: 5a]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 629445000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 38
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 629445000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 629445000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 38 | Recv: 38]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 630935000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 13
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 630935000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=9 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 630935000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 13 | Recv: 13]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 632565000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 3d
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 632565000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 632565000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 3d | Recv: 3d]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 635255000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: ce
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 635255000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=17 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 635255000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: ce | Recv: ce]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 637715000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 4c
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 637715000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 637715000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 4c | Recv: 4c]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 640605000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: a4
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 640605000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=18 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 640605000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: a4 | Recv: a4]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 642775000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 3f
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 642775000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=13 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 642775000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 3f | Recv: 3f]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 644745000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 57
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 644745000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=12 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 644745000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 57 | Recv: 57]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 645655000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: c1
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 645655000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=5 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 645655000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: c1 | Recv: c1]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 647995000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 09
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 647995000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 647995000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 09 | Recv: 09]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 649835000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 18
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 649835000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=11 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 649835000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 18 | Recv: 18]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 652985000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 95
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 652985000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=20 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 652985000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 95 | Recv: 95]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 654575000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: f0
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 654575000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=9 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 654575000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: f0 | Recv: f0]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 656355000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 81
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 656355000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=11 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 656355000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 81 | Recv: 81]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 658905000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 71
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 658905000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=16 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 658905000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 71 | Recv: 71]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 660905000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: d6
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 660905000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=12 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 660905000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: d6 | Recv: d6]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 663915000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 77
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 663915000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=19 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 663915000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 77 | Recv: 77]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 665045000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 78
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 665045000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=6 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 665045000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 78 | Recv: 78]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 666645000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 48
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 666645000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 666645000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 48 | Recv: 48]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 668285000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 5a
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 668285000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 668285000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 5a | Recv: 5a]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 668875000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: c9
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 668875000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 668875000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: c9 | Recv: c9]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 669695000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 09
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 669695000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=5 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 669695000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 09 | Recv: 09]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 670535000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 66
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 670535000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=5 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 670535000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 66 | Recv: 66]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 673025000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: fc
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 673025000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=16 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 673025000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: fc | Recv: fc]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 673675000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: ad
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 673675000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 673675000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: ad | Recv: ad]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 675095000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 60
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 675095000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=9 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 675095000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 60 | Recv: 60]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 677325000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: ed
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 677325000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=14 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 677325000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: ed | Recv: ed]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 680505000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 84
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 680505000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=20 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 680505000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 84 | Recv: 84]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 683145000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 3e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 683145000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=16 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 683145000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 3e | Recv: 3e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 686045000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 97
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 686045000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=18 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 686045000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 97 | Recv: 97]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 688515000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 8e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 688515000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 688515000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 8e | Recv: 8e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 690055000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 30
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 690055000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=9 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 690055000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 30 | Recv: 30]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 690935000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: a3
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 690935000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=5 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 690935000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: a3 | Recv: a3]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 693275000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: f5
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 693275000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=15 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 693275000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: f5 | Recv: f5]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 696465000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 72
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 696465000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=20 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 696465000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 72 | Recv: 72]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 698655000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: b6
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 698655000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=13 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 698655000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: b6 | Recv: b6]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 700625000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 8e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 700625000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=12 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 700625000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 8e | Recv: 8e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 701385000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: e1
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 701385000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 701385000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: e1 | Recv: e1]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 703865000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: a7
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 703865000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=16 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 703865000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: a7 | Recv: a7]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 705565000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: fe
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 705565000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=10 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 705565000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: fe | Recv: fe]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 706155000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 8f
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 706155000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=3 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 706155000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 8f | Recv: 8f]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 707125000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 94
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 707125000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=6 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 707125000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 94 | Recv: 94]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 709925000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: c4
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 709925000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=18 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 709925000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: c4 | Recv: c4]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 711195000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 8f
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 711195000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=7 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 711195000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 8f | Recv: 8f]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 712055000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: bf
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 712055000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=5 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 712055000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: bf | Recv: bf]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 713195000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 15
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 713195000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=7 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 713195000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 15 | Recv: 15]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 714355000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 2e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 714355000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=7 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 714355000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 2e | Recv: 2e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 716415000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: f9
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 716415000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=13 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 716415000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: f9 | Recv: f9]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 718385000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 6e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 718385000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=12 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 718385000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 6e | Recv: 6e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 719145000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 50
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 719145000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=4 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 719145000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 50 | Recv: 50]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 719975000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 60
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 719975000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=5 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 719975000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 60 | Recv: 60]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 722915000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 9e
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 722915000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=19 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 722915000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 9e | Recv: 9e]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 723895000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 7d
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 723895000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=5 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 723895000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 7d | Recv: 7d]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 726685000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 00
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 726685000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=18 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 726685000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 00 | Recv: 00]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 728855000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: b6
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 728855000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=13 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 728855000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: b6 | Recv: b6]
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(171) @ 731575000: uvm_test_top.env.agt.mon [MON] Captured Slave i_data: 92
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(233) @ 731575000: uvm_test_top.env.scb [SCB] Comparing Trans: SCLK_Half_Period=17 clk cycles
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(239) @ 731575000: uvm_test_top.env.scb [PASS] Data Integrity OK! [Sent: 92 | Recv: 92]
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 731745000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(298) @ 731745000: uvm_test_top.env.cov [spiS_coverage]   ===== Slave Coverage Summary =====  
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(299) @ 731745000: uvm_test_top.env.cov [spiS_coverage]  mosi_data  : 100.0%
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(300) @ 731745000: uvm_test_top.env.cov [spiS_coverage]  sclk_speed : 100.0%
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(301) @ 731745000: uvm_test_top.env.cov [spiS_coverage]  cross_sync : 100.0%
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(302) @ 731745000: uvm_test_top.env.cov [spiS_coverage]   ==================================  
 
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(253) @ 87185000: uvm_test_top.env.scb [REPORT] ---------------------------------------
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(254) @ 87185000: uvm_test_top.env.scb [REPORT]  Final Match Count : 50
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(255) @ 87185000: uvm_test_top.env.scb [REPORT]  Final Error Count : 0
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(257) @ 87185000: uvm_test_top.env.scb [REPORT]  Verification Status: PASSED
-UVM_INFO ./tb/tb_spi_slave_uvm.sv(260) @ 87185000: uvm_test_top.env.scb [REPORT] ---------------------------------------
-UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 87185000: reporter [UVM/REPORT/CATCHER] 
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(257) @ 731745000: uvm_test_top.env.scb [spiS_scoreboard] ========== SPI SLAVE Summary ==========
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(258) @ 731745000: uvm_test_top.env.scb [spiS_scoreboard]  Result      : ** PASS **
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(259) @ 731745000: uvm_test_top.env.scb [spiS_scoreboard]  PASSED      : 400
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(260) @ 731745000: uvm_test_top.env.scb [spiS_scoreboard]  ERROR       : 0
+UVM_INFO ./tb/tb_spi_slave_uvm.sv(261) @ 731745000: uvm_test_top.env.scb [spiS_scoreboard] =======================================
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 731745000: reporter [UVM/REPORT/CATCHER] 
 --- UVM Report catcher Summary ---
 
 
@@ -208,29 +1263,37 @@ Number of caught UVM_FATAL reports   :    0
 Number of caught UVM_ERROR reports   :    0
 Number of caught UVM_WARNING reports :    0
 
-UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_server.svh(904) @ 87185000: reporter [UVM/REPORT/SERVER] 
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_server.svh(904) @ 731745000: reporter [UVM/REPORT/SERVER] 
 --- UVM Report Summary ---
 
 ** Report counts by severity
-UVM_INFO :  166
+UVM_INFO : 1218
 UVM_WARNING :    0
 UVM_ERROR :    0
 UVM_FATAL :    0
 ** Report counts by id
-[MON]    50
-[PASS]    50
-[REPORT]     5
+[MON]   400
+[PASS]   400
 [RNTST]     1
-[SCB]    50
+[SCB]   400
 [TEST_DONE]     1
 [UVM/RELNOTES]     1
 [UVM/REPORT/CATCHER]     1
 [spiS_coverage]     5
-[spiS_driver]     2
+[spiS_driver]     3
+[spiS_monitor]     1
+[spiS_scoreboard]     5
 
 $finish called from file "/tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh", line 527.
-$finish at simulation time             87185000
+$finish at simulation time            731745000
+
+---------------------------------------------------------------------------
+VCS Coverage Metrics: during simulation line, cond, FSM, branch, tgl was monitored
+---------------------------------------------------------------------------
+
+ Coverage status: End of All Coverages ...
+
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 87185000 ps
-CPU Time:      0.220 seconds;       Data structure size:   0.6Mb
-Sun Apr 19 19:51:29 2026
+Time: 731745000 ps
+CPU Time:      0.330 seconds;       Data structure size:   0.6Mb
+Mon Apr 20 00:48:36 2026
