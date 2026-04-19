@@ -113,7 +113,7 @@ module spi_master (
                                 if(!cpha) begin
                                     rx_data <= rx_shift_reg;
                                 end else begin
-                                    rx_data <= rx_shift_reg;
+                                    //rx_data <= rx_shift_reg;
                                     // rx_data <= {rx_shift_reg[6:0], miso};
                                 end
                             end else begin
@@ -128,6 +128,7 @@ module spi_master (
                     done   <= 1'b1;
                     busy   <= 1'b0;
                     mosi   <= 1'b1;
+                    rx_data <= rx_shift_reg;
                     state  <= IDLE;
                 end
                 default: begin
