@@ -156,7 +156,7 @@ module axi4_lite_slave (
         end else begin
             case (ar_state)
                 AR_IDLE: begin
-                    if (ARVALID & ARREADY) begin
+                    if (ARVALID) begin
                         read_addr   <= ARADDR;
                         ARREADY     <= 1'b0;
                         r_addr_done <= 1'b1;
@@ -166,6 +166,7 @@ module axi4_lite_slave (
                 AR_BUSY: begin
                     if (read_done) begin
                         ARREADY     <= 1'b1;
+                        r_addr_done <= 1'b0;
                         ar_state    <= AR_IDLE;
                     end
                 end
@@ -190,17 +191,18 @@ module axi4_lite_slave (
         end else begin
             case (r_state)
                 R_IDLE: begin
+                    RVALID <= 1'b0;
                     if (r_addr_done) begin
-                        RVALID  <= 1'b0;
                         r_state <= R_BUSY;
                     end
                 end
                 R_BUSY: begin
-                    rdata <= slave_register[read_addr[7:2]]; // byte addressing
-                    r_state <= R_READ;
+                    rdata     <= slave_register[read_addr[7:2]]; // byte addressing
+                    read_done <= 1'b1;
+                    r_state   <= R_READ;
                 end
                 R_READ: begin
-                    read_done <= 1'b1;
+                    read_done <= 1'b0;
                     RVALID    <= 1'b1;
                     if(RREADY) begin
                         r_state   <= R_IDLE;
