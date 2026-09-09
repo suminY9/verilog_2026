@@ -45,7 +45,7 @@
 <table style="width: 100%; border: none; border-collapse: collapse;">
 <tr>
     <td style="width: 50%; text-align: center; padding: 5px; border: none;">
-      <img width="100%" alt="FrameCrop" src="https://github.com/user-attachments/assets/56b71920-9151-46d5-a55f-5771f5942b86" />
+      <img width="100%" alt="FrameCrop" src="https://github.com/user-attachments/assets/a162fbb3-5f29-4eb7-9f96-6c3f213922a9" />
     </td>
     <td style="width: 50%; text-align: center; padding: 5px; border: none;">
       <img width="100%" alt="PixelBuffer" src="https://github.com/user-attachments/assets/a4716e1b-79bd-4b05-90e8-4957e0e3039d" />
